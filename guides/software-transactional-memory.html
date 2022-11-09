@@ -3,12 +3,15 @@
 
 
 
+
+
 <head>
-  <title>Using Software Transactional Memory in Quarkus</title>
+  <title>Using Software Transactional Memory in Quarkus - Quarkus</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
-  <META HTTP-EQUIV='Content-Security-Policy' CONTENT="default-src 'none'; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self' ; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io; frame-ancestors 'none'; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;">
-  <META HTTP-EQUIV='X-Frame-Options' CONTENT="DENY">
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
   <META HTTP-EQUIV='X-Content-Type-Options' CONTENT="nosniff">
   <meta charset="utf-8">
@@ -20,16 +23,29 @@
   <meta property="og:url" content="https://quarkus.io/guides/software-transactional-memory" />
   <meta property="og:title" content="Using Software Transactional Memory in Quarkus" />
   <meta property="og:description" content="Quarkus: Supersonic Subatomic Java" />
-  <meta property="og:image" content="/assets/images/quarkus_card.png" />
+  <meta property="og:image" content="https://quarkus.io/assets/images/quarkus_card.png" />
   
   <link rel="canonical" href="https://quarkus.io/guides/software-transactional-memory">
   <link rel="shortcut icon" type="image/png" href="/favicon.ico" >
   <link rel="stylesheet" href="/guides/stylesheet/config.css" />
-  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/main.css?2021-07-29" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="alternate" type="application/rss+xml"  href="/feed.xml" title="Quarkus">
   <script src="/assets/javascript/goan.js" type="text/javascript"></script>
   <script src="/assets/javascript/hl.js" type="text/javascript"></script>
+  
+  
+  
+  
+  <link rel="alternate" hreflang="en" href="https://quarkus.io/guides/software-transactional-memory" />
+  
+  <link rel="alternate" hreflang="es" href="https://es.quarkus.io/guides/software-transactional-memory" />
+  
+  <link rel="alternate" hreflang="zh" href="https://cn.quarkus.io/guides/software-transactional-memory" />
+  
+  <link rel="alternate" hreflang="ja" href="https://ja.quarkus.io/guides/software-transactional-memory" />
+  
+  <link rel="alternate" hreflang="x-default" href="https://quarkus.io/" />
 </head>
 
 <body class="guides">
@@ -38,6 +54,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
+  
   <div class="nav-wrapper">
   <div class="grid-wrapper">
     <div class="width-12-12">
@@ -45,33 +62,57 @@
       <nav id="main-nav" class="main-nav">
   <div class="container">
     <div class="logo-wrapper">
-      
         <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-      
     </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
-    <div id="menu" class="menu">
-      <span>
-        <a href="/get-started/" class="">Get Started</a>
-      </span>
-      <span>
-        <a href="/guides/" class="active">Guides</a>
-      </span>
-      <span>
-        <a href="/community/" class="">Community</a>
-      </span>
-      <span>
-        <a href="/support/" class="">Support</a>
-      </span>
-      <span>
-        <a href="/blog/" class="">Blog</a>
-      </span>
-      <span>
-        <a href="https://code.quarkus.io" class="button-cta secondary white">Start Coding</a>
-      </span>
-    </div>
+    <ul id="menu" class="menu">
+      <li class="dropdown">
+        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
+          <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
+          <li><a href="/continuum" class="">REACTIVE</a></li>
+          <li><a href="/developer-joy" class="">DEVELOPER JOY</a></li>
+          <li><a href="/kubernetes-native" class="">KUBERNETES NATIVE</a></li>
+          <li><a href="/standards" class="">STANDARDS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <li><a href="/get-started" class="">GET STARTED</a></li>
+          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
+          <li><a href="/books" class="">BOOKS</a></li>
+          </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <li><a href="/support/" class="">SUPPORT</a></li>
+          <li><a href="/blog" class="">BLOG</a></li>
+          <li><a href="/discussion" class="">DISCUSSION</a></li>
+          <li><a href="/insights" class="">PODCAST</a></li>
+          <li><a href="/events" class="">EVENTS</a></li>
+          <li><a href="/newsletter" class="">NEWSLETTER</a></li>
+          <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" class="">ROADMAP</a></li>
+          </ul>
+      </li>
+      <li>
+        <a href="https://code.quarkus.io" class="button-cta secondary white">START CODING</a>
+      </li>
+      <li class="dropdown">
+        <span href="/language/"><div class="fas fa-globe langicon"></div><i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <li><a href="https://quarkus.io/guides/software-transactional-memory" >OFFICIAL (ENGLISH)</a></li>
+          <li><a href="https://es.quarkus.io/guides/software-transactional-memory">ESPAÑOL</a></li>
+          <li><a href="https://cn.quarkus.io/guides/software-transactional-memory">简体中文</a></li>
+          <li><a href="https://ja.quarkus.io/guides/software-transactional-memory">日本語</a></li>
+          </ul>
+      </li>
+    </ul>
   </div>
       </nav>
     </div>
@@ -82,35 +123,71 @@
     
 
 
-<div class="grid-wrapper guide">
-  <div class="grid__item width-10-12">
-    <h1 class="text-caps">Using Software Transactional Memory in Quarkus </h1>
+
+<div class="full-width-version-bg grey align-self">
+  <div class="grid-wrapper">
+    <div class="grid__item width-6-12">
+      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
+    </div>
+    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
+      <label id="guide-version-label">Select Guide Version</label>
+      <select id="guide-version-dropdown">
+        
+      
+        
+        
+        
+        
+          
+        <option value="main" >Main - SNAPSHOT</option>
+        
+        
+      
+        
+        
+        
+        
+          
+        <option value="latest" selected>2.13 - Latest</option>
+        
+        
+      
+        
+        
+        
+        
+          
+        <option value="2.7" >2.7</option>
+        
+        
+      
+        
+        
+        
+        
+          
+        <option value="2.2" >2.2</option>
+        
+        
+      
+        
+        
+        
+        
+          
+        <option value="1.11" >1.11</option>
+        
+        
+      
+    
+      </select>
+    </div>
   </div>
-  <div class="grid__item width-2-12 align-self-center text-right">
-    <select id="guides-version-dropdown">
-      
-        
-        
-        
-        
-          <option value="latest" selected>1.12 - Latest</option>
-        
-      
-        
-        
-        
-        
-          <option value="1.11" >1.11</option>
-        
-      
-        
-        
-        
-        
-          <option value="1.7" >1.7</option>
-        
-      
-    </select>
+</div>
+
+<div class="grid-wrapper guide">
+  <div class="grid__item width-12-12 width-12-12-mobile">
+    <h1 class="text-caps">Using Software Transactional Memory in Quarkus </h1>
   </div>
   <div class="width-12-12">
     <div class="hide-mobile toc"><ul class="sectlevel1">
@@ -133,7 +210,7 @@
 <div class="paragraph">
 <p>Software Transactional Memory (STM) has been around in research environments since the late
 1990&#8217;s and has relatively recently started to appear in products and various programming
-languages. We won&#8217;t go into all of the details behind STM but the interested reader could look at <a href="https://groups.csail.mit.edu/tds/papers/Shavit/ShavitTouitou-podc95.pdf">this paper</a>.
+languages. We won&#8217;t go into all the details behind STM but the interested reader could look at <a href="https://groups.csail.mit.edu/tds/papers/Shavit/ShavitTouitou-podc95.pdf">this paper</a>.
 However, suffice it to say that STM offers an approach to developing transactional applications in a highly
 concurrent environment with some of the same characteristics of ACID transactions, which you&#8217;ve probably already used
 through JTA. Importantly though, the Durability property is relaxed (removed) within STM implementations,
@@ -142,8 +219,8 @@ to a relational database which supports <a href="https://pubs.opengroup.org/onli
 standard</a>.</p>
 </div>
 <div class="paragraph">
-<p>Note, the STM implementation provided by Quarkus is based on the <a href="https://narayana.io/docs/project/index.html#d0e16066">Narayana STM</a> implementation. This document isn&#8217;t meant to be a replacement for that project&#8217;s documentation so you may want
-to look at that for more detail. However, we will try to focus more on how you can combine some of the key capabilities
+<p>Note that the STM implementation provided by Quarkus is based on the <a href="https://narayana.io/docs/project/index.html#d0e16066">Narayana STM</a> implementation. This document isn&#8217;t meant to be a replacement for that project&#8217;s documentation, so you may want
+to look at it for more detail. However, we will try to focus more on how you can combine some key capabilities
 into Quarkus when developing Kubernetes native applications and microservices.</p>
 </div>
 </div>
@@ -166,18 +243,18 @@ these threads using whatever isolation model has been chosen to protect that spe
 instance (object in the case of Quarkus). In Quarkus STM, there are two isolation implementations,
 pessimistic (the default), which would cause conflicting threads to be blocked until the original
 has completed its updates (committed or aborted the transaction); then there&#8217;s the optimistic
-approach which allows all of the threads to proceed and checks for conflicts at commit time, where
+approach which allows all the threads to proceed and checks for conflicts at commit time, where
 one or more of the threads may be forced to abort if there have been conflicting updates.</p>
 </li>
 <li>
-<p>STM objects have state but it doesn&#8217;t need to be persistent (durable). In fact the
+<p>STM objects have state, but it doesn&#8217;t need to be persistent (durable). In fact the
 default behaviour is for objects managed within transactional memory to be volatile, such that
 if the service or microservice within which they are being used crashes or is spawned elsewhere, e.g.,
 by a scheduler, all state in memory is lost and the objects start from scratch. But surely you get this and more
 with JTA (and a suitable transactional datastore) and don&#8217;t need to worry about restarting your application?
 Not quite. There&#8217;s a trade-off here: we&#8217;re doing away
 with persistent state and the overhead of reading from and then writing (and sync-ing) to the datastore during each
-transaction. This makes updates to (volatile) state very fast but you still get the benefits of atomic updates
+transaction. This makes updates to (volatile) state very fast, but you still get the benefits of atomic updates
 across multiple STM objects (e.g., objects your team wrote then calling objects you inherited from another team and requiring
 them to make all-or-nothing updates), as well as consistency
 and isolation in the presence of concurrent threads/users (common in distributed microservices architectures).
@@ -212,17 +289,17 @@ then later add those capabilities if they become necessary and without much deve
 <div class="sectionbody">
 <div class="paragraph">
 <p>There is also a fully worked example in the quickstarts which you may access by cloning the
-Git repository: <code>git clone <a href="https://github.com/quarkusio/quarkus-quickstarts.git" class="bare">https://github.com/quarkusio/quarkus-quickstarts.git</a></code>, or by downloading an <a href="https://github.com/quarkusio/quarkus-quickstarts/archive/master.zip">archive</a>.
+Git repository: <code>git clone <a href="https://github.com/quarkusio/quarkus-quickstarts.git" class="bare">https://github.com/quarkusio/quarkus-quickstarts.git</a></code>, or by downloading an <a href="https://github.com/quarkusio/quarkus-quickstarts/archive/main.zip">archive</a>.
 Look for the <code>software-transactional-memory-quickstart</code> example. This will help to understand how you
 can build STM-aware applications with Quarkus. However, before we do so there are a few basic concepts
 which we need to cover.</p>
 </div>
 <div class="paragraph">
 <p>Note, as you will see, STM in Quarkus relies on a number of annotations to define behaviours. The lack
-of these annotations causes sensible defaults to be assumed but it is important for the developer to
+of these annotations causes sensible defaults to be assumed, but it is important for the developer to
 understand what these may be. Please refer to the <a href="https://narayana.io/docs/project/index.html#d0e16066">Narayana STM manual</a>
 and the <a href="https://narayana.io//docs/project/index.html#d0e16133">STM annotations guide</a> for more details on
-all of the annotations Narayana STM provides.</p>
+all the annotations Narayana STM provides.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -236,11 +313,11 @@ all of the annotations Narayana STM provides.</p>
 </div>
 <div class="paragraph">
 <p>In <em>preview</em>, backward compatibility and presence in the ecosystem is not guaranteed.
-Specific improvements might require to change configuration or APIs and plans to become <em>stable</em> are under way.
+Specific improvements might require changing configuration or APIs, and plans to become <em>stable</em> are under way.
 Feedback is welcome on our <a href="https://groups.google.com/d/forum/quarkus-dev">mailing list</a> or as issues in our <a href="https://github.com/quarkusio/quarkus/issues">GitHub issue tracker</a>.</p>
 </div>
 <div class="paragraph">
-<p>For a full list of possible extension statuses, check our <a href="https://quarkus.io/faq/#extension-status">FAQ entry</a>.</p>
+<p>For a full list of possible statuses, check our <a href="https://quarkus.io/faq/#what-are-the-extension-statuses">FAQ entry</a>.</p>
 </div>
 </td>
 </tr>
@@ -252,18 +329,21 @@ Feedback is welcome on our <a href="https://groups.google.com/d/forum/quarkus-de
 <h2 id="setting-it-up"><a class="anchor" href="#setting-it-up"></a>Setting it up</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To use the extension include it as a dependency in your application pom:</p>
+<p>To use the extension include it as a dependency in your build file:</p>
 </div>
-<div class="listingblock">
+<div class="listingblock primary asciidoc-tabs-target-sync-cli asciidoc-tabs-target-sync-maven">
+<div class="title">pom.xml</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;dependencies&gt;
-    &lt;!-- STM extension --&gt;
-    &lt;dependency&gt;
-      &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
-      &lt;artifactId&gt;quarkus-narayana-stm&lt;/artifactId&gt;
-      &lt;version&gt;${quarkus.version}&lt;/version&gt;
-    &lt;/dependency&gt;
-&lt;/dependencies&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
+    &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
+    &lt;artifactId&gt;quarkus-narayana-stm&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock secondary asciidoc-tabs-target-sync-gradle">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("io.quarkus:quarkus-narayana-stm")</code></pre>
 </div>
 </div>
 </div>
@@ -285,7 +365,7 @@ For example:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="java" class="language-java hljs">@Transactional
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Transactional
 public interface FlightService {
     int getNumberOfBookings();
     void makeBooking(String details);
@@ -301,7 +381,7 @@ guarantee safety, such as assuming all methods will modify state.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="java" class="language-java hljs">public class FlightServiceImpl implements FlightService {
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public class FlightServiceImpl implements FlightService {
     @ReadLock
     public int getNumberOfBookings() { ... }
     public void makeBooking(String details) {...}
@@ -339,14 +419,14 @@ the reader can do the mental mapping.</p>
 </div>
 <div class="paragraph">
 <p>The default STM container (<code>org.jboss.stm.Container</code>) provides support for volatile objects that can only be shared between
-threads in the same microservice/JVM instance. When a STM-aware object is placed into the container it returns a handle
+threads in the same microservice/JVM instance. When an STM-aware object is placed into the container it returns a handle
 through which that object should then be used in the future. It is important to use this handle as continuing to access
 the object through the original reference will not allow the STM subsystem to track access and manage state and
 concurrency control.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="java" class="language-java hljs">    import org.jboss.stm.Container;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">    import org.jboss.stm.Container;
 
     ...
 
@@ -403,7 +483,7 @@ transaction acts as the parent of this newly created transaction.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="java" class="language-java hljs">AtomicAction aa = new AtomicAction(); <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">AtomicAction aa = new AtomicAction(); <i class="conum" data-value="1"></i><b>(1)</b>
 
 aa.begin(); <i class="conum" data-value="2"></i><b>(2)</b>
 {
@@ -439,7 +519,7 @@ without abandoning other work performed by the outer transaction].</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Since the transaction has not yet been committed the changes made by the flight and taxi services are not visible outside of the transaction.</td>
+<td>Since the transaction has not yet been committed the changes made by the flight and taxi services are not visible outside the transaction.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
@@ -480,7 +560,7 @@ described in the <a href="context-propagation">Context Propagation guide</a>.</p
     </div>
   </div>
   <div class="grid-wrapper">
-    <p class="grid__item width-3-12">Quarkus is open. All dependencies of this project are available under the <a href='https://www.apache.org/licenses/LICENSE-2.0' target='_blank'>Apache Software License 2.0</a> or compatible license.<br /><br />This website was built with <a href='https://jekyllrb.com/' target='_blank'>Jekyll</a>, is hosted on <a href='https://pages.github.com/' target='_blank'>Github Pages</a> and is completely open source. If you want to make it better, <a href='https://github.com/quarkusio/quarkusio.github.io' target='_blank'>fork the website</a> and show us what you’ve got.</p>
+    <p class="grid__item width-3-12">Quarkus is open. All dependencies of this project are available under the <a href='https://www.apache.org/licenses/LICENSE-2.0' target='_blank'>Apache Software License 2.0</a> or compatible license.<br /><br />This website was built with <a href='https://jekyllrb.com/' target='_blank'>Jekyll</a>, is hosted on <a href='https://pages.github.com/' target='_blank'>GitHub Pages</a> and is completely open source. If you want to make it better, <a href='https://github.com/quarkusio/quarkusio.github.io' target='_blank'>fork the website</a> and show us what you’ve got.</p>
 
     
       <div class="width-1-12 project-links">
@@ -489,26 +569,36 @@ described in the <a href="context-propagation">Context Propagation guide</a>.</p
           
             <li><a href="/">Home</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/about">About</a></li>
           
-            <li><a href="/community/#contributing">Contribute</a></li>
+            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
+            <li><a href="/events">Events</a></li>
+          
+            <li><a href="/newsletter">Newsletter</a></li>
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
+          
+            <li><a href="/security">Security&nbsp;policy</a></li>
           
         </ul>
       </div>
     
       <div class="width-1-12 project-links">
-        <span>Contribute</span>
+        <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Follow us</a></li>
+            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
+          
+            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
             <li><a href="https://github.com/quarkusio">GitHub</a></li>
-          
-            <li><a href="/security">Security&nbsp;policy</a></li>
           
         </ul>
       </div>
@@ -517,11 +607,34 @@ described in the <a href="context-propagation">Context Propagation guide</a>.</p
         <span>Get Help</span>
         <ul class="footer-links">
           
+            <li><a href="/support">Support</a></li>
+          
+            <li><a href="/guides">Guides</a></li>
+          
+            <li><a href="/faq">FAQ</a></li>
+          
+            <li><a href="/get-started">Get Started</a></li>
+          
             <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
           
-            <li><a href="https://quarkusio.zulipchat.com">Chat room</a></li>
+            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
             <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+        </ul>
+      </div>
+    
+      <div class="width-1-12 project-links">
+        <span>Languages</span>
+        <ul class="footer-links">
+          
+            <li><a href="https://quarkus.io/">English</a></li>
+          
+            <li><a href="https://es.quarkus.io/">Español</a></li>
+          
+            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
+          
+            <li><a href="https://ja.quarkus.io/">日本語</a></li>
           
         </ul>
       </div>
@@ -534,7 +647,7 @@ described in the <a href="context-propagation">Context Propagation guide</a>.</p
           
             <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
             <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
@@ -543,6 +656,8 @@ described in the <a href="context-propagation">Context Propagation guide</a>.</p
             <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
             <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+          
+            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
             <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
@@ -575,6 +690,9 @@ described in the <a href="context-propagation">Context Propagation guide</a>.</p
   <script src="/assets/javascript/search-filter.js" type="text/javascript"></script>
   <script src="/assets/javascript/guides-version-dropdown.js" type="text/javascript"></script>
   <script src="/assets/javascript/back-to-top.js" type="text/javascript"></script>
+  <script src="/assets/javascript/clipboard.min.js" type="text/javascript"></script>
+  <script src="/assets/javascript/copy.js" type="text/javascript"></script>
+  <script src="/assets/javascript/asciidoc-tabs.js" type="text/javascript"></script>
 </body>
 
 </html>
