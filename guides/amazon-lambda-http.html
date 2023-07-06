@@ -9,7 +9,7 @@
   <title>Amazon Lambda with RESTEasy Reactive, Undertow, or Reactive Routes - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,66 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" selected>2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -211,13 +187,14 @@
 <li><a href="#security-integration">Security Integration</a></li>
 <li><a href="#custom-security-integration">Custom Security Integration</a></li>
 <li><a href="#simple-sam-local-principal">Simple SAM Local Principal</a></li>
+<li><a href="#snapstart">SnapStart</a></li>
 </ul></div>
     <div>
       <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>With Quarkus you can deploy your favorite Java HTTP frameworks as Amazon Lambda&#8217;s using either the <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html">AWS Gateway HTTP API</a>
-or <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-rest-api.html">AWS Gateway REST API</a>.  This means that you can deploy your microservices written with RESTEasy Reactive (JAX-RS),
+or <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-rest-api.html">AWS Gateway REST API</a>.  This means that you can deploy your microservices written with RESTEasy Reactive (our Jakarta REST implementation),
 Undertow (servlet), Reactive Routes, <a href="funqy-http">Funqy HTTP</a> or any other Quarkus HTTP framework as an AWS Lambda.</p>
 </div>
 <div class="paragraph">
@@ -274,7 +251,7 @@ Feedback is welcome on our <a href="https://groups.google.com/d/forum/quarkus-de
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.6</p>
+<p>Apache Maven 3.9.2</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -324,7 +301,7 @@ for installing AWS SAM CLI.</p>
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn archetype:generate \
        -DarchetypeGroupId=io.quarkus \
        -DarchetypeArtifactId=quarkus-amazon-lambda-http-archetype \
-       -DarchetypeVersion=2.13.4.Final</code></pre>
+       -DarchetypeVersion=3.2.0.Final</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -335,7 +312,7 @@ for installing AWS SAM CLI.</p>
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn archetype:generate \
        -DarchetypeGroupId=io.quarkus \
        -DarchetypeArtifactId=quarkus-amazon-lambda-rest-archetype \
-       -DarchetypeVersion=2.13.4.Final</code></pre>
+       -DarchetypeVersion=3.2.0.Final</code></pre>
 </div>
 </div>
 </div>
@@ -500,7 +477,7 @@ and <code>io.quarkus.amazon.lambda.http.model.AwsProxyResponse</code>.  This cor
 to <code>quarkus-amazon-lambda-rest</code> extension and the AWS REST API.</p>
 </div>
 <div class="paragraph">
-<p>The mock event server is also started for <code>@NativeImageTest</code> and <code>@QuarkusIntegrationTest</code> tests so will work
+<p>The mock event server is also started for <code>@QuarkusIntegrationTest</code> tests so will work
 with native binaries too.  All this provides similar functionality to the SAM CLI local testing, without the overhead of Docker.</p>
 </div>
 <div class="paragraph">
@@ -629,7 +606,7 @@ These extensions automatically generate everything you might need for your lambd
 </div>
 <div class="paragraph">
 <p>Also, at least in the generated Maven archetype <code>pom.xml</code>, the <code>quarkus-resteasy-reactive</code>, <code>quarkus-reactive-routes</code>, and <code>quarkus-undertow</code>
-dependencies are all optional.  Pick which HTTP framework(s) you want to use (JAX-RS, Reactive Routes, and/or Servlet) and
+dependencies are all optional.  Pick which HTTP framework(s) you want to use (Jakarta REST, Reactive Routes, and/or Servlet) and
 remove the other dependencies to shrink your deployment.</p>
 </div>
 <div class="sect2">
@@ -650,7 +627,7 @@ Do not change the Lambda handler name.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>This handler is a bridge between the lambda runtime and the Quarkus HTTP framework you are using (JAX-RS, Servlet, etc.)</p>
+<p>This handler is a bridge between the lambda runtime and the Quarkus HTTP framework you are using (Jakarta REST, Servlet, etc.)</p>
 </div>
 <div class="paragraph">
 <p>If you want to go native, there&#8217;s an environment variable that must be set for native GraalVM deployments.  If you look at <code>sam.native.yaml</code>
@@ -688,8 +665,8 @@ HTTP response messages and the <code>sam.yaml</code> file must configure the API
 <h2 id="injectable-aws-context-variables"><a class="anchor" href="#injectable-aws-context-variables"></a>Injectable AWS Context Variables</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you are using RESTEasy Reactive and JAX-RS, you can inject various AWS Context variables into your JAX-RS resource classes
-using the JAX-RS <code>@Context</code> annotation or anywhere else with the CDI <code>@Inject</code> annotation.</p>
+<p>If you are using RESTEasy Reactive and Jakarta REST, you can inject various AWS Context variables into your Jakarta REST resource classes
+using the Jakarta REST <code>@Context</code> annotation or anywhere else with the CDI <code>@Inject</code> annotation.</p>
 </div>
 <div class="paragraph">
 <p>For the AWS HTTP API you can inject the AWS variables <code>com.amazonaws.services.lambda.runtime.Context</code> and
@@ -697,7 +674,7 @@ using the JAX-RS <code>@Context</code> annotation or anywhere else with the CDI 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.ws.rs.core.Context;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.ws.rs.core.Context;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent;
 
 
@@ -722,7 +699,7 @@ public class MyResource {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.ws.rs.core.Context;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.ws.rs.core.Context;
 import io.quarkus.amazon.lambda.http.model.AwsProxyRequestContext;
 import io.quarkus.amazon.lambda.http.model.AwsProxyRequest;
 
@@ -759,13 +736,13 @@ library is not fully compatible with GraalVM, so we had to do some integration w
 <div class="paragraph">
 <p>When you invoke an HTTP request on the API Gateway, the Gateway turns that HTTP request into a JSON event document that is
 forwarded to a Quarkus Lambda.  The Quarkus Lambda parses this json and converts in into an internal representation of an HTTP
-request that can be consumed by any HTTP framework Quarkus supports (JAX-RS, servlet, Reactive Routes).</p>
+request that can be consumed by any HTTP framework Quarkus supports (Jakarta REST, servlet, Reactive Routes).</p>
 </div>
 <div class="paragraph">
 <p>API Gateway supports many ways to securely invoke on your HTTP endpoints that are backed by Lambda and Quarkus.
 If you enable it, Quarkus will automatically parse relevant parts of the <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-lambda.html">event json document</a>
-and look for security based metadata and register a <code>java.security.Principal</code> internally that can be looked up in JAX-RS
-by injecting a <code>javax.ws.rs.core.SecurityContext</code>, via <code>HttpServletRequest.getUserPrincipal()</code> in servlet, and <code>RouteContext.user()</code> in Reactive Routes.
+and look for security based metadata and register a <code>java.security.Principal</code> internally that can be looked up in Jakarta REST
+by injecting a <code>jakarta.ws.rs.core.SecurityContext</code>, via <code>HttpServletRequest.getUserPrincipal()</code> in servlet, and <code>RouteContext.user()</code> in Reactive Routes.
 If you want more security information, the <code>Principal</code> object can be typecast to
 a class that will give you more information.</p>
 </div>
@@ -844,6 +821,34 @@ a class that will give you more information.</p>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>If the <code>cognito:groups</code> claim is present, then Quarkus will extract and map those groups
+to Quarkus roles which can then be used in authorization with annotations like <code>@RolesAllowed</code>.
+If you do not want to map <code>cognito:groups</code> to Quarkus roles, then you must explicitly disable it
+in configuration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>quarkus.lambda-http.map-cognito-to-roles=false</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also specify a different Cognito claim to extract roles from:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>quarkus.lambda-http.cognito-role-claim=cognito:roles</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By default, it expects roles in a space delimited list enclosed in brackets i.e. <code>[ user admin ]</code>.
+You can specify the regular expression to use to find individual roles in the claim string too:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>quarkus.lambda-http.cognito-claim-matcher=[^\[\] \t]+</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -852,7 +857,7 @@ a class that will give you more information.</p>
 <div class="paragraph">
 <p>The default support for AWS security only maps the principal name to Quarkus security
 APIs and does nothing to map claims or roles or permissions.  You have full control on
-how security metadata in the lambda HTTP event is mapped to Quarkus security APIs using
+how security metadata in the lambda HTTP event is mapped to Quarkus Security APIs using
 implementations of the <code>io.quarkus.amazon.lambda.http.LambdaIdentityProvider</code>
 interface.  By implementing this interface, you can do things like define role mappings for your principal
 or publish additional attributes provided by IAM or Cognito or your Custom Lambda security integration.</p>
@@ -947,7 +952,7 @@ you will allocate a SecurityIdentity based on how you want to map security data 
 
 import java.security.Principal;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import com.amazonaws.services.lambda.runtime.events.APIGatewayV2HTTPEvent;
 
@@ -979,7 +984,7 @@ public class CustomSecurityProvider implements LambdaIdentityProvider {
 
 import java.security.Principal;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import io.quarkus.amazon.lambda.http.model.AwsProxyRequest;
 
@@ -1018,6 +1023,14 @@ the <code>QUARKUS_AWS_LAMBDA_FORCE_USER_NAME</code> environment variable</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="snapstart"><a class="anchor" href="#snapstart"></a>SnapStart</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To optimize your application for Lambda SnapStart, check <a href="amazon-snapstart">the SnapStart Configuration Documentation</a>.</p>
+</div>
+</div>
+</div>
     </div>
   </div>
 </div>
@@ -1038,21 +1051,41 @@ the <code>QUARKUS_AWS_LAMBDA_FORCE_USER_NAME</code> environment variable</p>
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -1061,15 +1094,29 @@ the <code>QUARKUS_AWS_LAMBDA_FORCE_USER_NAME</code> environment variable</p>
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1078,19 +1125,33 @@ the <code>QUARKUS_AWS_LAMBDA_FORCE_USER_NAME</code> environment variable</p>
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1099,13 +1160,21 @@ the <code>QUARKUS_AWS_LAMBDA_FORCE_USER_NAME</code> environment variable</p>
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1116,21 +1185,21 @@ the <code>QUARKUS_AWS_LAMBDA_FORCE_USER_NAME</code> environment variable</p>
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

@@ -9,7 +9,7 @@
   <title>Native Reference Guide - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,58 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/version/main/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" >2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-      
-        
-        
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -188,6 +172,7 @@
 <li><a href="#garbage-collectors">Garbage Collectors</a></li>
 <li><a href="#memory-management-options">Memory Management Options</a></li>
 <li><a href="#gc-logging">GC Logging</a></li>
+<li><a href="#rss">Resident Set Size (RSS)</a></li>
 </ul>
 </li>
 <li><a href="#inspecting-and-debugging">Inspecting and Debugging Native Executables</a>
@@ -206,12 +191,13 @@
 <li><a href="#native-faq">Frequently Asked Questions</a>
 <ul class="sectlevel2">
 <li><a href="#why-is-the-process-of-generating-a-native-executable-slow">Why is the process of generating a native executable slow?</a></li>
+<li><a href="#i-get-a-analysiserrorparsingerror-when-building-a-native-executable-due-to-an-unresolvedelementexception-what-can-i-do">I get a <code>AnalysisError\$ParsingError</code> when building a native executable due to an <code>UnresolvedElementException</code>, what can I do?</a></li>
 <li><a href="#i-get-an-outofmemoryerror-oome-building-native-executables-what-can-i-do">I get an <code>OutOfMemoryError</code> (OOME) building native executables, what can I do?</a></li>
 <li><a href="#why-is-runtime-performance-of-a-native-executable-inferior-compared-to-jvm-mode">Why is runtime performance of a native executable inferior compared to JVM mode?</a></li>
 <li><a href="#why-are-native-executables-big">Why are native executables “big”?</a></li>
 <li><a href="#what-version-of-mandrel-was-used-to-generate-a-binary">What version of Mandrel was used to generate a binary?</a></li>
 <li><a href="#how-do-i-enable-gc-logging-in-native-executables">How do I enable GC logging in native executables?</a></li>
-<li><a href="#can-i-get-a-heap-dump-of-a-native-executable-e-g-if-it-runs-out-of-memory">Can I get a heap dump of a native executable? e.g. if it runs out of memory</a></li>
+<li><a href="#heap-dumps">Can I get a heap dump of a native executable? e.g. if it runs out of memory</a></li>
 <li><a href="#can-i-build-and-run-this-examples-outside-a-container-in-linux">Can I build and run this examples outside a container in Linux?</a></li>
 <li><a href="#generating-flame-graphs-is-slow-or-produces-errors-what-can-i-do">Generating flame graphs is slow, or produces errors, what can I do?</a></li>
 <li><a href="#i-think-ive-found-a-bug-in-native-image-how-can-i-debug-it-with-the-ide">I think I’ve found a bug in native-image, how can I debug it with the IDE?</a></li>
@@ -219,6 +205,7 @@
 <li><a href="#how-can-we-troubleshoot-performance-problems-only-reproducible-in-production">How can we troubleshoot performance problems only reproducible in production?</a></li>
 <li><a href="#what-information-helps-most-debug-issues-that-happen-either-at-build-time-or-run-time">What information helps most debug issues that happen either at build-time or run-time?</a></li>
 <li><a href="#build-stalled-for-minutes-barely-using-any-cpu">Build stalled for minutes, barely using any CPU</a></li>
+<li><a href="#work-around-missing-cpu-features">Work around missing CPU features</a></li>
 </ul>
 </li>
 </ul></div>
@@ -256,7 +243,7 @@ These are the high level sections to be found in this guide:</p>
 <div class="paragraph">
 <p>Memory management for Quarkus native executables is enabled by GraalVM’s SubstrateVM runtime system.
 The memory management component in GraalVM is explained in detail
-<a href="https://www.graalvm.org/22.3/reference-manual/native-image/optimizations-and-performance/MemoryManagement">here</a>.
+<a href="https://www.graalvm.org/jdk-17/reference-manual/native-image/optimizations-and-performance/MemoryManagement">here</a>.
 This guide complements the information available in the GraalVM website with further observations particularly relevant to Quarkus applications.</p>
 </div>
 <div class="sect2">
@@ -297,7 +284,7 @@ This means that GraalVM’s adaptive GC policy tries to aggressively trigger GCs
 <p>Up to version 2.13, Quarkus used the “space/time” GC collection policy by default,
 but starting with version 2.14, it switched to using the “adaptive” policy instead.
 The reason why Quarkus initially chose to use "space/time" is because at that time it had considerable performance improvements over "adaptive".
-Recent performance experiments, however, indicate that the "space/time" policy can result in worse out-of-the-box experience compared to the "space/time" policy,
+Recent performance experiments, however, indicate that the "space/time" policy can result in worse out-of-the-box experience compared to the "adaptive" policy,
 while at the same time the benefits it used to offer have diminished considerably after improvements made to the "adaptive" policy.
 As a result, the "adaptive" policy appears to be the best option for most, if not all, Quarkus applications.
 Full details on this switch can be read in <a href="https://github.com/quarkusio/quarkus/issues/28267">this issue</a>.</p>
@@ -354,7 +341,7 @@ To build Quarkus native with epsilon GC, pass the following argument at build ti
 <h3 id="memory-management-options"><a class="anchor" href="#memory-management-options"></a>Memory Management Options</h3>
 <div class="paragraph">
 <p>Options to control maximum heap size, young space and other typical use cases found in the JVM can be found in
-<a href="https://www.graalvm.org/22.3/reference-manual/native-image/optimizations-and-performance/MemoryManagement">the GraalVM memory management guide</a>.
+<a href="https://www.graalvm.org/jdk-17/reference-manual/native-image/optimizations-and-performance/MemoryManagement">the GraalVM memory management guide</a>.
 Setting the maximum heap size, either as a percentage or an explicit value, is generally recommended.</p>
 </div>
 </div>
@@ -418,6 +405,464 @@ collection time: 3055697 nanoSeconds]]</code></pre>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="rss"><a class="anchor" href="#rss"></a>Resident Set Size (RSS)</h3>
+<div class="paragraph">
+<p>As described in the
+<a href="performance-measure">Measuring Performance guide</a>,
+the footprint of Quarkus applications is measured using the resident set size (RSS).
+This is also applicable to native applications,
+but the runtime engine that manages the footprint in this case is built in the native executable itself rather than the JVM.</p>
+</div>
+<div class="paragraph">
+<p>The reporting techniques specified in the
+<a href="performance-measure">Measuring Performance guide</a>
+are applicable to native applications too,
+but what causes the RSS to be higher or lower is specific to how the generated native executables work.</p>
+</div>
+<div class="paragraph">
+<p>When the RSS is higher in one native version of the application versus another,
+the following checks should be carried out first:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Check the <a href="#native-reports">native build time reports</a>
+and see if there are big discrepancies in the number of used packages, used classes or used methods.
+A bigger universe will result in bigger memory footprint.</p>
+</li>
+<li>
+<p>Check the size of the binary for differences.
+Using <code>readelf</code> you can observe the size of different sections and compare them.
+The <code>.text</code> section where code lives,
+and the <code>.svm_heap</code> section where heap produced at build time lives,
+are particularly interesting.</p>
+</li>
+<li>
+<p>Generate <a href="#heap-dumps">heap dumps</a> and inspect them with tools such as VisualVM or Eclipse MAT.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Often profiling, instrumenting or tracing applications is the best way to figure out how things work.
+In the case of RSS and native applications,
+the techniques that Brendan Gregg explains in the
+<a href="https://www.brendangregg.com/FlameGraphs/memoryflamegraphs.html">"Memory Leak (and Growth) Flame Graphs"</a> guide are particularly useful.
+This section will apply the information in that article to show how to use <code>perf</code> and
+<a href="https://github.com/iovisor/bcc">bcc/eBPF</a>
+to understand what causes Quarkus native executables to consume memory on startup.</p>
+</div>
+<div class="sect3">
+<h4 id="rss-perf"><a class="anchor" href="#rss-perf"></a>Perf</h4>
+<div class="paragraph">
+<p><code>perf</code> works in older Linux systems, whereas eBPF requires a newer Linux kernel.
+The overhead of <code>perf</code> is higher than eBPF,
+but it can understand stack traces generated with DWARF debug symbols, which eBPF can&#8217;t.</p>
+</div>
+<div class="paragraph">
+<p>In the context of GraalVM,
+DWARF stack traces contain more detail and are easier to understand than those generated with frame pointers.
+As first step, build a Quarkus native executable with debug info enabled and a couple of extra flags.
+One flag to disable optimizations,
+and another to avoid inlined methods being omitted from the stack traces.
+These two flags have been added to obtain stack traces that contain as much information as possible.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mvn package -DskipTests -Dnative \
+  -Dquarkus.native.debug.enabled \
+  -Dquarkus.native.additional-build-args=-O0,-H:-OmitInlinedMethodDebugLineInfo</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Disabling optimizations makes it easier to learn how to use <code>perf</code>
+and get as detailed stack traces as possible,
+because it shows more info about what gets called where.
+However, doing so might lead to more allocations happening which would not happen if optimizations would have been applied.
+In other words, passing in <code>-O0</code> will change the allocation pattens for many applications,
+because it disables optimizations such as escape analysis or dead code elimination.
+To properly assess the allocations made by an application deployed in production,
+run with default optimizations (<code>-O2</code>).
+With default optimizations the stack traces obtained with <code>perf</code> maybe be harder to decipher.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s measure how much RSS a Quarkus native executable takes on startup on this particular environment:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ps -o pid,rss,command -p $(pidof code-with-quarkus-1.0.0-SNAPSHOT-runner)
+      PID   RSS COMMAND
+     1915 35472 ./target/code-with-quarkus-1.0.0-SNAPSHOT-runner -Xmx128m</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>How come this Quarkus native executable consumes ~35MB RSS on startup?
+To get an understanding of this number, this section will use <code>perf</code> to trace calls to <code>syscalls:sys_enter_mmap</code>.
+Assuming the default
+<a href="https://www.graalvm.org/jdk-17/reference-manual/native-image/MemoryManagement/#serial-garbage-collector">Serial Garbage Collector</a>
+is in use,
+this system call is particularly interesting for native executables generated by GraalVM&#8217;s <code>native-image</code> because of how it allocates heap.
+In native executables generated by GraalVM&#8217;s <code>native-image</code>, the heap is allocated using either aligned or unaligned heap chunks.
+All non-array objects get allocated in thread local aligned chunks.
+Each of these are 1MB in size by default.
+For arrays, if they are bigger than 1/8 of the aligned chunk size,
+they will be allocated in unaligned heap chunks which have a size dependant on the object itself.
+The very first time a thread allocates an object or small array,
+it will request an aligned heap chunk that it will use exclusively until it has run out of space in that chunk,
+in which case it will request another aligned heap chunk.
+So by tracing these system calls,
+the code paths that end up requesting new aligned or unaligned heap chunks will be recorded.
+Next, run the Quarkus native executable through <code>perf record</code> tracing the <code>mmap</code> system call:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ sudo perf record -e syscalls:sys_enter_mmap --call-graph dwarf -a -- target/code-with-quarkus-1.0.0-SNAPSHOT-runner -Xmx128m</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The size of the aligned heap chunks can be changed during native build time.
+A custom value (in number of bytes) can be passed via the <code>-H:AlignedHeapChunkSize</code> flag.
+One caveat is that this value needs to be multiple of 4096 (4KB).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once the startup completes, stop the process and generate the stacks:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ perf script &gt; out.stacks</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As a final step, generate a
+<a href="https://github.com/brendangregg/FlameGraph">flamegraph</a>
+with the generated stacks:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ export FG_HOME=...
+$ ${FG_HOME}/stackcollapse-perf.pl &lt; out.stacks | ${FG_HOME}/flamegraph.pl \
+    --color=mem --title="mmap Flame Graph" --countname="calls" &gt; out.svg</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The flamegraph should look similar to this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/mmap.svg" alt="mmap flamegraph">
+</div>
+</div>
+<div class="paragraph">
+<p>There are several things of interest to notice there:</p>
+</div>
+<div class="paragraph">
+<p>First, the stack traces that contain method calls to <code>com.oracle.svm.core.genscavenge.ThreadLocalAllocation</code> are related to aligned or unaligned heap chunk allocations explained above.
+As noted earlier,
+for the majority of allocations these chunks will be 1MB by default,
+so they&#8217;re interesting because each allocated chunk has a considerable effect on the RSS consumption.</p>
+</div>
+<div class="paragraph">
+<p>Second, of the thread allocation stacks,
+the ones under <code>start_thread</code> are particularly revealing.
+In this environment, taking into account the <code>-Xmx</code> value passed in,
+Quarkus creates 12 event loop threads.
+Aside from those, there are 6 extra threads.
+The names of all those 18 threads exceed 16 characters.
+This can be observed via the <code>ps</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ps -e -T | grep $(pidof code-with-quarkus-1.0.0-SNAPSHOT-runner)
+   2320    2320 pts/0    00:00:00 code-with-quark
+   2320    2321 pts/0    00:00:00 ference Handler
+   2320    2322 pts/0    00:00:00 gnal Dispatcher
+   2320    2324 pts/0    00:00:00 ecutor-thread-0
+   2320    2325 pts/0    00:00:00 -thread-checker
+   2320    2326 pts/0    00:00:00 ntloop-thread-0
+   2320    2327 pts/0    00:00:00 ntloop-thread-1
+   2320    2328 pts/0    00:00:00 ntloop-thread-2
+   2320    2329 pts/0    00:00:00 ntloop-thread-3
+   2320    2330 pts/0    00:00:00 ntloop-thread-4
+   2320    2331 pts/0    00:00:00 ntloop-thread-5
+   2320    2332 pts/0    00:00:00 ntloop-thread-6
+   2320    2333 pts/0    00:00:00 ntloop-thread-7
+   2320    2334 pts/0    00:00:00 ntloop-thread-8
+   2320    2335 pts/0    00:00:00 ntloop-thread-9
+   2320    2336 pts/0    00:00:00 tloop-thread-10
+   2320    2337 pts/0    00:00:00 tloop-thread-11
+   2320    2338 pts/0    00:00:00 ceptor-thread-0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The very first allocation that all these threads do is taking the thread name and trimming it so that it can fall within the character limit enforced by kernels.
+For each of those allocations,
+there are 2 <code>mmap</code> calls,
+one to reserve the memory and the other to commit it.
+When recording <code>syscalls:sys_enter_mmap</code> system call,
+the <code>perf</code> implementation tracks calls to <code><em>GI</em>_mmap64</code>.
+But this glibc <code><em>GI</em>_mmap64</code> implementation makes another call into <code><em>GI</em>_mmap64</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">(gdb) break __GI___mmap64
+(gdb) set scheduler-locking step
+...
+Thread 2 "code-with-quark" hit Breakpoint 1, __GI___mmap64 (offset=0, fd=-1, flags=16418, prot=0, len=2097152, addr=0x0) at ../sysdeps/unix/sysv/linux/mmap64.c:58
+58	  return (void *) MMAP_CALL (mmap, addr, len, prot, flags, fd, offset);
+(gdb) bt
+#0  __GI___mmap64 (offset=0, fd=-1, flags=16418, prot=0, len=2097152, addr=0x0) at ../sysdeps/unix/sysv/linux/mmap64.c:58
+#1  __GI___mmap64 (addr=0x0, len=2097152, prot=0, flags=16418, fd=-1, offset=0) at ../sysdeps/unix/sysv/linux/mmap64.c:46
+#2  0x00000000004f4033 in com.oracle.svm.core.posix.headers.Mman$NoTransitions::mmap (__0=&lt;optimized out&gt;, __1=&lt;optimized out&gt;, __2=&lt;optimized out&gt;, __3=&lt;optimized out&gt;, __4=&lt;optimized out&gt;, __5=&lt;optimized out&gt;)
+#3  0x00000000004f194e in com.oracle.svm.core.posix.PosixVirtualMemoryProvider::reserve (this=0x7ffff7691220, nbytes=0x100000, alignment=0x100000, executable=false) at com/oracle/svm/core/posix/PosixVirtualMemoryProvider.java:126
+#4  0x00000000004ef3b3 in com.oracle.svm.core.os.AbstractCommittedMemoryProvider::allocate (this=0x7ffff7658cb0, size=0x100000, alignment=0x100000, executable=false) at com/oracle/svm/core/os/AbstractCommittedMemoryProvider.java:124
+#5  0x0000000000482f40 in com.oracle.svm.core.os.AbstractCommittedMemoryProvider::allocateAlignedChunk (this=0x7ffff7658cb0, nbytes=0x100000, alignment=0x100000) at com/oracle/svm/core/os/AbstractCommittedMemoryProvider.java:107
+#6  com.oracle.svm.core.genscavenge.HeapChunkProvider::produceAlignedChunk (this=0x7ffff7444398) at com/oracle/svm/core/genscavenge/HeapChunkProvider.java:112
+#7  0x0000000000489485 in com.oracle.svm.core.genscavenge.ThreadLocalAllocation::slowPathNewArrayLikeObject0 (hub=0x7ffff6ff6110, length=15, size=0x20, podReferenceMap=0x7ffff6700000) at com/oracle/svm/core/genscavenge/ThreadLocalAllocation.java:306
+#8  0x0000000000489165 in com.oracle.svm.core.genscavenge.ThreadLocalAllocation::slowPathNewArrayLikeObject (objectHeader=0x8f6110 &lt;io.smallrye.common.expression.ExpressionNode::toString+160&gt;, length=15, podReferenceMap=0x7ffff6700000) at com/oracle/svm/core/genscavenge/ThreadLocalAllocation.java:279
+#9  0x0000000000489066 in com.oracle.svm.core.genscavenge.ThreadLocalAllocation::slowPathNewArray (objectHeader=0x8f6110 &lt;io.smallrye.common.expression.ExpressionNode::toString+160&gt;, length=15) at com/oracle/svm/core/genscavenge/ThreadLocalAllocation.java:242
+#10 0x0000000000d202a1 in java.util.Arrays::copyOfRange (original=0x7ffff6a33410, from=2, to=17) at java/util/Arrays.java:3819
+#11 0x0000000000acf8e6 in java.lang.StringLatin1::newString (val=0x7ffff6a33410, index=2, len=15) at java/lang/StringLatin1.java:769
+#12 0x0000000000acac59 in java.lang.String::substring (this=0x7ffff6dc0d48, beginIndex=2, endIndex=17) at java/lang/String.java:2712
+#13 0x0000000000acaba2 in java.lang.String::substring (this=0x7ffff6dc0d48, beginIndex=2) at java/lang/String.java:2680
+#14 0x00000000004f96cd in com.oracle.svm.core.posix.thread.PosixPlatformThreads::setNativeName (this=0x7ffff7658d10, thread=0x7ffff723fb30, name=0x7ffff6dc0d48) at com/oracle/svm/core/posix/thread/PosixPlatformThreads.java:163
+#15 0x00000000004f9285 in com.oracle.svm.core.posix.thread.PosixPlatformThreads::beforeThreadRun (this=0x7ffff7658d10, thread=0x7ffff723fb30) at com/oracle/svm/core/posix/thread/PosixPlatformThreads.java:212
+#16 0x00000000005237a2 in com.oracle.svm.core.thread.PlatformThreads::threadStartRoutine (threadHandle=0x1) at com/oracle/svm/core/thread/PlatformThreads.java:760
+#17 0x00000000004f9627 in com.oracle.svm.core.posix.thread.PosixPlatformThreads::pthreadStartRoutine (data=0x2a06e20) at com/oracle/svm/core/posix/thread/PosixPlatformThreads.java:203
+#18 0x0000000000462ab0 in com.oracle.svm.core.code.IsolateEnterStub::PosixPlatformThreads_pthreadStartRoutine_38d96cbc1a188a6051c29be1299afe681d67942e (__0=&lt;optimized out&gt;) at com/oracle/svm/core/code/IsolateEnterStub.java:1
+#19 0x00007ffff7e4714d in start_thread (arg=&lt;optimized out&gt;) at pthread_create.c:442
+#20 0x00007ffff7ec8950 in clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:81</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Setting <code>set scheduler-locking step</code> when the Quarkus native executable is running through <code>gdb</code> makes it easier to debug multi-threaded applications.
+It optimizes for single-stepping by stopping other threads from "seizing the prompt" by preempting the current thread is being stepped through.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This is how the above flamegraph shows a total of 72 calls to <code><em>GI</em>_mmap64</code> for the thread name abbreviation stack trace,
+given that Quarkus native executable runs 18 threads.</p>
+</div>
+<div class="paragraph">
+<p>A third, and final observation,
+is that if you capture the <code>syscalls:sys_enter_munmmap</code> event,
+you might observe that some allocations also result in calls to <code>munmap</code>.
+When calculating the size to reserve,
+the requested size to allocate can be rounded up to the page size.
+The maintain alignment,
+1MB in case of aligned chunks or 1 byte for unaligned chunks,
+some of the reserved memory might be unreserved.
+That is where these <code>munmap</code> calls would come from.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Just by looking at the flamegraph and counting the number of <code>mmap</code> calls that originate in thread local allocations,
+an approximate estimation can be made on the RSS a Quarkus native executable uses on startup.
+This estimation can&#8217;t be fully precise because for unaligned heap chunks, the stack trace doesn&#8217;t record the size of the chunk.
+Also, if the additional build args are removed,
+inlining optimizations might obscure the type of array allocation chunk requested,
+so it might not be possible to decipher if the allocation is for an aligned or unaligned chunk.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="rss-ebpf"><a class="anchor" href="#rss-ebpf"></a>bcc/eBPF</h4>
+<div class="paragraph">
+<p>A version of
+<a href="https://github.com/iovisor/bcc">bcc</a>/
+<a href="https://ebpf.io/">eBPF</a>
+that can do stack traces is only available from Linux kernel 4.8 onwards.
+It can do in-kernel summaries,
+which makes it more efficient and has lower overhead.
+Unfortunately it doesn&#8217;t understand DWARF debug symbols,
+so the information obtained might be harder to read and contain less detail.</p>
+</div>
+<div class="paragraph">
+<p>bcc/eBPF is very extensible so it&#8217;s easier to tailor make scripts to track specific metrics.
+The <code>bcc</code> project contains a <code>stackcount</code> program that can be used to count stack traces in similar way to what <code>perf</code> did in the previous section.
+But in some cases, it might be more useful to have other metrics other than number of calls to a system call.
+<code>malloc</code> is one such example.
+The number of <code>malloc</code> calls is not so important,
+but rather the size of the allocations.
+So rather than having a flamegraph showing sample counts,
+a flamegraph can be generated that shows bytes allocated.</p>
+</div>
+<div class="paragraph">
+<p>Aside from <code>mmap</code>,
+<code>malloc</code> system calls are also present in native executables generated by GraalVM.
+Let&#8217;s put bcc/eBPF in action to generate a flamegraph of bytes allocated using <code>malloc</code>.</p>
+</div>
+<div class="paragraph">
+<p>To do this,
+first re-generate a Quarkus native executable removing debug info,
+which bcc/eBPF does not understand,
+and instead use frame pointer with local symbols to get the stack traces:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ mvn package -DskipTests -Dnative \
+  -Dquarkus.native.additional-build-args=-H:-DeleteLocalSymbols,-H:+PreserveFramePointer</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <a href="mallocstacks.py">mallocstacks.py</a>
+bcc/eBPF script will be used to capture the <code>malloc</code> stacktraces with their allocated size.
+This script, and other typical bcc/eBPF scripts (e.g. <code>stackcount</code>), need to be given a process ID (PID).
+This makes a bit tricky when you want to trace startup,
+but you can use <code>gdb</code>
+(even if you haven&#8217;t enabled debug info)
+to get around this obstacle because it allows you to stop the application at the first instruction.
+Let&#8217;s start by running the native executable via <code>gdb</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ gdb --args ./target/code-with-quarkus-1.0.0-SNAPSHOT-runner -Xmx128m
+...
+(No debugging symbols found in ./target/code-with-quarkus-1.0.0-SNAPSHOT-runner)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>starti</code> is a <code>gdb</code> command that sets a temporary breakpoint at the very first instruction of the program&#8217;s execution.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">(gdb) starti
+Starting program: &lt;..&gt;/code-with-quarkus/target/code-with-quarkus-1.0.0-SNAPSHOT-runner -Xmx128m
+Program stopped.
+0x00007ffff7fe4790 in _start () from /lib64/ld-linux-x86-64.so.2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next invoke the bcc/eBPF script giving it the PID of the Quarkus process,
+so that it can track the <code>malloc</code> calls,
+capture stack traces and dump them to a file for post-processing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ sudo ./mallocstacks.py -p $(pidof code-with-quarkus-1.0.0-SNAPSHOT-runner) -f &gt; out.stacks</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then go back to the <code>gdb</code> shell and instruct it to continue the startup procedure after hitting the first instruction:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">(gdb) continue
+Continuing.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+[New Thread 0x7ffff65ff6c0 (LWP 3342)]
+...
+[New Thread 0x7fffc6ffd6c0 (LWP 3359)]
+__  ____  __  _____   ___  __ ____  ______
+ --/ __ \/ / / / _ | / _ \/ //_/ / / / __/
+ -/ /_/ / /_/ / __ |/ , _/ ,&lt; / /_/ /\ \
+--\___\_\____/_/ |_/_/|_/_/|_|\____/___/
+2023-02-09 18:02:32,794 INFO  [io.quarkus] (main) code-with-quarkus 1.0.0-SNAPSHOT native (powered by Quarkus 2.16.1.Final) started in 0.011s. Listening on: http://0.0.0.0:8080
+2023-02-09 18:02:32,794 INFO  [io.quarkus] (main) Profile prod activated.
+2023-02-09 18:02:32,794 INFO  [io.quarkus] (main) Installed features: [cdi, resteasy-reactive, smallrye-context-propagation, vertx]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once the startup has complete,
+press <code>Ctrl-C</code> on the <code>stackcount</code> shell.</p>
+</div>
+<div class="paragraph">
+<p>Then process the stacks file as a flamegraph.
+Note that the stacks generated by this script are already collapsed,
+so the flamegraph can be generated just like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ cat out.stacks | ${FG_HOME}/flamegraph.pl --color=mem --title="malloc bytes Flame Graph" --countname="bytes" &gt; out.svg</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The flamegraph produced should look something like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/malloc-bytes.svg" alt="malloc bytes flamegraph">
+</div>
+</div>
+<div class="paragraph">
+<p>This shows that most of the memory requested using <code>malloc</code> comes from epoll in Java NIO,
+but the overall amount allocated via <code>malloc</code> is barely 268KB.
+This amount of 274,269 bytes can be observed by hovering on top of <code>all</code> at the bottom of flamegraph
+(you might need to ask the browser to open the flamegraph in a different tab or window to observe this).
+This is very small compared with the amount allocated for the heap with <code>mmap</code>.</p>
+</div>
+<div class="paragraph">
+<p>Finally, just a brief mention about other bcc/eBPF commands,
+and how to transform them into flamegraphs.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ sudo /usr/share/bcc/tools/stackcount -P -p $(pidof code-with-quarkus-1.0.0-SNAPSHOT-runner) \
+  -U "t:syscalls:sys_enter_m*" # count stacks for mmap and munmap
+
+$ sudo /usr/share/bcc/tools/stackcount -P -p $(pidof code-with-quarkus-1.0.0-SNAPSHOT-runner) \
+  -U "c:*alloc" # count stacks for malloc, calloc and realloc
+
+$ sudo /usr/share/bcc/tools/stackcount -P -p $(pidof code-with-quarkus-1.0.0-SNAPSHOT-runner) \
+  -U "c:free" # count stacks for free
+
+$ sudo /usr/share/bcc/tools/stackcount -P -p $(pidof code-with-quarkus-1.0.0-SNAPSHOT-runner) \
+  -U "t:exceptions:page_fault_*" # count stacks for page faults</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Stacks produced by <code>stackcount</code> need to be collapsed before they can be transformed into flamegraphs.
+For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">${FG_HOME}/stackcollapse.pl &lt; out.stacks | ${FG_HOME}/flamegraph.pl \
+  --color=mem --title="mmap munmap Flame Graph" --countname="calls" &gt; out.svg</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -441,7 +886,7 @@ You can find instructions on how to quickly set up this application in this guid
 <p>JDK 11 installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.6</p>
+<p>Apache Maven 3.9.3</p>
 </li>
 <li>
 <p>A working container runtime (Docker, podman)</p>
@@ -544,10 +989,26 @@ So, go ahead and add the following options to that file:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.native.container-build=true
-quarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel-builder-image:22.3-java17
+quarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel-builder-image:jdk-17
 quarkus.container-image.build=true
 quarkus.container-image.group=test</code></pre>
 </div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Starting with 22.3, Mandrel does not provide a <code>-java11</code> version anymore.
+Note, however,  that this doesn&#8217;t mean that you may no longer produce native executables with Mandrel for Java 11 projects.
+You can still compile your Java 11 projects using OpenJDK 11 and produce native executables from the resulting Java 11 bytecode using the <code>-java17</code> Mandrel builder images.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -1051,7 +1512,7 @@ These are called expert options and you can learn more about them by running:</p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker run quay.io/quarkus/ubi-quarkus-mandrel-builder-image:22.3-java17 --expert-options-all</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">docker run quay.io/quarkus/ubi-quarkus-mandrel-builder-image:jdk-17 --expert-options-all</code></pre>
 </div>
 </div>
 <div class="admonitionblock warning">
@@ -1101,10 +1562,10 @@ add a new <code>TimestampResource</code> to the application that looks like this
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/timestamp")
 public class TimestampResource {
@@ -1160,8 +1621,8 @@ To see this in action, add this REST resource:</p>
 
 import javax.crypto.Cipher;
 import javax.crypto.NoSuchPaddingException;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
@@ -1312,10 +1773,10 @@ Assume that you’re in a scenario where profiling the pure Java version is not 
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/string-builder")
 public class StringBuilderResource {
@@ -1556,10 +2017,10 @@ To demonstrate this, add this <code>MulticastResource</code> code to your projec
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
@@ -1711,10 +2172,10 @@ To achieve this, add the following REST resource to the project:</p>
 
 import sun.misc.Unsafe;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 import java.lang.reflect.Field;
 
 @Path("/crash")
@@ -2024,7 +2485,7 @@ Source directories searched: /data/target/debugging-native-1.0.0-SNAPSHOT-native
 (in this case we see that it fails at the first read from src which contains the address <code>0x0000</code>),
 or walk up the stack using <code>gdb</code>’s <code>up</code> command to see what part of our code led to this situation.
 To learn more about using gdb to debug native executables see
-<a href="https://www.graalvm.org/22.3/reference-manual/native-image/debugging-and-diagnostics/DebugInfo/">here</a>.</p>
+<a href="https://www.graalvm.org/jdk-17/reference-manual/native-image/debugging-and-diagnostics/DebugInfo/">here</a>.</p>
 </div>
 </div>
 </div>
@@ -2058,10 +2519,63 @@ so it has to do more work to complete the analysis step.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="i-get-a-analysiserrorparsingerror-when-building-a-native-executable-due-to-an-unresolvedelementexception-what-can-i-do"><a class="anchor" href="#i-get-a-analysiserrorparsingerror-when-building-a-native-executable-due-to-an-unresolvedelementexception-what-can-i-do"></a>I get a <code>AnalysisError\$ParsingError</code> when building a native executable due to an <code>UnresolvedElementException</code>, what can I do?</h3>
+<div class="paragraph">
+<p>When building a native executable Quarkus requires all classes being referenced by the code, no matter if they are build-time or run-time initialized, to be present in the classpath.
+This way it ensures that there will be no crashes at runtime due to potential <code>NoClassDefFoundError</code> exceptions.
+To achieve this it makes use of GraalVM&#8217;s <code>--link-at-build-time</code> parameter:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">--link-at-build-time  require types to be fully defined at image build-time. If used
+                      without args, all classes in scope of the option are required to
+                      be fully defined.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This, however, may result in an <code>AnalysisError\$ParsingError</code> due to an <code>UnresolvedElementException</code> at build time.
+This is often caused because the application references a class from an <a href="https://maven.apache.org/guides/introduction/introduction-to-optional-and-excludes-dependencies.html#optional-dependencies">optional dependency</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you have access to the source code responsible for the reference to the missing dependency and can alter it, you should consider one of the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Remove the reference if it&#8217;s not actually necessary.</p>
+</li>
+<li>
+<p>Move the affected code in a sub-module and make the dependency non-optional (as is the best practice).</p>
+</li>
+<li>
+<p>Make the dependency non-optional.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In the unfortunate case where the reference causing the issue is made by a 3rd party library, that you cannot modify, you should consider one of the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Use a class/method substitution to remove the said reference.</p>
+</li>
+<li>
+<p>Add the optional dependency as a non-optional dependency of your project.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Note that although option (1) is the best choice performance wise, as it minimizes the applications footprint,it might not be trivial to implement.
+To make matters worse, it&#8217;s also not easy to maintain as it is tightly coupled to the 3rd party library implementation.
+Option (2) is a straight forward alternative to work around the issue, but comes at the cost of including possibly never invoked code in the resulting native executable.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="i-get-an-outofmemoryerror-oome-building-native-executables-what-can-i-do"><a class="anchor" href="#i-get-an-outofmemoryerror-oome-building-native-executables-what-can-i-do"></a>I get an <code>OutOfMemoryError</code> (OOME) building native executables, what can I do?</h3>
 <div class="paragraph">
 <p>Building native executables is not only time consuming, but it also takes a fair amount of memory.
-For example, building a sample native Quarkus JPA application such as the Hibernate quickstart,
+For example, building a sample native Quarkus Jakarta Persistence application such as the Hibernate ORM quickstart,
 may use 6GB to 8GB resident set size in memory.
 A big chunk of this memory is Java heap,
 but extra memory is required for other aspects of the JVM that runs the native building process.
@@ -2200,7 +2714,7 @@ com.oracle.svm.core.VM=GraalVM 22.0.0.2-Final Java 11 Mandrel Distribution</code
 </div>
 </div>
 <div class="sect2">
-<h3 id="can-i-get-a-heap-dump-of-a-native-executable-e-g-if-it-runs-out-of-memory"><a class="anchor" href="#can-i-get-a-heap-dump-of-a-native-executable-e-g-if-it-runs-out-of-memory"></a>Can I get a heap dump of a native executable? e.g. if it runs out of memory</h3>
+<h3 id="heap-dumps"><a class="anchor" href="#heap-dumps"></a>Can I get a heap dump of a native executable? e.g. if it runs out of memory</h3>
 <div class="paragraph">
 <p>Starting with GraalVM 22.2.0 it is possible to create heap dumps upon request,
 e.g. <code>kill -SIGUSR1 &lt;pid&gt;</code>.
@@ -2330,15 +2844,42 @@ so you can remote debug this process by adding the <code>--vm.agentlib:jdwp=tran
 <p><a href="https://docs.oracle.com/javacomponents/jmc-5-4/jfr-runtime-guide/about.htm#JFRUH170">Java Flight Recorder (JFR)</a> and
 <a href="https://www.oracle.com/java/technologies/jdk-mission-control.html">JDK Mission Control (JMC)</a>
 can be used to profile native binaries since GraalVM CE 21.2.0.
-However, JFR in GraalVM is currently significantly limited in capabilities compared to HotSpot.
-The custom event API is fully supported, but many VM level features are unavailable.
-They will be added in future releases. Current limitations are:</p>
+However, JFR in GraalVM is currently limited in capabilities compared to HotSpot.
+The custom event API is fully supported, but some VM level features are unavailable.
+More events and JFR features will continue to be added in later releases.
+The following table outlines Native Image JFR support and limitations by version.</p>
 </div>
-<div class="ulist">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 41.6666%;">
+<col style="width: 41.6668%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">GraalVM Version</th>
+<th class="tableblock halign-left valign-top">Supports</th>
+<th class="tableblock halign-left valign-top">Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GraalVM CE 21.3 and Mandrel 21.3</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>Minimal VM level events</p>
+<p>Minimal VM Level events</p>
 </li>
+<li>
+<p>Custom events API</p>
+</li>
+<li>
+<p>Start recordings upon executabe run or JFR Recording API</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
 <li>
 <p>No old object sampling</p>
 </li>
@@ -2346,19 +2887,77 @@ They will be added in future releases. Current limitations are:</p>
 <p>No stacktrace tracing</p>
 </li>
 <li>
-<p>No Streaming API for JDK 17</p>
+<p>No event streaming</p>
 </li>
 </ul>
-</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GraalVM CE 22.3 and Mandrel 22.3</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Everything from GraalVM CE 21.3</p>
+</li>
+<li>
+<p>Additional monitor and thread events</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>No old object sampling</p>
+</li>
+<li>
+<p>No stacktrace tracing</p>
+</li>
+<li>
+<p>No event streaming</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GraalVM CE for JDK 17/20 and Mandrel 23.0</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>Everything from GraalVM CE 22.3</p>
+</li>
+<li>
+<p>Additional monitor, thread, container, and allocation events</p>
+</li>
+<li>
+<p>Stacktraces</p>
+</li>
+<li>
+<p>Sampling based method profiling</p>
+</li>
+<li>
+<p>Event streaming</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>No old object sampling</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
-<p>To use JFR add the application property: <code>-Dquarkus.native.enable-vm-inspection=true</code>.
+<p>To add JFR support to your Quarkus executable, add the application property: <code>-Dquarkus.native.monitoring=jfr</code>.
 E.g.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw package -DskipTests -Dnative -Dquarkus.native.container-build=true \
-    -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel-builder-image:22.3-java17 \
-    -Dquarkus.native.enable-vm-inspection=true</code></pre>
+    -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel-builder-image:jdk-17 \
+    -Dquarkus.native.monitoring=jfr</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2372,7 +2971,7 @@ E.g.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>For more details on using JFR, see <a href="https://www.graalvm.org/22.3/reference-manual/native-image/debugging-and-diagnostics/JFR/">here</a>.</p>
+<p>For more details on using JFR, see <a href="https://www.graalvm.org/jdk-17/reference-manual/native-image/debugging-and-diagnostics/JFR/">here</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2435,6 +3034,47 @@ you will obtain precise <a href="#profiling">profiling information</a> as well.<
 <p>The proper solution is to increase the entropy available for the system. That is specific for each OS vendor and virtualization solution though.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="work-around-missing-cpu-features"><a class="anchor" href="#work-around-missing-cpu-features"></a>Work around missing CPU features</h3>
+<div class="paragraph">
+<p>When building on recent machines and running your native executable on older machines, you may see the following failure when starting the application:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">The current machine does not support all of the following CPU features that are required by the image: [CX8, CMOV, FXSR, MMX, SSE, SSE2, SSE3, SSSE3, SSE4_1, SSE4_2, POPCNT, LZCNT, AVX, AVX2, BMI1, BMI2, FMA].
+Please rebuild the executable with an appropriate setting of the -march option.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This error message means that the native compilation used more advanced instruction sets, not supported by the CPU running the application.
+To work around that issue, add the following line to the <code>application.properties</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.native.additional-build-args=-march=compatibility</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then, rebuild your native executable.
+This setting forces the native compilation to use an older instruction set, increasing the chance of compatibility.</p>
+</div>
+<div class="paragraph">
+<p>To explicitly define the target architecture run <code>native-image -march=list</code> to get the supported configurations and then set <code>-march</code> to one of them, e.g., <code>quarkus.native.additional-build-args=-march=x86-64-v4</code>.
+If you are targeting an AMD64 host, <code>-march=x86-64-v2</code> would work in most cases.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>march</code> parameter is only available on GraalVM 23+.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
     </div>
@@ -2457,21 +3097,41 @@ you will obtain precise <a href="#profiling">profiling information</a> as well.<
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -2480,15 +3140,29 @@ you will obtain precise <a href="#profiling">profiling information</a> as well.<
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -2497,19 +3171,33 @@ you will obtain precise <a href="#profiling">profiling information</a> as well.<
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -2518,13 +3206,21 @@ you will obtain precise <a href="#profiling">profiling information</a> as well.<
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -2535,21 +3231,21 @@ you will obtain precise <a href="#profiling">profiling information</a> as well.<
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

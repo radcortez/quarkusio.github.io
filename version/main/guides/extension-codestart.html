@@ -9,7 +9,7 @@
   <title>Extension codestart - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,58 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/version/main/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" >2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-      
-        
-        
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -344,6 +328,97 @@ A Quarkus extension is able to provide one or more well-defined codestarts which
 <div class="paragraph">
 <p>The <a href="https://github.com/quarkusio/quarkus/tree/main/independent-projects/tools/base-codestarts/src/main/resources/codestarts/quarkus" target="_blank" rel="noopener">base codestarts</a> contains templates to create project, buildtool, languages, config and tooling files.</p>
 </div>
+<div class="paragraph">
+<p>In addition, Quarkus also provides the following ways to initialize a new extension project with a Codestart:</p>
+</div>
+<div class="sidebarblock primary asciidoc-tabs-sync-cli">
+<div class="content">
+<div class="title">CLI</div>
+<div class="paragraph">
+<p>To create a new extension with a Codestart skeleton provide the <code>--codestart</code> flag to the <code>create extension</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">quarkus create extension --codestart org.acme:greeting-extension</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">Detected layout type is 'standalone'
+Generated runtime artifactId is 'greeting-extension'
+
+
+applying codestarts...
+📚  java
+🔨  maven
+📦  quarkus-extension
+🚀  devmode-test
+🚀  extension-base
+🚀  extension-codestart
+🚀  integration-tests
+🚀  unit-test
+
+-----------
+ 👍  extension has been successfully generated in:
+--&gt; /Users/.../greeting-extension
+-----------
+Navigate into this directory and get started: quarkus build</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>For more information about how to install the Quarkus CLI and use it, please refer to <a href="cli-tooling">the Quarkus CLI guide</a>.</em></p>
+</div>
+</div>
+</div>
+<div class="sidebarblock secondary asciidoc-tabs-sync-maven">
+<div class="content">
+<div class="title">Maven</div>
+<div class="paragraph">
+<p>Quarkus provides the <a href="building-my-first-extension#maven-setup"><code>create-extension</code> Maven Mojo</a> to initialize an extension project.</p>
+</div>
+<div class="paragraph">
+<p>To generate a new extension with a Codestart skeleton provide the <code>-DwithCodestart</code> flag to this Mojo:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:999-SNAPSHOT:create-extension -N \
+    -DgroupId=org.acme \
+    -DextensionId=greeting-extension \
+    -DwithCodestart</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">[INFO] --- quarkus-maven-plugin:999-SNAPSHOT:create-extension (default-cli) @ standalone-pom ---
+
+Detected layout type is 'standalone'
+Generated runtime artifactId is 'greeting-extension'
+
+
+applying codestarts...
+📚  java
+🔨  maven
+📦  quarkus-extension
+🚀  devmode-test
+🚀  extension-base
+🚀  extension-codestart
+🚀  integration-tests
+🚀  unit-test
+
+-----------
+ 👍  extension has been successfully generated in:
+--&gt; /Users/.../greeting-extension
+-----------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.638 s
+[INFO] Finished at: 2022-10-24T21:27:51+02:00
+[INFO] ------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -361,8 +436,10 @@ A Quarkus extension is able to provide one or more well-defined codestarts which
 <div class="sect2">
 <h3 id="the-code"><a class="anchor" href="#the-code"></a>The code</h3>
 <div class="paragraph">
-<p>A Codestart is a template for scaffolding new project.
-The easiest way to prepare a Codestart is to generate a Quarkus project, add the content you want in your template and then create your Codestart from there.</p>
+<p>A Codestart is a template for scaffolding new project.</p>
+</div>
+<div class="paragraph">
+<p>In this tutorial a Codestart project is created from a Quarkus project and adding the needed templates.</p>
 </div>
 <div class="paragraph">
 <p>Therefore, go to <a href="https://code.quarkus.io" target="_blank" rel="noopener">code.quarkus.io</a>, create a new project with the aloha extension and <code>org.acme</code> as Group (i.e <a href="#org-acme-package"><code>org.acme</code> placeholder for package name</a>). Prepare a nice starter. It should not include any business logic, instead, it should contain some stub data/hello world that compiles and gives an overview of how to use the extension. The idea is to bring code that is the most common starting point for the extension.</p>
@@ -611,7 +688,7 @@ type: code
 tags: extension-codestart
 # public metadata for this example (accessible as data in the templates e.g. {title})
 metadata:
-  title: RESTEasy JAX-RS example
+  title: RESTEasy Jakarta REST example
   description: Rest is easy peasy with this Hello World RESTEasy resource.
   related-guide-section: https://quarkus.io/guides/getting-started#the-jax-rs-resources
   # (optional) use this in web extensions with a specific path (and also add the index page)
@@ -651,9 +728,9 @@ metadata:
 <h3 id="dynamic-config-keys-in-codestart"><a class="anchor" href="#dynamic-config-keys-in-codestart"></a>Dynamic Config Keys in Codestart</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gen-info.time = time of generation (in millis)
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gen-info.time = generation time (in milliseconds)
 input.selected-extensions[].name|description|guide = list of selected extensions with info
-input.selected-extensions-ga = Set of String with the list of extensions groupId:artifactId, usefull for dynamic codestarts depending on selected extensions
+input.selected-extensions-ga = Set of Strings containing the list of extensions groupId:artifactId, useful for dynamic codestarts depending on selected extensions
 input.provided-code[].name|tags|title|description|related-guide: list of selected codestarts with info</code></pre>
 </div>
 </div>
@@ -663,24 +740,26 @@ input.provided-code[].name|tags|title|description|related-guide: list of selecte
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.platform.group-id = BOM groupId
-quarkus.platform.artifact-id = BOM ArtifactId
-quarkus.platform.version = BOM Version
+quarkus.platform.artifact-id = BOM artifactId
+quarkus.platform.version = BOM version
 project.group-id = Project groupId
-project.artifact-id = project ArtifactId
-project.version = Project Version
-project.package-name = Project Package name
+project.artifact-id = Project artifactId
+project.version = Project version
+project.name = Project name (if specified)
+project.description = Project description (if specified)
+project.package-name = Project package name
 quarkus.maven-plugin.group-id = Quarkus Maven plugin groupId
-quarkus.maven-plugin.artifact-id = Quarkus Maven plugin ArtifactId
-quarkus.maven-plugin.version = Quarkus Maven plugin version.
-quarkus.gradle-plugin.id = Quarkus gradle pluginId
-quarkus.gradle-plugin.version = Quarkus gradle plugin version
+quarkus.maven-plugin.artifact-id = Quarkus Maven plugin artifactId
+quarkus.maven-plugin.version = Quarkus Maven plugin version
+quarkus.gradle-plugin.id = Quarkus Gradle pluginId
+quarkus.gradle-plugin.version = Quarkus Gradle plugin version
 quarkus.version = Quarkus version
 java.version = Java version
 kotlin.version = Kotlin version
-scala.version = scala version
-scala-maven-plugin.version = scala maven plugin version
+scala.version = Scala version
+scala-maven-plugin.version = Scala Maven plugin version
 maven-compiler-plugin.version = Maven compiler plugin version
-maven-surefire-plugin.version = Maven surefire plugin version</code></pre>
+maven-surefire-plugin.version = Maven Surefire plugin version</code></pre>
 </div>
 </div>
 </div>
@@ -964,21 +1043,41 @@ In order to first generate or update existing snapshots files on your local file
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -987,15 +1086,29 @@ In order to first generate or update existing snapshots files on your local file
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1004,19 +1117,33 @@ In order to first generate or update existing snapshots files on your local file
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1025,13 +1152,21 @@ In order to first generate or update existing snapshots files on your local file
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1042,21 +1177,21 @@ In order to first generate or update existing snapshots files on your local file
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

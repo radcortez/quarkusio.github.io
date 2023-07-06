@@ -9,7 +9,7 @@
   <title>Quarkus Newsletter - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="">GUIDES</a></li>
+          <li><a href="/guides" class="">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -132,6 +139,70 @@
 
   
       <div class="card">
+        <a href="/newsletter/33/"></a>
+        <div>
+          <p class="title">June 2023 Newsletter #33</p>
+          <div class="description">Publication Date: June 13, 2023</div>
+        </div>
+      </div>
+  
+      <div class="card">
+        <a href="/newsletter/32/"></a>
+        <div>
+          <p class="title">May 2023 Newsletter #32</p>
+          <div class="description">Publication Date: May 16, 2023</div>
+        </div>
+      </div>
+  
+      <div class="card">
+        <a href="/newsletter/31/"></a>
+        <div>
+          <p class="title">April 2023 Newsletter #31</p>
+          <div class="description">Publication Date: April 12, 2023</div>
+        </div>
+      </div>
+  
+      <div class="card">
+        <a href="/newsletter/30/"></a>
+        <div>
+          <p class="title">March 2023 Newsletter #30</p>
+          <div class="description">Publication Date: March 14, 2023</div>
+        </div>
+      </div>
+  
+      <div class="card">
+        <a href="/newsletter/29/"></a>
+        <div>
+          <p class="title">February 2023 Newsletter #29</p>
+          <div class="description">Publication Date: February 13, 2023</div>
+        </div>
+      </div>
+  
+      <div class="card">
+        <a href="/newsletter/28/"></a>
+        <div>
+          <p class="title">January 2023 Newsletter #28</p>
+          <div class="description">Publication Date: January 13, 2023</div>
+        </div>
+      </div>
+  
+      <div class="card">
+        <a href="/newsletter/27/"></a>
+        <div>
+          <p class="title">December 2022 Newsletter #27</p>
+          <div class="description">Publication Date: December 15, 2022</div>
+        </div>
+      </div>
+  
+      <div class="card">
+        <a href="/newsletter/26/"></a>
+        <div>
+          <p class="title">November 2022 Newsletter #26</p>
+          <div class="description">Publication Date: November 18, 2022</div>
+        </div>
+      </div>
+  
+      <div class="card">
         <a href="/newsletter/25/"></a>
         <div>
           <p class="title">October Newsletter #25</p>
@@ -142,7 +213,7 @@
       <div class="card">
         <a href="/newsletter/24/"></a>
         <div>
-          <p class="title">September Newsletter #24</p>
+          <p class="title">September 2022 Newsletter #24</p>
           <div class="description">Publication Date: September 13, 2022</div>
         </div>
       </div>
@@ -150,7 +221,7 @@
       <div class="card">
         <a href="/newsletter/23/"></a>
         <div>
-          <p class="title">August Newsletter #23</p>
+          <p class="title">August 2022 Newsletter #23</p>
           <div class="description">Publication Date: August 18, 2022</div>
         </div>
       </div>
@@ -158,7 +229,7 @@
       <div class="card">
         <a href="/newsletter/22/"></a>
         <div>
-          <p class="title">July Newsletter #22</p>
+          <p class="title">July 2022 Newsletter #22</p>
           <div class="description">Publication Date: July 15, 2022</div>
         </div>
       </div>
@@ -166,7 +237,7 @@
       <div class="card">
         <a href="/newsletter/21/"></a>
         <div>
-          <p class="title">June Newsletter #21</p>
+          <p class="title">June 2022 Newsletter #21</p>
           <div class="description">Publication Date: June 14, 2022</div>
         </div>
       </div>
@@ -174,7 +245,7 @@
       <div class="card">
         <a href="/newsletter/20/"></a>
         <div>
-          <p class="title">May Newsletter #20</p>
+          <p class="title">May 2022 Newsletter #20</p>
           <div class="description">Publication Date: May 12, 2022</div>
         </div>
       </div>
@@ -182,7 +253,7 @@
       <div class="card">
         <a href="/newsletter/19/"></a>
         <div>
-          <p class="title">April Newsletter #19</p>
+          <p class="title">April 2022 Newsletter #19</p>
           <div class="description">Publication Date: April 14, 2022</div>
         </div>
       </div>
@@ -190,7 +261,7 @@
       <div class="card">
         <a href="/newsletter/18/"></a>
         <div>
-          <p class="title">March Newsletter #18</p>
+          <p class="title">March 2022 Newsletter #18</p>
           <div class="description">Publication Date: March 17, 2022</div>
         </div>
       </div>
@@ -198,7 +269,7 @@
       <div class="card">
         <a href="/newsletter/17/"></a>
         <div>
-          <p class="title">February Newsletter #17</p>
+          <p class="title">February 2022 Newsletter #17</p>
           <div class="description">Publication Date: February 23, 2022</div>
         </div>
       </div>
@@ -206,7 +277,7 @@
       <div class="card">
         <a href="/newsletter/16/"></a>
         <div>
-          <p class="title">January Newsletter #16</p>
+          <p class="title">January 2022 Newsletter #16</p>
           <div class="description">Publication Date: January 13, 2022</div>
         </div>
       </div>
@@ -214,7 +285,7 @@
       <div class="card">
         <a href="/newsletter/15/"></a>
         <div>
-          <p class="title">December Newsletter #15</p>
+          <p class="title">December 2021 Newsletter #15</p>
           <div class="description">Publication Date: December 16, 2021</div>
         </div>
       </div>
@@ -222,7 +293,7 @@
       <div class="card">
         <a href="/newsletter/14/"></a>
         <div>
-          <p class="title">November Newsletter #14</p>
+          <p class="title">November 2021 Newsletter #14</p>
           <div class="description">Publication Date: November 11, 2021</div>
         </div>
       </div>
@@ -230,7 +301,7 @@
       <div class="card">
         <a href="/newsletter/13/"></a>
         <div>
-          <p class="title">October Newsletter #13</p>
+          <p class="title">October 2021 Newsletter #13</p>
           <div class="description">Publication Date: October 18, 2021</div>
         </div>
       </div>
@@ -246,7 +317,7 @@
       <div class="card">
         <a href="/newsletter/11/"></a>
         <div>
-          <p class="title">August Newsletter #11</p>
+          <p class="title">August 2021 Newsletter #11</p>
           <div class="description">Publication Date: August 16, 2021</div>
         </div>
       </div>
@@ -254,7 +325,7 @@
       <div class="card">
         <a href="/newsletter/10/"></a>
         <div>
-          <p class="title">July Newsletter #10</p>
+          <p class="title">July 2021 Newsletter #10</p>
           <div class="description">Publication Date: July 14, 2021</div>
         </div>
       </div>
@@ -338,9 +409,10 @@
 <div class="full-width-bg component black homepage-content-band" >
   <div class="grid-wrapper">
     <div class="grid__item width-12-12">
-     <iframe class="mj-w-res-iframe iframeheight" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/6zV5/ID1" width="100%" ></iframe>
+    <iframe data-w-type="embedded" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://mj.quarkus.io/wgt/xy0p2/sqx/form?c=8b09919f" width="100%"></iframe>
 
-	<script type="text/javascript" src="https://app.mailjet.com/statics/js/iframeResizer.min.js"></script>
+    <script type="text/javascript" src="https://app.mailjet.com/pas-nc-embedded-v1.js"></script>
+
     </div>
   </div>
 </div>
@@ -362,21 +434,41 @@
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -385,15 +477,29 @@
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -402,19 +508,33 @@
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -423,13 +543,21 @@
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -440,21 +568,21 @@
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

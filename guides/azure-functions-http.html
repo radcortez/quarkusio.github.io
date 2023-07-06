@@ -6,10 +6,10 @@
 
 
 <head>
-  <title>Azure Functions (Serverless) with RESTEasy Reactive, Undertow, or Reactive Routes - Quarkus</title>
+  <title>Azure Functions with RESTEasy Reactive, Undertow, or Reactive Routes - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -21,7 +21,7 @@
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="https://quarkus.io/guides/azure-functions-http" />
-  <meta property="og:title" content="Azure Functions (Serverless) with RESTEasy Reactive, Undertow, or Reactive Routes" />
+  <meta property="og:title" content="Azure Functions with RESTEasy Reactive, Undertow, or Reactive Routes" />
   <meta property="og:description" content="Quarkus: Supersonic Subatomic Java" />
   <meta property="og:image" content="https://quarkus.io/assets/images/quarkus_card.png" />
   
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,91 +131,65 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" selected>2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
-    <h1 class="text-caps">Azure Functions (Serverless) with RESTEasy Reactive, Undertow, or Reactive Routes </h1>
+    <h1 class="text-caps">Azure Functions with RESTEasy Reactive, Undertow, or Reactive Routes </h1>
   </div>
   <div class="width-12-12">
     <div class="hide-mobile toc"><ul class="sectlevel1">
 <li><a href="#prerequisites">Prerequisites</a></li>
 <li><a href="#solution">Solution</a></li>
-<li><a href="#creating-the-maven-deployment-project">Creating the Maven Deployment Project</a></li>
+<li><a href="#creating-the-mavengradle-project">Creating the Maven/Gradle Project</a></li>
 <li><a href="#login-to-azure">Login to Azure</a></li>
-<li><a href="#build-and-deploy-to-azure">Build and Deploy to Azure</a></li>
-<li><a href="#extension-maven-dependencies">Extension maven dependencies</a></li>
+<li><a href="#quarkus-dev-mode">Quarkus dev mode</a></li>
+<li><a href="#examining-the-project">Examining the project</a></li>
 <li><a href="#azure-deployment-descriptors">Azure Deployment Descriptors</a></li>
 <li><a href="#config-azure-paths">Configuring Root Paths</a></li>
+<li><a href="#login-to-azure-2">Login to Azure</a></li>
+<li><a href="#quarkus-dev-mode-2">Quarkus dev mode</a></li>
+<li><a href="#run-locally-in-azure-functions-local-environment">Run locally in Azure Functions local environment</a></li>
+<li><a href="#quarkus-integration-testing">Quarkus Integration Testing</a></li>
+<li><a href="#deploy-to-azure">Deploy to Azure</a></li>
 </ul></div>
     <div>
       <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>quarkus-azure-functions-http</code> extension allows you to write microservices with RESTEasy Reactive (JAX-RS),
-Undertow (servlet), Reactive Routes, or <a href="funqy-http">Funqy HTTP</a> and make these microservices deployable to the Azure Functions runtime.</p>
-</div>
-<div class="paragraph">
-<p>One azure function deployment can represent any number of JAX-RS, servlet, Reactive Routes, or <a href="funqy-http">Funqy HTTP</a> endpoints.</p>
+<p>The <code>quarkus-azure-functions-http</code> extension allows you to write microservices with RESTEasy Reactive (our Jakarta REST implementation),
+Undertow (servlet), Reactive Routes, or <a href="funqy-http">Funqy HTTP</a> and make these microservices deployable to the Azure Functions runtime.
+In other words, this extension is a bridge from the Azure Functions HttpTrigger and the Quarkus family
+of HTTP APIs.
+One azure function deployment can represent any number of Jakarta REST, servlet, Reactive Routes, or <a href="funqy-http">Funqy HTTP</a> endpoints.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -264,7 +245,7 @@ Only text based media types are supported at the moment as Azure Functions HTTP 
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.6</p>
+<p>Apache Maven 3.9.2</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -274,6 +255,9 @@ Only text based media types are supported at the moment as Azure Functions HTTP 
 </li>
 <li>
 <p><a href="https://azure.microsoft.com">An Azure Account</a>.  Free accounts work.</p>
+</li>
+<li>
+<p><a href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local#v2">Azure Functions Core Tools</a> version 4.x</p>
 </li>
 <li>
 <p><a href="https://docs.microsoft.com/en-us/cli/azure/install-azure-cli">Azure CLI Installed</a></p>
@@ -286,59 +270,27 @@ Only text based media types are supported at the moment as Azure Functions HTTP 
 <h2 id="solution"><a class="anchor" href="#solution"></a>Solution</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide walks you through running a Maven Archetype to generate a sample project that contains three http endpoints
-written with JAX-RS APIs, Servlet APIs, Reactive Routes, or <a href="funqy-http">Funqy HTTP</a> APIs.  After building, you will then be able to deploy
-to Azure.</p>
+<p>This guide walks you through running a maven project that can deploy a Resteasy Reactive endpoint to Azure Functions.
+While only Jakarta REST is provided as an example, you can easily replace it with the HTTP framework of your choice.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="creating-the-maven-deployment-project"><a class="anchor" href="#creating-the-maven-deployment-project"></a>Creating the Maven Deployment Project</h2>
+<h2 id="creating-the-mavengradle-project"><a class="anchor" href="#creating-the-mavengradle-project"></a>Creating the Maven/Gradle Project</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Create the Azure Maven project for your Quarkus application using our Maven Archetype.</p>
+<p>You can generate the example code from Quarkus&#8217;s online application generator at <a href="https://code.quarkus.io/d?e=azure-functions-http&amp;cn=code.quarkus.io">this link</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can also generate this example with the Quarkus CLI:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn archetype:generate \
-    -DarchetypeGroupId=io.quarkus \
-    -DarchetypeArtifactId=quarkus-azure-functions-http-archetype \
-    -DarchetypeVersion=2.13.4.Final</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">quarkus create app --extension=quarkus-azure-functions-http</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Running this command will run maven in interactive mode and it will ask you to fill in some build properties:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>groupId</code> - The maven groupId of this generated project.  Type in <code>org.acme</code>.</p>
-</li>
-<li>
-<p><code>artifactId</code> - The maven artifactId of this generated project. Type in <code>quarkus-demo</code></p>
-</li>
-<li>
-<p><code>version</code> - Version of this generated project.</p>
-</li>
-<li>
-<p><code>package</code> - defaults to <code>groupId</code></p>
-</li>
-<li>
-<p><code>appName</code> - Use the default value.  This is the application name in Azure.  It must be a unique subdomain name under <code>*.azurewebsites.net</code>. Otherwise, deploying to Azure will fail.</p>
-</li>
-<li>
-<p><code>appRegion</code> - Defaults to <code>westus</code>.  Dependent on your azure region.</p>
-</li>
-<li>
-<p><code>function</code> - Use the default which is <code>quarkus</code>.  Name of your azure function. Can be anything you want.</p>
-</li>
-<li>
-<p><code>resourceGroup</code> - Use the default value.  Any value is fine though.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The values above are defined as properties in the generated <code>pom.xml</code> file.</p>
+<p>Add the <code>--gradle</code> switch if you want to generate a gradle project.</p>
 </div>
 </div>
 </div>
@@ -356,55 +308,36 @@ to Azure.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="build-and-deploy-to-azure"><a class="anchor" href="#build-and-deploy-to-azure"></a>Build and Deploy to Azure</h2>
+<h2 id="quarkus-dev-mode"><a class="anchor" href="#quarkus-dev-mode"></a>Quarkus dev mode</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <code>pom.xml</code> you generated in the previous step pulls in the <code>azure-functions-maven-plugin</code>.  Running maven install
-generates config files and a staging directory required by the <code>azure-functions-maven-plugin</code>.  Here&#8217;s
-how to execute it.</p>
+<p>Quarkus dev mode works by just running your application as a HTTP endpoint.  In dev mode
+there is no special interaction with the Azure Functions local runtime.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw clean install azure-functions:deploy</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw clean package quarkus:dev</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>If you haven&#8217;t already created your function up at azure, then build an uber-jar, package it, create the function
-at Azure, and deploy it.</p>
-</div>
-<div class="paragraph">
-<p>If deployment is a success, the azure plugin will tell you the base URL to access your function.</p>
-</div>
-<div class="paragraph">
-<p>i.e.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">Successfully deployed the artifact to https://quarkus-demo-123451234.azurewebsites.net</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The URL to access the service would be</p>
-</div>
-<div class="paragraph">
-<p><a href="https://{appName}.azurewebsites.net/api/hello" class="bare">https://{appName}.azurewebsites.net/api/hello</a>
-<a href="https://{appName}.azurewebsites.net/api/servlet/hello" class="bare">https://{appName}.azurewebsites.net/api/servlet/hello</a>
-<a href="https://{appName}.azurewebsites.net/api/vertx/hello" class="bare">https://{appName}.azurewebsites.net/api/vertx/hello</a>
-<a href="https://{appName}.azurewebsites.net/api/funqyHello" class="bare">https://{appName}.azurewebsites.net/api/funqyHello</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="extension-maven-dependencies"><a class="anchor" href="#extension-maven-dependencies"></a>Extension maven dependencies</h2>
+<h2 id="examining-the-project"><a class="anchor" href="#examining-the-project"></a>Examining the project</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The sample project includes the RESTEasy Reactive, Undertow, Reactive Routes, <a href="funqy-http">Funqy HTTP</a> extensions.  If you are only using one of those
-APIs (i.e. jax-rs only), respectively remove the maven dependency <code>quarkus-resteasy-reactive</code>, <code>quarkus-undertow</code>, <code>quarkus-funqy-http</code>, and/or
-<code>quarkus-reactive-routes</code>.</p>
+<p>If you open the <code>pom.xml</code> or <code>build.gradle</code> build file of the generated project you&#8217;ll see that
+the project is similar to any other Quarkus project.
+The <code>quarkus-azure-functions-http</code> extension is the integration point between
+Quarkus and Azure Functions.</p>
 </div>
 <div class="paragraph">
-<p>You must include the <code>quarkus-azure-functions-http</code> extension as this is a generic bridge between the Azure Functions
-runtime and the HTTP framework you are writing your microservices in.</p>
+<p>The current implementation of the <code>quarkus-azure-functions-http</code> extension no longer requires the
+<code>azure-functions-maven-plugin</code> or gradle equivalent.  Local development and Azure Functions packaging and
+deployment is now all done by Quarkus.</p>
+</div>
+<div class="paragraph">
+<p>Build configuration is now all within <code>application.properties</code>.  The only required configuration switch
+is <code>quarkus.azure-functions.app-name</code>.</p>
 </div>
 </div>
 </div>
@@ -412,12 +345,9 @@ runtime and the HTTP framework you are writing your microservices in.</p>
 <h2 id="azure-deployment-descriptors"><a class="anchor" href="#azure-deployment-descriptors"></a>Azure Deployment Descriptors</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Templates for Azure Functions deployment descriptors (<code>host.json</code>, <code>function.json</code>) are within
-the <code>azure-config</code> directory.  Edit them as you need to.  Rerun the build when you are ready.</p>
-</div>
-<div class="paragraph">
-<p><strong>NOTE</strong>: If you change the <code>function.json</code> <code>path</code> attribute or if you add a <code>routePrefix</code>,
-your jax-rs endpoints won&#8217;t route correctly.  See <a href="#config-azure-paths">Configuring Root Paths</a> for more information.</p>
+<p>The Azure Functions <code>host.json</code> deployment descriptor is automatically
+generated, but if you need to override it, declare it in the root directory of the project and
+rerun the build when you are ready.</p>
 </div>
 </div>
 </div>
@@ -425,13 +355,146 @@ your jax-rs endpoints won&#8217;t route correctly.  See <a href="#config-azure-p
 <h2 id="config-azure-paths"><a class="anchor" href="#config-azure-paths"></a>Configuring Root Paths</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The default route prefix for an Azure Function is <code>/api</code>.  All of your JAX-RS, Servlet, Reactive Routes, and <a href="funqy-http">Funqy HTTP</a> endpoints must
+<p>The default route prefix for an Azure Function is <code>/api</code>.  All of your Jakarta REST, Servlet, Reactive Routes, and <a href="funqy-http">Funqy HTTP</a> endpoints must
 explicitly take this into account.  In the generated project this is handled by the
 <code>quarkus.http.root-path</code> switch in <code>application.properties</code></p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="login-to-azure-2"><a class="anchor" href="#login-to-azure-2"></a>Login to Azure</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>If you modify the <code>path</code> or add a <code>routePrefix</code> within the <code>azure-config/function.json</code>
-deployment descriptor, your code or configuration must also reflect any prefixes you specify for your path.</p>
+<p>If you don&#8217;t log in to Azure you won&#8217;t be able to deploy.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">az login</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quarkus-dev-mode-2"><a class="anchor" href="#quarkus-dev-mode-2"></a>Quarkus dev mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quarkus dev mode does not work currently with Azure Functions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="run-locally-in-azure-functions-local-environment"><a class="anchor" href="#run-locally-in-azure-functions-local-environment"></a>Run locally in Azure Functions local environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to try this example within the local Azure Functions environment, you can
+use this command</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:run</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew --info --no-daemon quarkusRun</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Gradle is a bit quirky with process management, so you need the <code>--no-daemon</code> switch or control-c will not
+destroy the process cleanly and you&#8217;ll have open ports.</p>
+</div>
+<div class="paragraph">
+<p>Note that you must have the <a href="https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local#v2">Azure Functions Core Tools</a>
+installed for this to work!</p>
+</div>
+<div class="paragraph">
+<p>The URL to access the example would be:</p>
+</div>
+<div class="paragraph">
+<p><a href="http://localhost:8081/api/hello" class="bare">http://localhost:8081/api/hello</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quarkus-integration-testing"><a class="anchor" href="#quarkus-integration-testing"></a>Quarkus Integration Testing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can implement integration tests using <code>@QuarkusIntegrationTest</code> functionality.  When these
+integration tests run, the local Azure Functions environment will be spun up for the duration of integration testing.</p>
+</div>
+<div class="paragraph">
+<p>For maven:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw -DskipITs=false verify</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make sure any integration tests you execute with maven use the <code>*IT.java</code> file pattern so that regular builds do not execute
+the test.</p>
+</div>
+<div class="paragraph">
+<p>For Gradle:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew --info quarkusIntTest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make sure any integration tests you execute with Gradle are located within <code>src/integrationTest/java</code>.  Integration
+tests that exist in <code>src/test</code> will run with normal build and fail.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploy-to-azure"><a class="anchor" href="#deploy-to-azure"></a>Deploy to Azure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>quarkus-azure-functions-http</code> extension handles all the work to deploy to Azure.  By default,
+Quarkus will use the Azure CLI in the background to authenticate and deploy to Azure.  If you have
+multiple subscriptions associated with your account, you must set the <code>quarkus.azure-functions.subscription-id</code>
+property in your <code>application.properties</code> file to the subscription you want to use.
+For other authentication mechanisms and deployment options see our config properties <a href="https://quarkus.io/guides/all-config">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>To run the deploy, after you build your project execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./mvnw quarkus:deploy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./gradlew --info deploy</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If deployment is a success, Quarkus will output the endpoint URL of the example function to the console
+For Gradle, you must use the <code>--info</code> switch to see this output!</p>
+</div>
+<div class="paragraph">
+<p>i.e.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">[INFO] HTTP Trigger Urls:
+[INFO] 	 HttpExample : https://{appName}.azurewebsites.net/api/{*path}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The URL to access the service would be something like</p>
+</div>
+<div class="paragraph">
+<p><a href="https://{appName}.azurewebsites.net/api/hello" class="bare">https://{appName}.azurewebsites.net/api/hello</a></p>
 </div>
 </div>
 </div>
@@ -455,21 +518,41 @@ deployment descriptor, your code or configuration must also reflect any prefixes
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -478,15 +561,29 @@ deployment descriptor, your code or configuration must also reflect any prefixes
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -495,19 +592,33 @@ deployment descriptor, your code or configuration must also reflect any prefixes
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -516,13 +627,21 @@ deployment descriptor, your code or configuration must also reflect any prefixes
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -533,21 +652,21 @@ deployment descriptor, your code or configuration must also reflect any prefixes
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

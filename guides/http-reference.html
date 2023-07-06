@@ -9,7 +9,7 @@
   <title>HTTP Reference - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,66 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" selected>2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -193,8 +169,11 @@
     <div class="hide-mobile toc"><ul class="sectlevel1">
 <li><a href="#serving-static-resources">1. Serving Static Resources</a>
 <ul class="sectlevel2">
-<li><a href="#webjar-locator-support">1.1. WebJar Locator Support</a></li>
-<li><a href="#http-compression">1.2. HTTP Compression</a></li>
+<li><a href="#from-the-application-jar">1.1. From the application jar</a></li>
+<li><a href="#from-webjars">1.2. From WebJars</a></li>
+<li><a href="#from-a-local-directory">1.3. From a local directory</a></li>
+<li><a href="#http-compression">1.4. HTTP Compression</a></li>
+<li><a href="#static-resources-config">1.5. Other Configurations</a></li>
 </ul>
 </li>
 <li><a href="#context-path">2. Configuring the Context path</a></li>
@@ -203,7 +182,8 @@
 <li><a href="#providing-a-certificate-and-key-file">3.1. Providing a certificate and key file</a></li>
 <li><a href="#providing-a-keystore">3.2. Providing a keystore</a></li>
 <li><a href="#setting-the-password">3.3. Setting the password</a></li>
-<li><a href="#disable-the-http-port">3.4. Disable the HTTP port</a></li>
+<li><a href="#configure-the-https-port">3.4. Configure the HTTPS port</a></li>
+<li><a href="#disable-the-http-port">3.5. Disable the HTTP port</a></li>
 </ul>
 </li>
 <li><a href="#additional-http-headers">4. Additional HTTP Headers</a>
@@ -214,7 +194,11 @@
 <li><a href="#support-100-continue-in-vert-x">5. Support 100-Continue in vert.x</a></li>
 <li><a href="#http2-support">6. HTTP/2 Support</a></li>
 <li><a href="#listening-on-a-random-port">7. Listening on a Random Port</a></li>
-<li><a href="#cors-filter">8. CORS filter</a></li>
+<li><a href="#cors-filter">8. CORS filter</a>
+<ul class="sectlevel2">
+<li><a href="#support-all-origins-in-devmode">8.1. Support all origins in devmode</a></li>
+</ul>
+</li>
 <li><a href="#http-limits-configuration">9. HTTP Limits Configuration</a></li>
 <li><a href="#configuring-http-access-logs">10. Configuring HTTP Access Logs</a></li>
 <li><a href="#reverse-proxy">11. Running behind a reverse proxy</a></li>
@@ -234,7 +218,7 @@
 </div>
 <div class="paragraph">
 <p>HTTP is provided using Eclipse Vert.x as the base HTTP layer. Servlet&#8217;s are supported using a modified version of Undertow that
-runs on top of Vert.x, and RESTEasy is used to provide JAX-RS support. If Undertow is present RESTEasy will run as a
+runs on top of Vert.x, and RESTEasy is used to provide Jakarta REST support. If Undertow is present RESTEasy will run as a
 Servlet filter, otherwise it will run directly on top of Vert.x with no Servlet involvement.</p>
 </div>
 </div>
@@ -242,14 +226,17 @@ Servlet filter, otherwise it will run directly on top of Vert.x with no Servlet 
 <div class="sect1">
 <h2 id="serving-static-resources"><a class="anchor" href="#serving-static-resources"></a>1. Serving Static Resources</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="from-the-application-jar"><a class="anchor" href="#from-the-application-jar"></a>1.1. From the application jar</h3>
 <div class="paragraph">
-<p>To serve static resources you must place them in the <code>META-INF/resources</code> directory of your application. This location
+<p>To serve static resources from the application jar, you must place them in the <code>META-INF/resources</code> directory of your application. This location
 was chosen as it is the standard location for resources in <code>jar</code> files as defined by the Servlet spec. Even though
-Quarkus can be used without Servlet following this convention allows existing code that places its resources in this
+Quarkus can be used without Servlet, following this convention allows existing code that places its resources in this
 location to function correctly.</p>
 </div>
+</div>
 <div class="sect2">
-<h3 id="webjar-locator-support"><a class="anchor" href="#webjar-locator-support"></a>1.1. WebJar Locator Support</h3>
+<h3 id="from-webjars"><a class="anchor" href="#from-webjars"></a>1.2. From WebJars</h3>
 <div class="paragraph">
 <p>If you are using webjars, like the following JQuery one:</p>
 </div>
@@ -291,7 +278,37 @@ To use it, add the following to your project&#8217;s dependencies:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="http-compression"><a class="anchor" href="#http-compression"></a>1.2. HTTP Compression</h3>
+<h3 id="from-a-local-directory"><a class="anchor" href="#from-a-local-directory"></a>1.3. From a local directory</h3>
+<div class="paragraph">
+<p>Static resources can be served from a local directory by installing an additional route in the Vert.x router.</p>
+</div>
+<div class="paragraph">
+<p>For instance, to serve resources from the <code>static/</code> directory relative to the current path at <a href="http://localhost:8080/static/" class="bare">http://localhost:8080/static/</a>,
+you can install the following route:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
+
+import io.quarkus.runtime.StartupEvent;
+import io.vertx.ext.web.Router;
+import io.vertx.ext.web.handler.StaticHandler;
+import jakarta.enterprise.event.Observes;
+
+
+public class StaticResources {
+
+    void installRoute(@Observes StartupEvent startupEvent, Router router) {
+        router.route()
+                .path("/static/*")
+                .handler(StaticHandler.create("static/"));
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="http-compression"><a class="anchor" href="#http-compression"></a>1.4. HTTP Compression</h3>
 <div class="paragraph">
 <p>The response body of a static resource is not compressed by default.
 You can enable the HTTP compression support by means of <code>quarkus.http.enable-compression=true</code>.
@@ -317,6 +334,171 @@ By default, the following list of media types is compressed: <code>text/html</co
 </td>
 <td class="content">
 If the client does not support HTTP compression then the response body is not compressed.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="static-resources-config"><a class="anchor" href="#static-resources-config"></a>1.5. Other Configurations</h3>
+<div class="paragraph">
+<p>Additionally, the index page for static resources can be changed from default <code>index.html</code>, the hidden files (e.g. dot files) can be indicated as not served, the range requests can be disabled, and the caching support (e.g. caching headers and file properties cache) can be configured.</p>
+</div>
+<div class="paragraph configuration-legend">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> Configuration property fixed at build time - All other configuration properties are overridable at runtime</p>
+</div>
+<table class="tableblock frame-all grid-all stretch configuration-reference">
+<colgroup>
+<col style="width: 80%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><a id="quarkus-vertx-http-config-group-static-resources-config_configuration"></a><a href="#quarkus-vertx-http-config-group-static-resources-config_configuration">Configuration property</a></p></th>
+<th class="tableblock halign-left valign-middle"><p class="tableblock">Type</p></th>
+<th class="tableblock halign-left valign-middle"><p class="tableblock">Default</p></th>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.index-page"></a><code><a href="#quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.index-page">quarkus.http.static-resources.index-page</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set the index page when serving static resources.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6272">QUARKUS_HTTP_STATIC_RESOURCES_INDEX_PAGE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6272" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>index.html</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.include-hidden"></a><code><a href="#quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.include-hidden">quarkus.http.static-resources.include-hidden</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set whether hidden files should be served.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6273">QUARKUS_HTTP_STATIC_RESOURCES_INCLUDE_HIDDEN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6273" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.enable-range-support"></a><code><a href="#quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.enable-range-support">quarkus.http.static-resources.enable-range-support</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set whether range requests (resumable downloads; media streaming) should be enabled.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6274">QUARKUS_HTTP_STATIC_RESOURCES_ENABLE_RANGE_SUPPORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6274" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.caching-enabled"></a><code><a href="#quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.caching-enabled">quarkus.http.static-resources.caching-enabled</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set whether cache handling is enabled.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6275">QUARKUS_HTTP_STATIC_RESOURCES_CACHING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6275" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.cache-entry-timeout"></a><code><a href="#quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.cache-entry-timeout">quarkus.http.static-resources.cache-entry-timeout</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set the cache entry timeout. The default is <code>30</code> seconds.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6276">QUARKUS_HTTP_STATIC_RESOURCES_CACHE_ENTRY_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6276" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
+  <a href="#duration-note-anchor-quarkus-vertx-http-config-group-static-resources-config" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>30S</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.max-age"></a><code><a href="#quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.max-age">quarkus.http.static-resources.max-age</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set value for max age in caching headers. The default is <code>24</code> hours.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6277">QUARKUS_HTTP_STATIC_RESOURCES_MAX_AGE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6277" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
+  <a href="#duration-note-anchor-quarkus-vertx-http-config-group-static-resources-config" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>24H</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.max-cache-size"></a><code><a href="#quarkus-vertx-http-config-group-static-resources-config_quarkus.http.static-resources.max-cache-size">quarkus.http.static-resources.max-cache-size</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set the max cache size.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6278">QUARKUS_HTTP_STATIC_RESOURCES_MAX_CACHE_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6278" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>10000</code></p></td>
+</tr>
+</tbody>
+</table>
+<div id="duration-note-anchor-quarkus-vertx-http-config-group-static-resources-config" class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">About the Duration format</div>
+<div class="paragraph">
+<p>The format for durations uses the standard <code>java.time.Duration</code> format.
+You can learn more about it in the <a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-">Duration#parse() javadoc</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can also provide duration values starting with a number.
+In this case, if the value consists only of a number, the converter treats the value as seconds.
+Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a standard <code>java.time.Duration</code> format.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -363,6 +545,26 @@ base URL for use in Quarkus tests, so test URL&#8217;s should not include the ro
 <div class="paragraph">
 <p>The <a href="https://quarkus.io/blog/path-resolution-in-quarkus/">Path Resolution in Quarkus</a> blog post further explains how path resolution works for both user and extension defined paths.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="title">Management Interface</div>
+<div class="paragraph">
+<p><code>quarkus.http.root-path</code> is only used for the main HTTP server.
+If you enabled the management interface (using the <code>quarkus.management.enabled=true</code> property), you can configure the root path of the management interface using:
+<code>quarkus.management.root-path</code>.</p>
+</div>
+<div class="paragraph">
+<p>Refer to the <a href="./management-interface-reference">management interface reference</a> for more information.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -408,7 +610,7 @@ quarkus.http.ssl.certificate.key-files=/path/to/key</code></pre>
 <div class="sect2">
 <h3 id="providing-a-keystore"><a class="anchor" href="#providing-a-keystore"></a>3.2. Providing a keystore</h3>
 <div class="paragraph">
-<p>An alternate solution is to directly provide a keystore which already contains a default entry with a certificate
+<p>An alternate solution is to directly provide a keystore which already contains a default entry with a certificate.
  You will need to at least provide the file and a password.</p>
 </div>
 <div class="paragraph">
@@ -453,7 +655,16 @@ This will also work in tandem with <a href="https://kubernetes.io/docs/concepts/
 </div>
 </div>
 <div class="sect2">
-<h3 id="disable-the-http-port"><a class="anchor" href="#disable-the-http-port"></a>3.4. Disable the HTTP port</h3>
+<h3 id="configure-the-https-port"><a class="anchor" href="#configure-the-https-port"></a>3.4. Configure the HTTPS port</h3>
+<div class="paragraph">
+<p>By default, Quarkus listens to port 8443 for SSL secured connections and 8444 when running tests.</p>
+</div>
+<div class="paragraph">
+<p>These ports can be configured in your <code>application.properties</code> with the properties <code>quarkus.http.ssl-port</code> and <code>quarkus.http.test-ssl-port</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="disable-the-http-port"><a class="anchor" href="#disable-the-http-port"></a>3.5. Disable the HTTP port</h3>
 <div class="paragraph">
 <p>It is possible to disable the HTTP port and only support secure requests. This is done via the
 <code>quarkus.http.insecure-requests</code> property in <code>application.properties</code>. There are three possible
@@ -542,7 +753,7 @@ quarkus.http.header.Pragma.methods=GET,HEAD</code></pre>
 <p>The path this header should be applied</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4917">QUARKUS_HTTP_HEADER__HEADER__PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4917" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6279">QUARKUS_HTTP_HEADER__HEADER__PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6279" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -559,7 +770,7 @@ quarkus.http.header.Pragma.methods=GET,HEAD</code></pre>
 <p>The value for this header configuration</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4918">QUARKUS_HTTP_HEADER__HEADER__VALUE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4918" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6280">QUARKUS_HTTP_HEADER__HEADER__VALUE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6280" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -576,7 +787,58 @@ quarkus.http.header.Pragma.methods=GET,HEAD</code></pre>
 <p>The HTTP methods for this header configuration</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4919">QUARKUS_HTTP_HEADER__HEADER__METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4919" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6281">QUARKUS_HTTP_HEADER__HEADER__METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6281" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-header-config_quarkus.management.header.-header-.path"></a><code><a href="#quarkus-vertx-http-config-group-header-config_quarkus.management.header.-header-.path">quarkus.management.header."header".path</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The path this header should be applied</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6282">QUARKUS_MANAGEMENT_HEADER__HEADER__PATH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6282" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>/*</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-header-config_quarkus.management.header.-header-.value"></a><code><a href="#quarkus-vertx-http-config-group-header-config_quarkus.management.header.-header-.value">quarkus.management.header."header".value</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The value for this header configuration</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6283">QUARKUS_MANAGEMENT_HEADER__HEADER__VALUE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6283" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">required <span class="icon"><i class="fa fa-exclamation-circle" title="Configuration property is required"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-header-config_quarkus.management.header.-header-.methods"></a><code><a href="#quarkus-vertx-http-config-group-header-config_quarkus.management.header.-header-.methods">quarkus.management.header."header".methods</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The HTTP methods for this header configuration</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6284">QUARKUS_MANAGEMENT_HEADER__HEADER__METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6284" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -664,7 +926,7 @@ quarkus.http.filter.any-order.matches=/paths/order.*</code></pre>
 <p>A regular expression for the paths matching this configuration</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4920">QUARKUS_HTTP_FILTER__FILTER__MATCHES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4920" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6285">QUARKUS_HTTP_FILTER__FILTER__MATCHES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6285" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -681,7 +943,7 @@ quarkus.http.filter.any-order.matches=/paths/order.*</code></pre>
 <p>Additional HTTP Headers always sent in the response</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4921">QUARKUS_HTTP_FILTER__FILTER__HEADER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4921" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6286">QUARKUS_HTTP_FILTER__FILTER__HEADER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6286" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -698,7 +960,7 @@ quarkus.http.filter.any-order.matches=/paths/order.*</code></pre>
 <p>The HTTP methods for this path configuration</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4922">QUARKUS_HTTP_FILTER__FILTER__METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4922" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6287">QUARKUS_HTTP_FILTER__FILTER__METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6287" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -712,7 +974,72 @@ quarkus.http.filter.any-order.matches=/paths/order.*</code></pre>
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4923">QUARKUS_HTTP_FILTER__FILTER__ORDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4923" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6288">QUARKUS_HTTP_FILTER__FILTER__ORDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6288" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-filter-config_quarkus.management.filter.-filter-.matches"></a><code><a href="#quarkus-vertx-http-config-group-filter-config_quarkus.management.filter.-filter-.matches">quarkus.management.filter."filter".matches</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>A regular expression for the paths matching this configuration</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6289">QUARKUS_MANAGEMENT_FILTER__FILTER__MATCHES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6289" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">required <span class="icon"><i class="fa fa-exclamation-circle" title="Configuration property is required"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-filter-config_quarkus.management.filter.-filter-.header-header"></a><code><a href="#quarkus-vertx-http-config-group-filter-config_quarkus.management.filter.-filter-.header-header">quarkus.management.filter."filter".header</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Additional HTTP Headers always sent in the response</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6290">QUARKUS_MANAGEMENT_FILTER__FILTER__HEADER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6290" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-filter-config_quarkus.management.filter.-filter-.methods"></a><code><a href="#quarkus-vertx-http-config-group-filter-config_quarkus.management.filter.-filter-.methods">quarkus.management.filter."filter".methods</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The HTTP methods for this path configuration</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6291">QUARKUS_MANAGEMENT_FILTER__FILTER__METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6291" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">list of string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-filter-config_quarkus.management.filter.-filter-.order"></a><code><a href="#quarkus-vertx-http-config-group-filter-config_quarkus.management.filter.-filter-.order">quarkus.management.filter."filter".order</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6292">QUARKUS_MANAGEMENT_FILTER__FILTER__ORDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6292" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -729,7 +1056,8 @@ quarkus.http.filter.any-order.matches=/paths/order.*</code></pre>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In order to support <code>100-continue</code>, the <code>quarkus.http.handle-100-continue-automatically</code> option needs to be enabled explicitly
-For additional information check <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-5.1.1" class="bare">https://datatracker.ietf.org/doc/html/rfc7231#section-5.1.1</a>.</p>
+For additional information check <a href="https://datatracker.ietf.org/doc/html/rfc7231#section-5.1.1">100-continue</a> and the related
+<a href="https://vertx.io/docs/apidocs/io/vertx/core/http/HttpServerOptions.html#DEFAULT_HANDLE_100_CONTINE_AUTOMATICALLY">Vert.x documentation</a>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -753,6 +1081,11 @@ and may be used by non-browser clients.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.http.http2=false</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Note that some configuration attributes are specific to HTTP/2.
+For example, to configure the max header list size (~ header), you need to configure the <code>quarkus.http.limits.max-header-list-size</code> attribute.
+You can also enable or disable HTTP/2 push using <code>quarkus.http.http2-push-enabled</code>.</p>
 </div>
 </div>
 </div>
@@ -792,7 +1125,7 @@ allows restricted resources on a web page to be requested from another domain ou
 was served.</p>
 </div>
 <div class="paragraph">
-<p>Quarkus comes with a CORS filter which implements the <code>javax.servlet.Filter</code> interface and intercepts all incoming HTTP
+<p>Quarkus comes with a CORS filter which implements the <code>jakarta.servlet.Filter</code> interface and intercepts all incoming HTTP
 requests. It can be enabled in the Quarkus configuration file, <code>src/main/resources/application.properties</code>:</p>
 </div>
 <div class="listingblock">
@@ -802,7 +1135,7 @@ requests. It can be enabled in the Quarkus configuration file, <code>src/main/re
 </div>
 <div class="paragraph">
 <p>If the filter is enabled and an HTTP request is identified as cross-origin, the CORS policy and headers defined using the
-following properties will be applied before passing the request on to its actual target (servlet, JAX-RS resource, etc.):</p>
+following properties will be applied before passing the request on to its actual target (servlet, Jakarta REST resource, etc.):</p>
 </div>
 <div class="paragraph configuration-legend">
 <p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> Configuration property fixed at build time - All other configuration properties are overridable at runtime</p>
@@ -826,10 +1159,10 @@ following properties will be applied before passing the request on to its actual
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Origins allowed for CORS Comma separated list of valid URLs, e.g.: <a href="http://www.quarkus.io,http://localhost:3000" class="bare">http://www.quarkus.io,http://localhost:3000</a> In case an entry of the list is surrounded by forward slashes, it is interpreted as a regular expression. The filter allows any origin if this is not set. default: returns any requested origin as valid</p>
+<p>Origins allowed for CORS Comma separated list of valid URLs, e.g.: <a href="http://www.quarkus.io,http://localhost:3000" class="bare">http://www.quarkus.io,http://localhost:3000</a> In case an entry of the list is surrounded by forward slashes, it is interpreted as a regular expression.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4924">QUARKUS_HTTP_CORS_ORIGINS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4924" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6293">QUARKUS_HTTP_CORS_ORIGINS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6293" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -846,7 +1179,7 @@ following properties will be applied before passing the request on to its actual
 <p>HTTP methods allowed for CORS Comma separated list of valid methods. ex: GET,PUT,POST The filter allows any method if this is not set. default: returns any requested method as valid</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4925">QUARKUS_HTTP_CORS_METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4925" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6294">QUARKUS_HTTP_CORS_METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6294" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -863,7 +1196,7 @@ following properties will be applied before passing the request on to its actual
 <p>HTTP headers allowed for CORS Comma separated list of valid headers. ex: X-Custom,Content-Disposition The filter allows any header if this is not set. default: returns any requested header as valid</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4926">QUARKUS_HTTP_CORS_HEADERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4926" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6295">QUARKUS_HTTP_CORS_HEADERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6295" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -880,7 +1213,7 @@ following properties will be applied before passing the request on to its actual
 <p>HTTP headers exposed in CORS Comma separated list of valid headers. ex: X-Custom,Content-Disposition default: empty</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4927">QUARKUS_HTTP_CORS_EXPOSED_HEADERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4927" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6296">QUARKUS_HTTP_CORS_EXPOSED_HEADERS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6296" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -897,7 +1230,7 @@ following properties will be applied before passing the request on to its actual
 <p>The <code>Access-Control-Max-Age</code> response header value indicating how long the results of a pre-flight request can be cached.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4928">QUARKUS_HTTP_CORS_ACCESS_CONTROL_MAX_AGE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4928" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6297">QUARKUS_HTTP_CORS_ACCESS_CONTROL_MAX_AGE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6297" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -912,10 +1245,10 @@ following properties will be applied before passing the request on to its actual
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>The <code>Access-Control-Allow-Credentials</code> header is used to tell the browsers to expose the response to front-end JavaScript code when the request’s credentials mode Request.credentials is “include”. The value of this header will default to <code>true</code> if <code>quarkus.http.cors.origins</code> property is set and there is a match with the precise <code>Origin</code> header and that header is not '*'.</p>
+<p>The <code>Access-Control-Allow-Credentials</code> header is used to tell the browsers to expose the response to front-end JavaScript code when the request’s credentials mode Request.credentials is “include”. The value of this header will default to <code>true</code> if <code>quarkus.http.cors.origins</code> property is set and there is a match with the precise <code>Origin</code> header.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4929">QUARKUS_HTTP_CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4929" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6298">QUARKUS_HTTP_CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6298" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -959,6 +1292,24 @@ quarkus.http.cors.access-control-max-age=24H
 quarkus.http.cors.access-control-allow-credentials=true</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><code>/https://([a-z0-9\\-_]+)\\.app\\.mydomain\\.com/</code> is treated as a regular expression because it is surrounded by forward slash characters.</p>
+</div>
+<div class="sect2">
+<h3 id="support-all-origins-in-devmode"><a class="anchor" href="#support-all-origins-in-devmode"></a>8.1. Support all origins in devmode</h3>
+<div class="paragraph">
+<p>Having to configure required origins when you start developing a Quarkus application requiring CORS support can be difficult and, in such cases, you may want to allow all origins in dev mode only in order to focus on the actual development first:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.http.cors=true
+%dev.quarkus.http.cors.origins=/.*/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is important that you enable all origins only for the dev profile, allowing all origins in production is not recommended and could expose your applications to serious security issues.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -989,7 +1340,7 @@ quarkus.http.cors.access-control-allow-credentials=true</code></pre>
 <p>The maximum length of all headers.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4930">QUARKUS_HTTP_LIMITS_MAX_HEADER_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4930" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6299">QUARKUS_HTTP_LIMITS_MAX_HEADER_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6299" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1006,7 +1357,7 @@ quarkus.http.cors.access-control-allow-credentials=true</code></pre>
 <p>The maximum size of a request body.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4931">QUARKUS_HTTP_LIMITS_MAX_BODY_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4931" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6300">QUARKUS_HTTP_LIMITS_MAX_BODY_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6300" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1023,7 +1374,7 @@ quarkus.http.cors.access-control-allow-credentials=true</code></pre>
 <p>The max HTTP chunk size</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4932">QUARKUS_HTTP_LIMITS_MAX_CHUNK_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4932" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6301">QUARKUS_HTTP_LIMITS_MAX_CHUNK_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6301" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1040,7 +1391,7 @@ quarkus.http.cors.access-control-allow-credentials=true</code></pre>
 <p>The maximum length of the initial line (e.g. <code>"GET / HTTP/1.0"</code>).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4933">QUARKUS_HTTP_LIMITS_MAX_INITIAL_LINE_LENGTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4933" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6302">QUARKUS_HTTP_LIMITS_MAX_INITIAL_LINE_LENGTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6302" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1057,7 +1408,7 @@ quarkus.http.cors.access-control-allow-credentials=true</code></pre>
 <p>The maximum length of a form attribute.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4934">QUARKUS_HTTP_LIMITS_MAX_FORM_ATTRIBUTE_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4934" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6303">QUARKUS_HTTP_LIMITS_MAX_FORM_ATTRIBUTE_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6303" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1074,11 +1425,261 @@ quarkus.http.cors.access-control-allow-credentials=true</code></pre>
 <p>The maximum number of connections that are allowed at any one time. If this is set it is recommended to set a short idle timeout.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4935">QUARKUS_HTTP_LIMITS_MAX_CONNECTIONS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4935" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6304">QUARKUS_HTTP_LIMITS_MAX_CONNECTIONS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6304" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.http.limits.header-table-size"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.http.limits.header-table-size">quarkus.http.limits.header-table-size</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set the SETTINGS_HEADER_TABLE_SIZE HTTP/2 setting.</p>
+</div>
+<div class="paragraph">
+<p>Allows the sender to inform the remote endpoint of the maximum size of the header compression table used to decode header blocks, in octets. The encoder can select any size equal to or less than this value by using signaling specific to the header compression format inside a header block. The initial value is <code>4,096</code> octets.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6305">QUARKUS_HTTP_LIMITS_HEADER_TABLE_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6305" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">long</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.http.limits.max-concurrent-streams"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.http.limits.max-concurrent-streams">quarkus.http.limits.max-concurrent-streams</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set SETTINGS_MAX_CONCURRENT_STREAMS HTTP/2 setting.</p>
+</div>
+<div class="paragraph">
+<p>Indicates the maximum number of concurrent streams that the sender will allow. This limit is directional: it applies to the number of streams that the sender permits the receiver to create. Initially, there is no limit to this value. It is recommended that this value be no smaller than 100, to not unnecessarily limit parallelism.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6306">QUARKUS_HTTP_LIMITS_MAX_CONCURRENT_STREAMS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6306" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">long</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.http.limits.max-frame-size"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.http.limits.max-frame-size">quarkus.http.limits.max-frame-size</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set the SETTINGS_MAX_FRAME_SIZE HTTP/2 setting. Indicates the size of the largest frame payload that the sender is willing to receive, in octets. The initial value is <code>2^14</code> (16,384) octets.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6307">QUARKUS_HTTP_LIMITS_MAX_FRAME_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6307" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.http.limits.max-header-list-size"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.http.limits.max-header-list-size">quarkus.http.limits.max-header-list-size</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set the SETTINGS_MAX_HEADER_LIST_SIZE HTTP/2 setting. This advisory setting informs a peer of the maximum size of header list that the sender is prepared to accept, in octets. The value is based on the uncompressed size of header fields, including the length of the name and value in octets plus an overhead of 32 octets for each header field. The default value is <code>8192</code></p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6308">QUARKUS_HTTP_LIMITS_MAX_HEADER_LIST_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6308" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">long</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-header-size"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-header-size">quarkus.management.limits.max-header-size</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The maximum length of all headers.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6309">QUARKUS_MANAGEMENT_LIMITS_MAX_HEADER_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6309" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">MemorySize  <a href="#memory-size-note-anchor" title="More information about the MemorySize format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>20K</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-body-size"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-body-size">quarkus.management.limits.max-body-size</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The maximum size of a request body.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6310">QUARKUS_MANAGEMENT_LIMITS_MAX_BODY_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6310" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">MemorySize  <a href="#memory-size-note-anchor" title="More information about the MemorySize format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>10240K</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-chunk-size"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-chunk-size">quarkus.management.limits.max-chunk-size</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The max HTTP chunk size</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6311">QUARKUS_MANAGEMENT_LIMITS_MAX_CHUNK_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6311" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">MemorySize  <a href="#memory-size-note-anchor" title="More information about the MemorySize format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>8192</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-initial-line-length"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-initial-line-length">quarkus.management.limits.max-initial-line-length</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The maximum length of the initial line (e.g. <code>"GET / HTTP/1.0"</code>).</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6312">QUARKUS_MANAGEMENT_LIMITS_MAX_INITIAL_LINE_LENGTH</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6312" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>4096</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-form-attribute-size"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-form-attribute-size">quarkus.management.limits.max-form-attribute-size</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The maximum length of a form attribute.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6313">QUARKUS_MANAGEMENT_LIMITS_MAX_FORM_ATTRIBUTE_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6313" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">MemorySize  <a href="#memory-size-note-anchor" title="More information about the MemorySize format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>2048</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-connections"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-connections">quarkus.management.limits.max-connections</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The maximum number of connections that are allowed at any one time. If this is set it is recommended to set a short idle timeout.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6314">QUARKUS_MANAGEMENT_LIMITS_MAX_CONNECTIONS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6314" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.header-table-size"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.header-table-size">quarkus.management.limits.header-table-size</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set the SETTINGS_HEADER_TABLE_SIZE HTTP/2 setting.</p>
+</div>
+<div class="paragraph">
+<p>Allows the sender to inform the remote endpoint of the maximum size of the header compression table used to decode header blocks, in octets. The encoder can select any size equal to or less than this value by using signaling specific to the header compression format inside a header block. The initial value is <code>4,096</code> octets.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6315">QUARKUS_MANAGEMENT_LIMITS_HEADER_TABLE_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6315" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">long</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-concurrent-streams"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-concurrent-streams">quarkus.management.limits.max-concurrent-streams</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set SETTINGS_MAX_CONCURRENT_STREAMS HTTP/2 setting.</p>
+</div>
+<div class="paragraph">
+<p>Indicates the maximum number of concurrent streams that the sender will allow. This limit is directional: it applies to the number of streams that the sender permits the receiver to create. Initially, there is no limit to this value. It is recommended that this value be no smaller than 100, to not unnecessarily limit parallelism.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6316">QUARKUS_MANAGEMENT_LIMITS_MAX_CONCURRENT_STREAMS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6316" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">long</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-frame-size"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-frame-size">quarkus.management.limits.max-frame-size</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set the SETTINGS_MAX_FRAME_SIZE HTTP/2 setting. Indicates the size of the largest frame payload that the sender is willing to receive, in octets. The initial value is <code>2^14</code> (16,384) octets.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6317">QUARKUS_MANAGEMENT_LIMITS_MAX_FRAME_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6317" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-header-list-size"></a><code><a href="#quarkus-vertx-http-config-group-server-limits-config_quarkus.management.limits.max-header-list-size">quarkus.management.limits.max-header-list-size</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Set the SETTINGS_MAX_HEADER_LIST_SIZE HTTP/2 setting. This advisory setting informs a peer of the maximum size of header list that the sender is prepared to accept, in octets. The value is based on the uncompressed size of header fields, including the length of the name and value in octets plus an overhead of 32 octets for each header field. The default value is <code>8192</code></p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6318">QUARKUS_MANAGEMENT_LIMITS_MAX_HEADER_LIST_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6318" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">long</p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 </tbody>
@@ -1133,7 +1734,7 @@ either logging to the standard JBoss logging output, or logging to a dedicated f
 <p>If access logging is enabled. By default this will log via the standard logging facility</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4936">QUARKUS_HTTP_ACCESS_LOG_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4936" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6319">QUARKUS_HTTP_ACCESS_LOG_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6319" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1150,7 +1751,7 @@ either logging to the standard JBoss logging output, or logging to a dedicated f
 <p>A regular expression that can be used to exclude some paths from logging.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4937">QUARKUS_HTTP_ACCESS_LOG_EXCLUDE_PATTERN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4937" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6320">QUARKUS_HTTP_ACCESS_LOG_EXCLUDE_PATTERN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6320" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1186,7 +1787,7 @@ either logging to the standard JBoss logging output, or logging to a dedicated f
 <p>Otherwise, consult the Quarkus documentation for the full list of variables that can be used.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4938">QUARKUS_HTTP_ACCESS_LOG_PATTERN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4938" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6321">QUARKUS_HTTP_ACCESS_LOG_PATTERN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6321" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1203,7 +1804,7 @@ either logging to the standard JBoss logging output, or logging to a dedicated f
 <p>If logging should be done to a separate file.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4939">QUARKUS_HTTP_ACCESS_LOG_LOG_TO_FILE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4939" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6322">QUARKUS_HTTP_ACCESS_LOG_LOG_TO_FILE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6322" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1220,7 +1821,7 @@ either logging to the standard JBoss logging output, or logging to a dedicated f
 <p>The access log file base name, defaults to 'quarkus' which will give a log file name of 'quarkus.log'.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4940">QUARKUS_HTTP_ACCESS_LOG_BASE_FILE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4940" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6323">QUARKUS_HTTP_ACCESS_LOG_BASE_FILE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6323" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1237,7 +1838,7 @@ either logging to the standard JBoss logging output, or logging to a dedicated f
 <p>The log directory to use when logging access to a file If this is not set then the current working directory is used.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4941">QUARKUS_HTTP_ACCESS_LOG_LOG_DIRECTORY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4941" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6324">QUARKUS_HTTP_ACCESS_LOG_LOG_DIRECTORY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6324" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1254,7 +1855,7 @@ either logging to the standard JBoss logging output, or logging to a dedicated f
 <p>The log file suffix</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4942">QUARKUS_HTTP_ACCESS_LOG_LOG_SUFFIX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4942" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6325">QUARKUS_HTTP_ACCESS_LOG_LOG_SUFFIX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6325" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1271,7 +1872,7 @@ either logging to the standard JBoss logging output, or logging to a dedicated f
 <p>The log category to use if logging is being done via the standard log mechanism (i.e. if base-file-name is empty).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4943">QUARKUS_HTTP_ACCESS_LOG_CATEGORY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4943" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6326">QUARKUS_HTTP_ACCESS_LOG_CATEGORY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6326" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1288,7 +1889,7 @@ either logging to the standard JBoss logging output, or logging to a dedicated f
 <p>If the log should be rotated daily</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-4944">QUARKUS_HTTP_ACCESS_LOG_ROTATE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-4944" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6327">QUARKUS_HTTP_ACCESS_LOG_ROTATE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6327" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1468,6 +2069,20 @@ either logging to the standard JBoss logging output, or logging to a dedicated f
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Use <code>quarkus.http.access-log.exclude-pattern=/some/path/.*</code> to exclude all entries concerning the path <code>/some/path/&#8230;&#8203;</code> (<em>including subsequent paths</em>) from the log.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1516,8 +2131,17 @@ Consider activate it only when running behind a reverse proxy.
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.http.proxy.proxy-address-forwarding=true
 quarkus.http.proxy.allow-x-forwarded=true
 quarkus.http.proxy.enable-forwarded-host=true
-quarkus.http.proxy.enable-forwarded-prefix=true</code></pre>
+quarkus.http.proxy.enable-forwarded-prefix=true
+quarkus.http.proxy.trusted-proxies=127.0.0.1 <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Configure trusted proxy with the IP address <code>127.0.0.1</code>. Request headers from any other address are going to be ignored.</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Both configurations related to standard and non-standard headers can be combined, although the standard headers configuration will have precedence. However, combining them has security implications as clients can forge requests with a forwarded header that is not overwritten by the proxy. Therefore, proxies should strip unexpected <code>X-Forwarded</code> or <code>X-Forwarded-*</code> headers from the client.</p>
@@ -1557,7 +2181,7 @@ quarkus.http.proxy.enable-forwarded-prefix=true</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">quarkus.http.same-site-cookie.jwt.value=Lax
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.http.same-site-cookie.jwt.value=Lax
 quarkus.http.same-site-cookie.session.value=Strict</code></pre>
 </div>
 </div>
@@ -1623,21 +2247,41 @@ in the <code>META-INF</code> directory of your application jar. This file contai
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -1646,15 +2290,29 @@ in the <code>META-INF</code> directory of your application jar. This file contai
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1663,19 +2321,33 @@ in the <code>META-INF</code> directory of your application jar. This file contai
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1684,13 +2356,21 @@ in the <code>META-INF</code> directory of your application jar. This file contai
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1701,21 +2381,21 @@ in the <code>META-INF</code> directory of your application jar. This file contai
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

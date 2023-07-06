@@ -9,7 +9,7 @@
   <title>Simplified Hibernate Reactive with Panache - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,62 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/version/main/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" >2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -216,7 +196,7 @@
 </ul>
 </li>
 <li><a href="#multiple-persistence-units">Multiple Persistence Units</a></li>
-<li><a href="#transactions">Transactions</a></li>
+<li><a href="#transactions">Sessions and Transactions</a></li>
 <li><a href="#lock-management">Lock management</a>
 <ul class="sectlevel2">
 <li><a href="#first-locking-using-findbyid">First: Locking using findById().</a></li>
@@ -224,6 +204,7 @@
 </ul>
 </li>
 <li><a href="#custom-ids">Custom IDs</a></li>
+<li><a href="#testing">Testing</a></li>
 <li><a href="#mocking">Mocking</a>
 <ul class="sectlevel2">
 <li><a href="#using-the-active-record-pattern">Using the active record pattern</a></li>
@@ -237,7 +218,7 @@
       <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://hibernate.org/reactive/">Hibernate Reactive</a> is the only reactive JPA implementation and offers you the full
+<p><a href="https://hibernate.org/reactive/">Hibernate Reactive</a> is the only reactive Jakarta Persistence (formerly known as JPA) implementation and offers you the full
 breadth of an Object Relational Mapper allowing you to access your database over reactive drivers.
 It makes complex mappings possible, but it does not make simple and common mappings trivial.
 Hibernate Reactive with Panache focuses on making your entities trivial and fun to write in Quarkus.</p>
@@ -252,7 +233,9 @@ Hibernate Reactive with Panache focuses on making your entities trivial and fun 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Entity
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.quarkus.hibernate.reactive.panache.PanacheEntity;
+
+@Entity
 public class Person extends PanacheEntity {
     public String name;
     public LocalDate birth;
@@ -283,7 +266,7 @@ Does this look interesting? Read on!</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-the <code>list()</code> method might be surprising at first. It takes fragments of HQL (JP-QL) queries and contextualizes the rest. That makes for very concise but yet readable code.
+The <code>list()</code> method might be surprising at first. It takes fragments of HQL (JP-QL) queries and contextualizes the rest. That makes for very concise but yet readable code.
 </td>
 </tr>
 </table>
@@ -295,7 +278,7 @@ the <code>list()</code> method might be surprising at first. It takes fragments 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-what was described above is essentially the <a href="https://www.martinfowler.com/eaaCatalog/activeRecord.html">active record pattern</a>, sometimes just called the entity pattern.
+What was described above is essentially the <a href="https://www.martinfowler.com/eaaCatalog/activeRecord.html">active record pattern</a>, sometimes just called the entity pattern.
 Hibernate with Panache also allows for the use of the more classical <a href="https://martinfowler.com/eaaCatalog/repository.html">repository pattern</a> via <code>PanacheRepository</code>.
 </td>
 </tr>
@@ -459,7 +442,7 @@ public class Person extends PanacheEntity {
 </div>
 </div>
 <div class="paragraph">
-<p>You can put all your JPA column annotations on the public fields. If you need a field to not be persisted, use the
+<p>You can put all your Jakarta Persistence column annotations on the public fields. If you need a field to not be persisted, use the
 <code>@Transient</code> annotation on it. If you need to write accessors, you can:</p>
 </div>
 <div class="listingblock">
@@ -580,7 +563,7 @@ public class Person extends PanacheEntity {
 <div class="sect2">
 <h3 id="defining-your-entity-2"><a class="anchor" href="#defining-your-entity-2"></a>Defining your entity</h3>
 <div class="paragraph">
-<p>When using the repository pattern, you can define your entities as regular JPA entities.</p>
+<p>When using the repository pattern, you can define your entities as regular Jakarta Persistence entities.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -914,7 +897,7 @@ at the end.</p>
 </td>
 <td class="content">
 You can also write your queries in plain
-<a href="https://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#hql">HQL</a>:
+<a href="https://docs.jboss.org/hibernate/orm/6.2/userguide/html_single/Hibernate_User_Guide.html#hql">HQL</a>:
 </td>
 </tr>
 </table>
@@ -971,7 +954,7 @@ public class Person extends PanacheEntity {
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Named queries can only be defined inside your JPA entity classes (being the Panache entity class, or the repository parameterized type),
+<p>Named queries can only be defined inside your Jakarta Persistence entity classes (being the Panache entity class, or the repository parameterized type),
 or on one of its super classes.</p>
 </div>
 </td>
@@ -1029,7 +1012,7 @@ Person.find("name = :name and status = :status",
 <div class="paragraph">
 <p>Hibernate will use <strong>DTO projection</strong> and generate a SELECT clause with the attributes from the projection class.
 This is also called <strong>dynamic instantiation</strong> or <strong>constructor expression</strong>, more info can be found on the Hibernate guide:
-<a href="https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html#hql-select-clause">hql select clause</a></p>
+<a href="https://docs.jboss.org/hibernate/orm/6.2/userguide/html_single/Hibernate_User_Guide.html#hql-select-clause">hql select clause</a></p>
 </div>
 <div class="paragraph">
 <p>The projection class needs to be a valid Java Bean and have a constructor that contains all its attributes, this constructor will be used to
@@ -1144,7 +1127,7 @@ public class RaceWeight {
 }
 
 // Only the race and the average weight will be loaded
-PanacheQuery&lt;RaceWeight&gt; query = Person.find("select d.race, AVG(d.weight) from Dog d group by d.race).project(RaceWeight.class);</code></pre>
+PanacheQuery&lt;RaceWeight&gt; query = Person.find("select d.race, AVG(d.weight) from Dog d group by d.race").project(RaceWeight.class);</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -1170,7 +1153,7 @@ PanacheQuery&lt;RaceWeight&gt; query = Person.find("select d.race, AVG(d.weight)
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">PanacheQuery&lt;RaceWeight&gt; query = Person.find("select new MyView(d.race, AVG(d.weight)) from Dog d group by d.race).project(AnotherView.class);</code></pre>
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">PanacheQuery&lt;RaceWeight&gt; query = Person.find("select new MyView(d.race, AVG(d.weight)) from Dog d group by d.race").project(AnotherView.class);</code></pre>
 </div>
 </div>
 </td>
@@ -1189,13 +1172,16 @@ PanacheQuery&lt;RaceWeight&gt; query = Person.find("select d.race, AVG(d.weight)
 </div>
 </div>
 <div class="sect1">
-<h2 id="transactions"><a class="anchor" href="#transactions"></a>Transactions</h2>
+<h2 id="transactions"><a class="anchor" href="#transactions"></a>Sessions and Transactions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Make sure to wrap methods modifying your database (e.g. <code>entity.persist()</code>) within a transaction. Marking a
-CDI bean method <code>@ReactiveTransactional</code> will do that for you and make that method a transaction boundary. Alternatively,
-you can use <code>Panache.withTransaction()</code> for the same effect. We recommend doing
-so at your application entry point boundaries like your REST endpoint controllers.</p>
+<p>First of all, most of the methods of a Panache entity must be invoked within the scope of a reactive <code>Mutiny.Session</code>.
+In some cases, the session is opened automatically on demand.
+For example, if a Panache entity method is invoked in a Jakarta REST resource method in an application that includes the <code>quarkus-resteasy-reactive</code> extension.
+For other cases, there are both a declarative and a programmatic way to ensure the session is opened.
+You can annotate a CDI business method that returns <code>Uni</code> with the <code>@WithSession</code> annotation.
+The method will be intercepted and the returned <code>Uni</code> will be triggered within a scope of a reactive session.
+Alternatively, you can use the <code>Panache.withSession()</code> method to achieve the same effect.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1204,17 +1190,33 @@ so at your application entry point boundaries like your REST endpoint controller
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You cannot use <code>@Transactional</code> with Hibernate Reactive for your transactions: you must use <code>@ReactiveTransactional</code>,
-and your annotated method must return a <code>Uni</code> to be non-blocking. Otherwise, it needs be called from a non-<code>VertxThread</code> thread
-and will become blocking.
+Note that a Panache entity may not be used from a blocking thread. See also <a href="getting-started-reactive">Getting Started With Reactive</a> guide that explains the basics of reactive principles in Quarkus.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>JPA batches changes you make to your entities and sends changes (it is called flush) at the end of the transaction or before a query.
+<p>Also make sure to wrap methods that modify the database or involve multiple queries (e.g. <code>entity.persist()</code>) within a transaction.
+You can annotate a CDI business method that returns <code>Uni</code> with the <code>@WithTransaction</code> annotation.
+The method will be intercepted and the returned <code>Uni</code> is triggered within a transaction boundary.
+Alternatively, you can use the <code>Panache.withTransaction()</code> method for the same effect.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+You cannot use the <code>@Transactional</code> annotation with Hibernate Reactive for your transactions: you must use <code>@WithTransaction</code>, and your annotated method must return a <code>Uni</code> to be non-blocking.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Hibernate Reactive batches changes you make to your entities and sends changes (it is called flush) at the end of the transaction or before a query.
 This is usually a good thing as it is more efficient.
-But if you want to check optimistic locking failures, do object validation right away or generally want to get immediate feedback, you can force the flush operation by calling <code>entity.flush()</code> or even use <code>entity.persistAndFlush()</code> to make it a single method call. This will allow you to catch any <code>PersistenceException</code> that could occur when JPA send those changes to the database.
+But if you want to check optimistic locking failures, do object validation right away or generally want to get immediate feedback, you can force the flush operation by calling <code>entity.flush()</code> or even use <code>entity.persistAndFlush()</code> to make it a single method call. This will allow you to catch any <code>PersistenceException</code> that could occur when Hibernate Reactive send those changes to the database.
 Remember, this is less efficient so don&#8217;t abuse it.
 And your transaction still has to be committed.</p>
 </div>
@@ -1223,9 +1225,9 @@ And your transaction still has to be committed.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@ReactiveTransactional
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@WithTransaction
 public Uni&lt;Void&gt; create(Person person){
-    //Here I use the persistAndFlush() shorthand method on a Panache repository to persist to database then flush the changes.
+    // Here we use the persistAndFlush() shorthand method on a Panache repository to persist to database then flush the changes.
     return person.persistAndFlush()
             .onFailure(PersistenceException.class)
             .recoverWithItem(() -&gt; {
@@ -1238,12 +1240,11 @@ public Uni&lt;Void&gt; create(Person person){
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>@ReactiveTransactional</code> annotation will also work for testing.
+<p>The <code>@WithTransaction</code> annotation will also work for testing.
 This means that changes done during the test will be propagated to the database.
 If you want any changes made to be rolled back at the end of
 the test you can use the <code>io.quarkus.test.TestReactiveTransaction</code> annotation.
-This will run the test method in a transaction, but roll it back once the test method is
-complete to revert any database changes.</p>
+This will run the test method in a transaction, but roll it back once the test method is complete to revert any database changes.</p>
 </div>
 </div>
 </div>
@@ -1344,6 +1345,59 @@ public class PersonRepository implements PanacheRepositoryBase&lt;Person,Integer
 </div>
 </div>
 <div class="sect1">
+<h2 id="testing"><a class="anchor" href="#testing"></a>Testing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Testing reactive Panache entities in a <code>@QuarkusTest</code> is slightly more complicated than testing regular Panache entities due to the asynchronous nature of the APIs and the fact that all operations need to run on a Vert.x event loop.</p>
+</div>
+<div class="paragraph">
+<p>The <code>quarkus-test-vertx</code> dependency provides the <code>@io.quarkus.test.vertx.RunOnVertxContext</code> annotation and the <code>io.quarkus.test.vertx.UniAsserter</code> class which are intended precisely for this purpose.
+The usage is described in the <a href="hibernate-reactive#testing">Hibernate Reactive</a> guide.</p>
+</div>
+<div class="paragraph">
+<p>Moreover, the <code>quarkus-test-hibernate-reactive-panache</code> dependency provides the <code>io.quarkus.test.hibernate.reactive.panache.TransactionalUniAsserter</code> that can be injected as a method parameter of a test method annotated with <code>@RunOnVertxContext</code>.
+The <code>TransactionalUniAsserter</code> is a <code>io.quarkus.test.vertx.UniAsserterInterceptor</code> that wraps each assert method within a separate reactive transaction.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>TransactionalUniAsserter</code> Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.quarkus.test.hibernate.reactive.panache.TransactionalUniAsserter;
+
+@QuarkusTest
+public class SomeTest {
+
+    @Test
+    @RunOnVertxContext
+    public void testEntity(TransactionalUniAsserter asserter) {
+        asserter.execute(() -&gt; new MyEntity().persist()); <i class="conum" data-value="1"></i><b>(1)</b>
+        asserter.assertEquals(() -&gt; MyEntity.count(), 1l); <i class="conum" data-value="2"></i><b>(2)</b>
+        asserter.execute(() -&gt; MyEntity.deleteAll()); <i class="conum" data-value="3"></i><b>(3)</b>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The first reactive transaction is used to persist the entity.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The second reactive transaction is used to count the entities.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The third reactive transaction is used to delete all entities.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Of course, you can also define a custom <code>UniAsserterInterceptor</code> to wrap the injected <code>UniAsserter</code> and customize the behavior.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="mocking"><a class="anchor" href="#mocking"></a>Mocking</h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -1393,52 +1447,68 @@ public class Person extends PanacheEntity {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@QuarkusTest
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.quarkus.test.vertx.UniAsserter;
+import io.quarkus.test.vertx.RunOnVertxContext;
+
+@QuarkusTest
 public class PanacheFunctionalityTest {
 
+    @RunOnVertxContext <i class="conum" data-value="1"></i><b>(1)</b>
     @Test
-    public void testPanacheMocking() {
-        PanacheMock.mock(Person.class);
+    public void testPanacheMocking(UniAsserter asserter) { <i class="conum" data-value="2"></i><b>(2)</b>
+        asserter.execute(() -&gt; PanacheMock.mock(Person.class));
 
         // Mocked classes always return a default value
-        Assertions.assertEquals(0, Person.count().await().indefinitely());
+        asserter.assertEquals(() -&gt; Person.count(), 0l);
 
         // Now let's specify the return value
-        Mockito.when(Person.count()).thenReturn(Uni.createFrom().item(23l));
-        Assertions.assertEquals(23, Person.count().await().indefinitely());
+        asserter.execute(() -&gt; Mockito.when(Person.count()).thenReturn(Uni.createFrom().item(23l)));
+        asserter.assertEquals(() -&gt; Person.count(), 23l);
 
         // Now let's change the return value
-        Mockito.when(Person.count()).thenReturn(Uni.createFrom().item(42l));
-        Assertions.assertEquals(42, Person.count().await().indefinitely());
+        asserter.execute(() -&gt; Mockito.when(Person.count()).thenReturn(Uni.createFrom().item(42l)));
+        asserter.assertEquals(() -&gt; Person.count(), 42l);
 
         // Now let's call the original method
-        Mockito.when(Person.count()).thenCallRealMethod();
-        Assertions.assertEquals(0, Person.count().await().indefinitely());
+        asserter.execute(() -&gt; Mockito.when(Person.count()).thenCallRealMethod());
+        asserter.assertEquals(() -&gt; Person.count(), 0l);
 
         // Check that we called it 4 times
-        PanacheMock.verify(Person.class, Mockito.times(4)).count();<i class="conum" data-value="1"></i><b>(1)</b>
+        asserter.execute(() -&gt; {
+            PanacheMock.verify(Person.class, Mockito.times(4)).count(); <i class="conum" data-value="3"></i><b>(3)</b>
+        });
 
         // Mock only with specific parameters
-        Person p = new Person();
-        Mockito.when(Person.findById(12l)).thenReturn(Uni.createFrom().item(p));
-        Assertions.assertSame(p, Person.findById(12l).await().indefinitely());
-        Assertions.assertNull(Person.findById(42l).await().indefinitely());
+        asserter.execute(() -&gt; {
+            Person p = new Person();
+            Mockito.when(Person.findById(12l)).thenReturn(Uni.createFrom().item(p));
+            asserter.putData(key, p);
+        });
+        asserter.assertThat(() -&gt; Person.findById(12l), p -&gt; Assertions.assertSame(p, asserter.getData(key)));
+        asserter.assertNull(() -&gt; Person.findById(42l));
 
         // Mock throwing
-        Mockito.when(Person.findById(12l)).thenThrow(new WebApplicationException());
-        try {
-            Person.findById(12l);
-            Assertions.fail();
-        } catch (WebApplicationException x) {
-        }
+        asserter.execute(() -&gt; Mockito.when(Person.findById(12l)).thenThrow(new WebApplicationException()));
+        asserter.assertFailedWith(() -&gt; {
+            try {
+                return Person.findById(12l);
+            } catch (Exception e) {
+                return Uni.createFrom().failure(e);
+            }
+        }, t -&gt; assertEquals(WebApplicationException.class, t.getClass()));
 
         // We can even mock your custom methods
-        Mockito.when(Person.findOrdered()).thenReturn(Uni.createFrom().item(Collections.emptyList()));
-        Assertions.assertTrue(Person.findOrdered().await().indefinitely().isEmpty());
+        asserter.execute(() -&gt; Mockito.when(Person.findOrdered()).thenReturn(Uni.createFrom().item(Collections.emptyList())));
+        asserter.assertThat(() -&gt; Person.findOrdered(), list -&gt; list.isEmpty());
 
-        PanacheMock.verify(Person.class).findOrdered();
-        PanacheMock.verify(Person.class, Mockito.atLeastOnce()).findById(Mockito.any());
-        PanacheMock.verifyNoMoreInteractions(Person.class);
+        asserter.execute(() -&gt; {
+            PanacheMock.verify(Person.class).findOrdered();
+            PanacheMock.verify(Person.class, Mockito.atLeastOnce()).findById(Mockito.any());
+            PanacheMock.verifyNoMoreInteractions(Person.class);
+        });
+
+        // IMPORTANT: We need to execute the asserter within a reactive session
+        asserter.surroundWith(u -&gt; Panache.withSession(() -&gt; u));
     }
 }</code></pre>
 </div>
@@ -1447,36 +1517,18 @@ public class PanacheFunctionalityTest {
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Make sure the test method is run on the Vert.x event loop.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The injected <code>UniAsserter</code> argument is used to make assertions.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
 <td>Be sure to call your <code>verify</code> and <code>do*</code> methods on <code>PanacheMock</code> rather than <code>Mockito</code>, otherwise you won&#8217;t know
 what mock object to pass.</td>
 </tr>
 </table>
-</div>
-<div class="sect3">
-<h4 id="mocking-mutiny-session-and-entity-instance-methods"><a class="anchor" href="#mocking-mutiny-session-and-entity-instance-methods"></a>Mocking <code>Mutiny.Session</code> and entity instance methods</h4>
-<div class="paragraph">
-<p>If you need to mock entity instance methods, such as <code>persist()</code> you can do it by mocking the Hibernate Reactive <code>Mutiny.Session</code> object:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@QuarkusTest
-public class PanacheMockingTest {
-
-    @InjectMock
-    Mutiny.Session session;
-
-    @Test
-    public void testPanacheSessionMocking() {
-        Person p = new Person();
-        // mocked via Mutiny.Session mocking
-        p.persist().await().indefinitely();
-        Assertions.assertNull(p.id);
-
-        Mockito.verify(session, Mockito.times(1)).persist(Mockito.any());
-    }
-}</code></pre>
-</div>
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -1535,56 +1587,86 @@ public class PersonRepository implements PanacheRepository&lt;Person&gt; {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@QuarkusTest
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.quarkus.test.vertx.UniAsserter;
+import io.quarkus.test.vertx.RunOnVertxContext;
+
+@QuarkusTest
 public class PanacheFunctionalityTest {
     @InjectMock
     PersonRepository personRepository;
 
+    @RunOnVertxContext <i class="conum" data-value="1"></i><b>(1)</b>
     @Test
-    public void testPanacheRepositoryMocking() throws Throwable {
+    public void testPanacheRepositoryMocking(UniAsserter asserter) { <i class="conum" data-value="2"></i><b>(2)</b>
+
         // Mocked classes always return a default value
-        Assertions.assertEquals(0, mockablePersonRepository.count().await().indefinitely());
+        asserter.assertEquals(() -&gt; mockablePersonRepository.count(), 0l);
 
         // Now let's specify the return value
-        Mockito.when(mockablePersonRepository.count()).thenReturn(Uni.createFrom().item(23l));
-        Assertions.assertEquals(23, mockablePersonRepository.count().await().indefinitely());
+        asserter.execute(() -&gt; Mockito.when(mockablePersonRepository.count()).thenReturn(Uni.createFrom().item(23l)));
+        asserter.assertEquals(() -&gt; mockablePersonRepository.count(), 23l);
 
         // Now let's change the return value
-        Mockito.when(mockablePersonRepository.count()).thenReturn(Uni.createFrom().item(42l));
-        Assertions.assertEquals(42, mockablePersonRepository.count().await().indefinitely());
+        asserter.execute(() -&gt; Mockito.when(mockablePersonRepository.count()).thenReturn(Uni.createFrom().item(42l)));
+        asserter.assertEquals(() -&gt; mockablePersonRepository.count(), 42l);
 
         // Now let's call the original method
-        Mockito.when(mockablePersonRepository.count()).thenCallRealMethod();
-        Assertions.assertEquals(0, mockablePersonRepository.count().await().indefinitely());
+        asserter.execute(() -&gt; Mockito.when(mockablePersonRepository.count()).thenCallRealMethod());
+        asserter.assertEquals(() -&gt; mockablePersonRepository.count(), 0l);
 
         // Check that we called it 4 times
-        Mockito.verify(mockablePersonRepository, Mockito.times(4)).count();
+        asserter.execute(() -&gt; {
+            Mockito.verify(mockablePersonRepository, Mockito.times(4)).count();
+        });
 
         // Mock only with specific parameters
-        Person p = new Person();
-        Mockito.when(mockablePersonRepository.findById(12l)).thenReturn(Uni.createFrom().item(p));
-        Assertions.assertSame(p, mockablePersonRepository.findById(12l).await().indefinitely());
-        Assertions.assertNull(mockablePersonRepository.findById(42l).await().indefinitely());
+        asserter.execute(() -&gt; {
+            Person p = new Person();
+            Mockito.when(mockablePersonRepository.findById(12l)).thenReturn(Uni.createFrom().item(p));
+            asserter.putData(key, p);
+        });
+        asserter.assertThat(() -&gt; mockablePersonRepository.findById(12l), p -&gt; Assertions.assertSame(p, asserter.getData(key)));
+        asserter.assertNull(() -&gt; mockablePersonRepository.findById(42l));
 
         // Mock throwing
-        Mockito.when(mockablePersonRepository.findById(12l)).thenThrow(new WebApplicationException());
-        try {
-            mockablePersonRepository.findById(12l);
-            Assertions.fail();
-        } catch (WebApplicationException x) {
-        }
+        asserter.execute(() -&gt; Mockito.when(mockablePersonRepository.findById(12l)).thenThrow(new WebApplicationException()));
+        asserter.assertFailedWith(() -&gt; {
+            try {
+                return mockablePersonRepository.findById(12l);
+            } catch (Exception e) {
+                return Uni.createFrom().failure(e);
+            }
+        }, t -&gt; assertEquals(WebApplicationException.class, t.getClass()));
 
         // We can even mock your custom methods
-        Mockito.when(mockablePersonRepository.findOrdered()).thenReturn(Uni.createFrom().item(Collections.emptyList()));
-        Assertions.assertTrue(mockablePersonRepository.findOrdered().await().indefinitely().isEmpty());
+        asserter.execute(() -&gt; Mockito.when(mockablePersonRepository.findOrdered())
+                .thenReturn(Uni.createFrom().item(Collections.emptyList())));
+        asserter.assertThat(() -&gt; mockablePersonRepository.findOrdered(), list -&gt; list.isEmpty());
 
-        Mockito.verify(mockablePersonRepository).findOrdered();
-        Mockito.verify(mockablePersonRepository, Mockito.atLeastOnce()).findById(Mockito.any());
-        Mockito.verify(mockablePersonRepository).persist(Mockito.&lt;Person&gt; any());
-        Mockito.verifyNoMoreInteractions(mockablePersonRepository);
+        asserter.execute(() -&gt; {
+            Mockito.verify(mockablePersonRepository).findOrdered();
+            Mockito.verify(mockablePersonRepository, Mockito.atLeastOnce()).findById(Mockito.any());
+            Mockito.verify(mockablePersonRepository).persist(Mockito.&lt;Person&gt; any());
+            Mockito.verifyNoMoreInteractions(mockablePersonRepository);
+        });
+
+        // IMPORTANT: We need to execute the asserter within a reactive session
+        asserter.surroundWith(u -&gt; Panache.withSession(() -&gt; u));
     }
 }</code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Make sure the test method is run on the Vert.x event loop.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The injected <code>UniAsserter</code> agrument is used to make assertions.</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1727,21 +1809,41 @@ yourself, or add the <code>quarkus-panache-common</code> as well, as shown below
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -1750,15 +1852,29 @@ yourself, or add the <code>quarkus-panache-common</code> as well, as shown below
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1767,19 +1883,33 @@ yourself, or add the <code>quarkus-panache-common</code> as well, as shown below
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1788,13 +1918,21 @@ yourself, or add the <code>quarkus-panache-common</code> as well, as shown below
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1805,21 +1943,21 @@ yourself, or add the <code>quarkus-panache-common</code> as well, as shown below
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

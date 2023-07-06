@@ -9,7 +9,7 @@
   <title>Apache Kafka Reference Guide - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,66 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" selected>2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -202,6 +178,7 @@
 <li><a href="#error-handling">4.4. Error Handling Strategies</a></li>
 <li><a href="#consumer-groups">4.5. Consumer Groups</a></li>
 <li><a href="#receiving-kafka-records-in-batches">4.6. Receiving Kafka Records in Batches</a></li>
+<li><a href="#stateful-processing-checkpointing">4.7. Stateful processing with Checkpointing</a></li>
 </ul>
 </li>
 <li><a href="#sending-messages-to-kafka">5. Sending messages to Kafka</a>
@@ -258,35 +235,36 @@
 <li><a href="#redpanda-transactions">18.6. Transactional and Idempotent producers support</a></li>
 </ul>
 </li>
-<li><a href="#kubernetes-service-bindings">19. Kubernetes Service Bindings</a></li>
-<li><a href="#execution-model">20. Execution model</a></li>
-<li><a href="#channel-decorators">21. Channel Decorators</a></li>
-<li><a href="#kafka-configuration">22. Configuration Reference</a>
+<li><a href="#kafka-dev-ui">19. Kafka Dev UI</a></li>
+<li><a href="#kubernetes-service-bindings">20. Kubernetes Service Bindings</a></li>
+<li><a href="#execution-model">21. Execution model</a></li>
+<li><a href="#channel-decorators">22. Channel Decorators</a></li>
+<li><a href="#kafka-configuration">23. Configuration Reference</a>
 <ul class="sectlevel2">
-<li><a href="#incoming-channel-configuration-polling-from-kafka">22.1. Incoming channel configuration (polling from Kafka)</a></li>
-<li><a href="#outgoing-channel-configuration-writing-to-kafka">22.2. Outgoing channel configuration (writing to Kafka)</a></li>
-<li><a href="#kafka-configuration-resolution">22.3. Kafka Configuration Resolution</a></li>
+<li><a href="#incoming-channel-configuration-polling-from-kafka">23.1. Incoming channel configuration (polling from Kafka)</a></li>
+<li><a href="#outgoing-channel-configuration-writing-to-kafka">23.2. Outgoing channel configuration (writing to Kafka)</a></li>
+<li><a href="#kafka-configuration-resolution">23.3. Kafka Configuration Resolution</a></li>
 </ul>
 </li>
-<li><a href="#integrating-with-kafka-common-patterns">23. Integrating with Kafka - Common patterns</a>
+<li><a href="#integrating-with-kafka-common-patterns">24. Integrating with Kafka - Common patterns</a>
 <ul class="sectlevel2">
-<li><a href="#writing-to-kafka-from-an-http-endpoint">23.1. Writing to Kafka from an HTTP endpoint</a></li>
-<li><a href="#persisting-kafka-messages-with-hibernate-with-panache">23.2. Persisting Kafka messages with Hibernate with Panache</a></li>
-<li><a href="#persisting-kafka-messages-with-hibernate-reactive">23.3. Persisting Kafka messages with Hibernate Reactive</a></li>
-<li><a href="#writing-entities-managed-by-hibernate-to-kafka">23.4. Writing entities managed by Hibernate to Kafka</a></li>
-<li><a href="#writing-entities-managed-by-hibernate-reactive-to-kafka">23.5. Writing entities managed by Hibernate Reactive to Kafka</a></li>
-<li><a href="#streaming-kafka-topics-as-server-sent-events">23.6. Streaming Kafka topics as server-sent events</a></li>
-<li><a href="#chaining-kafka-transactions-with-hibernate-reactive-transactions">23.7. Chaining Kafka Transactions with Hibernate Reactive transactions</a></li>
+<li><a href="#writing-to-kafka-from-an-http-endpoint">24.1. Writing to Kafka from an HTTP endpoint</a></li>
+<li><a href="#persisting-kafka-messages-with-hibernate-with-panache">24.2. Persisting Kafka messages with Hibernate with Panache</a></li>
+<li><a href="#persisting-kafka-messages-with-hibernate-reactive">24.3. Persisting Kafka messages with Hibernate Reactive</a></li>
+<li><a href="#writing-entities-managed-by-hibernate-to-kafka">24.4. Writing entities managed by Hibernate to Kafka</a></li>
+<li><a href="#writing-entities-managed-by-hibernate-reactive-to-kafka">24.5. Writing entities managed by Hibernate Reactive to Kafka</a></li>
+<li><a href="#streaming-kafka-topics-as-server-sent-events">24.6. Streaming Kafka topics as server-sent events</a></li>
+<li><a href="#chaining-kafka-transactions-with-hibernate-reactive-transactions">24.7. Chaining Kafka Transactions with Hibernate Reactive transactions</a></li>
 </ul>
 </li>
-<li><a href="#logging">24. Logging</a></li>
-<li><a href="#connecting-to-managed-kafka-clusters">25. Connecting to Managed Kafka clusters</a>
+<li><a href="#logging">25. Logging</a></li>
+<li><a href="#connecting-to-managed-kafka-clusters">26. Connecting to Managed Kafka clusters</a>
 <ul class="sectlevel2">
-<li><a href="#azure-event-hub">25.1. Azure Event Hub</a></li>
-<li><a href="#red-hat-openshift-streams-for-apache-kafka">25.2. Red Hat OpenShift Streams for Apache Kafka</a></li>
+<li><a href="#azure-event-hub">26.1. Azure Event Hub</a></li>
+<li><a href="#red-hat-openshift-streams-for-apache-kafka">26.2. Red Hat OpenShift Streams for Apache Kafka</a></li>
 </ul>
 </li>
-<li><a href="#going-further">26. Going further</a></li>
+<li><a href="#going-further">27. Going further</a></li>
 </ul></div>
     <div>
       <div id="preamble">
@@ -490,7 +468,7 @@ Quarkus automatically associates <em>orphan</em> channels to the (unique) connec
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.microprofile.reactive.messaging.Incoming;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class PriceConsumer {
@@ -564,13 +542,13 @@ public void consume(Record&lt;String, Double&gt; record) {
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.smallrye.mutiny.Multi;
-import io.smallrye.reactive.messaging.annotations.Channel;
+import org.eclipse.microprofile.reactive.messaging.Channel;
 
-import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 import org.jboss.resteasy.reactive.RestStreamElementType;
 
 @Path("/prices")
@@ -658,8 +636,8 @@ For this, you need to use the <code>@Blocking</code> annotation indicating that 
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.smallrye.reactive.messaging.annotations.Blocking;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.transaction.Transactional;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.transaction.Transactional;
 
 @ApplicationScoped
 public class PriceStorage {
@@ -785,10 +763,19 @@ However, not committing the offset often enough may lead to message duplication 
 This strategy guarantees at-least-once delivery even if the channel performs asynchronous processing.
 The connector tracks the received records and periodically (period specified by <code>auto.commit.interval.ms</code>, default: 5000 ms) commits the highest consecutive offset.
 The connector will be marked as unhealthy if a message associated with a record is not acknowledged in <code>throttled.unprocessed-record-max-age.ms</code> (default: 60000 ms).
-Indeed, this strategy cannot commit the offset as soon as a single record processing fails (see <a href="#error-handling">Error Handling Strategies</a> to configure what happens on failing processing).
+Indeed, this strategy cannot commit the offset as soon as a single record processing fails.
 If <code>throttled.unprocessed-record-max-age.ms</code> is set to less than or equal to <code>0</code>, it does not perform any health check verification.
 Such a setting might lead to running out of memory if there are "poison pill" messages (that are never acked).
 This strategy is the default if <code>enable.auto.commit</code> is not explicitly set to true.</p>
+</li>
+<li>
+<p><code>checkpoint</code> allows persisting consumer offsets on a <strong>state store</strong>, instead of committing them back to the Kafka broker.
+Using the <code>CheckpointMetadata</code> API, consumer code can persist a <em>processing state</em> with the record offset to mark the progress of a consumer.
+When the processing continues from a previously persisted offset, it seeks the Kafka consumer to that offset and also restores the persisted state, continuing the stateful processing from where it left off.
+The checkpoint strategy holds locally the processing state associated with the latest offset, and persists it periodically to the state store (period specified by <code>auto.commit.interval.ms</code> (default: 5000)).
+The connector will be marked as unhealthy if no processing state is persisted to the state store in <code>checkpoint.unsynced-state-max-age.ms</code> (default: 10000).
+If <code>checkpoint.unsynced-state-max-age.ms</code> is set to less than or equal to 0, it does not perform any health check verification.
+For more information, see <a href="#stateful-processing-checkpointing">Stateful processing with Checkpointing</a></p>
 </li>
 <li>
 <p><code>latest</code> commits the record offset received by the Kafka consumer as soon as the associated message is acknowledged (if the offset is higher than the previously committed offset).
@@ -1114,7 +1101,7 @@ import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.OffsetAndTimestamp;
 import org.apache.kafka.clients.consumer.TopicPartition;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -1162,7 +1149,7 @@ import io.smallrye.reactive.messaging.kafka.IncomingKafkaRecord;
 import org.eclipse.microprofile.reactive.messaging.Acknowledgment;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
@@ -1299,6 +1286,206 @@ You can configure batch mode explicitly with <code>mp.messaging.incoming.$channe
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="stateful-processing-checkpointing"><a class="anchor" href="#stateful-processing-checkpointing"></a>4.7. Stateful processing with Checkpointing</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>checkpoint</code> commit strategy is an experimental feature and can change in the future.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Smallrye Reactive Messaging <code>checkpoint</code> commit strategy allows consumer applications to process messages in a stateful manner, while also respecting Kafka consumer scalability.
+An incoming channel with <code>checkpoint</code> commit strategy persists consumer offsets on an external
+<a href="#state-stores">state store</a>, such as a relational database or a key-value store.
+As a result of processing consumed records, the consumer application can accumulate an internal state for each topic-partition assigned to the Kafka consumer.
+This local state will be periodically persisted to the state store and will be associated with the offset of the record that produced it.</p>
+</div>
+<div class="paragraph">
+<p>This strategy does not commit any offsets to the Kafka broker, so when new partitions get assigned to the consumer,
+i.e. consumer restarts or consumer group instances scale,
+the consumer resumes the processing from the latest <em>checkpointed</em> offset with its saved state.</p>
+</div>
+<div class="paragraph">
+<p>The <code>@Incoming</code> channel consumer code can manipulate the processing state through the <code>CheckpointMetadata</code> API.
+For example, a consumer calculating the moving average of prices received on a Kafka topic would look the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
+
+import java.util.concurrent.CompletionStage;
+
+import jakarta.enterprise.context.ApplicationScoped;
+
+import org.eclipse.microprofile.reactive.messaging.Incoming;
+import org.eclipse.microprofile.reactive.messaging.Message;
+
+import io.smallrye.reactive.messaging.kafka.KafkaRecord;
+import io.smallrye.reactive.messaging.kafka.commit.CheckpointMetadata;
+
+@ApplicationScoped
+public class MeanCheckpointConsumer {
+
+    @Incoming("prices")
+    public CompletionStage&lt;Void&gt; consume(Message&lt;Double&gt; record) {
+        // Get the `CheckpointMetadata` from the incoming message
+        CheckpointMetadata&lt;AveragePrice&gt; checkpoint = CheckpointMetadata.fromMessage(record);
+
+        // `CheckpointMetadata` allows transforming the processing state
+        // Applies the given function, starting from the value `0.0` when no previous state exists
+        checkpoint.transform(new AveragePrice(), average -&gt; average.update(record.getPayload()), /* persistOnAck */ true);
+
+        // `persistOnAck` flag set to true, ack will persist the processing state
+        // associated with the latest offset (per partition).
+        return record.ack();
+    }
+
+    static class AveragePrice {
+        long count;
+        double mean;
+
+        AveragePrice update(double newPrice) {
+            mean += ((newPrice - mean) / ++count);
+            return this;
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>transform</code> method applies the transformation function to the current state, producing a changed state and registering it locally for checkpointing.
+By default, the local state is persisted to the state store periodically, period specified by <code>auto.commit.interval.ms</code>, (default: 5000).
+If <code>persistOnAck</code> flag is given, the latest state is persisted to the state store eagerly on message acknowledgment.
+The <code>setNext</code> method works similarly directly setting the latest state.</p>
+</div>
+<div class="paragraph">
+<p>The checkpoint commit strategy tracks when a processing state is last persisted for each topic-partition.
+If an outstanding state change can not be persisted for <code>checkpoint.unsynced-state-max-age.ms</code> (default: 10000), the channel is marked unhealthy.</p>
+</div>
+<div class="sect3">
+<h4 id="state-stores"><a class="anchor" href="#state-stores"></a>4.7.1. State stores</h4>
+<div class="paragraph">
+<p>State store implementations determine where and how the processing states are persisted.
+This is configured by the <code>mp.messaging.incoming.[channel-name].checkpoint.state-store</code> property.
+The serialization of state objects depends on the state store implementation.
+In order to instruct state stores for serialization can require configuring the class name of state objects using <code>mp.messaging.incoming.[channel-name].checkpoint.state-type</code> property.</p>
+</div>
+<div class="paragraph">
+<p>Quarkus provides following state store implementations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quarkus-redis</code>: Uses the <a href="redis-reference"><code>quarkus-redis-client</code></a> extension to persist processing states.
+Jackson is used to serialize processing state in Json. For complex objects it is required to configure the <code>checkpoint.state-type</code> property with the class name of the object.
+By default, the state store uses the default redis client, but if a <a href="https://quarkus.io/guides/redis-reference#default-and-named-clients">named client</a> is to be used, the client name can be specified using the <code>mp.messaging.incoming.[channel-name].checkpoint.quarkus-redis.client-name</code> property.
+Processing states will be stored in Redis using the key naming scheme <code>[consumer-group-id]:[topic]:[partition]</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example the configuration of the previous code would be the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">mp.messaging.incoming.prices.group.id=prices-checkpoint
+# ...
+mp.messaging.incoming.prices.commit-strategy=checkpoint
+mp.messaging.incoming.prices.checkpoint.state-store=quarkus-redis
+mp.messaging.incoming.prices.checkpoint.state-type=org.acme.MeanCheckpointConsumer.AveragePrice
+# ...
+# if using a named redis client
+mp.messaging.incoming.prices.checkpoint.quarkus-redis.client-name=my-redis
+quarkus.redis.my-redis.hosts=redis://localhost:7000
+quarkus.redis.my-redis.password=&lt;redis-pwd&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quarkus-hibernate-reactive</code>: Uses the <a href="hibernate-reactive"><code>quarkus-hibernate-reactive</code></a> extension to persist processing states.
+Processing state objects are required to be a Jakarta Persistence entity and extend the <code>CheckpointEntity</code> class,
+which handles object identifiers composed of the consumer group id, topic and partition.
+Therefore, the class name of the entity needs to be configured using the <code>checkpoint.state-type</code> property.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example the configuration of the previous code would be the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">mp.messaging.incoming.prices.group.id=prices-checkpoint
+# ...
+mp.messaging.incoming.prices.commit-strategy=checkpoint
+mp.messaging.incoming.prices.checkpoint.state-store=quarkus-hibernate-reactive
+mp.messaging.incoming.prices.checkpoint.state-type=org.acme.AveragePriceEntity</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With <code>AveragePriceEntity</code> being a Jakarta Persistence entity extending <code>CheckpointEntity</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
+
+import jakarta.persistence.Entity;
+
+import io.quarkus.smallrye.reactivemessaging.kafka.CheckpointEntity;
+
+@Entity
+public class AveragePriceEntity extends CheckpointEntity {
+    public long count;
+    public double mean;
+
+    public AveragePriceEntity update(double newPrice) {
+        mean += ((newPrice - mean) / ++count);
+        return this;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quarkus-hibernate-orm</code>: Uses the <a href="hibernate-orm"><code>quarkus-hibernate-orm</code></a> extension to persist processing states.
+It is similar to the previous state store, but it uses Hibernate ORM instead of Hibernate Reactive.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When configured, it can use a named <code>persistence-unit</code> for the checkpointing state store:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">mp.messaging.incoming.prices.commit-strategy=checkpoint
+mp.messaging.incoming.prices.checkpoint.state-store=quarkus-hibernate-orm
+mp.messaging.incoming.prices.checkpoint.state-type=org.acme.AveragePriceEntity
+mp.messaging.incoming.prices.checkpoint.quarkus-hibernate-orm.persistence-unit=prices
+# ... Setup "prices" persistence unit
+quarkus.datasource."prices".db-kind=postgresql
+quarkus.datasource."prices".username=&lt;your username&gt;
+quarkus.datasource."prices".password=&lt;your password&gt;
+quarkus.datasource."prices".jdbc.url=jdbc:postgresql://localhost:5432/hibernate_orm_test
+quarkus.hibernate-orm."prices".datasource=prices
+quarkus.hibernate-orm."prices".packages=org.acme</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For instructions on how to implement custom state stores,
+see <a href="https://smallrye.io/smallrye-reactive-messaging/3.22.0/kafka/receiving-kafka-records/#implementing-state-stores">Implementing State Stores</a>.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1356,7 +1543,7 @@ It can use <code>double</code> payloads as in the following snippet:</p>
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.smallrye.mutiny.Multi;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.time.Duration;
 import java.util.Random;
 
@@ -1464,11 +1651,11 @@ In this case, you cannot use <code>@Outgoing</code> because your method has para
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 
-import javax.inject.Inject;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.core.MediaType;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/prices")
 public class PriceResource {
@@ -1529,11 +1716,11 @@ It lets you configure the size of the queue (default is 256) and the strategy to
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 
-import javax.inject.Inject;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.core.MediaType;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/prices")
 public class PriceResource {
@@ -1564,11 +1751,11 @@ You can therefore use Mutiny APIs for handling downstream messages and errors.</
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.microprofile.reactive.messaging.Channel;
 
-import javax.inject.Inject;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.core.MediaType;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.core.MediaType;
 
 import io.smallrye.reactive.messaging.MutinyEmitter;
 
@@ -1763,7 +1950,7 @@ You can override this behavior by setting <code>mp.messaging.$channel.broadcast=
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.util.Random;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
@@ -1819,7 +2006,7 @@ It can be injected as a regular emitter <code>@Channel</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.enterprise.context.ApplicationScoped;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.enterprise.context.ApplicationScoped;
 
 import org.eclipse.microprofile.reactive.messaging.Channel;
 
@@ -1917,7 +2104,7 @@ A processor method can be simply implemented using both the <code>@Incoming</cod
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class PriceProcessor {
@@ -1942,7 +2129,7 @@ Previously mentioned signatures for parameter and return types are also supporte
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.enterprise.context.ApplicationScoped;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.enterprise.context.ApplicationScoped;
 
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
@@ -1991,7 +2178,7 @@ This enables coupling a consumer with a transactional producer in a <em>consume-
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.enterprise.context.ApplicationScoped;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.enterprise.context.ApplicationScoped;
 
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Incoming;
@@ -2085,9 +2272,9 @@ Configuring <code>failure-strategy=ignore</code> simply resets the Kafka consume
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.event.Observes;
-import javax.inject.Inject;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.event.Observes;
+import jakarta.inject.Inject;
 
 import org.apache.kafka.clients.producer.ProducerRecord;
 
@@ -2134,9 +2321,9 @@ import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.KafkaAdminClient;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Produces;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Produces;
+import jakarta.inject.Inject;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -2202,7 +2389,7 @@ For more configuration options check out <a href="#kafka-configuration-resolutio
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 import org.eclipse.microprofile.reactive.messaging.Outgoing;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
 /**
 * A bean consuming data from the "fruit-in" channel and applying some price conversion.
@@ -3214,17 +3401,35 @@ You can set the port by configuring the <code>quarkus.kafka.devservices.port</co
 <div class="sect2">
 <h3 id="configuring-the-image"><a class="anchor" href="#configuring-the-image"></a>18.4. Configuring the image</h3>
 <div class="paragraph">
-<p>Dev Services for Kafka supports <a href="https://redpanda.com">Redpanda</a> and <a href="https://strimzi.io">Strimzi</a> (in <a href="https://github.com/apache/kafka/blob/trunk/config/kraft/README.md">Kraft</a> mode).</p>
+<p>Dev Services for Kafka supports <a href="https://redpanda.com">Redpanda</a>, <a href="https://github/ozangunalp/kafka-native">kafka-native</a>
+and <a href="https://strimzi.io">Strimzi</a> (in <a href="https://github.com/apache/kafka/blob/trunk/config/kraft/README.md">Kraft</a> mode)  images.</p>
 </div>
 <div class="paragraph">
-<p>Redpanda is a Kafka compatible event streaming platform.
-Because it provides a faster startup time dev services defaults to <code>vectorized/redpanda</code> images.
+<p><strong>Redpanda</strong> is a Kafka compatible event streaming platform.
+Because it provides a fast startup times, dev services defaults to Redpanda images from <code>vectorized/redpanda</code>.
 You can select any version from <a href="https://hub.docker.com/r/vectorized/redpanda" class="bare">https://hub.docker.com/r/vectorized/redpanda</a>.</p>
 </div>
 <div class="paragraph">
-<p>Strimzi provides container images and Operators for running Apache Kafka on Kubernetes.
+<p><strong>kafka-native</strong> provides images of standard Apache Kafka distribution compiled to native binary using Quarkus and GraalVM.
+While still being <em>experimental</em>, it provides very fast startup times with small footprint.</p>
+</div>
+<div class="paragraph">
+<p>Image type can be configured using</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.kafka.devservices.provider=kafka-native</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Strimzi</strong> provides container images and Operators for running Apache Kafka on Kubernetes.
 While Strimzi is optimized for Kubernetes, the images work perfectly in classic container environments.
 Strimzi container images run "genuine" Kafka broker on JVM, which is slower to start.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.kafka.devservices.provider=strimzi</code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>For Strimzi, you can select any image with a Kafka version which has Kraft support (2.8.1 and higher) from <a href="https://quay.io/repository/strimzi-test-container/test-container?tab=tags" class="bare">https://quay.io/repository/strimzi-test-container/test-container?tab=tags</a></p>
@@ -3285,7 +3490,58 @@ Redpanda transactions does not support exactly-once processing.
 </div>
 </div>
 <div class="sect1">
-<h2 id="kubernetes-service-bindings"><a class="anchor" href="#kubernetes-service-bindings"></a>19. Kubernetes Service Bindings</h2>
+<h2 id="kafka-dev-ui"><a class="anchor" href="#kafka-dev-ui"></a>19. Kafka Dev UI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If any Kafka-related extension is present (e.g. <code>quarkus-smallrye-reactive-messaging-kafka</code>),
+the Quarkus Dev UI is extended with a Kafka broker management UI.
+It is connected automatically to the Kafka broker configured for the application.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="/guides/images/kafka-dev-ui-link.png" alt="Kafka Dev UI link" width="25%">
+</div>
+</div>
+<div class="paragraph">
+<p>With the <strong>Kafka Dev UI</strong>, you can directly manage your Kafka cluster and perform tasks, such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Listing and creating topics</p>
+</li>
+<li>
+<p>Visualizing records</p>
+</li>
+<li>
+<p>Publishing new records</p>
+</li>
+<li>
+<p>Inspecting the list of consumer groups and their consumption lag</p>
+</li>
+</ul>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="/guides/images/kafka-dev-ui-records.png" alt="Kafka Dev UI records" width="80%">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Kafka Dev UI is part of the Quarkus Dev UI and is only available in development mode.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="kubernetes-service-bindings"><a class="anchor" href="#kubernetes-service-bindings"></a>20. Kubernetes Service Bindings</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Quarkus Kafka extension supports
@@ -3298,7 +3554,7 @@ You can enable this by adding the <code>quarkus-kubernetes-service-binding</code
 </div>
 </div>
 <div class="sect1">
-<h2 id="execution-model"><a class="anchor" href="#execution-model"></a>20. Execution model</h2>
+<h2 id="execution-model"><a class="anchor" href="#execution-model"></a>21. Execution model</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Reactive Messaging invokes user&#8217;s methods on an I/O thread.
@@ -3311,7 +3567,7 @@ As described in <a href="#blocking-processing">Blocking processing</a>, you need
 </div>
 </div>
 <div class="sect1">
-<h2 id="channel-decorators"><a class="anchor" href="#channel-decorators"></a>21. Channel Decorators</h2>
+<h2 id="channel-decorators"><a class="anchor" href="#channel-decorators"></a>22. Channel Decorators</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>SmallRye Reactive Messaging supports decorating incoming and outgoing channels for implementing cross-cutting concerns such as monitoring, tracing or message interception. For more information on implementing decorators and message interceptors see the <a href="http://smallrye.io/smallrye-reactive-messaging/3.19.1/concepts/decorators/">SmallRye Reactive Messaging documentation</a>.</p>
@@ -3319,7 +3575,7 @@ As described in <a href="#blocking-processing">Blocking processing</a>, you need
 </div>
 </div>
 <div class="sect1">
-<h2 id="kafka-configuration"><a class="anchor" href="#kafka-configuration"></a>22. Configuration Reference</h2>
+<h2 id="kafka-configuration"><a class="anchor" href="#kafka-configuration"></a>23. Configuration Reference</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>More details about the SmallRye Reactive Messaging configuration can be found in the <a href="https://smallrye.io/smallrye-reactive-messaging/latest/kafka/kafka/#using-the-kafka-connector">SmallRye Reactive Messaging - Kafka Connector Documentation</a>.</p>
@@ -3347,7 +3603,7 @@ As described in <a href="#blocking-processing">Blocking processing</a>, you need
 <p>The most important attributes are listed in the tables below:</p>
 </div>
 <div class="sect2">
-<h3 id="incoming-channel-configuration-polling-from-kafka"><a class="anchor" href="#incoming-channel-configuration-polling-from-kafka"></a>22.1. Incoming channel configuration (polling from Kafka)</h3>
+<h3 id="incoming-channel-configuration-polling-from-kafka"><a class="anchor" href="#incoming-channel-configuration-polling-from-kafka"></a>23.1. Incoming channel configuration (polling from Kafka)</h3>
 <div class="paragraph">
 <p>The following attributes are configured using:</p>
 </div>
@@ -3393,7 +3649,7 @@ As described in <a href="#blocking-processing">Blocking processing</a>, you need
 <p>If a <code>client.id</code> is provided, it is used as-is or suffixed with client index if <code>partitions</code> property is set.</p>
 </li>
 <li>
-<p>If a <code>client.id</code> is not provided, it is generated as <code>kafka-consumer-[channel][-index]</code>.</p>
+<p>If a <code>client.id</code> is not provided, it is generated as <code>[client-id-prefix][channel-name][-index]</code>.</p>
 </li>
 </ul>
 </div>
@@ -3479,6 +3735,34 @@ As described in <a href="#blocking-processing">Blocking processing</a>, you need
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>true</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="no-hyphens"><strong>client-id-prefix</strong></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix for Kafka client <code>client.id</code> attribute. If defined configured or generated <code>client.id</code> will be prefixed with the given value, otherwise <code>kafka-consumer-</code> is the prefix.</p>
+<p class="tableblock">Type: <em>string</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="no-hyphens"><strong>checkpoint.state-store</strong></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">While using the <code>checkpoint</code> commit-strategy, the name set in <code>@Identifier</code> of a bean that implements <code>io.smallrye.reactive.messaging.kafka.StateStore.Factory</code> to specify the state store implementation.</p>
+<p class="tableblock">Type: <em>string</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="no-hyphens"><strong>checkpoint.state-type</strong></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">While using the <code>checkpoint</code> commit-strategy, the fully qualified type name of the state object to persist in the state store. When provided, it can be used by the state store implementation to help persisting the processing state object.</p>
+<p class="tableblock">Type: <em>string</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="no-hyphens"><strong>checkpoint.unsynced-state-max-age.ms</strong></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">While using the <code>checkpoint</code> commit-strategy, specify the max age in milliseconds that the processing state must be persisted before the connector is marked as unhealthy. Setting this attribute to <code>0</code> disables this monitoring.</p>
+<p class="tableblock">Type: <em>int</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>10000</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="no-hyphens"><strong>cloud-events</strong></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enables (default) or disables the Cloud Event support. If enabled on an <em>incoming</em> channel, the connector analyzes the incoming records and try to create Cloud Event metadata. If enabled on an <em>outgoing</em>, the connector sends the outgoing messages as Cloud Event if the message includes Cloud Event Metadata.</p>
 <p class="tableblock">Type: <em>boolean</em></p></td>
@@ -3512,6 +3796,13 @@ As described in <a href="#blocking-processing">Blocking processing</a>, you need
 <p class="tableblock">Type: <em>string</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.apache.kafka.common.serialization.StringDeserializer</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="no-hyphens"><strong>lazy-client</strong></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether Kafka client is created lazily or eagerly.</p>
+<p class="tableblock">Type: <em>boolean</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="no-hyphens"><strong>value.deserializer</strong></span></p></td>
@@ -3703,7 +3994,7 @@ You can explicitly ask for automatically generated unique id by setting this pro
 </table>
 </div>
 <div class="sect2">
-<h3 id="outgoing-channel-configuration-writing-to-kafka"><a class="anchor" href="#outgoing-channel-configuration-writing-to-kafka"></a>22.2. Outgoing channel configuration (writing to Kafka)</h3>
+<h3 id="outgoing-channel-configuration-writing-to-kafka"><a class="anchor" href="#outgoing-channel-configuration-writing-to-kafka"></a>23.2. Outgoing channel configuration (writing to Kafka)</h3>
 <div class="paragraph">
 <p>The following attributes are configured using:</p>
 </div>
@@ -3741,7 +4032,7 @@ You can explicitly ask for automatically generated unique id by setting this pro
 <p>If not set, <code>key.serializer</code> is set to <code>org.apache.kafka.common.serialization.StringSerializer</code>.</p>
 </div>
 <div class="paragraph">
-<p>If not set, producer <code>client.id</code> is generated as <code>kafka-producer-[channel]</code>.</p>
+<p>If not set, producer <code>client.id</code> is generated as <code>[client-id-prefix][channel-name]</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. Outgoing Attributes of the 'smallrye-kafka' connector</caption>
@@ -3774,6 +4065,13 @@ You can explicitly ask for automatically generated unique id by setting this pro
 <p class="tableblock">Type: <em>string</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>localhost:9092</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="no-hyphens"><strong>client-id-prefix</strong></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix for Kafka client <code>client.id</code> attribute. If defined configured or generated <code>client.id</code> will be prefixed with the given value, otherwise <code>kafka-producer-</code> is the prefix.</p>
+<p class="tableblock">Type: <em>string</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="no-hyphens"><strong>buffer.memory</strong></span></p></td>
@@ -3922,6 +4220,13 @@ You can explicitly ask for automatically generated unique id by setting this pro
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.apache.kafka.common.serialization.StringSerializer</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="no-hyphens"><strong>lazy-client</strong></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether Kafka client is created lazily or eagerly.</p>
+<p class="tableblock">Type: <em>boolean</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="no-hyphens"><strong>max-inflight-messages</strong></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The maximum number of messages to be written to Kafka concurrently. It limits the number of messages waiting to be written and acknowledged by the broker. You can set this attribute to <code>0</code> remove the limit</p>
 <p class="tableblock">Type: <em>long</em></p></td>
@@ -4002,7 +4307,7 @@ You can explicitly ask for automatically generated unique id by setting this pro
 </table>
 </div>
 <div class="sect2">
-<h3 id="kafka-configuration-resolution"><a class="anchor" href="#kafka-configuration-resolution"></a>22.3. Kafka Configuration Resolution</h3>
+<h3 id="kafka-configuration-resolution"><a class="anchor" href="#kafka-configuration-resolution"></a>23.3. Kafka Configuration Resolution</h3>
 <div class="paragraph">
 <p>Quarkus exposes all Kafka related application properties, prefixed with <code>kafka.</code> or <code>KAFKA_</code> inside a configuration map with <code>default-kafka-broker</code> name.
 This configuration is used to establish the connection with the Kafka broker.</p>
@@ -4064,10 +4369,10 @@ If <code>kafka-configuration</code> is set and no <code>Map</code> can be found,
 </div>
 </div>
 <div class="sect1">
-<h2 id="integrating-with-kafka-common-patterns"><a class="anchor" href="#integrating-with-kafka-common-patterns"></a>23. Integrating with Kafka - Common patterns</h2>
+<h2 id="integrating-with-kafka-common-patterns"><a class="anchor" href="#integrating-with-kafka-common-patterns"></a>24. Integrating with Kafka - Common patterns</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="writing-to-kafka-from-an-http-endpoint"><a class="anchor" href="#writing-to-kafka-from-an-http-endpoint"></a>23.1. Writing to Kafka from an HTTP endpoint</h3>
+<h3 id="writing-to-kafka-from-an-http-endpoint"><a class="anchor" href="#writing-to-kafka-from-an-http-endpoint"></a>24.1. Writing to Kafka from an HTTP endpoint</h3>
 <div class="paragraph">
 <p>To send messages to Kafka from an HTTP endpoint, inject an <code>Emitter</code> (or a <code>MutinyEmitter</code>) in your endpoint:</p>
 </div>
@@ -4077,10 +4382,10 @@ If <code>kafka-configuration</code> is set and no <code>Map</code> can be found,
 
 import java.util.concurrent.CompletionStage;
 
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
@@ -4142,10 +4447,10 @@ If the writing fails, the returned <code>CompletionStage</code> is completed exc
 
 import java.util.concurrent.CompletionStage;
 
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
@@ -4180,7 +4485,7 @@ public class ResourceSendingToKafka {
 </div>
 </div>
 <div class="sect2">
-<h3 id="persisting-kafka-messages-with-hibernate-with-panache"><a class="anchor" href="#persisting-kafka-messages-with-hibernate-with-panache"></a>23.2. Persisting Kafka messages with Hibernate with Panache</h3>
+<h3 id="persisting-kafka-messages-with-hibernate-with-panache"><a class="anchor" href="#persisting-kafka-messages-with-hibernate-with-panache"></a>24.2. Persisting Kafka messages with Hibernate with Panache</h3>
 <div class="paragraph">
 <p>To persist objects received from Kafka into a database, you can use Hibernate with Panache.</p>
 </div>
@@ -4204,7 +4509,7 @@ For simplicity purposes, our <code>Fruit</code> class is pretty simple:</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
 
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
@@ -4223,8 +4528,8 @@ public class Fruit extends PanacheEntity {
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.transaction.Transactional;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.transaction.Transactional;
 
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 
@@ -4294,7 +4599,7 @@ You can also use Avro.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="persisting-kafka-messages-with-hibernate-reactive"><a class="anchor" href="#persisting-kafka-messages-with-hibernate-reactive"></a>23.3. Persisting Kafka messages with Hibernate Reactive</h3>
+<h3 id="persisting-kafka-messages-with-hibernate-reactive"><a class="anchor" href="#persisting-kafka-messages-with-hibernate-reactive"></a>24.3. Persisting Kafka messages with Hibernate Reactive</h3>
 <div class="paragraph">
 <p>To persist objects received from Kafka into a database, you can use Hibernate Reactive with Panache.</p>
 </div>
@@ -4306,7 +4611,7 @@ For simplicity purposes, our <code>Fruit</code> class is pretty simple:</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
 
-import javax.persistence.Entity;
+import jakarta.persistence.Entity;
 
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;  <i class="conum" data-value="1"></i><b>(1)</b>
 
@@ -4333,7 +4638,8 @@ public class Fruit extends PanacheEntity {
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
 
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.control.ActivateRequestContext;
 
 import org.eclipse.microprofile.reactive.messaging.Incoming;
 
@@ -4347,11 +4653,12 @@ public class FruitStore {
     Mutiny.Session session;                    <i class="conum" data-value="1"></i><b>(1)</b>
 
     @Incoming("in")
+    @ActivateRequestContext <i class="conum" data-value="2"></i><b>(2)</b>
     public Uni&lt;Void&gt; consume(Fruit entity) {
-        return session.withTransaction(t -&gt; {  <i class="conum" data-value="2"></i><b>(2)</b>
-            return entity.persistAndFlush()    <i class="conum" data-value="3"></i><b>(3)</b>
-                    .replaceWithVoid();        <i class="conum" data-value="4"></i><b>(4)</b>
-        }).onTermination().call(() -&gt; session.close()); <i class="conum" data-value="5"></i><b>(5)</b>
+        return session.withTransaction(t -&gt; {  <i class="conum" data-value="3"></i><b>(3)</b>
+            return entity.persistAndFlush()    <i class="conum" data-value="4"></i><b>(4)</b>
+                    .replaceWithVoid();        <i class="conum" data-value="5"></i><b>(5)</b>
+        }).onTermination().call(() -&gt; session.close()); <i class="conum" data-value="6"></i><b>(6)</b>
     }
 
 }</code></pre>
@@ -4365,18 +4672,24 @@ public class FruitStore {
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Requests a new transaction. The transaction completes when the passed action completes.</td>
+<td>Hibernate Reactive <code>Session</code> and <code>Panache</code> APIs require an active CDI Request context.
+<code>@ActivateRequestContext</code> annotation creates a new request context and destroys it when the <code>Uni</code> returned from the method completes.
+If <code>Panache</code> is not used, <code>Mutiny.SessionFactory</code> can be injected and used similarly without the need of activating the request context or closing the session manually.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Persist the entity. It returns a <code>Uni&lt;Fruit&gt;</code>.</td>
+<td>Requests a new transaction. The transaction completes when the passed action completes.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Switch back to a <code>Uni&lt;Void&gt;</code>.</td>
+<td>Persist the entity. It returns a <code>Uni&lt;Fruit&gt;</code>.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Switch back to a <code>Uni&lt;Void&gt;</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
 <td>Close the session - this is close the connection with the database. The connection can then be recycled.</td>
 </tr>
 </table>
@@ -4418,7 +4731,7 @@ You can also use Avro.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="writing-entities-managed-by-hibernate-to-kafka"><a class="anchor" href="#writing-entities-managed-by-hibernate-to-kafka"></a>23.4. Writing entities managed by Hibernate to Kafka</h3>
+<h3 id="writing-entities-managed-by-hibernate-to-kafka"><a class="anchor" href="#writing-entities-managed-by-hibernate-to-kafka"></a>24.4. Writing entities managed by Hibernate to Kafka</h3>
 <div class="paragraph">
 <p>Let&#8217;s imagine the following process:</p>
 </div>
@@ -4466,9 +4779,9 @@ Otherwise, you may access the object outside the transaction, which is not allow
 
 import java.util.concurrent.CompletionStage;
 
-import javax.transaction.Transactional;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import jakarta.transaction.Transactional;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
 
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
@@ -4483,7 +4796,7 @@ public class ResourceSendingToKafka {
     @Transactional                                                      <i class="conum" data-value="1"></i><b>(1)</b>
     public CompletionStage&lt;Void&gt; storeAndSendToKafka(Fruit fruit) {     <i class="conum" data-value="2"></i><b>(2)</b>
         fruit.persist();
-        return emitter.send(fruit);                                     <i class="conum" data-value="3"></i><b>(3)</b>
+        return emitter.send(new FruitDto(fruit));                       <i class="conum" data-value="3"></i><b>(3)</b>
     }
 }</code></pre>
 </div>
@@ -4500,13 +4813,14 @@ public class ResourceSendingToKafka {
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Send the managed instance to Kafka. Make sure we wait for the message to complete before closing the transaction.</td>
+<td>Wrap the managed entity inside a Data transfer object and send it to Kafka.
+This makes sure that managed entity is not impacted by the Kafka serialization.</td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="writing-entities-managed-by-hibernate-reactive-to-kafka"><a class="anchor" href="#writing-entities-managed-by-hibernate-reactive-to-kafka"></a>23.5. Writing entities managed by Hibernate Reactive to Kafka</h3>
+<h3 id="writing-entities-managed-by-hibernate-reactive-to-kafka"><a class="anchor" href="#writing-entities-managed-by-hibernate-reactive-to-kafka"></a>24.5. Writing entities managed by Hibernate Reactive to Kafka</h3>
 <div class="paragraph">
 <p>To send to Kafka entities managed by Hibernate Reactive, we recommend using:</p>
 </div>
@@ -4527,8 +4841,8 @@ public class ResourceSendingToKafka {
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
 
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
 
 import org.eclipse.microprofile.reactive.messaging.Channel;
 
@@ -4574,7 +4888,7 @@ public class ReactiveGreetingResource {
 </div>
 </div>
 <div class="sect2">
-<h3 id="streaming-kafka-topics-as-server-sent-events"><a class="anchor" href="#streaming-kafka-topics-as-server-sent-events"></a>23.6. Streaming Kafka topics as server-sent events</h3>
+<h3 id="streaming-kafka-topics-as-server-sent-events"><a class="anchor" href="#streaming-kafka-topics-as-server-sent-events"></a>24.6. Streaming Kafka topics as server-sent events</h3>
 <div class="paragraph">
 <p>Streaming a Kafka topic as server-sent events (SSE) is straightforward:</p>
 </div>
@@ -4645,7 +4959,7 @@ To achieve this we merge the stream coming from Kafka and a periodic stream emit
 </div>
 </div>
 <div class="sect2">
-<h3 id="chaining-kafka-transactions-with-hibernate-reactive-transactions"><a class="anchor" href="#chaining-kafka-transactions-with-hibernate-reactive-transactions"></a>23.7. Chaining Kafka Transactions with Hibernate Reactive transactions</h3>
+<h3 id="chaining-kafka-transactions-with-hibernate-reactive-transactions"><a class="anchor" href="#chaining-kafka-transactions-with-hibernate-reactive-transactions"></a>24.7. Chaining Kafka Transactions with Hibernate Reactive transactions</h3>
 <div class="paragraph">
 <p>By chaining a Kafka transaction with a Hibernate Reactive transaction you can send records to a Kafka transaction,
 perform database updates and commit the Kafka transaction only if the database transaction is successful.</p>
@@ -4676,10 +4990,10 @@ perform database updates and commit the Kafka transaction only if the database t
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.faulttolerance.Bulkhead;
 import org.eclipse.microprofile.reactive.messaging.Channel;
@@ -4751,11 +5065,11 @@ If you wish to commit the Kafka transaction first and the database transaction s
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.core.MediaType;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.inject.Inject;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.faulttolerance.Bulkhead;
 import org.eclipse.microprofile.reactive.messaging.Channel;
@@ -4821,7 +5135,7 @@ We need to switch to the Vert.x context previously captured in order to terminat
 </div>
 </div>
 <div class="sect1">
-<h2 id="logging"><a class="anchor" href="#logging"></a>24. Logging</h2>
+<h2 id="logging"><a class="anchor" href="#logging"></a>25. Logging</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To reduce the amount of log written by the Kafka client, Quarkus sets the level of the following log categories to <code>WARNING</code>:</p>
@@ -4852,13 +5166,13 @@ quarkus.log.category."org.apache.kafka.common.metrics".level=INFO</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="connecting-to-managed-kafka-clusters"><a class="anchor" href="#connecting-to-managed-kafka-clusters"></a>25. Connecting to Managed Kafka clusters</h2>
+<h2 id="connecting-to-managed-kafka-clusters"><a class="anchor" href="#connecting-to-managed-kafka-clusters"></a>26. Connecting to Managed Kafka clusters</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section explains how to connect to notorious Kafka Cloud Services.</p>
 </div>
 <div class="sect2">
-<h3 id="azure-event-hub"><a class="anchor" href="#azure-event-hub"></a>25.1. Azure Event Hub</h3>
+<h3 id="azure-event-hub"><a class="anchor" href="#azure-event-hub"></a>26.1. Azure Event Hub</h3>
 <div class="paragraph">
 <p><a href="https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview">Azure Event Hub</a> provides an endpoint compatible with Apache Kafka.</p>
 </div>
@@ -4936,7 +5250,7 @@ mp.messaging.incoming.$channel.sasl.jaas.config=org.apache.kafka.common.security
 </div>
 </div>
 <div class="sect2">
-<h3 id="red-hat-openshift-streams-for-apache-kafka"><a class="anchor" href="#red-hat-openshift-streams-for-apache-kafka"></a>25.2. Red Hat OpenShift Streams for Apache Kafka</h3>
+<h3 id="red-hat-openshift-streams-for-apache-kafka"><a class="anchor" href="#red-hat-openshift-streams-for-apache-kafka"></a>26.2. Red Hat OpenShift Streams for Apache Kafka</h3>
 <div class="paragraph">
 <p><a href="https://cloud.redhat.com/">Red Hat OpenShift Streams for Apache Kafka</a> provides managed Kafka brokers.
 First, follow the instructions from <a href="https://access.redhat.com/documentation/en-us/red_hat_openshift_streams_for_apache_kafka/1/guide/88e1487a-2a14-4b35-85b9-a7a2d67a37f3">Getting started with the <code>rhoas</code> CLI for Red Hat OpenShift Streams for Apache Kafka</a> to create your Kafka broker instance.
@@ -5019,7 +5333,7 @@ stringData:
 </div>
 </div>
 <div class="sect3">
-<h4 id="red-hat-openshift-service-registry"><a class="anchor" href="#red-hat-openshift-service-registry"></a>25.2.1. Red Hat OpenShift Service Registry</h4>
+<h4 id="red-hat-openshift-service-registry"><a class="anchor" href="#red-hat-openshift-service-registry"></a>26.2.1. Red Hat OpenShift Service Registry</h4>
 <div class="paragraph">
 <p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-service-registry">Red Hat OpenShift Service Registry</a>
 provides fully managed service registry for handling Kafka schemas.</p>
@@ -5080,7 +5394,7 @@ mp.messaging.connector.smallrye-kafka.apicurio.auth.client.secret=${RHOAS_CLIENT
 </div>
 </div>
 <div class="sect3">
-<h4 id="binding-red-hat-openshift-managed-services-to-quarkus-application-using-the-service-binding-operator"><a class="anchor" href="#binding-red-hat-openshift-managed-services-to-quarkus-application-using-the-service-binding-operator"></a>25.2.2. Binding Red Hat OpenShift managed services to Quarkus application using the Service Binding Operator</h4>
+<h4 id="binding-red-hat-openshift-managed-services-to-quarkus-application-using-the-service-binding-operator"><a class="anchor" href="#binding-red-hat-openshift-managed-services-to-quarkus-application-using-the-service-binding-operator"></a>26.2.2. Binding Red Hat OpenShift managed services to Quarkus application using the Service Binding Operator</h4>
 <div class="paragraph">
 <p>If your Quarkus application is deployed on a Kubernetes or OpenShift cluster with <a href="https://github.com/redhat-developer/service-binding-operator">Service Binding Operator</a> and <a href="https://github.com/redhat-developer/app-services-operator/tree/main/docs">OpenShift Application Services</a> operators installed,
 configurations necessary to access Red Hat OpenShift Streams for Apache Kafka and Service Registry can be injected to the application using <a href="deploying-to-kubernetes#service_binding">Kubernetes Service Binding</a>.</p>
@@ -5160,7 +5474,7 @@ The configuration properties necessary to access the Kafka and Schema Registry i
 </div>
 </div>
 <div class="sect1">
-<h2 id="going-further"><a class="anchor" href="#going-further"></a>26. Going further</h2>
+<h2 id="going-further"><a class="anchor" href="#going-further"></a>27. Going further</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This guide has shown how you can interact with Kafka using Quarkus.
@@ -5191,21 +5505,41 @@ It utilizes SmallRye Reactive Messaging to build data streaming applications.</p
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -5214,15 +5548,29 @@ It utilizes SmallRye Reactive Messaging to build data streaming applications.</p
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -5231,19 +5579,33 @@ It utilizes SmallRye Reactive Messaging to build data streaming applications.</p
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -5252,13 +5614,21 @@ It utilizes SmallRye Reactive Messaging to build data streaming applications.</p
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -5269,21 +5639,21 @@ It utilizes SmallRye Reactive Messaging to build data streaming applications.</p
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

@@ -9,7 +9,7 @@
   <title>release - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="">GUIDES</a></li>
+          <li><a href="/guides" class="">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="active">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -135,6 +142,1581 @@
 <div class="grid-wrapper blog-page">
   <div class="grid__item width-9-12 width-12-12-m">
     <h2 class="title">Tagged posts: 'release'</h2>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-2-0-final-released/">Quarkus 3.2.0.Final released - New security features, @QuarkusComponentTest</a>
+          </div>
+          <div class="post-date small">
+            July 05, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>We released Quarkus 3.2.0.Final with new security features and the ability to test CDI components with @QuarkusComponentTest.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-2-0-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-2-0-final-released/&title=Quarkus 3.2.0.Final released - New security features, @QuarkusComponentTest" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.2.0.Final released - New security features, @QuarkusComponentTest&url=https://quarkus.io/blog/quarkus-3-2-0-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-2-0-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-2-0-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.2.0.Final released - New security features, @QuarkusComponentTest&amp;body=Quarkus 3.2.0.Final released - New security features, @QuarkusComponentTest https://quarkus.io/blog/quarkus-3-2-0-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-16-8-final-released/">Quarkus 2.16.8.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            July 05, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.16.8.Final is the eighth maintenance release of our 2.16 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-16-8-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-16-8-final-released/&title=Quarkus 2.16.8.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.16.8.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-16-8-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-16-8-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-16-8-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.16.8.Final released - Maintenance release&amp;body=Quarkus 2.16.8.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-16-8-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-1-3-final-released/">Quarkus 3.1.3.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            June 29, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 3.1.3.Final is the third maintenance release of our 3.1 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-1-3-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-1-3-final-released/&title=Quarkus 3.1.3.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.1.3.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-3-1-3-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-1-3-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-1-3-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.1.3.Final released - Maintenance release&amp;body=Quarkus 3.1.3.Final released - Maintenance release https://quarkus.io/blog/quarkus-3-1-3-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-1-2-final-released/">Quarkus 3.1.2.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            June 16, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 3.1.2.Final is the second maintenance release of our 3.1 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-1-2-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-1-2-final-released/&title=Quarkus 3.1.2.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.1.2.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-3-1-2-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-1-2-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-1-2-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.1.2.Final released - Maintenance release&amp;body=Quarkus 3.1.2.Final released - Maintenance release https://quarkus.io/blog/quarkus-3-1-2-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-1-1-final-released/">Quarkus 3.1.1.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            June 07, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 3.1.1.Final is the first maintenance release of our 3.1 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-1-1-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-1-1-final-released/&title=Quarkus 3.1.1.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.1.1.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-3-1-1-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-1-1-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-1-1-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.1.1.Final released - Maintenance release&amp;body=Quarkus 3.1.1.Final released - Maintenance release https://quarkus.io/blog/quarkus-3-1-1-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-1-0-final-released/">Quarkus 3.1.0.Final released - Programmatic creation of Reactive REST Clients, Kotlin 1.8.21 and more</a>
+          </div>
+          <div class="post-date small">
+            May 31, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>We released Quarkus 3.1.0.Final with a new API for programmatically creating Reactive REST Clients, among other things.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-1-0-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-1-0-final-released/&title=Quarkus 3.1.0.Final released - Programmatic creation of Reactive REST Clients, Kotlin 1.8.21 and more" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.1.0.Final released - Programmatic creation of Reactive REST Clients, Kotlin 1.8.21 and more&url=https://quarkus.io/blog/quarkus-3-1-0-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-1-0-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-1-0-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.1.0.Final released - Programmatic creation of Reactive REST Clients, Kotlin 1.8.21 and more&amp;body=Quarkus 3.1.0.Final released - Programmatic creation of Reactive REST Clients, Kotlin 1.8.21 and more https://quarkus.io/blog/quarkus-3-1-0-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-4-final-released/">Quarkus 3.0.4.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            May 25, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 3.0.4.Final is the third maintenance release of our 3.0 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-4-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-4-final-released/&title=Quarkus 3.0.4.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.4.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-3-0-4-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-4-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-4-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.4.Final released - Maintenance release&amp;body=Quarkus 3.0.4.Final released - Maintenance release https://quarkus.io/blog/quarkus-3-0-4-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-3-final-released/">Quarkus 3.0.3.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            May 10, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 3.0.3.Final is the second maintenance release of our 3.0 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-3-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-3-final-released/&title=Quarkus 3.0.3.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.3.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-3-0-3-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-3-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-3-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.3.Final released - Maintenance release&amp;body=Quarkus 3.0.3.Final released - Maintenance release https://quarkus.io/blog/quarkus-3-0-3-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-16-7-final-released/">Quarkus 2.16.7.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            May 05, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.16.7.Final is the seventh maintenance release of our 2.16 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-16-7-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-16-7-final-released/&title=Quarkus 2.16.7.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.16.7.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-16-7-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-16-7-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-16-7-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.16.7.Final released - Maintenance release&amp;body=Quarkus 2.16.7.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-16-7-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-2-final-released/">Quarkus 3.0.2.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            May 04, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 3.0.2.Final is the first maintenance release of our 3.0 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-2-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-2-final-released/&title=Quarkus 3.0.2.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.2.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-3-0-2-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-2-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-2-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.2.Final released - Maintenance release&amp;body=Quarkus 3.0.2.Final released - Maintenance release https://quarkus.io/blog/quarkus-3-0-2-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-final-released/">Quarkus 3.0, our new major release, is here!</a>
+          </div>
+          <div class="post-date small">
+            April 26, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>It is our great pleasure to announce our new major release of Quarkus: Quarkus 3.0.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-final-released/&title=Quarkus 3.0, our new major release, is here!" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0, our new major release, is here!&url=https://quarkus.io/blog/quarkus-3-0-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0, our new major release, is here!&amp;body=Quarkus 3.0, our new major release, is here! https://quarkus.io/blog/quarkus-3-0-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-0-cr2-released/">Quarkus 3.0.0.CR2 released</a>
+          </div>
+          <div class="post-date small">
+            April 05, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Today, we released Quarkus 3.0.0.CR2, our last step before building the 3.0.0.Final bits.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-0-cr2-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-0-cr2-released/&title=Quarkus 3.0.0.CR2 released" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.0.CR2 released&url=https://quarkus.io/blog/quarkus-3-0-0-cr2-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-0-cr2-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-0-cr2-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.0.CR2 released&amp;body=Quarkus 3.0.0.CR2 released https://quarkus.io/blog/quarkus-3-0-0-cr2-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-16-6-final-released/">Quarkus 2.16.6.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            April 04, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.16.6.Final is the sixth maintenance release of our 2.16 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-16-6-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-16-6-final-released/&title=Quarkus 2.16.6.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.16.6.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-16-6-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-16-6-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-16-6-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.16.6.Final released - Maintenance release&amp;body=Quarkus 2.16.6.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-16-6-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-0-cr1-released/">Quarkus 3.0.0.CR1 released</a>
+          </div>
+          <div class="post-date small">
+            March 30, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Today, we released Quarkus 3.0.0.CR1, bringing us one step closer to Quarkus 3.0 final release.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-0-cr1-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-0-cr1-released/&title=Quarkus 3.0.0.CR1 released" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.0.CR1 released&url=https://quarkus.io/blog/quarkus-3-0-0-cr1-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-0-cr1-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-0-cr1-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.0.CR1 released&amp;body=Quarkus 3.0.0.CR1 released https://quarkus.io/blog/quarkus-3-0-0-cr1-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-0-beta1-released/">Quarkus 3.0.0.Beta1 released</a>
+          </div>
+          <div class="post-date small">
+            March 23, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>We continue our journey towards the Quarkus 3.0 final release, this time with Quarkus 3.0.0.Beta1.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-0-beta1-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-0-beta1-released/&title=Quarkus 3.0.0.Beta1 released" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.0.Beta1 released&url=https://quarkus.io/blog/quarkus-3-0-0-beta1-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-0-beta1-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-0-beta1-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.0.Beta1 released&amp;body=Quarkus 3.0.0.Beta1 released https://quarkus.io/blog/quarkus-3-0-0-beta1-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-16-5-final-released/">Quarkus 2.16.5.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            March 22, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.16.5.Final is the fifth maintenance release of our 2.16 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-16-5-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-16-5-final-released/&title=Quarkus 2.16.5.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.16.5.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-16-5-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-16-5-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-16-5-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.16.5.Final released - Maintenance release&amp;body=Quarkus 2.16.5.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-16-5-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-0-alpha6-released/">Quarkus 3.0.0.Alpha6 released</a>
+          </div>
+          <div class="post-date small">
+            March 15, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>3.0.0.Alpha5 came with big changes, 3.0.0.Alpha6 is a smaller release with bugfixes, enhancements, both to Quarkus and our upgrade process.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-0-alpha6-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-0-alpha6-released/&title=Quarkus 3.0.0.Alpha6 released" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.0.Alpha6 released&url=https://quarkus.io/blog/quarkus-3-0-0-alpha6-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-0-alpha6-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-0-alpha6-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.0.Alpha6 released&amp;body=Quarkus 3.0.0.Alpha6 released https://quarkus.io/blog/quarkus-3-0-0-alpha6-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-0-alpha5-released/">Quarkus 3.0.0.Alpha5 released - now with Hibernate ORM 6, new Dev UI and more!</a>
+          </div>
+          <div class="post-date small">
+            March 08, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/9ac47c2c99739d75d633f4d9b73eef35">
+          
+          <p class="byline"><span>By</span> Max Rydahl Andersen<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>This version is the second biggest update with major impact for Quarkus 3 - upgrading Hibernate ORM 5 to Hibernate ORM 6.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-0-alpha5-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-0-alpha5-released/&title=Quarkus 3.0.0.Alpha5 released - now with Hibernate ORM 6, new Dev UI and more!" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.0.Alpha5 released - now with Hibernate ORM 6, new Dev UI and more!&url=https://quarkus.io/blog/quarkus-3-0-0-alpha5-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-0-alpha5-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-0-alpha5-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.0.Alpha5 released - now with Hibernate ORM 6, new Dev UI and more!&amp;body=Quarkus 3.0.0.Alpha5 released - now with Hibernate ORM 6, new Dev UI and more! https://quarkus.io/blog/quarkus-3-0-0-alpha5-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-16-4-final-released/">Quarkus 2.16.4.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            March 06, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.16.4.Final is the fourth maintenance release of our 2.16 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-16-4-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-16-4-final-released/&title=Quarkus 2.16.4.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.16.4.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-16-4-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-16-4-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-16-4-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.16.4.Final released - Maintenance release&amp;body=Quarkus 2.16.4.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-16-4-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-16-3-final-released/">Quarkus 2.16.3.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            February 17, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.16.3.Final is the third maintenance release of our 2.16 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-16-3-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-16-3-final-released/&title=Quarkus 2.16.3.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.16.3.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-16-3-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-16-3-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-16-3-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.16.3.Final released - Maintenance release&amp;body=Quarkus 2.16.3.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-16-3-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-0-alpha4-released/">Quarkus 3.0.0.Alpha4 released - Fourth iteration of our Jakarta EE 10 stream</a>
+          </div>
+          <div class="post-date small">
+            February 15, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>This version marks a huge milestone: the Jakarta EE 10 work has been integrated into our main branch.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-0-alpha4-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-0-alpha4-released/&title=Quarkus 3.0.0.Alpha4 released - Fourth iteration of our Jakarta EE 10 stream" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.0.Alpha4 released - Fourth iteration of our Jakarta EE 10 stream&url=https://quarkus.io/blog/quarkus-3-0-0-alpha4-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-0-alpha4-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-0-alpha4-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.0.Alpha4 released - Fourth iteration of our Jakarta EE 10 stream&amp;body=Quarkus 3.0.0.Alpha4 released - Fourth iteration of our Jakarta EE 10 stream https://quarkus.io/blog/quarkus-3-0-0-alpha4-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-16-2-final-released/">Quarkus 2.16.2.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            February 09, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.16.2.Final is the second maintenance release of our 2.16 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-16-2-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-16-2-final-released/&title=Quarkus 2.16.2.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.16.2.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-16-2-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-16-2-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-16-2-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.16.2.Final released - Maintenance release&amp;body=Quarkus 2.16.2.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-16-2-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-16-1-final-released/">Quarkus 2.16.1.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            February 01, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.16.1.Final is the first maintenance release of our 2.16 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-16-1-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-16-1-final-released/&title=Quarkus 2.16.1.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.16.1.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-16-1-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-16-1-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-16-1-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.16.1.Final released - Maintenance release&amp;body=Quarkus 2.16.1.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-16-1-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-16-0-final-released/">Quarkus 2.16.0.Final released - Redis time series and preloading, support for XDS in gRPC</a>
+          </div>
+          <div class="post-date small">
+            January 25, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>We released Quarkus 2.16.0.Final with improvements to the Redis and gRPC extensions, among other things.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-16-0-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-16-0-final-released/&title=Quarkus 2.16.0.Final released - Redis time series and preloading, support for XDS in gRPC" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.16.0.Final released - Redis time series and preloading, support for XDS in gRPC&url=https://quarkus.io/blog/quarkus-2-16-0-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-16-0-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-16-0-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.16.0.Final released - Redis time series and preloading, support for XDS in gRPC&amp;body=Quarkus 2.16.0.Final released - Redis time series and preloading, support for XDS in gRPC https://quarkus.io/blog/quarkus-2-16-0-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-0-alpha3-released/">Quarkus 3.0.0.Alpha3 released - Third iteration of our Jakarta EE 10 stream</a>
+          </div>
+          <div class="post-date small">
+            January 23, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Today, we released Quarkus 3.0.0.Alpha3 which is based on our current main but targeting Jakarta EE 10. It also comes with some additional changes.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-0-alpha3-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-0-alpha3-released/&title=Quarkus 3.0.0.Alpha3 released - Third iteration of our Jakarta EE 10 stream" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.0.Alpha3 released - Third iteration of our Jakarta EE 10 stream&url=https://quarkus.io/blog/quarkus-3-0-0-alpha3-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-0-alpha3-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-0-alpha3-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.0.Alpha3 released - Third iteration of our Jakarta EE 10 stream&amp;body=Quarkus 3.0.0.Alpha3 released - Third iteration of our Jakarta EE 10 stream https://quarkus.io/blog/quarkus-3-0-0-alpha3-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-15-3-final-released/">Quarkus 2.15.3.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            January 10, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.15.3.Final is the third maintenance release of our 2.15 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-15-3-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-15-3-final-released/&title=Quarkus 2.15.3.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.15.3.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-15-3-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-15-3-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-15-3-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.15.3.Final released - Maintenance release&amp;body=Quarkus 2.15.3.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-15-3-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-15-2-final-released/">Quarkus 2.15.2.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            January 04, 2023 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.15.2.Final is the second maintenance release of our 2.15 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-15-2-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-15-2-final-released/&title=Quarkus 2.15.2.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.15.2.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-15-2-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-15-2-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-15-2-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.15.2.Final released - Maintenance release&amp;body=Quarkus 2.15.2.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-15-2-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-15-1-final-released/">Quarkus 2.15.1.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            December 21, 2022 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.15.1.Final is the first maintenance release of our 2.15 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-15-1-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-15-1-final-released/&title=Quarkus 2.15.1.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.15.1.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-15-1-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-15-1-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-15-1-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.15.1.Final released - Maintenance release&amp;body=Quarkus 2.15.1.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-15-1-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-15-0-final-released/">Quarkus 2.15.0.Final released - AWS Lambda SnapStart, new gRPC extension, and a lot more</a>
+          </div>
+          <div class="post-date small">
+            December 14, 2022 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>We released Quarkus 2.15.0.Final which introduces a lot of new features such as support for AWS Lambda SnapStart, a new Vert.x-based gRPC extension, federation support for SmallRye GraphQL...</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-15-0-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-15-0-final-released/&title=Quarkus 2.15.0.Final released - AWS Lambda SnapStart, new gRPC extension, and a lot more" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.15.0.Final released - AWS Lambda SnapStart, new gRPC extension, and a lot more&url=https://quarkus.io/blog/quarkus-2-15-0-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-15-0-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-15-0-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.15.0.Final released - AWS Lambda SnapStart, new gRPC extension, and a lot more&amp;body=Quarkus 2.15.0.Final released - AWS Lambda SnapStart, new gRPC extension, and a lot more https://quarkus.io/blog/quarkus-2-15-0-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-0-alpha2-released/">Quarkus 3.0.0.Alpha2 released - Second iteration of our Jakarta EE 10 stream</a>
+          </div>
+          <div class="post-date small">
+            December 07, 2022 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>We released Quarkus 3.0.0.Alpha2 based on the features of Quarkus 2.14.3.Final but targeting Jakarta EE 10.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-0-alpha2-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-0-alpha2-released/&title=Quarkus 3.0.0.Alpha2 released - Second iteration of our Jakarta EE 10 stream" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.0.Alpha2 released - Second iteration of our Jakarta EE 10 stream&url=https://quarkus.io/blog/quarkus-3-0-0-alpha2-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-0-alpha2-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-0-alpha2-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.0.Alpha2 released - Second iteration of our Jakarta EE 10 stream&amp;body=Quarkus 3.0.0.Alpha2 released - Second iteration of our Jakarta EE 10 stream https://quarkus.io/blog/quarkus-3-0-0-alpha2-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-14-3-final-released/">Quarkus 2.14.3.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            December 06, 2022 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.14.3.Final is the third maintenance release of our 2.14 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-14-3-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-14-3-final-released/&title=Quarkus 2.14.3.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.14.3.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-14-3-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-14-3-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-14-3-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.14.3.Final released - Maintenance release&amp;body=Quarkus 2.14.3.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-14-3-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-14-2-final-released/">Quarkus 2.14.2.Final and 2.13.5.Final released - Fix for CVE-2022-4116</a>
+          </div>
+          <div class="post-date small">
+            November 28, 2022 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.14.2.Final and 2.13.5.Final fix CVE-2022-4116. Please upgrade.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-14-2-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-14-2-final-released/&title=Quarkus 2.14.2.Final and 2.13.5.Final released - Fix for CVE-2022-4116" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.14.2.Final and 2.13.5.Final released - Fix for CVE-2022-4116&url=https://quarkus.io/blog/quarkus-2-14-2-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-14-2-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-14-2-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.14.2.Final and 2.13.5.Final released - Fix for CVE-2022-4116&amp;body=Quarkus 2.14.2.Final and 2.13.5.Final released - Fix for CVE-2022-4116 https://quarkus.io/blog/quarkus-2-14-2-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-3-0-0-alpha1-released/">Quarkus 3.0.0.Alpha1 released - First iteration of our Jakarta EE 10 stream</a>
+          </div>
+          <div class="post-date small">
+            November 18, 2022 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>We released Quarkus 3.0.0.Alpha1 based on the features of Quarkus 2.13.3.Final but targeting Jakarta EE 10.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-3-0-0-alpha1-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-3-0-0-alpha1-released/&title=Quarkus 3.0.0.Alpha1 released - First iteration of our Jakarta EE 10 stream" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 3.0.0.Alpha1 released - First iteration of our Jakarta EE 10 stream&url=https://quarkus.io/blog/quarkus-3-0-0-alpha1-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-3-0-0-alpha1-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-3-0-0-alpha1-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 3.0.0.Alpha1 released - First iteration of our Jakarta EE 10 stream&amp;body=Quarkus 3.0.0.Alpha1 released - First iteration of our Jakarta EE 10 stream https://quarkus.io/blog/quarkus-3-0-0-alpha1-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-14-1-final-released/">Quarkus 2.14.1.Final released - Maintenance release</a>
+          </div>
+          <div class="post-date small">
+            November 16, 2022 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>Quarkus 2.14.1.Final is the first maintenance release of our 2.14 release train.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-14-1-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-14-1-final-released/&title=Quarkus 2.14.1.Final released - Maintenance release" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.14.1.Final released - Maintenance release&url=https://quarkus.io/blog/quarkus-2-14-1-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-14-1-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-14-1-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.14.1.Final released - Maintenance release&amp;body=Quarkus 2.14.1.Final released - Maintenance release https://quarkus.io/blog/quarkus-2-14-1-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
+    
+      
+      <div class="blog-list-item grid-wrapper">
+        <div class="grid__item width-12-12">
+          <div class="post-title">
+            <a href="/blog/quarkus-2-14-0-final-released/">Quarkus 2.14.0.Final released - Jandex 3, new Redis commands, caching annotations for Infinispan</a>
+          </div>
+          <div class="post-date small">
+            November 09, 2022 
+            
+              <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+            
+          </div>
+        </div>
+        <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+          
+            <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+          
+          <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+        </div>
+        <div class="grid__item width-12-12">
+          
+            <p>We released Quarkus 2.14.0.Final with a lot of both internal and user facing improvements.</p>
+          
+        </div>
+        <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-2-14-0-final-released/">Read More &rsaquo;</a></div>
+        <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-2-14-0-final-released/&title=Quarkus 2.14.0.Final released - Jandex 3, new Redis commands, caching annotations for Infinispan" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 2.14.0.Final released - Jandex 3, new Redis commands, caching annotations for Infinispan&url=https://quarkus.io/blog/quarkus-2-14-0-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-2-14-0-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-2-14-0-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 2.14.0.Final released - Jandex 3, new Redis commands, caching annotations for Infinispan&amp;body=Quarkus 2.14.0.Final released - Jandex 3, new Redis commands, caching annotations for Infinispan https://quarkus.io/blog/quarkus-2-14-0-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+      </div>
     
       
       <div class="blog-list-item grid-wrapper">
@@ -5600,6 +7182,10 @@
     
     
     
+    <a href="/blog/tag/announcements">announcements</a></br>
+    
+    
+    
     <a href="/blog/tag/api">api</a></br>
     
     
@@ -5724,6 +7310,10 @@
     
     
     
+    <a href="/blog/tag/gc">gc</a></br>
+    
+    
+    
     <a href="/blog/tag/gitlab">gitlab</a></br>
     
     
@@ -5772,7 +7362,19 @@
     
     
     
+    <a href="/blog/tag/intellij">intellij</a></br>
+    
+    
+    
+    <a href="/blog/tag/jakarta">jakarta</a></br>
+    
+    
+    
     <a href="/blog/tag/java">java</a></br>
+    
+    
+    
+    <a href="/blog/tag/jetbrains">jetbrains</a></br>
     
     
     
@@ -5801,6 +7403,10 @@
     
     
     <a href="/blog/tag/microprofile">microprofile</a></br>
+    
+    
+    
+    <a href="/blog/tag/migration">migration</a></br>
     
     
     
@@ -5966,6 +7572,10 @@
     
     <a href="/blog/tag/web">web</a></br>
     
+    
+    
+    <a href="/blog/tag/windows">windows</a></br>
+    
   </div>
 </div>
 
@@ -5986,21 +7596,41 @@
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -6009,15 +7639,29 @@
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -6026,19 +7670,33 @@
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -6047,13 +7705,21 @@
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -6064,21 +7730,21 @@
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

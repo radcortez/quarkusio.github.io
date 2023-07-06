@@ -9,7 +9,7 @@
   <title>Blog - page 25 - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="">GUIDES</a></li>
+          <li><a href="/guides" class="">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="active">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -133,41 +140,41 @@
         <div class="blog-list-item grid-wrapper">
           <div class="grid__item width-12-12">
             <div class="post-title">
-              <a href="/blog/qute/">Qute - Why (Not Just) Yet Another Templating Engine</a>
+              <a href="/blog/contributing-for-the-first-time/">Contributing to Quarkus for the first time</a>
             </div>
             <div class="post-date small">
-              February 23, 2020 
+              October 05, 2020 
               
-                <span class="tags">tags:</span>
+                <span class="tags">tags:<a href="/blog/tag/contribution">#contribution</a><a href="/blog/tag/hacktoberfest">#hacktoberfest</a></span>
               
             </div>
           </div>
           <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
             
-              <img class="headshot" src="https://www.gravatar.com/avatar/8036ef0e54eaf768510dcc9be07762a6">
+              <img class="headshot" src="https://www.gravatar.com/avatar/41b10810ea2a2901531f2ed45986dd7d">
             
-            <p class="byline"><span>By</span> Martin Kouba<br/></p>
+            <p class="byline"><span>By</span> Loïc Mathieu<br/></p>
           </div>
           <div class="grid__item width-12-12">
             
-              <p>Qute - a templating engine designed specifically to meet the Quarkus needs.</p>
+              <p>Hacktoberfest has begun and you wonder how to contribute to your favorite framework? We will try to give you some answers in this article.</p>
             
           </div>
-          <div class="grid__item width-8-12 read-more small"><a href="/blog/qute/">Read More &rsaquo;</a></div>
+          <div class="grid__item width-8-12 read-more small"><a href="/blog/contributing-for-the-first-time/">Read More &rsaquo;</a></div>
           <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
-  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/qute/&title=Qute - Why (Not Just) Yet Another Templating Engine" rel="nofollow" target="_blank" title="Share on LinkedIn">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/contributing-for-the-first-time/&title=Contributing to Quarkus for the first time" rel="nofollow" target="_blank" title="Share on LinkedIn">
     <img src="/assets/images/share-page/icons_social-linkedin.png"/>
   </a>
-  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Qute - Why (Not Just) Yet Another Templating Engine&url=https://quarkus.io/blog/qute/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Contributing to Quarkus for the first time&url=https://quarkus.io/blog/contributing-for-the-first-time/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
     <img src="/assets/images/share-page/icons_social-twitter.png"/>
   </a>
-  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/qute/" rel="nofollow" target="_blank" title="Share on Facebook">
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/contributing-for-the-first-time/" rel="nofollow" target="_blank" title="Share on Facebook">
     <img src="/assets/images/share-page/icons_social-facebook.png"/>
   </a>
-  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/qute/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/contributing-for-the-first-time/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
     <img src="/assets/images/share-page/icons_social-reddit.png"/>
   </a>
-  <a class="share-email" href="mailto:?subject=Qute - Why (Not Just) Yet Another Templating Engine&amp;body=Qute - Why (Not Just) Yet Another Templating Engine https://quarkus.io/blog/qute/" title="Share via Email" >
+  <a class="share-email" href="mailto:?subject=Contributing to Quarkus for the first time&amp;body=Contributing to Quarkus for the first time https://quarkus.io/blog/contributing-for-the-first-time/" title="Share via Email" >
     <img src="/assets/images/share-page/icons_social-email.png"/>
   </a>
 </div>
@@ -178,372 +185,12 @@
         <div class="blog-list-item grid-wrapper">
           <div class="grid__item width-12-12">
             <div class="post-title">
-              <a href="/blog/quarkus-1-2-1-final-released/">Quarkus 1.2.1.Final released - Bugfixes only</a>
+              <a href="/blog/biased-locking-help/">Biased locking removed from Java - does it affect you ?</a>
             </div>
             <div class="post-date small">
-              February 19, 2020 
+              September 30, 2020 
               
-                <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
-              
-            </div>
-          </div>
-          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
-            
-              <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
-            
-            <p class="byline"><span>By</span> Guillaume Smet<br/></p>
-          </div>
-          <div class="grid__item width-12-12">
-            
-              <p>1.2.1.Final fixes several issues in Quarkus and the documentation.</p>
-            
-          </div>
-          <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-1-2-1-final-released/">Read More &rsaquo;</a></div>
-          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
-  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-1-2-1-final-released/&title=Quarkus 1.2.1.Final released - Bugfixes only" rel="nofollow" target="_blank" title="Share on LinkedIn">
-    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
-  </a>
-  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 1.2.1.Final released - Bugfixes only&url=https://quarkus.io/blog/quarkus-1-2-1-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
-    <img src="/assets/images/share-page/icons_social-twitter.png"/>
-  </a>
-  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-1-2-1-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
-    <img src="/assets/images/share-page/icons_social-facebook.png"/>
-  </a>
-  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-1-2-1-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
-    <img src="/assets/images/share-page/icons_social-reddit.png"/>
-  </a>
-  <a class="share-email" href="mailto:?subject=Quarkus 1.2.1.Final released - Bugfixes only&amp;body=Quarkus 1.2.1.Final released - Bugfixes only https://quarkus.io/blog/quarkus-1-2-1-final-released/" title="Share via Email" >
-    <img src="/assets/images/share-page/icons_social-email.png"/>
-  </a>
-</div>
-</div>
-        </div>
-      
-        
-        <div class="blog-list-item grid-wrapper">
-          <div class="grid__item width-12-12">
-            <div class="post-title">
-              <a href="/blog/aviatar-experiences-significant-savings/">Lufthansa Technik AVIATAR experiences significant cloud resources savings by moving to Kubernetes-native Quarkus</a>
-            </div>
-            <div class="post-date small">
-              February 17, 2020 
-              
-                <span class="tags">tags:<a href="/blog/tag/user-story">#user-story</a></span>
-              
-            </div>
-          </div>
-          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
-            
-              <img class="headshot" src="https://www.gravatar.com/avatar/33c2cb775850e595c2dc1dedd88ef98d">
-            
-            <p class="byline"><span>By</span> Cesar Saavedra<br/></p>
-          </div>
-          <div class="grid__item width-12-12">
-            
-              <p>Lufthansa Technik, the world’s largest independent provider of airline maintenance, repair, and overhaul (MRO) services, runs a SaaS digital platform, called AVIATAR, for the aviation industry. This platform helps airlines avoid delays and cancellations by using data to better organize and schedule maintenance. The company built and operated AVIATAR using a hybrid cloud infrastructure based on enterprise open source software from Red Hat. In the last 3 years, AVIATAR business has been growing fast and...</p>
-            
-          </div>
-          <div class="grid__item width-8-12 read-more small"><a href="/blog/aviatar-experiences-significant-savings/">Read More &rsaquo;</a></div>
-          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
-  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/aviatar-experiences-significant-savings/&title=Lufthansa Technik AVIATAR experiences significant cloud resources savings by moving to Kubernetes-native Quarkus" rel="nofollow" target="_blank" title="Share on LinkedIn">
-    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
-  </a>
-  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Lufthansa Technik AVIATAR experiences significant cloud resources savings by moving to Kubernetes-native Quarkus&url=https://quarkus.io/blog/aviatar-experiences-significant-savings/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
-    <img src="/assets/images/share-page/icons_social-twitter.png"/>
-  </a>
-  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/aviatar-experiences-significant-savings/" rel="nofollow" target="_blank" title="Share on Facebook">
-    <img src="/assets/images/share-page/icons_social-facebook.png"/>
-  </a>
-  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/aviatar-experiences-significant-savings/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
-    <img src="/assets/images/share-page/icons_social-reddit.png"/>
-  </a>
-  <a class="share-email" href="mailto:?subject=Lufthansa Technik AVIATAR experiences significant cloud resources savings by moving to Kubernetes-native Quarkus&amp;body=Lufthansa Technik AVIATAR experiences significant cloud resources savings by moving to Kubernetes-native Quarkus https://quarkus.io/blog/aviatar-experiences-significant-savings/" title="Share via Email" >
-    <img src="/assets/images/share-page/icons_social-email.png"/>
-  </a>
-</div>
-</div>
-        </div>
-      
-        
-        <div class="blog-list-item grid-wrapper">
-          <div class="grid__item width-12-12">
-            <div class="post-title">
-              <a href="/blog/asiakastieto-chooses-quarkus-for-microservices/">Suomen Asiakastieto Oy chooses Quarkus for their microservices development</a>
-            </div>
-            <div class="post-date small">
-              February 10, 2020 
-              
-                <span class="tags">tags:<a href="/blog/tag/user-story">#user-story</a></span>
-              
-            </div>
-          </div>
-          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
-            
-              <img class="headshot" src="https://www.gravatar.com/avatar/33c2cb775850e595c2dc1dedd88ef98d">
-            
-            <p class="byline"><span>By</span> Cesar Saavedra<br/></p>
-          </div>
-          <div class="grid__item width-12-12">
-            
-              <p>Based in Helsinki, Finland, The Asiakastieto Group is a leading provider of innovative, digital business and consumer information services in the Nordic region. In the banking, financial services, and retail industries, Asiakastieto’s products and services support risk management, finance and business administration, credit or loan-related decision-making, sales and marketing. When the EU introduced its revised Payment Services Directive (PSD2) in 2018 to increase competition, promote innovation, and improve security in the payments industry, Asiakastieto began...</p>
-            
-          </div>
-          <div class="grid__item width-8-12 read-more small"><a href="/blog/asiakastieto-chooses-quarkus-for-microservices/">Read More &rsaquo;</a></div>
-          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
-  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/asiakastieto-chooses-quarkus-for-microservices/&title=Suomen Asiakastieto Oy chooses Quarkus for their microservices development" rel="nofollow" target="_blank" title="Share on LinkedIn">
-    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
-  </a>
-  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Suomen Asiakastieto Oy chooses Quarkus for their microservices development&url=https://quarkus.io/blog/asiakastieto-chooses-quarkus-for-microservices/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
-    <img src="/assets/images/share-page/icons_social-twitter.png"/>
-  </a>
-  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/asiakastieto-chooses-quarkus-for-microservices/" rel="nofollow" target="_blank" title="Share on Facebook">
-    <img src="/assets/images/share-page/icons_social-facebook.png"/>
-  </a>
-  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/asiakastieto-chooses-quarkus-for-microservices/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
-    <img src="/assets/images/share-page/icons_social-reddit.png"/>
-  </a>
-  <a class="share-email" href="mailto:?subject=Suomen Asiakastieto Oy chooses Quarkus for their microservices development&amp;body=Suomen Asiakastieto Oy chooses Quarkus for their microservices development https://quarkus.io/blog/asiakastieto-chooses-quarkus-for-microservices/" title="Share via Email" >
-    <img src="/assets/images/share-page/icons_social-email.png"/>
-  </a>
-</div>
-</div>
-        </div>
-      
-        
-        <div class="blog-list-item grid-wrapper">
-          <div class="grid__item width-12-12">
-            <div class="post-title">
-              <a href="/blog/vscode-quarkus-1.3.0/">Introducing 10 new features in Quarkus Tools for Visual Studio Code 1.3.0</a>
-            </div>
-            <div class="post-date small">
-              February 07, 2020 
-              
-                <span class="tags">tags:<a href="/blog/tag/ide">#ide</a></span>
-              
-            </div>
-          </div>
-          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
-            
-              <img class="headshot" src="https://www.gravatar.com/avatar/ddbf60c0e87ce6ad86f98aaf4fa55ff0">
-            
-            <p class="byline"><span>By</span> David Kwon<br/></p>
-          </div>
-          <div class="grid__item width-12-12">
-            
-              <p>Quarkus Tools for Visual Studio Code 1.3.0 has been released on the VS Code Marketplace , the first release of the year. Alongside various bug fixes, this release focused on introducing VS Code support that accompanies new Quarkus features like application.yaml support, server-side templating support and the Quarkus 1.2 kebab-case @ConfigProperties property names. For a list of all changes, please refer to the changelog. Watch a demo video of all features presented in this article:...</p>
-            
-          </div>
-          <div class="grid__item width-8-12 read-more small"><a href="/blog/vscode-quarkus-1.3.0/">Read More &rsaquo;</a></div>
-          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
-  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/vscode-quarkus-1.3.0/&title=Introducing 10 new features in Quarkus Tools for Visual Studio Code 1.3.0" rel="nofollow" target="_blank" title="Share on LinkedIn">
-    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
-  </a>
-  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Introducing 10 new features in Quarkus Tools for Visual Studio Code 1.3.0&url=https://quarkus.io/blog/vscode-quarkus-1.3.0/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
-    <img src="/assets/images/share-page/icons_social-twitter.png"/>
-  </a>
-  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/vscode-quarkus-1.3.0/" rel="nofollow" target="_blank" title="Share on Facebook">
-    <img src="/assets/images/share-page/icons_social-facebook.png"/>
-  </a>
-  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/vscode-quarkus-1.3.0/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
-    <img src="/assets/images/share-page/icons_social-reddit.png"/>
-  </a>
-  <a class="share-email" href="mailto:?subject=Introducing 10 new features in Quarkus Tools for Visual Studio Code 1.3.0&amp;body=Introducing 10 new features in Quarkus Tools for Visual Studio Code 1.3.0 https://quarkus.io/blog/vscode-quarkus-1.3.0/" title="Share via Email" >
-    <img src="/assets/images/share-page/icons_social-email.png"/>
-  </a>
-</div>
-</div>
-        </div>
-      
-        
-        <div class="blog-list-item grid-wrapper">
-          <div class="grid__item width-12-12">
-            <div class="post-title">
-              <a href="/blog/quarkus-1-2-0-final-released/">Quarkus 1.2.0.Final released - GraalVM 19.3.1 support, Metrics, Cache extension, and more</a>
-            </div>
-            <div class="post-date small">
-              January 28, 2020 
-              
-                <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
-              
-            </div>
-          </div>
-          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
-            
-              <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
-            
-            <p class="byline"><span>By</span> Guillaume Smet<br/></p>
-          </div>
-          <div class="grid__item width-12-12">
-            
-              <p>GraalVM 19.3.1 support, Metrics, a brand new Cache extension, Vault Transit Secret engine, Quarkus 1.2.0.Final is here packed with new features.</p>
-            
-          </div>
-          <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-1-2-0-final-released/">Read More &rsaquo;</a></div>
-          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
-  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-1-2-0-final-released/&title=Quarkus 1.2.0.Final released - GraalVM 19.3.1 support, Metrics, Cache extension, and more" rel="nofollow" target="_blank" title="Share on LinkedIn">
-    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
-  </a>
-  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 1.2.0.Final released - GraalVM 19.3.1 support, Metrics, Cache extension, and more&url=https://quarkus.io/blog/quarkus-1-2-0-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
-    <img src="/assets/images/share-page/icons_social-twitter.png"/>
-  </a>
-  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-1-2-0-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
-    <img src="/assets/images/share-page/icons_social-facebook.png"/>
-  </a>
-  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-1-2-0-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
-    <img src="/assets/images/share-page/icons_social-reddit.png"/>
-  </a>
-  <a class="share-email" href="mailto:?subject=Quarkus 1.2.0.Final released - GraalVM 19.3.1 support, Metrics, Cache extension, and more&amp;body=Quarkus 1.2.0.Final released - GraalVM 19.3.1 support, Metrics, Cache extension, and more https://quarkus.io/blog/quarkus-1-2-0-final-released/" title="Share via Email" >
-    <img src="/assets/images/share-page/icons_social-email.png"/>
-  </a>
-</div>
-</div>
-        </div>
-      
-        
-        <div class="blog-list-item grid-wrapper">
-          <div class="grid__item width-12-12">
-            <div class="post-title">
-              <a href="/blog/quarkus-wins-devies-award/">Quarkus wins DEVIES award</a>
-            </div>
-            <div class="post-date small">
-              January 24, 2020 
-              
-                <span class="tags">tags:<a href="/blog/tag/announcement">#announcement</a><a href="/blog/tag/awards">#awards</a></span>
-              
-            </div>
-          </div>
-          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
-            
-              <img class="headshot" src="https://www.gravatar.com/avatar/33c2cb775850e595c2dc1dedd88ef98d">
-            
-            <p class="byline"><span>By</span> Cesar Saavedra<br/></p>
-          </div>
-          <div class="grid__item width-12-12">
-            
-              <p>On January 22, 2020, we were informed that Quarkus had won the DeveloperWeek DEVIES Awards in the category of Best Innovation in: Code Frameworks/Libraries. As a Kubernetes-native Java stack, Quarkus represents a fundamental shift in modern application development that makes Java a great fit for cloud-native application architectures, such as containers, microservices and serverless. Java developers are able to use Quarkus to build applications that have a faster startup time and take up significantly less...</p>
-            
-          </div>
-          <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-wins-devies-award/">Read More &rsaquo;</a></div>
-          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
-  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-wins-devies-award/&title=Quarkus wins DEVIES award" rel="nofollow" target="_blank" title="Share on LinkedIn">
-    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
-  </a>
-  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus wins DEVIES award&url=https://quarkus.io/blog/quarkus-wins-devies-award/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
-    <img src="/assets/images/share-page/icons_social-twitter.png"/>
-  </a>
-  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-wins-devies-award/" rel="nofollow" target="_blank" title="Share on Facebook">
-    <img src="/assets/images/share-page/icons_social-facebook.png"/>
-  </a>
-  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-wins-devies-award/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
-    <img src="/assets/images/share-page/icons_social-reddit.png"/>
-  </a>
-  <a class="share-email" href="mailto:?subject=Quarkus wins DEVIES award&amp;body=Quarkus wins DEVIES award https://quarkus.io/blog/quarkus-wins-devies-award/" title="Share via Email" >
-    <img src="/assets/images/share-page/icons_social-email.png"/>
-  </a>
-</div>
-</div>
-        </div>
-      
-        
-        <div class="blog-list-item grid-wrapper">
-          <div class="grid__item width-12-12">
-            <div class="post-title">
-              <a href="/blog/quarkus-fault-tolerance-4-0/">New fault tolerance implementation in Quarkus</a>
-            </div>
-            <div class="post-date small">
-              January 23, 2020 
-              
-                <span class="tags">tags:<a href="/blog/tag/extension">#extension</a><a href="/blog/tag/smallrye">#smallrye</a><a href="/blog/tag/fault-tolerance">#fault-tolerance</a></span>
-              
-            </div>
-          </div>
-          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
-            
-              <img class="headshot" src="https://www.gravatar.com/avatar/56bb9db102d84c3cf9656564445fc1f0">
-            
-            <p class="byline"><span>By</span> Michał Szynkiewicz<br/></p>
-          </div>
-          <div class="grid__item width-12-12">
-            
-              <p>Since its first release, Quarkus lets you create resilient applications with MicroProfile Fault Tolerance. It uses SmallRye Fault Tolerance to provide this functionality. At the time SmallRye Fault Tolerance was born, Hystrix was still a thing and was chosen to be the core of the implementation. The choice turned out to be sub-optimal. The library itself is not developed anymore. Moreover, changes in the MicroProfile Fault Tolerance specification made it impossible to satisfy the specification...</p>
-            
-          </div>
-          <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-fault-tolerance-4-0/">Read More &rsaquo;</a></div>
-          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
-  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-fault-tolerance-4-0/&title=New fault tolerance implementation in Quarkus" rel="nofollow" target="_blank" title="Share on LinkedIn">
-    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
-  </a>
-  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=New fault tolerance implementation in Quarkus&url=https://quarkus.io/blog/quarkus-fault-tolerance-4-0/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
-    <img src="/assets/images/share-page/icons_social-twitter.png"/>
-  </a>
-  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-fault-tolerance-4-0/" rel="nofollow" target="_blank" title="Share on Facebook">
-    <img src="/assets/images/share-page/icons_social-facebook.png"/>
-  </a>
-  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-fault-tolerance-4-0/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
-    <img src="/assets/images/share-page/icons_social-reddit.png"/>
-  </a>
-  <a class="share-email" href="mailto:?subject=New fault tolerance implementation in Quarkus&amp;body=New fault tolerance implementation in Quarkus https://quarkus.io/blog/quarkus-fault-tolerance-4-0/" title="Share via Email" >
-    <img src="/assets/images/share-page/icons_social-email.png"/>
-  </a>
-</div>
-</div>
-        </div>
-      
-        
-        <div class="blog-list-item grid-wrapper">
-          <div class="grid__item width-12-12">
-            <div class="post-title">
-              <a href="/blog/quarkus-eclipse-microprofile-3-2-compatible/">Quarkus is Eclipse MicroProfile 3.2 compatible!</a>
-            </div>
-            <div class="post-date small">
-              January 21, 2020 
-              
-                <span class="tags">tags:<a href="/blog/tag/announcement">#announcement</a><a href="/blog/tag/microprofile">#microprofile</a></span>
-              
-            </div>
-          </div>
-          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
-            
-              <img class="headshot" src="https://www.gravatar.com/avatar/74e721dd22b0d509b85746c5edf559c8">
-            
-            <p class="byline"><span>By</span> Ken Finnigan<br/></p>
-          </div>
-          <div class="grid__item width-12-12">
-            
-              <p>With the announcement that Quarkus 1.1 was available in December 2019, and after a tremendous effort from all the contributors and community, we’re excited to announce that Quarkus 1.1 is Eclipse MicroProfile 3.2 compatible! MicroProfile 3.2 was released November 2019, bringing updates to the Metrics and Health specifications, but what is MicroProfile and why do I care? MicroProfile creates specifications for developing microservices with Enterprise Java, making compatibility with MicroProfile a key feature of Quarkus....</p>
-            
-          </div>
-          <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-eclipse-microprofile-3-2-compatible/">Read More &rsaquo;</a></div>
-          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
-  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-eclipse-microprofile-3-2-compatible/&title=Quarkus is Eclipse MicroProfile 3.2 compatible!" rel="nofollow" target="_blank" title="Share on LinkedIn">
-    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
-  </a>
-  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus is Eclipse MicroProfile 3.2 compatible!&url=https://quarkus.io/blog/quarkus-eclipse-microprofile-3-2-compatible/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
-    <img src="/assets/images/share-page/icons_social-twitter.png"/>
-  </a>
-  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-eclipse-microprofile-3-2-compatible/" rel="nofollow" target="_blank" title="Share on Facebook">
-    <img src="/assets/images/share-page/icons_social-facebook.png"/>
-  </a>
-  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-eclipse-microprofile-3-2-compatible/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
-    <img src="/assets/images/share-page/icons_social-reddit.png"/>
-  </a>
-  <a class="share-email" href="mailto:?subject=Quarkus is Eclipse MicroProfile 3.2 compatible!&amp;body=Quarkus is Eclipse MicroProfile 3.2 compatible! https://quarkus.io/blog/quarkus-eclipse-microprofile-3-2-compatible/" title="Share via Email" >
-    <img src="/assets/images/share-page/icons_social-email.png"/>
-  </a>
-</div>
-</div>
-        </div>
-      
-        
-        <div class="blog-list-item grid-wrapper">
-          <div class="grid__item width-12-12">
-            <div class="post-title">
-              <a href="/blog/march-of-ides/">Quarkus support in IDE's</a>
-            </div>
-            <div class="post-date small">
-              January 21, 2020 
-              
-                <span class="tags">tags:<a href="/blog/tag/development-tips">#development-tips</a><a href="/blog/tag/ide">#ide</a></span>
+                <span class="tags">tags:<a href="/blog/tag/help">#help</a></span>
               
             </div>
           </div>
@@ -555,24 +202,384 @@
           </div>
           <div class="grid__item width-12-12">
             
-              <p>An overview on currently available IDE integrations for Quarkus.</p>
+              <p>In Java 15 *biased locking* is now disabled by default and is planned to be removed in the Java Virtual Machine as per JEP 374. We need your help seeing if it affects Quarkus performance in your application.</p>
             
           </div>
-          <div class="grid__item width-8-12 read-more small"><a href="/blog/march-of-ides/">Read More &rsaquo;</a></div>
+          <div class="grid__item width-8-12 read-more small"><a href="/blog/biased-locking-help/">Read More &rsaquo;</a></div>
           <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
-  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/march-of-ides/&title=Quarkus support in IDE's" rel="nofollow" target="_blank" title="Share on LinkedIn">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/biased-locking-help/&title=Biased locking removed from Java - does it affect you ?" rel="nofollow" target="_blank" title="Share on LinkedIn">
     <img src="/assets/images/share-page/icons_social-linkedin.png"/>
   </a>
-  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus support in IDE's&url=https://quarkus.io/blog/march-of-ides/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Biased locking removed from Java - does it affect you ?&url=https://quarkus.io/blog/biased-locking-help/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
     <img src="/assets/images/share-page/icons_social-twitter.png"/>
   </a>
-  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/march-of-ides/" rel="nofollow" target="_blank" title="Share on Facebook">
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/biased-locking-help/" rel="nofollow" target="_blank" title="Share on Facebook">
     <img src="/assets/images/share-page/icons_social-facebook.png"/>
   </a>
-  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/march-of-ides/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/biased-locking-help/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
     <img src="/assets/images/share-page/icons_social-reddit.png"/>
   </a>
-  <a class="share-email" href="mailto:?subject=Quarkus support in IDE's&amp;body=Quarkus support in IDE's https://quarkus.io/blog/march-of-ides/" title="Share via Email" >
+  <a class="share-email" href="mailto:?subject=Biased locking removed from Java - does it affect you ?&amp;body=Biased locking removed from Java - does it affect you ? https://quarkus.io/blog/biased-locking-help/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+        </div>
+      
+        
+        <div class="blog-list-item grid-wrapper">
+          <div class="grid__item width-12-12">
+            <div class="post-title">
+              <a href="/blog/mutiny-concurrent-uni/">Concurrent asynchronous actions with Mutiny</a>
+            </div>
+            <div class="post-date small">
+              September 29, 2020 
+              
+                <span class="tags">tags:<a href="/blog/tag/reactive">#reactive</a><a href="/blog/tag/mutiny">#mutiny</a><a href="/blog/tag/async">#async</a></span>
+              
+            </div>
+          </div>
+          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+            
+              <img class="headshot" src="https://www.gravatar.com/avatar/ab937f7df990a673446f1e30fd9ccfba">
+            
+            <p class="byline"><span>By</span> Clement Escoffier<br/></p>
+          </div>
+          <div class="grid__item width-12-12">
+            
+              <p>Running concurrent asynchronous actions with Mutiny</p>
+            
+          </div>
+          <div class="grid__item width-8-12 read-more small"><a href="/blog/mutiny-concurrent-uni/">Read More &rsaquo;</a></div>
+          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/mutiny-concurrent-uni/&title=Concurrent asynchronous actions with Mutiny" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Concurrent asynchronous actions with Mutiny&url=https://quarkus.io/blog/mutiny-concurrent-uni/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/mutiny-concurrent-uni/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/mutiny-concurrent-uni/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Concurrent asynchronous actions with Mutiny&amp;body=Concurrent asynchronous actions with Mutiny https://quarkus.io/blog/mutiny-concurrent-uni/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+        </div>
+      
+        
+        <div class="blog-list-item grid-wrapper">
+          <div class="grid__item width-12-12">
+            <div class="post-title">
+              <a href="/blog/quarkus-newsletter-8/">Quarkus Newsletter #8</a>
+            </div>
+            <div class="post-date small">
+              September 28, 2020 
+              
+                <span class="tags">tags:<a href="/blog/tag/newsletter">#newsletter</a></span>
+              
+            </div>
+          </div>
+          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+            
+              <img class="headshot" src="https://www.gravatar.com/avatar/9ac47c2c99739d75d633f4d9b73eef35">
+            
+            <p class="byline"><span>By</span> Max Rydahl Andersen<br/></p>
+          </div>
+          <div class="grid__item width-12-12">
+            
+              <p>Latest online content in and around Quarkus.</p>
+            
+          </div>
+          <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-newsletter-8/">Read More &rsaquo;</a></div>
+          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-newsletter-8/&title=Quarkus Newsletter #8" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus Newsletter #8&url=https://quarkus.io/blog/quarkus-newsletter-8/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-newsletter-8/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-newsletter-8/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus Newsletter #8&amp;body=Quarkus Newsletter #8 https://quarkus.io/blog/quarkus-newsletter-8/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+        </div>
+      
+        
+        <div class="blog-list-item grid-wrapper">
+          <div class="grid__item width-12-12">
+            <div class="post-title">
+              <a href="/blog/cytech-customer-story/">Cytech uses Quarkus to save Greek Tourism</a>
+            </div>
+            <div class="post-date small">
+              September 23, 2020 
+              
+                <span class="tags">tags:<a href="/blog/tag/user-story">#user-story</a></span>
+              
+            </div>
+          </div>
+          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+            
+              <img class="headshot" src="https://www.gravatar.com/avatar/f151c7272ad06cc1ad84c5a6e19885bb">
+            
+            <p class="byline"><span>By</span> Dimitris Andreadis<br/></p>
+          </div>
+          <div class="grid__item width-12-12">
+            
+              <p>Cytech uses Quarkus to save Greek Tourism</p>
+            
+          </div>
+          <div class="grid__item width-8-12 read-more small"><a href="/blog/cytech-customer-story/">Read More &rsaquo;</a></div>
+          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/cytech-customer-story/&title=Cytech uses Quarkus to save Greek Tourism" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Cytech uses Quarkus to save Greek Tourism&url=https://quarkus.io/blog/cytech-customer-story/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/cytech-customer-story/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/cytech-customer-story/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Cytech uses Quarkus to save Greek Tourism&amp;body=Cytech uses Quarkus to save Greek Tourism https://quarkus.io/blog/cytech-customer-story/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+        </div>
+      
+        
+        <div class="blog-list-item grid-wrapper">
+          <div class="grid__item width-12-12">
+            <div class="post-title">
+              <a href="/blog/kafka-avro/">How to Use Kafka, Schema Registry and Avro with Quarkus</a>
+            </div>
+            <div class="post-date small">
+              September 22, 2020 
+              
+                <span class="tags">tags:<a href="/blog/tag/reactive">#reactive</a><a href="/blog/tag/kafka">#kafka</a><a href="/blog/tag/avro">#avro</a><a href="/blog/tag/apicurio">#apicurio</a></span>
+              
+            </div>
+          </div>
+          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+            
+              <img class="headshot" src="https://www.gravatar.com/avatar/ab937f7df990a673446f1e30fd9ccfba">
+            
+            <p class="byline"><span>By</span> Clement Escoffier<br/></p>
+          </div>
+          <div class="grid__item width-12-12">
+            
+              <p>How to Use Kafka, Schema Registry, and Avro with Quarkus</p>
+            
+          </div>
+          <div class="grid__item width-8-12 read-more small"><a href="/blog/kafka-avro/">Read More &rsaquo;</a></div>
+          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/kafka-avro/&title=How to Use Kafka, Schema Registry and Avro with Quarkus" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=How to Use Kafka, Schema Registry and Avro with Quarkus&url=https://quarkus.io/blog/kafka-avro/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/kafka-avro/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/kafka-avro/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=How to Use Kafka, Schema Registry and Avro with Quarkus&amp;body=How to Use Kafka, Schema Registry and Avro with Quarkus https://quarkus.io/blog/kafka-avro/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+        </div>
+      
+        
+        <div class="blog-list-item grid-wrapper">
+          <div class="grid__item width-12-12">
+            <div class="post-title">
+              <a href="/blog/quarkus-1-8-1-final-released/">Quarkus 1.8.1.Final released - Bugfixes, RESTEasy Multipart extension</a>
+            </div>
+            <div class="post-date small">
+              September 18, 2020 
+              
+                <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+              
+            </div>
+          </div>
+          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+            
+              <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+            
+            <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+          </div>
+          <div class="grid__item width-12-12">
+            
+              <p>1.8.1.Final fixes some regressions and bugs and introduces the RESTEasy Multipart extension.</p>
+            
+          </div>
+          <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-1-8-1-final-released/">Read More &rsaquo;</a></div>
+          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-1-8-1-final-released/&title=Quarkus 1.8.1.Final released - Bugfixes, RESTEasy Multipart extension" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 1.8.1.Final released - Bugfixes, RESTEasy Multipart extension&url=https://quarkus.io/blog/quarkus-1-8-1-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-1-8-1-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-1-8-1-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 1.8.1.Final released - Bugfixes, RESTEasy Multipart extension&amp;body=Quarkus 1.8.1.Final released - Bugfixes, RESTEasy Multipart extension https://quarkus.io/blog/quarkus-1-8-1-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+        </div>
+      
+        
+        <div class="blog-list-item grid-wrapper">
+          <div class="grid__item width-12-12">
+            <div class="post-title">
+              <a href="/blog/intellij-quarkus-tools-1.1.0/">Quarkus Tools for IntelliJ 1.1.0 released!</a>
+            </div>
+            <div class="post-date small">
+              September 17, 2020 
+              
+                <span class="tags">tags:<a href="/blog/tag/announcement">#announcement</a><a href="/blog/tag/ide">#ide</a></span>
+              
+            </div>
+          </div>
+          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+            
+              <img class="headshot" src="https://www.gravatar.com/avatar/26b324ed039d9aadd939a3f3a4844823">
+            
+            <p class="byline"><span>By</span> Jeff Maury<br/></p>
+          </div>
+          <div class="grid__item width-12-12">
+            
+              <p>We are very pleased to announce the 1.1.0 release of Quarkus Tools for IntelliJ. This release brings support for YAML configuration files and bug fixes. application.yaml support Code completion (Ctrl + ENTER) Property documentation Select a property and press Ctrl+Q Syntax validation Wrong property key names or values are reported Moving Forward If you have any questions, suggestions or feedback, by all means please open an issue. Thank you for reading and stay tuned for...</p>
+            
+          </div>
+          <div class="grid__item width-8-12 read-more small"><a href="/blog/intellij-quarkus-tools-1.1.0/">Read More &rsaquo;</a></div>
+          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/intellij-quarkus-tools-1.1.0/&title=Quarkus Tools for IntelliJ 1.1.0 released!" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus Tools for IntelliJ 1.1.0 released!&url=https://quarkus.io/blog/intellij-quarkus-tools-1.1.0/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/intellij-quarkus-tools-1.1.0/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/intellij-quarkus-tools-1.1.0/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus Tools for IntelliJ 1.1.0 released!&amp;body=Quarkus Tools for IntelliJ 1.1.0 released! https://quarkus.io/blog/intellij-quarkus-tools-1.1.0/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+        </div>
+      
+        
+        <div class="blog-list-item grid-wrapper">
+          <div class="grid__item width-12-12">
+            <div class="post-title">
+              <a href="/blog/quarkus-1-8-0-final-released/">Quarkus 1.8 released - Multiple Persistence Units, Micrometer, jbang, GraalVM 20.2</a>
+            </div>
+            <div class="post-date small">
+              September 15, 2020 
+              
+                <span class="tags">tags:<a href="/blog/tag/release">#release</a></span>
+              
+            </div>
+          </div>
+          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+            
+              <img class="headshot" src="https://www.gravatar.com/avatar/ec96387a1a8295b6fd6dffb68f80c352">
+            
+            <p class="byline"><span>By</span> Guillaume Smet<br/></p>
+          </div>
+          <div class="grid__item width-12-12">
+            
+              <p>Quarkus 1.8 has been released with multiple persistence units support, a Micrometer extension, jbang integration and an update to GraalVM 20.2.</p>
+            
+          </div>
+          <div class="grid__item width-8-12 read-more small"><a href="/blog/quarkus-1-8-0-final-released/">Read More &rsaquo;</a></div>
+          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/quarkus-1-8-0-final-released/&title=Quarkus 1.8 released - Multiple Persistence Units, Micrometer, jbang, GraalVM 20.2" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Quarkus 1.8 released - Multiple Persistence Units, Micrometer, jbang, GraalVM 20.2&url=https://quarkus.io/blog/quarkus-1-8-0-final-released/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/quarkus-1-8-0-final-released/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/quarkus-1-8-0-final-released/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Quarkus 1.8 released - Multiple Persistence Units, Micrometer, jbang, GraalVM 20.2&amp;body=Quarkus 1.8 released - Multiple Persistence Units, Micrometer, jbang, GraalVM 20.2 https://quarkus.io/blog/quarkus-1-8-0-final-released/" title="Share via Email" >
+    <img src="/assets/images/share-page/icons_social-email.png"/>
+  </a>
+</div>
+</div>
+        </div>
+      
+        
+        <div class="blog-list-item grid-wrapper">
+          <div class="grid__item width-12-12">
+            <div class="post-title">
+              <a href="/blog/mutiny-pagination/">Handling paginated APIs with Mutiny</a>
+            </div>
+            <div class="post-date small">
+              September 15, 2020 
+              
+                <span class="tags">tags:<a href="/blog/tag/reactive">#reactive</a><a href="/blog/tag/rest">#rest</a><a href="/blog/tag/mutiny">#mutiny</a><a href="/blog/tag/http">#http</a><a href="/blog/tag/pagination">#pagination</a></span>
+              
+            </div>
+          </div>
+          <div class="grid__item width-8-12 width-12-12-m byline-wrapper">
+            
+              <img class="headshot" src="https://www.gravatar.com/avatar/ab937f7df990a673446f1e30fd9ccfba">
+            
+            <p class="byline"><span>By</span> Clement Escoffier<br/></p>
+          </div>
+          <div class="grid__item width-12-12">
+            
+              <p>How to use API using pagination with Mutiny</p>
+            
+          </div>
+          <div class="grid__item width-8-12 read-more small"><a href="/blog/mutiny-pagination/">Read More &rsaquo;</a></div>
+          <div class="grid__item width-4-12 width-12-12-m share-post"><div class="share-page">
+  <a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://quarkus.io/blog/mutiny-pagination/&title=Handling paginated APIs with Mutiny" rel="nofollow" target="_blank" title="Share on LinkedIn">
+    <img src="/assets/images/share-page/icons_social-linkedin.png"/>
+  </a>
+  <a class="share-twitter" href="https://twitter.com/intent/tweet?text=Handling paginated APIs with Mutiny&url=https://quarkus.io/blog/mutiny-pagination/&via=quarkusio&related=quarkusio" rel="nofollow" target="_blank" title="Share on Twitter">
+    <img src="/assets/images/share-page/icons_social-twitter.png"/>
+  </a>
+  <a class="share-facebook" href="https://facebook.com/sharer.php?u=https://quarkus.io/blog/mutiny-pagination/" rel="nofollow" target="_blank" title="Share on Facebook">
+    <img src="/assets/images/share-page/icons_social-facebook.png"/>
+  </a>
+  <a class="share-reddit" href="http://www.reddit.com/submit?url=https://quarkus.io/blog/mutiny-pagination/" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Reddit" >
+    <img src="/assets/images/share-page/icons_social-reddit.png"/>
+  </a>
+  <a class="share-email" href="mailto:?subject=Handling paginated APIs with Mutiny&amp;body=Handling paginated APIs with Mutiny https://quarkus.io/blog/mutiny-pagination/" title="Share via Email" >
     <img src="/assets/images/share-page/icons_social-email.png"/>
   </a>
 </div>
@@ -610,6 +617,10 @@
      
      
      <a href="/blog/tag/announcement">announcement</a></br>
+    
+     
+     
+     <a href="/blog/tag/announcements">announcements</a></br>
     
      
      
@@ -737,6 +748,10 @@
     
      
      
+     <a href="/blog/tag/gc">gc</a></br>
+    
+     
+     
      <a href="/blog/tag/gitlab">gitlab</a></br>
     
      
@@ -785,7 +800,19 @@
     
      
      
+     <a href="/blog/tag/intellij">intellij</a></br>
+    
+     
+     
+     <a href="/blog/tag/jakarta">jakarta</a></br>
+    
+     
+     
      <a href="/blog/tag/java">java</a></br>
+    
+     
+     
+     <a href="/blog/tag/jetbrains">jetbrains</a></br>
     
      
      
@@ -814,6 +841,10 @@
      
      
      <a href="/blog/tag/microprofile">microprofile</a></br>
+    
+     
+     
+     <a href="/blog/tag/migration">migration</a></br>
     
      
      
@@ -979,6 +1010,10 @@
      
      <a href="/blog/tag/web">web</a></br>
     
+     
+     
+     <a href="/blog/tag/windows">windows</a></br>
+    
   </div>
 </div>
 
@@ -999,21 +1034,41 @@
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -1022,15 +1077,29 @@
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1039,19 +1108,33 @@
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1060,13 +1143,21 @@
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1077,21 +1168,21 @@
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

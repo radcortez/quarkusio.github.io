@@ -9,7 +9,7 @@
   <title>Simplified MongoDB with Panache - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,66 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" selected>2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -209,7 +185,7 @@
 <li><a href="#most-useful-operations-2">Most useful operations</a></li>
 </ul>
 </li>
-<li><a href="#writing-a-jax-rs-resource">Writing a JAX-RS resource</a></li>
+<li><a href="#writing-a-jakarta-rest-resource">Writing a Jakarta REST resource</a></li>
 <li><a href="#advanced-query">Advanced Query</a>
 <ul class="sectlevel2">
 <li><a href="#paging">Paging</a></li>
@@ -225,7 +201,11 @@
 <li><a href="#transactions">Transactions</a></li>
 <li><a href="#custom-ids">Custom IDs</a></li>
 <li><a href="#working-with-kotlin-data-classes">Working with Kotlin Data classes</a></li>
-<li><a href="#reactive">Reactive Entities and Repositories</a></li>
+<li><a href="#reactive">Reactive Entities and Repositories</a>
+<ul class="sectlevel2">
+<li><a href="#reactive-transactions">Reactive transactions</a></li>
+</ul>
+</li>
 <li><a href="#mocking">Mocking</a>
 <ul class="sectlevel2">
 <li><a href="#using-the-active-record-pattern">Using the active-record pattern</a></li>
@@ -234,6 +214,13 @@
 </li>
 <li><a href="#how-and-why-we-simplify-mongodb-api">How and why we simplify MongoDB API</a></li>
 <li><a href="#defining-entities-in-external-projects-or-jars">Defining entities in external projects or jars</a></li>
+<li><a href="#multitenancy">Multitenancy</a>
+<ul class="sectlevel2">
+<li><a href="#writing-the-application">Writing the application</a></li>
+<li><a href="#configuring-the-application">Configuring the application</a></li>
+<li><a href="#testing">Testing</a></li>
+</ul>
+</li>
 </ul></div>
     <div>
       <div id="preamble">
@@ -354,7 +341,7 @@ cd mongodb-panache-quickstart</code></pre>
 <div class="title">Maven</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.13.4.Final:create \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:3.2.0.Final:create \
     -DprojectGroupId=org.acme \
     -DprojectArtifactId=mongodb-panache-quickstart \
     -Dextensions='resteasy-reactive-jackson,mongodb-panache' \
@@ -470,10 +457,10 @@ quarkus.mongodb.database = person</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>the name of the client for multi-tenant application, see <a href="mongodb#multiple-mongodb-clients">Multiple MongoDB Clients</a>. Otherwise, the default client will be used.</p>
+<p>the name of the client for multitenant application, see <a href="mongodb#multiple-mongodb-clients">Multiple MongoDB Clients</a>. Otherwise, the default client will be used.</p>
 </li>
 <li>
-<p>the name of the database, otherwise, the <code>quarkus.mongodb.database</code> property will be used.</p>
+<p>the name of the database, otherwise the <code>quarkus.mongodb.database</code> property or a <a href="https://www.mongodb.com/docs/drivers/java/sync/current#multitenancy"><code>MongoDatabaseResolver</code></a> implementation will be used.</p>
 </li>
 <li>
 <p>the name of the collection, otherwise the simple name of the class will be used.</p>
@@ -889,10 +876,10 @@ The repository pattern examples have been omitted for brevity.
 </div>
 </div>
 <div class="sect1">
-<h2 id="writing-a-jax-rs-resource"><a class="anchor" href="#writing-a-jax-rs-resource"></a>Writing a JAX-RS resource</h2>
+<h2 id="writing-a-jakarta-rest-resource"><a class="anchor" href="#writing-a-jakarta-rest-resource"></a>Writing a Jakarta REST resource</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>First, include one of the RESTEasy extensions to enable JAX-RS endpoints, for example, add the <code>io.quarkus:quarkus-resteasy-reactive-jackson</code> dependency for JAX-RS and JSON support.</p>
+<p>First, include one of the RESTEasy extensions to enable Jakarta REST endpoints, for example, add the <code>io.quarkus:quarkus-resteasy-reactive-jackson</code> dependency for Jakarta REST and JSON support.</p>
 </div>
 <div class="paragraph">
 <p>Then, you can create the following resource to create/read/update/delete your Person entity:</p>
@@ -1137,7 +1124,7 @@ The MongoDB POJO codec doesn&#8217;t support <code>ZonedDateTime</code> and <cod
 <p><code>{'firstname' : ?1 and 'status' : ?2}</code> will be mapped to the update document <code>{'$set' : {'firstname': ?1, 'status': ?2}}</code></p>
 </li>
 <li>
-<p><code>{'firstname' : :firstname and 'status' : :status}</code> ` will be mapped to the update document <code>{'$set' : {'firstname': :firstname, 'status': :status}}</code></p>
+<p><code>{'firstname' : :firstname and 'status' : :status}</code> will be mapped to the update document <code>{'$set' : {'firstname': :firstname, 'status': :status}}</code></p>
 </li>
 <li>
 <p><code>{'$inc': {'cpt': ?1}}</code> will be used as-is</p>
@@ -1286,6 +1273,18 @@ You can have your projection class extends from another class. In this case, the
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you run Java 17+, records are a good fit for projection classes.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -1338,18 +1337,6 @@ See <a href="mongodb#simplifying-mongodb-client-usage-using-bson-codec">Using BS
 <div class="paragraph">
 <p>In MongoDB, a transaction is only possible on a replicaset,
 luckily our <a href="mongodb#dev-services">Dev Services for MongoDB</a> setups a single node replicaset so it is compatible with transactions.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Transaction support inside MongoDB with Panache is still experimental.
-</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
@@ -1631,7 +1618,7 @@ Uni&lt;Long&gt; updated = ReactivePerson.update("name", "Mortal").where("status"
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If you use MongoDB with Panache in conjunction with RESTEasy Reactive, you can directly return a reactive type inside your JAX-RS resource endpoint.
+If you use MongoDB with Panache in conjunction with RESTEasy Reactive, you can directly return a reactive type inside your Jakarta REST resource endpoint.
 </td>
 </tr>
 </table>
@@ -1646,9 +1633,9 @@ If you use MongoDB with Panache in conjunction with RESTEasy Reactive, you can d
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.jboss.resteasy.reactive.RestStreamElementType;
 import org.reactivestreams.Publisher;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
 
 @GET
 @Path("/stream")
@@ -1671,6 +1658,30 @@ public Multi&lt;ReactivePerson&gt; streamPersons() {
 </tr>
 </table>
 </div>
+<div class="sect2">
+<h3 id="reactive-transactions"><a class="anchor" href="#reactive-transactions"></a>Reactive transactions</h3>
+<div class="paragraph">
+<p>MongoDB offers ACID transactions since version 4.0.</p>
+</div>
+<div class="paragraph">
+<p>To use them with reactive entities or repositories you need to use <code>io.quarkus.mongodb.panache.common.reactive.Panache.withTransaction()</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@POST
+public Uni&lt;Response&gt; addPerson(ReactiveTransactionPerson person) {
+    return Panache.withTransaction(() -&gt; person.persist().map(v -&gt; {
+        //the ID is populated before sending it to the database
+        String id = person.id.toString();
+        return Response.created(URI.create("/reactive-transaction/" + id)).build();
+    }));
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In MongoDB, a transaction is only possible on a replicaset,
+luckily our <a href="mongodb#dev-services">Dev Services for MongoDB</a> setups a single node replicaset so it is compatible with transactions.</p>
+</div>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -1678,10 +1689,11 @@ public Multi&lt;ReactivePerson&gt; streamPersons() {
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Transactions are not supported for Reactive Entities and Repositories.
+Reactive transaction support inside MongoDB with Panache is still experimental.
 </td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -1970,6 +1982,260 @@ this file manually in some cases.</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="multitenancy"><a class="anchor" href="#multitenancy"></a>Multitenancy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>"Multitenancy is a software architecture where a single software instance can serve multiple, distinct user groups. Software-as-a-service (SaaS)
+offerings are an example of multitenant architecture." (<a href="https://www.redhat.com/en/topics/cloud-computing/what-is-multitenancy#:~:text=Multitenancy%20is%20a%20software%20architecture,an%20example%20of%20multitenant%20architecture.">Red Hat</a>).</p>
+</div>
+<div class="paragraph">
+<p>MongoDB with Panache currently supports the database per tenant approach, it&#8217;s similar to schema per tenant approach when compared to SQL databases.</p>
+</div>
+<div class="sect2">
+<h3 id="writing-the-application"><a class="anchor" href="#writing-the-application"></a>Writing the application</h3>
+<div class="paragraph">
+<p>In order to resolve the tenant from incoming requests and map it to a specific database, you must create an implementation
+of the <code>io.quarkus.mongodb.panache.common.MongoDatabaseResolver</code> interface.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.quarkus.mongodb.panache.common.MongoDatabaseResolver;
+import io.vertx.ext.web.RoutingContext;
+
+@RequestScoped <i class="conum" data-value="1"></i><b>(1)</b>
+public class CustomMongoDatabaseResolver implements MongoDatabaseResolver {
+
+    @Inject
+    RoutingContext context;
+
+    @Override
+    public String resolve() {
+        return context.request().getHeader("X-Tenant");
+    }
+
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The bean is made <code>@RequestScoped</code> as the tenant resolution depends on the incoming request.</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The database selection priority order is as follow: <code>@MongoEntity(database="mizain")</code>, <code>MongoDatabaseResolver</code>,
+and then <code>quarkus.mongodb.database</code> property.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you also use <a href="security-openid-connect-multitenancy">OIDC multitenancy</a>, then if the OIDC tenantID and MongoDB
+database are the same and must be extracted from the Vert.x <code>RoutingContext</code> you can pass the tenant id from the OIDC <code>TenantResolver</code>
+to the MongoDB with Panache <code>MongoDatabaseResolver</code> as a <code>RoutingContext</code> attribute, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.quarkus.mongodb.panache.common.MongoDatabaseResolver;
+import io.vertx.ext.web.RoutingContext;
+
+@RequestScoped
+public class CustomMongoDatabaseResolver implements MongoDatabaseResolver {
+
+    @Inject
+    RoutingContext context;
+    ...
+    @Override
+    public String resolve() {
+        // OIDC TenantResolver has already calculated the tenant id and saved it as a RoutingContext `tenantId` attribute:
+        return context.get("tenantId");
+    }
+}</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Given this entity:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.bson.codecs.pojo.annotations.BsonId;
+import io.quarkus.mongodb.panache.common.MongoEntity;
+
+@MongoEntity(collection = "persons")
+public class Person extends PanacheMongoEntityBase {
+    @BsonId
+    public Long id;
+    public String firstname;
+    public String lastname;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And this resource:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import java.net.URI;
+
+import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.core.Response;
+
+@Path("/persons")
+public class PersonResource {
+
+    @GET
+    @Path("/{id}")
+    public Person getById(Long id) {
+        return Person.findById(id);
+    }
+
+    @POST
+    public Response create(Person person) {
+        Person.persist(person);
+        return Response.created(URI.create(String.format("/persons/%d", person.id))).build();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From the classes above, we have enough to persist and fetch persons from different databases, so it&#8217;s possible to see how it works.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuring-the-application"><a class="anchor" href="#configuring-the-application"></a>Configuring the application</h3>
+<div class="paragraph">
+<p>The same mongo connection will be used for all tenants, so a database has to be created for every tenant.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.mongodb.connection-string=mongodb://login:pass@mongo:27017
+# The default database
+quarkus.mongodb.database=sanjoka</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testing"><a class="anchor" href="#testing"></a>Testing</h3>
+<div class="paragraph">
+<p>You can write your test like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.Objects;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.junit.jupiter.api.Test;
+
+import io.quarkus.test.junit.QuarkusTest;
+import io.restassured.RestAssured;
+import io.restassured.http.Method;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+@QuarkusTest
+public class PanacheMongoMultiTenancyTest {
+
+    public static final String TENANT_HEADER_NAME = "X-Tenant";
+    private static final String TENANT_1 = "Tenant1";
+    private static final String TENANT_2 = "Tenant2";
+
+    @Test
+    public void testMongoDatabaseResolverUsingPersonResource() {
+        Person person1 = new Person();
+        person1.id = 1L;
+        person1.firstname = "Pedro";
+        person1.lastname = "Pereira";
+
+        Person person2 = new Person();
+        person2.id = 2L;
+        person2.firstname = "Tibé";
+        person2.lastname = "Venâncio";
+
+        String endpoint = "/persons";
+
+        // creating person 1
+        Response createPerson1Response = callCreatePersonEndpoint(endpoint, TENANT_1, person1);
+        assertResponse(createPerson1Response, 201);
+
+        // checking person 1 creation
+        Response getPerson1ByIdResponse = callGetPersonByIdEndpoint(endpoint, person1.id, TENANT_1);
+        assertResponse(getPerson1ByIdResponse, 200, person1);
+
+        // creating person 2
+        Response createPerson2Response = callCreatePersonEndpoint(endpoint, TENANT_2, person2);
+        assertResponse(createPerson2Response, 201);
+
+        // checking person 2 creation
+        Response getPerson2ByIdResponse = callGetPersonByIdEndpoint(endpoint, person2.id, TENANT_2);
+        assertResponse(getPerson2ByIdResponse, 200, person2);
+    }
+
+    protected Response callCreatePersonEndpoint(String endpoint, String tenant, Object person) {
+        return RestAssured.given()
+                .header("Content-Type", "application/json")
+                .header(TENANT_HEADER_NAME, tenant)
+                .body(person)
+                .post(endpoint)
+                .andReturn();
+    }
+
+    private Response callGetPersonByIdEndpoint(String endpoint, Long resourceId, String tenant) {
+        RequestSpecification request = RestAssured.given()
+                .header("Content-Type", "application/json");
+
+        if (Objects.nonNull(tenant) &amp;&amp; !tenant.isBlank()) {
+            request.header(TENANT_HEADER_NAME, tenant);
+        }
+
+        return request.when()
+                .request(Method.GET, endpoint.concat("/{id}"), resourceId)
+                .andReturn();
+    }
+
+    private void assertResponse(Response response, Integer expectedStatusCode) {
+        assertResponse(response, expectedStatusCode, null);
+    }
+
+    private void assertResponse(Response response, Integer expectedStatusCode, Object expectedResponseBody) {
+        assertEquals(expectedStatusCode, response.statusCode());
+        if (Objects.nonNull(expectedResponseBody)) {
+            assertTrue(EqualsBuilder.reflectionEquals(response.as(expectedResponseBody.getClass()), expectedResponseBody));
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
     </div>
   </div>
 </div>
@@ -1990,21 +2256,41 @@ this file manually in some cases.</p>
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -2013,15 +2299,29 @@ this file manually in some cases.</p>
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -2030,19 +2330,33 @@ this file manually in some cases.</p>
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -2051,13 +2365,21 @@ this file manually in some cases.</p>
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -2068,21 +2390,21 @@ this file manually in some cases.</p>
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

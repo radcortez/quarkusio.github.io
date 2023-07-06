@@ -6,6 +6,22 @@ These instructions will get you a copy of the Quarkus.io website up and running 
 
 ### Installation
 
+#### Using Docker
+
+1. Install [Docker Desktop](https://docs.docker.com/install/).
+2. Fork the [project repository](https://github.com/quarkusio/quarkusio.github.io), then clone your fork.
+
+        git clone git@github.com:YOUR_USER_NAME/quarkusio.github.io.git
+
+3. Change into the project directory:
+
+        cd quarkusio.github.io
+4. Run Docker Composer
+
+        docker-compose up
+
+5. Now browse to http://localhost:4000
+#### Using a local Ruby environment
 [Jekyll static site generator docs](https://jekyllrb.com/docs/).
 
 1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/). If you use `rvm`, run: `rvm use 2.7.1`.
@@ -56,7 +72,7 @@ To write a blog:
   - `emailhash` you can get by running `echo -n your@email.org | md5sum` on Linux or `echo -n your@email.org | md5` on macOS using an email you have registered from the [Gravatar service](https://gravatar.com),
      
 - create an blog entry under [_posts](https://github.com/quarkusio/quarkusio.github.io/tree/develop/_posts)
-  - the file name is `yyyy-mm-dd-slug.adoc`
+  - the file name is `yyyy-mm-dd-slug.adoc` Set the date to the same value in the asciidoc preamble.
 - `tags` should be used with some care as an archive page is created for of them. Below are some basic rules to try follow:
   - `quarkus-release` used for Quarkus release blogs
   - `announcement` used for general announcement with some impact.
@@ -67,7 +83,7 @@ To write a blog:
   - tags is space separated list `tags:extension grpc`
   - tags must be in lowercase
 - it's in asciidoc format, there is an example as shown with [2019-06-05-quarkus-and-web-ui-development-mode.adoc](https://github.com/quarkusio/quarkusio.github.io/blob/develop/_posts/2019-06-05-quarkus-and-web-ui-development-mode.adoc)
-  - Be aware that the `date` attribute in the asciidoc preamble defines when the article will be published. Use a present date while writing your article to test locally, then switch to the actual target date before submitting. 
+  - Be aware that the `date` attribute in the asciidoc preamble defines when the article will be published. Add a `--future` flag when testing locally to ensure the article is included in the generated site. 
 - send a pull request against the develop branch and voilà
 
 ## Translations/Localization (l10n)

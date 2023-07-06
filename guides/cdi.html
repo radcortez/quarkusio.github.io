@@ -6,10 +6,10 @@
 
 
 <head>
-  <title>Introduction to Contexts and Dependency Injection - Quarkus</title>
+  <title>Introduction to Contexts and Dependency Injection (CDI) - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -21,7 +21,7 @@
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="https://quarkus.io/guides/cdi" />
-  <meta property="og:title" content="Introduction to Contexts and Dependency Injection" />
+  <meta property="og:title" content="Introduction to Contexts and Dependency Injection (CDI)" />
   <meta property="og:description" content="Quarkus: Supersonic Subatomic Java" />
   <meta property="og:image" content="https://quarkus.io/assets/images/quarkus_card.png" />
   
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,70 +131,39 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" selected>2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
-    <h1 class="text-caps">Introduction to Contexts and Dependency Injection </h1>
+    <h1 class="text-caps">Introduction to Contexts and Dependency Injection (CDI) </h1>
   </div>
   <div class="width-12-12">
     <div class="hide-mobile toc"><ul class="sectlevel1">
@@ -199,8 +175,8 @@
 <li><a href="#hm-wait-a-minute-what-happens-if-multiple-beans-declare-the-same-type">6. Hm, wait a minute. What happens if multiple beans declare the same type?</a></li>
 <li><a href="#can-i-use-setter-and-constructor-injection">7. Can I use setter and constructor injection?</a></li>
 <li><a href="#you-talked-about-some-qualifiers">8. You talked about some qualifiers?</a></li>
-<li><a href="#looks-good-what-is-the-bean-scope">9. Looks good. What is the bean scope?</a></li>
-<li><a href="#what-scopes-can-i-actually-use-in-my-quarkus-application">10. What scopes can I actually use in my Quarkus application?</a></li>
+<li><a href="#bean-scope">9. Looks good. What is the bean scope?</a></li>
+<li><a href="#bean-scope-available">10. What scopes can I actually use in my Quarkus application?</a></li>
 <li><a href="#applicationscoped-and-singleton-look-very-similar-which-one-should-i-choose-for-my-quarkus-application">11. <code>@ApplicationScoped</code> and <code>@Singleton</code> look very similar. Which one should I choose for my Quarkus application?</a></li>
 <li><a href="#client_proxies">12. I don&#8217;t understand the concept of client proxies.</a></li>
 <li><a href="#ok-you-said-that-there-are-several-kinds-of-beans">13. OK. You said that there are several kinds of beans?</a></li>
@@ -218,7 +194,7 @@
       <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this guide we&#8217;re going to describe the basic principles of the Quarkus programming model that is based on the <a href="https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html" target="_blank" rel="noopener">Contexts and Dependency Injection for Java 2.0</a> specification.</p>
+<p>In this guide we&#8217;re going to describe the basic principles of the Quarkus programming model that is based on the <a href="https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html" target="_blank" rel="noopener">Jakarta Contexts and Dependency Injection 4.0</a> specification.</p>
 </div>
 </div>
 </div>
@@ -271,8 +247,8 @@ The most common ones are class-based beans:</p>
 <div class="listingblock">
 <div class="title">Simple Bean Example</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.inject.Inject;
-import javax.enterprise.context.ApplicationScoped;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.metrics.annotation.Counted;
 
 @ApplicationScoped <i class="conum" data-value="1"></i><b>(1)</b>
@@ -337,7 +313,7 @@ This is very useful because your application fails fast whenever the container i
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Your can use programmatic lookup via  <code>javax.enterprise.inject.Instance</code> to resolve ambiguities at runtime and even iterate over all beans implementing a given type:</p>
+<p>Your can use programmatic lookup via  <code>jakarta.enterprise.inject.Instance</code> to resolve ambiguities at runtime and even iterate over all beans implementing a given type:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -362,7 +338,7 @@ This is very useful because your application fails fast whenever the container i
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><code>javax.enterprise.inject.Instance</code> extends <code>Iterable</code>.</td>
+<td><code>jakarta.enterprise.inject.Instance</code> extends <code>Iterable</code>.</td>
 </tr>
 </table>
 </div>
@@ -377,7 +353,7 @@ This is very useful because your application fails fast whenever the container i
 <div class="sectionbody">
 <div class="paragraph">
 <p>Yes, you can.
-In fact, in CDI the "setter injection" is superseded by more powerful <a href="https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html#initializer_methods" target="_blank" rel="noopener">initializer methods</a>.
+In fact, in CDI the "setter injection" is superseded by more powerful <a href="https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#initializer_methods" target="_blank" rel="noopener">initializer methods</a>.
 Initializers may accept multiple parameters and don&#8217;t have to follow the JavaBean naming conventions.</p>
 </div>
 <div class="listingblock">
@@ -424,12 +400,12 @@ It&#8217;s also not necessary to add <code>@Inject</code> if there is only one c
 <h2 id="you-talked-about-some-qualifiers"><a class="anchor" href="#you-talked-about-some-qualifiers"></a>8. You talked about some qualifiers?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html#qualifiers" target="_blank" rel="noopener">Qualifiers</a> are annotations that help the container to distinguish beans that implement the same type.
+<p><a href="https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#qualifiers" target="_blank" rel="noopener">Qualifiers</a> are annotations that help the container to distinguish beans that implement the same type.
 As we already said a bean is assignable to an injection point if it has all the required qualifiers.
 If you declare no qualifier at an injection point the <code>@Default</code> qualifier is assumed.</p>
 </div>
 <div class="paragraph">
-<p>A qualifier type is a Java annotation defined as <code>@Retention(RUNTIME)</code> and annotated with the <code>@javax.inject.Qualifier</code> meta-annotation:</p>
+<p>A qualifier type is a Java annotation defined as <code>@Retention(RUNTIME)</code> and annotated with the <code>@jakarta.inject.Qualifier</code> meta-annotation:</p>
 </div>
 <div class="listingblock">
 <div class="title">Qualifier Example</div>
@@ -460,7 +436,7 @@ public class SuperiorTranslator extends Translator {
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><code>@Superior</code> is a <a href="https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html#defining_qualifier_types" target="_blank" rel="noopener">qualifier annotation</a>.</td>
+<td><code>@Superior</code> is a <a href="https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#defining_qualifier_types" target="_blank" rel="noopener">qualifier annotation</a>.</td>
 </tr>
 </table>
 </div>
@@ -472,7 +448,7 @@ And since our <code>SuperiorTranslator</code> does not declare <code>@Default</c
 </div>
 </div>
 <div class="sect1">
-<h2 id="looks-good-what-is-the-bean-scope"><a class="anchor" href="#looks-good-what-is-the-bean-scope"></a>9. Looks good. What is the bean scope?</h2>
+<h2 id="bean-scope"><a class="anchor" href="#bean-scope"></a>9. Looks good. What is the bean scope?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The scope of a bean determines the lifecycle of its instances, i.e. when and where an instance should be created and destroyed.</p>
@@ -492,10 +468,10 @@ Every bean has exactly one scope.
 </div>
 </div>
 <div class="sect1">
-<h2 id="what-scopes-can-i-actually-use-in-my-quarkus-application"><a class="anchor" href="#what-scopes-can-i-actually-use-in-my-quarkus-application"></a>10. What scopes can I actually use in my Quarkus application?</h2>
+<h2 id="bean-scope-available"><a class="anchor" href="#bean-scope-available"></a>10. What scopes can I actually use in my Quarkus application?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use all the built-in scopes mentioned by the specification except for <code>javax.enterprise.context.ConversationScoped</code>.</p>
+<p>You can use all the built-in scopes mentioned by the specification except for <code>jakarta.enterprise.context.ConversationScoped</code>.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -510,24 +486,24 @@ Every bean has exactly one scope.
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@javax.enterprise.context.ApplicationScoped</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@jakarta.enterprise.context.ApplicationScoped</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A single bean instance is used for the application and shared among all injection points. The instance is created lazily, i.e. once a method is invoked upon the <a href="#client_proxies">client proxy</a>.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@javax.inject.Singleton</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@jakarta.inject.Singleton</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Just like <code>@ApplicationScoped</code> except that no client proxy is used. The instance is created when an injection point that resolves to a @Singleton bean is being injected.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@javax.enterprise.context.RequestScoped</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@jakarta.enterprise.context.RequestScoped</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The bean instance is associated with the current <em>request</em> (usually an HTTP request).</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@javax.enterprise.context.Dependent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@jakarta.enterprise.context.Dependent</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This is a pseudo-scope. The instances are not shared and every injection point spawns a new instance of the dependent bean. The lifecycle of dependent bean is bound to the bean injecting it - it will be created and destroyed along with the bean injecting it.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@javax.enterprise.context.SessionScoped</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This scope is backed by a <code>javax.servlet.http.HttpSession</code> object. It&#8217;s only available if the <code>quarkus-undertow</code> extension is used.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@jakarta.enterprise.context.SessionScoped</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This scope is backed by a <code>jakarta.servlet.http.HttpSession</code> object. It&#8217;s only available if the <code>quarkus-undertow</code> extension is used.</p></td>
 </tr>
 </tbody>
 </table>
@@ -538,7 +514,7 @@ Every bean has exactly one scope.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-There can be other custom scopes provided by Quarkus extensions. For example, <code>quarkus-narayana-jta</code> provides <code>javax.transaction.TransactionScoped</code>.
+There can be other custom scopes provided by Quarkus extensions. For example, <a href="transaction"><code>quarkus-narayana-jta</code></a> provides <a href="transaction#transaction-scope"><code>jakarta.transaction.TransactionScoped</code></a>.
 </td>
 </tr>
 </table>
@@ -578,7 +554,7 @@ Existing injection points just work because the injected proxy delegates to the 
 <h2 id="client_proxies"><a class="anchor" href="#client_proxies"></a>12. I don&#8217;t understand the concept of client proxies.</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Indeed, the <a href="https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html#client_proxies" target="_blank" rel="noopener">client proxies</a> could be hard to grasp, but they provide some useful functionality.
+<p>Indeed, the <a href="https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#client_proxies" target="_blank" rel="noopener">client proxies</a> could be hard to grasp, but they provide some useful functionality.
 A client proxy is basically an object that delegates all method invocations to a target bean instance.
 It&#8217;s a container construct that implements <code>io.quarkus.arc.ClientProxy</code> and extends the bean class.</p>
 </div>
@@ -621,7 +597,7 @@ class Translator_ClientProxy extends Translator { <i class="conum" data-value="1
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>The <code>Translator_ClientProxy</code> instance is always injected instead of a direct reference to a <a href="https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html#contextual_instance" target="_blank" rel="noopener">contextual instance</a> of the <code>Translator</code> bean.</td>
+<td>The <code>Translator_ClientProxy</code> instance is always injected instead of a direct reference to a <a href="https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html#contextual_instance" target="_blank" rel="noopener">contextual instance</a> of the <code>Translator</code> bean.</td>
 </tr>
 </table>
 </div>
@@ -760,8 +736,8 @@ You can read more about producers for example in the <a href="https://docs.jboss
 <div class="listingblock">
 <div class="title">Lifecycle Callbacks Example</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 @ApplicationScoped
 public class Translator {
@@ -817,7 +793,7 @@ import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import javax.interceptor.InterceptorBinding;
+import jakarta.interceptor.InterceptorBinding;
 
 @InterceptorBinding <i class="conum" data-value="1"></i><b>(1)</b>
 @Retention(RetentionPolicy.RUNTIME)
@@ -846,10 +822,10 @@ public @interface Logged {
 <div class="listingblock">
 <div class="title">Simple Interceptor Example</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.annotation.Priority;
-import javax.interceptor.AroundInvoke;
-import javax.interceptor.Interceptor;
-import javax.interceptor.InvocationContext;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.annotation.Priority;
+import jakarta.interceptor.AroundInvoke;
+import jakarta.interceptor.Interceptor;
+import jakarta.interceptor.InvocationContext;
 
 @Logged <i class="conum" data-value="1"></i><b>(1)</b>
 @Priority(2020) <i class="conum" data-value="2"></i><b>(2)</b>
@@ -913,7 +889,7 @@ Instances of interceptors are dependent objects of the bean instance they interc
 <div class="listingblock">
 <div class="title">Simple Example of Interceptor Usage</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.enterprise.context.ApplicationScoped;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.enterprise.context.ApplicationScoped;
 
 @Logged <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="2"></i><b>(2)</b>
 @ApplicationScoped
@@ -947,11 +923,11 @@ If there&#8217;s a bean class that inherits from <code>MyService</code>, the <co
 <div class="listingblock">
 <div class="title">Simple Decorator Example</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import javax.decorator.Decorator;
-import javax.decorator.Delegate;
-import javax.annotation.Priority;
-import javax.inject.Inject;
-import javax.enterprise.inject.Any;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import jakarta.decorator.Decorator;
+import jakarta.decorator.Delegate;
+import jakarta.annotation.Priority;
+import jakarta.inject.Inject;
+import jakarta.enterprise.inject.Any;
 
 public interface Account {
    void withdraw(BigDecimal amount);
@@ -1061,7 +1037,7 @@ class Logger {
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><code>javax.enterprise.event.Event</code> is used to fire events.</td>
+<td><code>jakarta.enterprise.event.Event</code> is used to fire events.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -1092,11 +1068,10 @@ For more info about events/observers visit <a href="https://docs.jboss.org/weld/
 <h2 id="conclusion"><a class="anchor" href="#conclusion"></a>15. Conclusion</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this guide, we&#8217;ve covered some basic topics of the Quarkus programming model that is based on the <a href="https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html" target="_blank" rel="noopener">Contexts and Dependency Injection for Java 2.0</a> specification.
-However, a full CDI implementation is not used under the hood.
-Quarkus only implements a subset of the CDI features - see also <a href="cdi-reference#supported_features">the list of supported features</a> and <a href="cdi-reference#limitations">the list of limitations</a>.
-On the other hand, there are quite a few <a href="cdi-reference#nonstandard_features">non-standard features</a> and <a href="cdi-reference#build_time_apis">Quarkus-specific APIs</a>.
-We believe that our efforts will drive the innovation of the CDI specification towards the build-time oriented developer stacks in the future.</p>
+<p>In this guide, we&#8217;ve covered some basic topics of the Quarkus programming model that is based on the <a href="https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html" target="_blank" rel="noopener">Jakarta Contexts and Dependency Injection 4.0</a> specification.
+Quarkus implements the CDI Lite specification, but not CDI Full.
+See also <a href="cdi-reference#supported_features">the list of supported features</a> and <a href="cdi-reference#limitations">the list of limitations</a>.
+There are also quite a few <a href="cdi-reference#nonstandard_features">non-standard features</a> and <a href="cdi-reference#build_time_apis">Quarkus-specific APIs</a>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1106,7 +1081,7 @@ We believe that our efforts will drive the innovation of the CDI specification t
 </td>
 <td class="content">
 If you wish to learn more about Quarkus-specific features and limitations there is a Quarkus <a href="cdi-reference">CDI Reference Guide</a>.
-We also recommend you to read the <a href="https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html">CDI specification</a> and the <a href="https://docs.jboss.org/weld/reference/latest/en-US/html/">Weld documentation</a> (Weld is a CDI Reference Implementation) to get acquainted with more complex topics.
+We also recommend you to read the <a href="https://jakarta.ee/specifications/cdi/4.0/jakarta-cdi-spec-4.0.html">CDI specification</a> and the <a href="https://docs.jboss.org/weld/reference/latest/en-US/html/">Weld documentation</a> (Weld is a CDI Reference Implementation) to get acquainted with more complex topics.
 </td>
 </tr>
 </table>
@@ -1133,21 +1108,41 @@ We also recommend you to read the <a href="https://jakarta.ee/specifications/cdi
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -1156,15 +1151,29 @@ We also recommend you to read the <a href="https://jakarta.ee/specifications/cdi
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1173,19 +1182,33 @@ We also recommend you to read the <a href="https://jakarta.ee/specifications/cdi
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1194,13 +1217,21 @@ We also recommend you to read the <a href="https://jakarta.ee/specifications/cdi
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1211,21 +1242,21 @@ We also recommend you to read the <a href="https://jakarta.ee/specifications/cdi
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

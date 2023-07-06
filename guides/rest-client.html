@@ -6,10 +6,10 @@
 
 
 <head>
-  <title>Using the REST Client - Quarkus</title>
+  <title>Using the legacy REST Client - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -21,7 +21,7 @@
   <meta name="twitter:site" content="@QuarkusIO"> 
   <meta name="twitter:creator" content="@QuarkusIO">
   <meta property="og:url" content="https://quarkus.io/guides/rest-client" />
-  <meta property="og:title" content="Using the REST Client" />
+  <meta property="og:title" content="Using the legacy REST Client" />
   <meta property="og:description" content="Quarkus: Supersonic Subatomic Java" />
   <meta property="og:image" content="https://quarkus.io/assets/images/quarkus_card.png" />
   
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,70 +131,39 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" selected>2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
-    <h1 class="text-caps">Using the REST Client </h1>
+    <h1 class="text-caps">Using the legacy REST Client </h1>
   </div>
   <div class="width-12-12">
     <div class="hide-mobile toc"><ul class="sectlevel1">
@@ -206,8 +182,9 @@
 <li><a href="#disabling-ssl-verifications">Disabling SSL verifications</a></li>
 </ul>
 </li>
-<li><a href="#create-the-jax-rs-resource">Create the JAX-RS resource</a></li>
+<li><a href="#create-the-jakarta-rest-resource">Create the Jakarta REST resource</a></li>
 <li><a href="#update-the-test">Update the test</a></li>
+<li><a href="#redirection">Redirection</a></li>
 <li><a href="#async-support">Async Support</a></li>
 <li><a href="#custom-headers-support">Custom headers support</a>
 <ul class="sectlevel2">
@@ -230,7 +207,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>This guide is about the REST Client compatible with <a href="https://resteasy.dev">RESTEasy Classic</a> which used to be the default JAX-RS implementation until Quarkus 2.8.</p>
+<p>This guide is about the REST Client compatible with <a href="https://resteasy.dev">RESTEasy Classic</a> which used to be the default Jakarta REST (formerly known as JAX-RS) implementation until Quarkus 2.8.</p>
 </div>
 <div class="paragraph">
 <p>It is now recommended to use RESTEasy Reactive, which supports equally well traditional blocking workloads and reactive workloads.
@@ -277,7 +254,7 @@ there is another guide if you need to write server <a href="rest-json">JSON REST
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.6</p>
+<p>Apache Maven 3.9.2</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -334,7 +311,7 @@ cd rest-client-quickstart</code></pre>
 <div class="title">Maven</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.13.4.Final:create \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:3.2.0.Final:create \
     -DprojectGroupId=org.acme \
     -DprojectArtifactId=rest-client-quickstart \
     -Dextensions='resteasy,resteasy-jackson,rest-client,rest-client-jackson' \
@@ -442,7 +419,7 @@ public class Extension {
 <h2 id="create-the-interface"><a class="anchor" href="#create-the-interface"></a>Create the interface</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Using the RESTEasy REST Client is as simple as creating an interface using the proper JAX-RS and MicroProfile annotations. In our case the interface should be created at <code>src/main/java/org/acme/rest/client/ExtensionsService.java</code> and have the following content:</p>
+<p>Using the RESTEasy REST Client is as simple as creating an interface using the proper Jakarta REST and MicroProfile annotations. In our case the interface should be created at <code>src/main/java/org/acme/rest/client/ExtensionsService.java</code> and have the following content:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -451,9 +428,9 @@ public class Extension {
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import org.jboss.resteasy.annotations.jaxrs.QueryParam;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.QueryParam;
 import java.util.Set;
 
 @Path("/extensions")
@@ -478,7 +455,7 @@ public interface ExtensionsService {
 CDI injection as a REST Client</p>
 </li>
 <li>
-<p><code>@Path</code>, <code>@GET</code> and <code>@QueryParam</code> are the standard JAX-RS annotations used to define how to access the service</p>
+<p><code>@Path</code>, <code>@GET</code> and <code>@QueryParam</code> are the standard Jakarta REST annotations used to define how to access the service</p>
 </li>
 </ul>
 </div>
@@ -501,7 +478,7 @@ you will need to add <code>@Produces(MediaType.APPLICATION_JSON)</code> and <cod
 </div>
 <div class="paragraph">
 <p>If you don&#8217;t rely on the JSON default, it is heavily recommended to annotate your endpoints with the <code>@Produces</code> and <code>@Consumes</code> annotations to define precisely the expected content-types.
-It will allow to narrow down the number of JAX-RS providers (which can be seen as converters) included in the native executable.</p>
+It will allow to narrow down the number of Jakarta REST providers (which can be seen as converters) included in the native executable.</p>
 </div>
 </td>
 </tr>
@@ -520,8 +497,8 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 import org.jboss.resteasy.annotations.jaxrs.QueryParam;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 import java.util.Set;
 
 @Path("/extensions")
@@ -548,7 +525,7 @@ The name of the property needs to follow a certain convention which is best disp
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># Your configuration properties
 quarkus.rest-client."org.acme.rest.client.ExtensionsService".url=https://stage.code.quarkus.io/api # <i class="conum" data-value="1"></i><b>(1)</b>
-quarkus.rest-client."org.acme.rest.client.ExtensionsService".scope=javax.inject.Singleton # <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+quarkus.rest-client."org.acme.rest.client.ExtensionsService".scope=jakarta.inject.Singleton # <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -581,7 +558,7 @@ The default scope can also be defined on the interface.</td>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">org.acme.rest.client.ExtensionsService/mp-rest/url=https://stage.code.quarkus.io/api
-org.acme.rest.client.ExtensionsService/mp-rest/scope=javax.inject.Singleton</code></pre>
+org.acme.rest.client.ExtensionsService/mp-rest/scope=jakarta.inject.Singleton</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -606,7 +583,7 @@ public interface ExtensionsService {
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties"># Your configuration properties
 quarkus.rest-client.extensions-api.url=https://stage.code.quarkus.io/api
-quarkus.rest-client.extensions-api.scope=javax.inject.Singleton</code></pre>
+quarkus.rest-client.extensions-api.scope=jakarta.inject.Singleton</code></pre>
 </div>
 </div>
 <div class="sect2">
@@ -616,8 +593,44 @@ quarkus.rest-client.extensions-api.scope=javax.inject.Singleton</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.rest-client.extensions-api.hostname-verifier=io.quarkus.restclient.NoopHostnameVerifier</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.rest-client.extensions-api.verify-host=false</code></pre>
 </div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This setting should not be used in production as it will disable the SSL hostname verification.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Moreover, you can configure a REST client to use your custom hostname verify strategy. All you need to do is to provide a class that implements the interface <code>javax.net.ssl.HostnameVerifier</code> and add the following property to your configuration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.rest-client.extensions-api.hostname-verifier=&lt;full qualified custom hostname verifier class name&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Quarkus REST client provides an embedded hostname verifier strategy to disable the hostname verification called <code>io.quarkus.restclient.NoopHostnameVerifier</code>.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -648,7 +661,7 @@ quarkus.rest-client.extensions-api.scope=javax.inject.Singleton</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="create-the-jax-rs-resource"><a class="anchor" href="#create-the-jax-rs-resource"></a>Create the JAX-RS resource</h2>
+<h2 id="create-the-jakarta-rest-resource"><a class="anchor" href="#create-the-jakarta-rest-resource"></a>Create the Jakarta REST resource</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Create the <code>src/main/java/org/acme/rest/client/ExtensionsResource.java</code> file with the following content:</p>
@@ -660,9 +673,9 @@ quarkus.rest-client.extensions-api.scope=javax.inject.Singleton</code></pre>
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
-import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 import java.util.Set;
 
 @Path("/extension")
@@ -732,6 +745,33 @@ public class ExtensionsResourceTest {
 </div>
 </div>
 <div class="sect1">
+<h2 id="redirection"><a class="anchor" href="#redirection"></a>Redirection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A HTTP server can redirect a response to another location by sending a response with a status code that starts with "3" and a HTTP header "Location" holding the URL to be redirected to. When the REST Client receives a redirection response from a HTTP server, it won&#8217;t automatically perform another request to the new location. However, you can enable the automatic redirection by enabling the "follow-redirects" property:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>quarkus.rest-client.follow-redirects</code> to enable redirection for all REST clients.</p>
+</li>
+<li>
+<p><code>quarkus.rest-client.&lt;client-prefix&gt;.follow-redirects</code> to enable redirection for a specific REST client.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If this property is true, then REST Client will perform a new request that it receives a redirection response from the HTTP server.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, we can limit the number of redirections using the property "max-redirects".</p>
+</div>
+<div class="paragraph">
+<p>One important note is that according to the <a href="https://www.rfc-editor.org/rfc/rfc2616#section-10.3.8">RFC2616</a> specs, by default the redirection will only happen for GET or HEAD methods.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="async-support"><a class="anchor" href="#async-support"></a>Async Support</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -746,8 +786,8 @@ Let&#8217;s see it in action by adding a <code>getByIdAsync</code> method in our
 import java.util.Set;
 import java.util.concurrent.CompletionStage;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import org.jboss.resteasy.annotations.jaxrs.QueryParam;
@@ -775,9 +815,9 @@ public interface ExtensionsService {
 import java.util.Set;
 import java.util.concurrent.CompletionStage;
 
-import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
@@ -833,8 +873,8 @@ public void testExtensionIdAsyncEndpoint() {
 import java.util.Set;
 import java.util.concurrent.CompletionStage;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import org.jboss.resteasy.annotations.jaxrs.QueryParam;
@@ -862,9 +902,9 @@ public interface ExtensionsService {
 import java.util.Set;
 import java.util.concurrent.CompletionStage;
 
-import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
@@ -922,7 +962,7 @@ extensionsService.getByIdAsUni(id)
 <div class="paragraph">
 <p>If you use a <code>CompletionStage</code>, you would need to call the service&#8217;s method to retry.
 This difference comes from the laziness aspect of Mutiny and its subscription protocol.
-More details about this can be found in <a href="https://smallrye.io/smallrye-mutiny/#_uni_and_multi">the Mutiny documentation</a>.</p>
+More details about this can be found in <a href="https://smallrye.io/smallrye-mutiny/latest/reference/uni-and-multi/">the Mutiny documentation</a>.</p>
 </div>
 </div>
 </div>
@@ -942,8 +982,8 @@ More details about this can be found in <a href="https://smallrye.io/smallrye-mu
 import java.util.Set;
 import java.util.concurrent.CompletionStage;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
 
 import org.eclipse.microprofile.rest.client.annotation.RegisterClientHeaders;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
@@ -976,9 +1016,9 @@ public interface ExtensionsService {
 
 import org.eclipse.microprofile.rest.client.ext.ClientHeadersFactory;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.core.MultivaluedHashMap;
-import javax.ws.rs.core.MultivaluedMap;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.ws.rs.core.MultivaluedHashMap;
+import jakarta.ws.rs.core.MultivaluedMap;
 import java.util.UUID;
 
 @ApplicationScoped
@@ -1110,7 +1150,7 @@ public interface ExtensionsService {
 <div class="sectionbody">
 <div class="paragraph">
 <p>In Quarkus, the REST Client extension and <a href="rest-json">the RESTEasy extension</a> share the same infrastructure.
-One important consequence of this consideration is that they share the same list of providers (in the JAX-RS meaning of the word).</p>
+One important consequence of this consideration is that they share the same list of providers (in the Jakarta REST meaning of the word).</p>
 </div>
 <div class="paragraph">
 <p>For instance, if you declare a <code>WriterInterceptor</code>, it will by default intercept both the servers calls and the client calls,
@@ -1201,7 +1241,6 @@ values that Quarkus will use.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme.rest.client;
 
-import java.util.Collections;
 import java.util.Map;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
@@ -1230,7 +1269,7 @@ public class WireMockExtensions implements QuarkusTestResourceLifecycleManager {
 
         wireMockServer.stubFor(get(urlMatching(".*")).atPriority(10).willReturn(aResponse().proxiedFrom("https://stage.code.quarkus.io/api")));   <i class="conum" data-value="5"></i><b>(5)</b>
 
-        return Collections.singletonMap("quarkus.rest-client.\"org.acme.rest.client.ExtensionsService\".url", wireMockServer.baseUrl()); <i class="conum" data-value="6"></i><b>(6)</b>
+        return Map.of("quarkus.rest-client.\"org.acme.rest.client.ExtensionsService\".url", wireMockServer.baseUrl()); <i class="conum" data-value="6"></i><b>(6)</b>
     }
 
     @Override
@@ -1335,21 +1374,41 @@ public class ExtensionsResourceTest {
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -1358,15 +1417,29 @@ public class ExtensionsResourceTest {
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1375,19 +1448,33 @@ public class ExtensionsResourceTest {
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1396,13 +1483,21 @@ public class ExtensionsResourceTest {
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1413,21 +1508,21 @@ public class ExtensionsResourceTest {
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

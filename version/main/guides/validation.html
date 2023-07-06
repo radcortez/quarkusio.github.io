@@ -9,7 +9,7 @@
   <title>Validation with Hibernate Validator - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,66 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/version/main/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" >2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -206,6 +182,12 @@
 <li><a href="#hibernate-validator-extension-and-cdi">Hibernate Validator extension and CDI</a></li>
 <li><a href="#validation-and-localization">Validation and localization</a></li>
 <li><a href="#validation-groups-for-rest-endpoint-or-service-method-validation">Validation groups for REST endpoint or service method validation</a></li>
+</ul>
+</li>
+<li><a href="#limitations">Limitations</a>
+<ul class="sectlevel2">
+<li><a href="#meta-infvalidation-xml">META-INF/validation.xml</a></li>
+<li><a href="#validatorfactory-and-native-executables">ValidatorFactory and native executables</a></li>
 </ul>
 </li>
 <li><a href="#configuration-reference">Hibernate Validator Configuration Reference</a></li>
@@ -246,7 +228,7 @@
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.6</p>
+<p>Apache Maven 3.9.3</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -330,7 +312,7 @@ cd validation-quickstart</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command generates a Maven structure importing the RESTEasy Reactive/JAX-RS, Jackson and Hibernate Validator/Bean Validation extensions.</p>
+<p>This command generates a Maven structure importing the RESTEasy Reactive/Jakarta REST, Jackson and Hibernate Validator/Bean Validation extensions.</p>
 </div>
 <div class="paragraph">
 <p>If you already have your Quarkus project configured, you can add the <code>hibernate-validator</code> extension
@@ -385,8 +367,8 @@ Create the <code>org.acme.validation.Book</code> class with the following conten
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme.validation;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Min;
 
 public class Book {
 
@@ -417,10 +399,10 @@ The getter and setter methods are also used for JSON mapping.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme.validation;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/books")
 public class BookResource {
@@ -545,8 +527,8 @@ It can be extracted and manipulated to display a proper error message.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme.validation;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.validation.Valid;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.validation.Valid;
 
 @ApplicationScoped
 public class BookService {
@@ -706,22 +688,22 @@ you can very easily tweak it by declaring replacement beans that will be injecte
 <div class="ulist">
 <ul>
 <li>
-<p><code>javax.validation.ClockProvider</code></p>
+<p><code>jakarta.validation.ClockProvider</code></p>
 </li>
 <li>
-<p><code>javax.validation.ConstraintValidator</code></p>
+<p><code>jakarta.validation.ConstraintValidator</code></p>
 </li>
 <li>
-<p><code>javax.validation.ConstraintValidatorFactory</code></p>
+<p><code>jakarta.validation.ConstraintValidatorFactory</code></p>
 </li>
 <li>
-<p><code>javax.validation.MessageInterpolator</code></p>
+<p><code>jakarta.validation.MessageInterpolator</code></p>
 </li>
 <li>
-<p><code>javax.validation.ParameterNameProvider</code></p>
+<p><code>jakarta.validation.ParameterNameProvider</code></p>
 </li>
 <li>
-<p><code>javax.validation.TraversableResolver</code></p>
+<p><code>jakarta.validation.TraversableResolver</code></p>
 </li>
 <li>
 <p><code>org.hibernate.validator.spi.properties.GetterPropertySelectionStrategy</code></p>
@@ -787,7 +769,7 @@ public class MyEmailValidatorFactoryCustomizer implements ValidatorFactoryCustom
 </div>
 <div class="paragraph">
 <p>All beans implementing <code>ValidatorFactoryCustomizer</code> are applied, meaning you can have several of them.
-If you need to enforce some ordering, you can use the usual <code>@javax.annotation.Priority</code> annotation - beans with higher priority are applied first.</p>
+If you need to enforce some ordering, you can use the usual <code>@jakarta.annotation.Priority</code> annotation - beans with higher priority are applied first.</p>
 </div>
 </div>
 <div class="sect3">
@@ -862,7 +844,7 @@ quarkus.default-locale=fr-FR</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>If you are using RESTEasy Reactive or RESTEasy Classic, in the context of a JAX-RS endpoint,
+<p>If you are using RESTEasy Reactive or RESTEasy Classic, in the context of a Jakarta REST endpoint,
 Hibernate Validator will automatically resolve the optimal locale to use from the <code>Accept-Language</code> HTTP header,
 provided the supported locales have been properly specified in the <code>application.properties</code>:</p>
 </div>
@@ -992,6 +974,51 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
 </div>
 </div>
 <div class="sect1">
+<h2 id="limitations"><a class="anchor" href="#limitations"></a>Limitations</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="meta-infvalidation-xml"><a class="anchor" href="#meta-infvalidation-xml"></a>META-INF/validation.xml</h3>
+<div class="paragraph">
+<p>Configuring the <code>ValidatorFactory</code> using a <code>META-INF/validation.xml</code> file is <strong>NOT</strong> supported in Quarkus.</p>
+</div>
+<div class="paragraph">
+<p>At the moment, Hibernate Validator does not expose an API to extract the information from this file
+so that we could register the appropriate classes for reflection.</p>
+</div>
+<div class="paragraph">
+<p>To configure the <code>ValidatorFactory</code>, use the exposed configuration properties and the CDI integration.</p>
+</div>
+<div class="paragraph">
+<p>Consequently, the only way to define constraints in Quarkus is by annotating your classes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="validatorfactory-and-native-executables"><a class="anchor" href="#validatorfactory-and-native-executables"></a>ValidatorFactory and native executables</h3>
+<div class="paragraph">
+<p>Quarkus provides a default <code>ValidatorFactory</code> that you can customize using configuration properties.
+This <code>ValidatorFactory</code> is carefully initialized to support native executables
+using a bootstrap that is Quarkus-specific.</p>
+</div>
+<div class="paragraph">
+<p>Creating a <code>ValidatorFactory</code> by yourself it not supported in native executables
+and if you try to do so,
+you will get an  error similar to <code>jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no
+Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your
+classpath.</code> when running your native executable.</p>
+</div>
+<div class="paragraph">
+<p>Thus why you should always use the Quarkus-managed <code>ValidatorFactory</code> by injecting an instance of
+<code>ValidatorFactory</code> or directly an instance of <code>Validator</code> using CDI injection.</p>
+</div>
+<div class="paragraph">
+<p>To support some external libraries that are creating a <code>ValidatorFactory</code> using the default bootstrap,
+Quarkus returns the <code>ValidatorFactory</code> managed by Quarkus when <code>Validation.buildDefaultValidatorFactory()</code>
+is called.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="configuration-reference"><a class="anchor" href="#configuration-reference"></a>Hibernate Validator Configuration Reference</h2>
 <div class="sectionbody">
 <div class="paragraph configuration-legend">
@@ -1019,7 +1046,7 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
 <p>Enable the fail fast mode. When fail fast is enabled the validation will stop on the first constraint violation detected.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13469">QUARKUS_HIBERNATE_VALIDATOR_FAIL_FAST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13469" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-29223">QUARKUS_HIBERNATE_VALIDATOR_FAIL_FAST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29223" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1038,11 +1065,20 @@ In this case, it means <code>Book.id</code> must not be <code>null</code> and <c
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Define whether overriding methods that override constraints should throw a <code>ConstraintDefinitionException</code>. The default value is <code>false</code>, i.e. do not allow.
-See Section 4.5.5 of the JSR 380 specification, specifically "In sub types (be it sub classes/interfaces or interface implementations), no parameter constraints may be declared on overridden or implemented methods, nor may parameters be marked for cascaded validation. This would pose a strengthening of preconditions to be fulfilled by the caller."</p>
+<p>Define whether overriding methods that override constraints should throw a <code>ConstraintDefinitionException</code>. The default value is <code>false</code>, i.e. do not allow.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13470">QUARKUS_HIBERNATE_VALIDATOR_METHOD_VALIDATION_ALLOW_OVERRIDING_PARAMETER_CONSTRAINTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13470" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>See Section 4.5.5 of the JSR 380 specification, specifically</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>In sub types (be it sub classes/interfaces or interface implementations), no parameter constraints may be declared on overridden or implemented methods, nor may parameters be marked for cascaded validation. This would pose a strengthening of preconditions to be fulfilled by the caller.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-29224">QUARKUS_HIBERNATE_VALIDATOR_METHOD_VALIDATION_ALLOW_OVERRIDING_PARAMETER_CONSTRAINTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29224" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1056,11 +1092,20 @@ See Section 4.5.5 of the JSR 380 specification, specifically "In sub types (be i
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Define whether parallel methods that define constraints should throw a <code>ConstraintDefinitionException</code>. The default value is <code>false</code>, i.e. do not allow.
-See Section 4.5.5 of the JSR 380 specification, specifically "If a sub type overrides/implements a method originally defined in several parallel types of the hierarchy (e.g. two interfaces not extending each other, or a class and an interface not implemented by said class), no parameter constraints may be declared for that method at all nor parameters be marked for cascaded validation. This again is to avoid an unexpected strengthening of preconditions to be fulfilled by the caller."</p>
+<p>Define whether parallel methods that define constraints should throw a <code>ConstraintDefinitionException</code>. The default value is <code>false</code>, i.e. do not allow.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13471">QUARKUS_HIBERNATE_VALIDATOR_METHOD_VALIDATION_ALLOW_PARAMETER_CONSTRAINTS_ON_PARALLEL_METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13471" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>See Section 4.5.5 of the JSR 380 specification, specifically</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>If a sub type overrides/implements a method originally defined in several parallel types of the hierarchy (e.g. two interfaces not extending each other, or a class and an interface not implemented by said class), no parameter constraints may be declared for that method at all nor parameters be marked for cascaded validation. This again is to avoid an unexpected strengthening of preconditions to be fulfilled by the caller.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-29225">QUARKUS_HIBERNATE_VALIDATOR_METHOD_VALIDATION_ALLOW_PARAMETER_CONSTRAINTS_ON_PARALLEL_METHODS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29225" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1074,11 +1119,20 @@ See Section 4.5.5 of the JSR 380 specification, specifically "If a sub type over
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Define whether more than one constraint on a return value may be marked for cascading validation are allowed. The default value is <code>false</code>, i.e. do not allow.
-See Section 4.5.5 of the JSR 380 specification, specifically "One must not mark a method return value for cascaded validation more than once in a line of a class hierarchy. In other words, overriding methods on sub types (be it sub classes/interfaces or interface implementations) cannot mark the return value for cascaded validation if the return value has already been marked on the overridden method of the super type or interface."</p>
+<p>Define whether more than one constraint on a return value may be marked for cascading validation are allowed. The default value is <code>false</code>, i.e. do not allow.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13472">QUARKUS_HIBERNATE_VALIDATOR_METHOD_VALIDATION_ALLOW_MULTIPLE_CASCADED_VALIDATION_ON_RETURN_VALUES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13472" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>See Section 4.5.5 of the JSR 380 specification, specifically</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>One must not mark a method return value for cascaded validation more than once in a line of a class hierarchy. In other words, overriding methods on sub types (be it sub classes/interfaces or interface implementations) cannot mark the return value for cascaded validation if the return value has already been marked on the overridden method of the super type or interface.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-29226">QUARKUS_HIBERNATE_VALIDATOR_METHOD_VALIDATION_ALLOW_MULTIPLE_CASCADED_VALIDATION_ON_RETURN_VALUES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29226" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1097,12 +1151,16 @@ See Section 4.5.5 of the JSR 380 specification, specifically "One must not mark 
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Configure the Expression Language feature level for constraints, allowing the selection of Expression Language features available for message interpolation.
-This property only affects the EL feature level of "static" constraint violation messages set through the <code>message</code> attribute of constraint annotations.
-In particular, it doesn&#8217;t affect the default EL feature level for custom violations created programmatically in validator implementations. The feature level for those can only be configured directly in the validator implementation.</p>
+<p>Configure the Expression Language feature level for constraints, allowing the selection of Expression Language features available for message interpolation.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-13473">QUARKUS_HIBERNATE_VALIDATOR_EXPRESSION_LANGUAGE_CONSTRAINT_EXPRESSION_FEATURE_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-13473" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>This property only affects the EL feature level of "static" constraint violation messages set through the <code>message</code> attribute of constraint annotations.</p>
+</div>
+<div class="paragraph">
+<p>In particular, it doesn&#8217;t affect the default EL feature level for custom violations created programmatically in validator implementations. The feature level for those can only be configured directly in the validator implementation.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-29227">QUARKUS_HIBERNATE_VALIDATOR_EXPRESSION_LANGUAGE_CONSTRAINT_EXPRESSION_FEATURE_LEVEL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-29227" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1135,21 +1193,41 @@ In particular, it doesn&#8217;t affect the default EL feature level for custom v
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -1158,15 +1236,29 @@ In particular, it doesn&#8217;t affect the default EL feature level for custom v
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1175,19 +1267,33 @@ In particular, it doesn&#8217;t affect the default EL feature level for custom v
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1196,13 +1302,21 @@ In particular, it doesn&#8217;t affect the default EL feature level for custom v
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1213,21 +1327,21 @@ In particular, it doesn&#8217;t affect the default EL feature level for custom v
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

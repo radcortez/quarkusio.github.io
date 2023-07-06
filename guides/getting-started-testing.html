@@ -9,7 +9,7 @@
   <title>Testing Your Application - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,66 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" selected>2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -248,6 +224,14 @@
 </ul>
 </li>
 <li><a href="#testing-dev-services">19. Testing Dev Services</a></li>
+<li><a href="#testing-components">20. Testing Components</a>
+<ul class="sectlevel2">
+<li><a href="#lifecycle">20.1. Lifecycle</a></li>
+<li><a href="#auto-mocking-unsatisfied-dependencies">20.2. Auto Mocking Unsatisfied Dependencies</a></li>
+<li><a href="#custom-mocks-for-unsatisfied-dependencies">20.3. Custom Mocks For Unsatisfied Dependencies</a></li>
+<li><a href="#configuration">20.4. Configuration</a></li>
+</ul>
+</li>
 </ul></div>
     <div>
       <div id="preamble">
@@ -289,7 +273,7 @@ This guide covers:</p>
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.6</p>
+<p>Apache Maven 3.9.2</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -476,7 +460,7 @@ tests while having the application running in parallel.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">quarkus.http.test-port=8083
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.http.test-port=8083
 quarkus.http.test-ssl-port=8446</code></pre>
 </div>
 </div>
@@ -500,7 +484,7 @@ You can override this setting with the <code>quarkus.http.test-timeout</code> pr
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">quarkus.http.test-timeout=10s</code></pre>
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.http.test-timeout=10s</code></pre>
 </div>
 </div>
 </div>
@@ -579,7 +563,7 @@ public class StaticContentTest {
 <div class="sectionbody">
 <div class="paragraph">
 <p>Both RESTassured and <code>@TestHTTPResource</code> allow you to specify the endpoint class you are testing rather than hard coding
-a path. This currently supports both JAX-RS endpoints, Servlets and Reactive Routes. This makes it a lot easier to see exactly which endpoints
+a path. This currently supports both Jakarta REST endpoints, Servlets and Reactive Routes. This makes it a lot easier to see exactly which endpoints
 a given test is testing.</p>
 </div>
 <div class="paragraph">
@@ -605,7 +589,7 @@ public class GreetingResource {
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This currently does not support the <code>@ApplicationPath()</code> annotation to set the JAX-RS context path. Use the
+This currently does not support the <code>@ApplicationPath()</code> annotation to set the Jakarta REST context path. Use the
 <code>quarkus.resteasy.path</code> config value instead if you want a custom context path.
 </td>
 </tr>
@@ -726,7 +710,7 @@ service directly without using HTTP:</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme.getting.started.testing;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -839,6 +823,9 @@ transaction, but roll it back once the test method is complete to revert any dat
 <p><code>io.quarkus.test.junit.callback.QuarkusTestAfterEachCallback</code></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Optionally, you can enable these callbacks also for the <code>@QuarkusIntegrationTest</code> tests if the property <code>quarkus.test.enable-callbacks-for-integration-tests</code> is <code>true</code>.</p>
 </div>
 <div class="paragraph">
 <p>Such a callback implementation has to be registered as a "service provider" as defined by <code>java.util.ServiceLoader</code>.</p>
@@ -959,7 +946,7 @@ public class MockGreetingProfile implements QuarkusTestProfile { <i class="conum
      * however existing config will be merged with this (i.e. application.properties
      * config will still take effect, unless a specific config key has been overridden).
      *
-     * Here we are changing the JAX-RS root path.
+     * Here we are changing the Jakarta REST root path.
      */
     @Override
     public Map&lt;String, String&gt; getConfigOverrides() {
@@ -1339,8 +1326,8 @@ objects to provide the behaviour you require.</p>
 </td>
 <td class="content">
 Using <code>@Inject</code> will get you a CDI proxy to the mock instance you install, which is not suitable for passing to methods such as <code>Mockito.verify</code>
-which want the mock instance itself. So if you need to call methods such as <code>verify</code> you need to hang on to the mock instance in your test, or use <code>@InjectMock</code>
-as shown below.
+which want the mock instance itself.
+So if you need to call methods such as <code>verify</code> you should hang on to the mock instance in your test, or use <code>@io.quarkus.test.InjectMock</code>.
 </td>
 </tr>
 </table>
@@ -1349,7 +1336,7 @@ as shown below.
 <h4 id="further-simplification-with-injectmock"><a class="anchor" href="#further-simplification-with-injectmock"></a>11.2.1. Further simplification with <code>@InjectMock</code></h4>
 <div class="paragraph">
 <p>Building on the features provided by <code>QuarkusMock</code>, Quarkus also allows users to effortlessly take advantage of <a href="https://site.mockito.org/">Mockito</a> for mocking the beans supported by <code>QuarkusMock</code>.
-This functionality is available via the <code>@io.quarkus.test.junit.mockito.InjectMock</code> annotation which is available in the <code>quarkus-junit5-mockito</code> dependency.</p>
+This functionality is available with the <code>@io.quarkus.test.InjectMock</code> annotation if the <code>quarkus-junit5-mockito</code> dependency is present.</p>
 </div>
 <div class="paragraph">
 <p>Using <code>@InjectMock</code>, the previous example could be written as follows:</p>
@@ -1405,7 +1392,7 @@ public class MockTestCase {
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><code>@InjectMock</code> results in a mock being and is available in test methods of the test class (other test classes are <strong>not</strong> affected by this)</td>
+<td><code>@InjectMock</code> results in a Mockito mock being created, which is then available in test methods of the test class (other test classes are <strong>not</strong> affected by this)</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -1479,7 +1466,7 @@ public class MockGreetingServiceTest {
 </div>
 <div class="paragraph">
 <p>By default, the <code>@InjectMock</code> annotation can be used for any normal CDI scoped bean (e.g. <code>@ApplicationScoped</code>, <code>@RequestScoped</code>).
-Mocking <code>@Singleton</code> beans can be performed by setting the <code>convertScopes</code> property to true (such as <code>@InjectMock(convertScopes = true</code>).
+Mocking <code>@Singleton</code> beans can be performed by adding the <code>@MockitoConfig(convertScopes = true)</code> annotation.
 This will convert the <code>@Singleton</code> bean to an <code>@ApplicationScoped</code> bean for the test.</p>
 </div>
 <div class="paragraph">
@@ -1493,7 +1480,7 @@ This will convert the <code>@Singleton</code> bean to an <code>@ApplicationScope
 This functionality is available via the <code>@io.quarkus.test.junit.mockito.InjectSpy</code> annotation which is available in the <code>quarkus-junit5-mockito</code> dependency.</p>
 </div>
 <div class="paragraph">
-<p>Sometimes when testing you only need to verify that a certain logical path was taken, or you only need to stub out a single method&#8217;s response while still executing the rest of the methods on the Spied clone. Please see <a href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#spy-T-">Mockito documentation</a> for more details on Spy partial mocks.
+<p>Sometimes when testing you only need to verify that a certain logical path was taken, or you only need to stub out a single method&#8217;s response while still executing the rest of the methods on the Spied clone. Please see <a href="https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#13">Mockito documentation - Spying on real objects</a> for more details on Spy partial mocks.
 In either of those situations a Spy of the object is preferable.
 Using <code>@InjectSpy</code>, the previous example could be written as follows:</p>
 </div>
@@ -1518,7 +1505,7 @@ public class SpyGreetingServiceTest {
 
     @Test
     public void testOverrideGreeting() {
-        when(greetingService.greet()).thenReturn("hi"); <i class="conum" data-value="2"></i><b>(2)</b>
+        doReturn("hi").when(greetingService).greet(); <i class="conum" data-value="2"></i><b>(2)</b>
         given()
                 .when().get("/greeting")
                 .then()
@@ -1559,7 +1546,7 @@ public class SpyGreetingServiceTest {
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Here we are telling the Spy to return "hi" instead of "hello". When the <code>GreetingResource</code> requests the greeting from <code>GreetingService</code> we get the mocked response instead of the response of the regular <code>GreetingService</code> bean</td>
+<td>Here we are telling the Spy to return "hi" instead of "hello". When the <code>GreetingResource</code> requests the greeting from <code>GreetingService</code> we get the mocked response instead of the response of the regular <code>GreetingService</code> bean. Sometimes it&#8217;s impossible or impractical to use <code>when(Object)</code> for stubbing spies. Therefore when using spies please consider <code>doReturn|Answer|Throw()</code> family of methods for stubbing.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
@@ -1795,6 +1782,29 @@ public @interface WithKubernetesTestServer {
 }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>If you want to make the annotation repeatable, the containing annotation type must be annotated with <code>@QuarkusTestResourceRepeatable</code>.
+For example, this would define a repeatable <code>@WithRepeatableTestResource</code> annotation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@QuarkusTestResource(KubernetesServerTestResource.class)
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+@Repeatable(WithRepeatableTestResource.List.class)
+public @interface WithRepeatableTestResource {
+
+    String key() default "";
+
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.RUNTIME)
+    @QuarkusTestResourceRepeatable(WithRepeatableTestResource.class)
+    @interface List {
+        WithRepeatableTestResource[] value();
+    }
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1837,7 +1847,7 @@ Finally, if a container image was created during the build (by including the <co
 <code>quarkus.container-image.build=true</code> property configured), then a container is created and run (this requires the <code>docker</code> executable being present).</p>
 </div>
 <div class="paragraph">
-<p>As is the case with <code>@NativeImageTest</code>, this is a black box test that supports the same set features and has the same limitations.</p>
+<p>This is a black box test that supports the same set features and has the same limitations.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1917,6 +1927,20 @@ The executable is retrieved by the <em>Failsafe Maven Plugin</em>.</td>
 </div>
 <div class="paragraph">
 <p>More information can be found in the <a href="building-native-image#testing-the-native-executable">Testing the native executable Guide</a>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When the application is tested using <code>@QuarkusIntegrationTest</code> it is launched using the <code>prod</code> configuration profile, but this can be changed using the <code>quarkus.test.integration-test-profile</code> property.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="launching-containers"><a class="anchor" href="#launching-containers"></a>16.1. Launching containers</h3>
@@ -2006,20 +2030,6 @@ public class CustomResource implements QuarkusTestResourceLifecycleManager, DevS
 </div>
 <div class="sect2">
 <h3 id="executing-against-a-running-application"><a class="anchor" href="#executing-against-a-running-application"></a>16.2. Executing against a running application</h3>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This feature is considered experimental and is likely to change in future versions of Quarkus.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
 <p><code>@QuarkusIntegrationTest</code> supports executing tests against an already running instance of the application. This can be achieved by setting the
 <code>quarkus.http.test-host</code> system property when running the tests.</p>
@@ -2190,6 +2200,213 @@ This can be used by <code>QuarkusTestResourceLifecycleManager</code> that need t
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="testing-components"><a class="anchor" href="#testing-components"></a>20. Testing Components</h2>
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+This feature is experimental and the API may change in the future.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>In Quarkus, the component model is built on top CDI.
+Therefore, Quarkus provides the <code>QuarkusComponentTestExtension</code>, a JUnit extension to ease the testing of components and mocking of their dependencies.
+This extension is available in the <code>quarkus-junit5-component</code> dependency.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s have a component <code>Foo</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme;
+
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+
+@ApplicationScoped <i class="conum" data-value="1"></i><b>(1)</b>
+public class Foo {
+
+    @Inject
+    Charlie charlie; <i class="conum" data-value="2"></i><b>(2)</b>
+
+    @ConfigProperty(name = "bar")
+    boolean bar; <i class="conum" data-value="3"></i><b>(3)</b>
+
+    public String ping() {
+        return bar ? charlie.ping() : "nok";
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>Foo</code> is an <code>@ApplicationScoped</code> CDI bean.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>Foo</code> depends on <code>Charlie</code> which declares a method <code>ping()</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>Foo</code> depends on the config property <code>bar</code>.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Then a component test could look like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import jakarta.inject.Inject;
+import io.quarkus.test.InjectMock;
+import io.quarkus.test.component.TestConfigProperty;
+import io.quarkus.test.component.QuarkusComponentTest;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+@QuarkusComponentTest <i class="conum" data-value="1"></i><b>(1)</b>
+@TestConfigProperty(key = "bar", value = "true") <i class="conum" data-value="2"></i><b>(2)</b>
+public class FooTest {
+
+    @Inject
+    Foo foo; <i class="conum" data-value="3"></i><b>(3)</b>
+
+    @InjectMock
+    Charlie charlieMock; <i class="conum" data-value="4"></i><b>(4)</b>
+
+    @Test
+    public void testPing() {
+        Mockito.when(charlieMock.ping()).thenReturn("OK"); <i class="conum" data-value="5"></i><b>(5)</b>
+        assertEquals("OK", foo.ping());
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>QuarkusComponentTest</code> annotation registers the JUnit extension.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Set a configuration property for the test.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The test injects the component under the test. The types of all fields annotated with <code>@Inject</code> are considered the component types under test. You can also specify additional component classes via <code>@QuarkusComponentTest#value()</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>The test also injects <code>Charlie</code>, a dependency for which a synthetic <code>@Singleton</code> bean is registered automatically. The injected reference is an "unconfigured" Mockito mock.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>We can leverage the Mockito API in a test method to configure the behavior.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you need the full control over the <code>QuarkusComponentTestExtension</code> configuration then you can use the <code>@RegisterExtension</code> annotation and configure the extension programatically.
+The test above could be rewritten like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import jakarta.inject.Inject;
+import io.quarkus.test.InjectMock;
+import io.quarkus.test.component.QuarkusComponentTestExtension;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+public class FooTest {
+
+    @RegisterExtension <i class="conum" data-value="1"></i><b>(1)</b>
+    static final QuarkusComponentTestExtension extension = new QuarkusComponentTestExtension().configProperty("bar","true");
+
+    @Inject
+    Foo foo;
+
+    @InjectMock
+    Charlie charlieMock;
+
+    @Test
+    public void testPing() {
+        Mockito.when(charlieMock.ping()).thenReturn("OK");
+        assertEquals("OK", foo.ping());
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The <code>QuarkusComponentTestExtension</code> is configured in a static field.</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="lifecycle"><a class="anchor" href="#lifecycle"></a>20.1. Lifecycle</h3>
+<div class="paragraph">
+<p>So what exactly does the <code>QuarkusComponentTest</code> do?
+It starts the CDI container and registers a dedicated <a href="config-reference">configuration object</a> during the <code>before all</code> test phase.
+The container is stopped and the config is released during the <code>after all</code> test phase.
+The fields annotated with <code>@Inject</code> and <code>@InjectMock</code> are injected after a test instance is created and unset before a test instance is destroyed.
+Finally, the CDI request context is activated and terminated per each test method.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+By default, a new test instance is created for each test method. Therefore, a new CDI container is started for each test method. However, if the test class is annotated with <code>@org.junit.jupiter.api.TestInstance</code> and the test instance lifecycle is set to <code>org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS</code> then the CDI container will be shared across all test method executions of a given test class.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auto-mocking-unsatisfied-dependencies"><a class="anchor" href="#auto-mocking-unsatisfied-dependencies"></a>20.2. Auto Mocking Unsatisfied Dependencies</h3>
+<div class="paragraph">
+<p>Unlike in regular CDI environments the test does not fail if a component injects an unsatisfied dependency.
+Instead, a synthetic bean is registered automatically for each combination of required type and qualifiers of an injection point that resolves to an unsatisfied dependency.
+The bean has the <code>@Singleton</code> scope so it&#8217;s shared across all injection points with the same required type and qualifiers.
+The injected reference is an <em>unconfigured</em> Mockito mock.
+You can inject the mock in your test and leverage the Mockito API to configure the behavior.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="custom-mocks-for-unsatisfied-dependencies"><a class="anchor" href="#custom-mocks-for-unsatisfied-dependencies"></a>20.3. Custom Mocks For Unsatisfied Dependencies</h3>
+<div class="paragraph">
+<p>Sometimes you need the full control over the bean attributes and maybe even configure the default mock behavior.
+You can use the mock configurator API via the <code>QuarkusComponentTestExtension#mock()</code> method.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuration"><a class="anchor" href="#configuration"></a>20.4. Configuration</h3>
+<div class="paragraph">
+<p>A dedicated <code>SmallRyeConfig</code> is registered during the <code>before all</code> test phase.
+Moreover, it&#8217;s possible to set the configuration properties via the <code>QuarkusComponentTestExtension#configProperty(String, String)</code> method or the <code>@TestConfigProperty</code> annotation.
+If you only need to use the default values for missing config properties, then the <code>QuarkusComponentTestExtension#useDefaultConfigProperties()</code> or <code>@QuarkusComponentTest#useDefaultConfigProperties()</code> might come in useful.</p>
+</div>
+</div>
+</div>
+</div>
     </div>
   </div>
 </div>
@@ -2210,21 +2427,41 @@ This can be used by <code>QuarkusTestResourceLifecycleManager</code> that need t
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -2233,15 +2470,29 @@ This can be used by <code>QuarkusTestResourceLifecycleManager</code> that need t
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -2250,19 +2501,33 @@ This can be used by <code>QuarkusTestResourceLifecycleManager</code> that need t
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -2271,13 +2536,21 @@ This can be used by <code>QuarkusTestResourceLifecycleManager</code> that need t
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -2288,21 +2561,21 @@ This can be used by <code>QuarkusTestResourceLifecycleManager</code> that need t
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

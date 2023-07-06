@@ -9,7 +9,7 @@
   <title>Getting Started with gRPC - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,66 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/version/main/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" >2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -198,6 +174,7 @@
 <li><a href="#proto-files-from-dependencies"><code>proto</code> files from dependencies</a></li>
 </ul>
 </li>
+<li><a href="#different-grpc-implementations-types">Different gRPC implementations / types</a></li>
 <li><a href="#implementing-a-grpc-service">Implementing a gRPC service</a>
 <ul class="sectlevel2">
 <li><a href="#implementing-a-service">Implementing a service</a></li>
@@ -206,7 +183,7 @@
 </li>
 <li><a href="#consuming-a-grpc-service">Consuming a gRPC service</a></li>
 <li><a href="#packaging-the-application">Packaging the application</a></li>
-<li><a href="#generating-java-files-from-proto-with-protobuf-maven-plugin">Generating Java files from proto with protobuf-maven-plugin</a></li>
+<li><a href="#protobuf-maven-plugin">Generating Java files from proto with protobuf-maven-plugin</a></li>
 <li><a href="#grpc-classes-from-dependencies">gRPC classes from dependencies</a></li>
 </ul></div>
     <div>
@@ -241,14 +218,21 @@ However, you can go right to the completed example.</p>
 <h2 id="configuring-your-project"><a class="anchor" href="#configuring-your-project"></a>Configuring your project</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Edit the <code>pom.xml</code> file to add the Quarkus gRPC extension dependency (just under <code>&lt;dependencies&gt;</code>):</p>
+<p>Add the Quarkus gRPC extension to your build file:</p>
 </div>
-<div class="listingblock">
+<div class="listingblock primary asciidoc-tabs-target-sync-cli asciidoc-tabs-target-sync-maven">
+<div class="title">pom.xml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
-  &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
-  &lt;artifactId&gt;quarkus-grpc&lt;/artifactId&gt;
+    &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
+    &lt;artifactId&gt;quarkus-grpc&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<div class="listingblock secondary asciidoc-tabs-target-sync-gradle">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("io.quarkus:quarkus-grpc")</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -256,7 +240,8 @@ However, you can go right to the completed example.</p>
 In this guide we will follow a reactive approach.
 Under the <code>dependencies</code> section of your <code>pom.xml</code> file, make sure you have the RESTEasy Reactive dependency:</p>
 </div>
-<div class="listingblock">
+<div class="listingblock primary asciidoc-tabs-target-sync-cli asciidoc-tabs-target-sync-maven">
+<div class="title">pom.xml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;dependency&gt;
     &lt;groupId&gt;io.quarkus&lt;/groupId&gt;
@@ -264,8 +249,14 @@ Under the <code>dependencies</code> section of your <code>pom.xml</code> file, m
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
+<div class="listingblock secondary asciidoc-tabs-target-sync-gradle">
+<div class="title">build.gradle</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">implementation("io.quarkus:quarkus-resteasy-reactive")</code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>Make sure you have <code>generate-code</code> goal of <code>quarkus-maven-plugin</code> enabled in your <code>pom.xml</code>.
+<p>If you are using Maven, make sure you have the <code>generate-code</code> goal of <code>quarkus-maven-plugin</code> enabled in your <code>pom.xml</code>.
 If you wish to generate code from different <code>proto</code> files for tests, also add the <code>generate-code-tests</code> goal.
 Please note that no additional task/goal is required for the Gradle plugin.</p>
 </div>
@@ -304,7 +295,8 @@ You can also download the suitable binary and specify the location via
 <code>-Dquarkus.grpc.protoc-path=/path/to/protoc</code>.</p>
 </div>
 <div class="paragraph">
-<p>Alternatively to using the <code>generate-code</code> goal of the <code>quarkus-maven-plugin</code>, you can use <code>protobuf-maven-plugin</code> to generate these files, more in <a href="#generating-java-files-from-proto-with-protobuf-maven-plugin">Generating Java files from proto with protobuf-maven-plugin</a></p>
+<p>Alternatively to using the <code>generate-code</code> goal of the <code>quarkus-maven-plugin</code>, you can use <code>protobuf-maven-plugin</code> to generate these files.
+See the <a href="#protobuf-maven-plugin">Generating Java files from proto with protobuf-maven-plugin</a> section for more information.</p>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s start with a simple <em>Hello</em> service.
@@ -339,6 +331,18 @@ message HelloReply {
 </div>
 <div class="paragraph">
 <p>This <code>proto</code> file defines a simple service interface with a single method (<code>SayHello</code>), and the exchanged messages (<code>HelloRequest</code> containing the name and <code>HelloReply</code> containing the greeting message).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Your <code>proto</code> file must not contain <code>option java_generic_services = true;</code>. <a href="https://developers.google.com/protocol-buffers/docs/reference/java-generated?hl=en#service">Generic services are deprecated</a> and are not compatible with Quarkus code generation plugins.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>Before coding, we need to generate the classes used to implement and consume gRPC services.
@@ -425,6 +429,82 @@ To override it, set the <code>quarkus.generate-code.grpc.scan-for-imports</code>
 <div class="paragraph">
 <p>The value of the property may be <code>none</code>, which is the default value, or a comma separated list of <code>groupId:artifactId</code> coordinates.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>option java_generic_services = true;</code> will automatically be removed from proto file containing it.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If the dependency contains a lot of proto files and you want to generate classes for only a subset of them, you can specify glob patterns per dependency. The path to match are relative to the path <code>src/main/resources</code> in the dependency.</p>
+</div>
+<div class="paragraph">
+<p>For instance, having the following properties in your <code>application.properties</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-properties hljs" data-lang="properties">quarkus.generate-code.grpc.scan-for-proto-includes."&lt;groupId&gt;\:&lt;artifactId&gt;"=foo/**,bar/**,banana/a-proto.proto
+quarkus.generate-code.grpc.scan-for-proto-excludes."&lt;groupId&gt;\:&lt;artifactId&gt;"=foo/private/**,bar/another-proto.proto</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>will include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>all files in the <code>foo/</code> directory and its subdirectories except for files in <code>foo/private/</code> and its subdirectories,</p>
+</li>
+<li>
+<p>all files in the <code>bar/</code> directory and its subdirectories except for <code>another-proto.proto</code>.</p>
+</li>
+<li>
+<p><code>banana/a-proto.proto</code> file.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>:</code> character in the property keys must be escaped.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="different-grpc-implementations-types"><a class="anchor" href="#different-grpc-implementations-types"></a>Different gRPC implementations / types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Another thing to take note as well is that Quarkus' gRPC support currently includes 3 different types of gRPC usage:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha">
+<li>
+<p>old Vert.x gRPC implementation with a separate gRPC server (default)</p>
+</li>
+<li>
+<p>new Vert.x gRPC implementation on top of the existing HTTP server</p>
+</li>
+<li>
+<p><a href="https://grpc.github.io/grpc/core/md_doc_grpc_xds_features.html">xDS gRPC</a> wrapper over <a href="https://github.com/grpc/grpc-java">grpc-java</a> with a separate Netty based gRPC server</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Further docs explain how to enable and use each of them.</p>
 </div>
 </div>
 </div>
@@ -583,10 +663,10 @@ import io.quarkus.example.HelloRequest;
 import io.quarkus.grpc.GrpcClient;
 import io.smallrye.mutiny.Uni;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/hello")
 public class ExampleResource {
@@ -654,12 +734,12 @@ In the <code>src/main/resources/application.properties</code> file, add the foll
 <div class="sectionbody">
 <div class="paragraph">
 <p>Like any other Quarkus applications, you can package it with: <code>mvn package</code>.
-You can also package the application into a native executable with: <code>mvn package -Pnative</code>.</p>
+You can also package the application into a native executable with: <code>mvn package -Dnative</code>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="generating-java-files-from-proto-with-protobuf-maven-plugin"><a class="anchor" href="#generating-java-files-from-proto-with-protobuf-maven-plugin"></a>Generating Java files from proto with protobuf-maven-plugin</h2>
+<h2 id="protobuf-maven-plugin"><a class="anchor" href="#protobuf-maven-plugin"></a>Generating Java files from proto with protobuf-maven-plugin</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Alternatively to using Quarkus code generation to generate stubs for <code>proto</code> files, you can also use
@@ -670,8 +750,8 @@ You can also package the application into a native executable with: <code>mvn pa
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;grpc.version&gt;1.50.2&lt;/grpc.version&gt;
-&lt;protoc.version&gt;3.19.6&lt;/protoc.version&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;grpc.version&gt;1.56.1&lt;/grpc.version&gt;
+&lt;protoc.version&gt;3.22.0&lt;/protoc.version&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -786,7 +866,7 @@ The <code>jandex-maven-plugin</code> can be used to create a Jandex index. More 
         &lt;plugin&gt;
             &lt;groupId&gt;io.smallrye&lt;/groupId&gt;
             &lt;artifactId&gt;jandex-maven-plugin&lt;/artifactId&gt;
-            &lt;version&gt;3.0.2&lt;/version&gt;
+            &lt;version&gt;3.1.2&lt;/version&gt;
             &lt;executions&gt;
                 &lt;execution&gt;
                 &lt;id&gt;make-index&lt;/id&gt;
@@ -822,21 +902,41 @@ The <code>jandex-maven-plugin</code> can be used to create a Jandex index. More 
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -845,15 +945,29 @@ The <code>jandex-maven-plugin</code> can be used to create a Jandex index. More 
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -862,19 +976,33 @@ The <code>jandex-maven-plugin</code> can be used to create a Jandex index. More 
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -883,13 +1011,21 @@ The <code>jandex-maven-plugin</code> can be used to create a Jandex index. More 
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -900,21 +1036,21 @@ The <code>jandex-maven-plugin</code> can be used to create a Jandex index. More 
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

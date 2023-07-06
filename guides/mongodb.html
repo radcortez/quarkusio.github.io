@@ -9,7 +9,7 @@
   <title>Using the MongoDB Client - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,66 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" selected>2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -251,7 +227,7 @@
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.6</p>
+<p>Apache Maven 3.9.2</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -325,7 +301,7 @@ cd mongodb-quickstart</code></pre>
 <div class="title">Maven</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.13.4.Final:create \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:3.2.0.Final:create \
     -DprojectGroupId=org.acme \
     -DprojectArtifactId=mongodb-quickstart \
     -Dextensions='resteasy-reactive-jackson,mongodb-client' \
@@ -470,8 +446,8 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import org.bson.Document;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -535,7 +511,7 @@ public class FruitResource {
 </div>
 </div>
 <div class="paragraph">
-<p>The implementation is pretty straightforward, and you just need to define your endpoints using the JAX-RS annotations and use the <code>FruitService</code> to list/add new fruits.</p>
+<p>The implementation is pretty straightforward, and you just need to define your endpoints using the Jakarta REST annotations and use the <code>FruitService</code> to list/add new fruits.</p>
 </div>
 </div>
 </div>
@@ -618,7 +594,7 @@ and automatically configure the connection.</p>
 <p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present. When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5281">QUARKUS_MONGODB_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5281" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6848">QUARKUS_MONGODB_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6848" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -635,7 +611,7 @@ and automatically configure the connection.</p>
 <p>The container image name to use, for container based DevServices providers.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5282">QUARKUS_MONGODB_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5282" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6849">QUARKUS_MONGODB_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6849" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -649,11 +625,13 @@ and automatically configure the connection.</p>
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Optional fixed port the dev service will listen to.
-If not defined, the port will be chosen randomly.</p>
+<p>Optional fixed port the dev service will listen to.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5283">QUARKUS_MONGODB_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5283" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6850">QUARKUS_MONGODB_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6850" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -670,7 +648,24 @@ If not defined, the port will be chosen randomly.</p>
 <p>Generic properties that are added to the connection URL.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5284">QUARKUS_MONGODB_DEVSERVICES_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5284" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6851">QUARKUS_MONGODB_DEVSERVICES_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6851" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-mongodb-config-group-dev-services-build-time-config_quarkus.mongodb.devservices.container-env-container-env"></a><code><a href="#quarkus-mongodb-config-group-dev-services-build-time-config_quarkus.mongodb.devservices.container-env-container-env">quarkus.mongodb.devservices.container-env</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Environment variables that are passed to the container.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6852">QUARKUS_MONGODB_DEVSERVICES_CONTAINER_ENV</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6852" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -764,7 +759,7 @@ ReactiveMongoClient mongoClient2;</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you use <a href="#dev-services">Dev Services</a>, launching the container manually is not necessary!</p>
+<p>If you use <a href="#dev-services">Dev Services</a>, launching the container manually is not necessary.</p>
 </div>
 </td>
 </tr>
@@ -849,8 +844,8 @@ import io.quarkus.mongodb.reactive.ReactiveMongoCollection;
 import io.smallrye.mutiny.Uni;
 import org.bson.Document;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import java.util.List;
 
 @ApplicationScoped
@@ -891,13 +886,13 @@ import io.smallrye.mutiny.Uni;
 
 import java.util.List;
 
-import javax.inject.Inject;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.core.MediaType;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/reactive_fruits")
 @Produces(MediaType.APPLICATION_JSON)
@@ -1045,8 +1040,8 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -1390,7 +1385,7 @@ quarkus.mongodb.native.dns.lookup-timeout=10s # the default is 5s</code></pre>
 <p>Whether a health check is published in case the smallrye-health extension is present.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5285">QUARKUS_MONGODB_HEALTH_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5285" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6853">QUARKUS_MONGODB_HEALTH_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6853" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1407,7 +1402,7 @@ quarkus.mongodb.native.dns.lookup-timeout=10s # the default is 5s</code></pre>
 <p>Whether metrics are published in case a metrics extension is present.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5286">QUARKUS_MONGODB_METRICS_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5286" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6854">QUARKUS_MONGODB_METRICS_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6854" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1424,7 +1419,7 @@ quarkus.mongodb.native.dns.lookup-timeout=10s # the default is 5s</code></pre>
 <p>Whether tracing spans of driver commands are sent in case the smallrye-opentracing extension is present.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5287">QUARKUS_MONGODB_TRACING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5287" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6855">QUARKUS_MONGODB_TRACING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6855" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1441,7 +1436,7 @@ quarkus.mongodb.native.dns.lookup-timeout=10s # the default is 5s</code></pre>
 <p>If set to true, the default clients will always be created even if there are no injection points that use them</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5288">QUARKUS_MONGODB_FORCE_DEFAULT_CLIENTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5288" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6856">QUARKUS_MONGODB_FORCE_DEFAULT_CLIENTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6856" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1458,7 +1453,7 @@ quarkus.mongodb.native.dns.lookup-timeout=10s # the default is 5s</code></pre>
 <p>If DevServices has been explicitly enabled or disabled. DevServices is generally enabled by default, unless there is an existing configuration present. When DevServices is enabled Quarkus will attempt to automatically configure and start a database when running in Dev or Test mode.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5289">QUARKUS_MONGODB_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5289" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6857">QUARKUS_MONGODB_DEVSERVICES_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6857" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1475,7 +1470,7 @@ quarkus.mongodb.native.dns.lookup-timeout=10s # the default is 5s</code></pre>
 <p>The container image name to use, for container based DevServices providers.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5290">QUARKUS_MONGODB_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5290" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6858">QUARKUS_MONGODB_DEVSERVICES_IMAGE_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6858" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1489,11 +1484,13 @@ quarkus.mongodb.native.dns.lookup-timeout=10s # the default is 5s</code></pre>
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Optional fixed port the dev service will listen to.
-If not defined, the port will be chosen randomly.</p>
+<p>Optional fixed port the dev service will listen to.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5291">QUARKUS_MONGODB_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5291" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>If not defined, the port will be chosen randomly.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6859">QUARKUS_MONGODB_DEVSERVICES_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6859" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1507,22 +1504,55 @@ If not defined, the port will be chosen randomly.</p>
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Configures the connection string. The format is: <code>mongodb://[username:password@]host1[:port1][,host2[:port2],&#8230;&#8203;[,hostN[:portN]]][/[database.collection][?options]]</code>
-<code>mongodb://</code> is a required prefix to identify that this is a string in the standard connection format.
-<code>username:password@</code> are optional. If given, the driver will attempt to log in to a database after connecting to a database server. For some authentication mechanisms, only the username is specified and the password is not, in which case the ":" after the username is left off as well.
-<code>host1</code> is the only required part of the connection string. It identifies a server address to connect to.
-<code>:portX</code> is optional and defaults to :27017 if not provided.
-<code>/database</code> is the name of the database to log in to and thus is only relevant if the <code>username:password@</code> syntax is used. If not specified the <code>admin</code> database will be used by default.
-<code>?options</code> are connection options. Note that if <code>database</code> is absent there is still a <code>/</code> required between the last host and the <code>?</code> introducing the options. Options are name=value pairs and the pairs are separated by "&amp;".
-An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mongodb&#43;srv://[username:password@]host[/[database][?options]]
- - <code>mongodb&#43;srv://</code> is a required prefix for this format.
- - <code>username:password@</code> are optional. If given, the driver will attempt to login to a database after connecting to a database server. For some authentication mechanisms, only the username is specified and the password is not, in which case the ":" after the username is left off as well
- - <code>host</code> is the only required part of the URI. It identifies a single host name for which SRV records are looked up from a Domain Name Server after prefixing the host name with <code>"_mongodb._tcp"</code>. The host/port for each SRV record becomes the seed list used to connect, as if each one were provided as host/port pair in a URI using the normal mongodb protocol.
- - <code>/database</code> is the name of the database to login to and thus is only relevant if the <code>username:password@</code> syntax is used. If not specified the "admin" database will be used by default.
- - <code>?options</code> are connection options. Note that if <code>database</code> is absent there is still a <code>/</code> required between the last host and the <code>?</code> introducing the options. Options are name=value pairs and the pairs are separated by "&amp;". Additionally with the mongodb&#43;srv protocol, TXT records are looked up from a Domain Name Server for the given host, and the text value of each one is prepended to any options on the URI itself. Because the last specified value for any option wins, that means that options provided on the URI will override any that are provided via TXT records.</p>
+<p>Configures the connection string. The format is: <code>mongodb://[username:password@]host1[:port1][,host2[:port2],&#8230;&#8203;[,hostN[:portN]]][/[database.collection][?options]]</code></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5292">QUARKUS_MONGODB_CONNECTION_STRING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5292" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p><code>mongodb://</code> is a required prefix to identify that this is a string in the standard connection format.</p>
+</div>
+<div class="paragraph">
+<p><code>username:password@</code> are optional. If given, the driver will attempt to log in to a database after connecting to a database server. For some authentication mechanisms, only the username is specified and the password is not, in which case the ":" after the username is left off as well.</p>
+</div>
+<div class="paragraph">
+<p><code>host1</code> is the only required part of the connection string. It identifies a server address to connect to.</p>
+</div>
+<div class="paragraph">
+<p><code>:portX</code> is optional and defaults to :27017 if not provided.</p>
+</div>
+<div class="paragraph">
+<p><code>/database</code> is the name of the database to log in to and thus is only relevant if the <code>username:password@</code> syntax is used. If not specified the <code>admin</code> database will be used by default.</p>
+</div>
+<div class="paragraph">
+<p><code>?options</code> are connection options. Note that if <code>database</code> is absent there is still a <code>/</code> required between the last host and the <code>?</code> introducing the options. Options are name=value pairs and the pairs are separated by "&amp;".</p>
+</div>
+<div class="paragraph">
+<p>An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">mongodb+srv://[username:password@]host[/[database][?options]]</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mongodb&#43;srv://</code> is a required prefix for this format.</p>
+</li>
+<li>
+<p><code>username:password@</code> are optional. If given, the driver will attempt to login to a database after connecting to a database server. For some authentication mechanisms, only the username is specified and the password is not, in which case the ":" after the username is left off as well</p>
+</li>
+<li>
+<p><code>host</code> is the only required part of the URI. It identifies a single host name for which SRV records are looked up from a Domain Name Server after prefixing the host name with <code>"_mongodb._tcp"</code>. The host/port for each SRV record becomes the seed list used to connect, as if each one were provided as host/port pair in a URI using the normal mongodb protocol.</p>
+</li>
+<li>
+<p><code>/database</code> is the name of the database to login to and thus is only relevant if the <code>username:password@</code> syntax is used. If not specified the "admin" database will be used by default.</p>
+</li>
+<li>
+<p><code>?options</code> are connection options. Note that if <code>database</code> is absent there is still a <code>/</code> required between the last host and the <code>?</code> introducing the options. Options are name=value pairs and the pairs are separated by "&amp;". Additionally with the mongodb&#43;srv protocol, TXT records are looked up from a Domain Name Server for the given host, and the text value of each one is prepended to any options on the URI itself. Because the last specified value for any option wins, that means that options provided on the URI will override any that are provided via TXT records.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6860">QUARKUS_MONGODB_CONNECTION_STRING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6860" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1539,7 +1569,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the MongoDB server addressed (one if single mode). The addresses are passed as <code>host:port</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5293">QUARKUS_MONGODB_HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5293" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6861">QUARKUS_MONGODB_HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6861" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1556,7 +1586,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configure the database name.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5294">QUARKUS_MONGODB_DATABASE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5294" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6862">QUARKUS_MONGODB_DATABASE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6862" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1573,7 +1603,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the application name.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5295">QUARKUS_MONGODB_APPLICATION_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5295" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6863">QUARKUS_MONGODB_APPLICATION_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6863" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1590,7 +1620,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the maximum number of connections in the connection pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5296">QUARKUS_MONGODB_MAX_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5296" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6864">QUARKUS_MONGODB_MAX_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6864" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1607,7 +1637,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the minimum number of connections in the connection pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5297">QUARKUS_MONGODB_MIN_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5297" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6865">QUARKUS_MONGODB_MIN_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6865" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1624,7 +1654,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Maximum idle time of a pooled connection. A connection that exceeds this limit will be closed.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5298">QUARKUS_MONGODB_MAX_CONNECTION_IDLE_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5298" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6866">QUARKUS_MONGODB_MAX_CONNECTION_IDLE_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6866" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1642,7 +1672,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Maximum lifetime of a pooled connection. A connection that exceeds this limit will be closed.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5299">QUARKUS_MONGODB_MAX_CONNECTION_LIFE_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5299" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6867">QUARKUS_MONGODB_MAX_CONNECTION_LIFE_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6867" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1660,7 +1690,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the time period between runs of the maintenance job.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5300">QUARKUS_MONGODB_MAINTENANCE_FREQUENCY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5300" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6868">QUARKUS_MONGODB_MAINTENANCE_FREQUENCY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6868" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1678,7 +1708,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures period of time to wait before running the first maintenance job on the connection pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5301">QUARKUS_MONGODB_MAINTENANCE_INITIAL_DELAY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5301" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6869">QUARKUS_MONGODB_MAINTENANCE_INITIAL_DELAY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6869" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1696,7 +1726,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>How long a connection can take to be opened before timing out.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5302">QUARKUS_MONGODB_CONNECT_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5302" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6870">QUARKUS_MONGODB_CONNECT_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6870" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1714,7 +1744,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>How long a socket read can take before timing out.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5303">QUARKUS_MONGODB_READ_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5303" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6871">QUARKUS_MONGODB_READ_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6871" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1732,7 +1762,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>If connecting with TLS, this option enables insecure TLS connections.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5304">QUARKUS_MONGODB_TLS_INSECURE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5304" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6872">QUARKUS_MONGODB_TLS_INSECURE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6872" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1749,7 +1779,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Whether to connect using TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5305">QUARKUS_MONGODB_TLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5305" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6873">QUARKUS_MONGODB_TLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6873" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1766,7 +1796,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Implies that the hosts given are a seed list, and the driver will attempt to find all members of the set.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5306">QUARKUS_MONGODB_REPLICA_SET_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5306" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6874">QUARKUS_MONGODB_REPLICA_SET_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6874" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1783,7 +1813,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>How long the driver will wait for server selection to succeed before throwing an exception.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5307">QUARKUS_MONGODB_SERVER_SELECTION_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5307" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6875">QUARKUS_MONGODB_SERVER_SELECTION_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6875" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1801,7 +1831,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>When choosing among multiple MongoDB servers to send a request, the driver will only send that request to a server whose ping time is less than or equal to the server with the fastest ping time plus the local threshold.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5308">QUARKUS_MONGODB_LOCAL_THRESHOLD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5308" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6876">QUARKUS_MONGODB_LOCAL_THRESHOLD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6876" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1819,7 +1849,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>The frequency that the driver will attempt to determine the current state of each server in the cluster.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5309">QUARKUS_MONGODB_HEARTBEAT_FREQUENCY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5309" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6877">QUARKUS_MONGODB_HEARTBEAT_FREQUENCY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6877" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1837,7 +1867,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the read concern. Supported values are: <code>local|majority|linearizable|snapshot|available</code></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5310">QUARKUS_MONGODB_READ_CONCERN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5310" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6878">QUARKUS_MONGODB_READ_CONCERN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6878" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1851,10 +1881,10 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Configures the read preferences. Supported values are: <code>primary|primaryPreferred|secondary|secondaryPreferred|nearest</code></p>
+<p>Configures the read preference. Supported values are: <code>primary|primaryPreferred|secondary|secondaryPreferred|nearest</code></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5311">QUARKUS_MONGODB_READ_PREFERENCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5311" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6879">QUARKUS_MONGODB_READ_PREFERENCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6879" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1871,7 +1901,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>The database used during the readiness health checks</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5312">QUARKUS_MONGODB_HEALTH_DATABASE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5312" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6880">QUARKUS_MONGODB_HEALTH_DATABASE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6880" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1888,7 +1918,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>This property configures the DNS server. If the server is not set, it tries to read the first <code>nameserver</code> from <code>/etc /resolv.conf</code> (if the file exists), otherwise fallback to the default.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5313">QUARKUS_MONGODB_DNS_SERVER_HOST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5313" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6881">QUARKUS_MONGODB_DNS_SERVER_HOST</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6881" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1905,7 +1935,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>This property configures the DNS server port.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5314">QUARKUS_MONGODB_DNS_SERVER_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5314" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6882">QUARKUS_MONGODB_DNS_SERVER_PORT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6882" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1922,7 +1952,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>If <code>native.dns.use-vertx-dns-resolver</code> is set to <code>true</code>, this property configures the DNS lookup timeout duration.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5315">QUARKUS_MONGODB_DNS_LOOKUP_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5315" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6883">QUARKUS_MONGODB_DNS_LOOKUP_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6883" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1940,7 +1970,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>This property enables the logging ot the DNS lookup. It can be useful to understand why the lookup fails.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5316">QUARKUS_MONGODB_DNS_LOG_ACTIVITY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5316" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6884">QUARKUS_MONGODB_DNS_LOG_ACTIVITY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6884" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1957,7 +1987,24 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Generic properties that are added to the connection URL.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5317">QUARKUS_MONGODB_DEVSERVICES_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5317" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6885">QUARKUS_MONGODB_DEVSERVICES_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6885" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-mongodb_quarkus.mongodb.devservices.container-env-container-env"></a><code><a href="#quarkus-mongodb_quarkus.mongodb.devservices.container-env-container-env">quarkus.mongodb.devservices.container-env</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Environment variables that are passed to the container.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6886">QUARKUS_MONGODB_DEVSERVICES_CONTAINER_ENV</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6886" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1971,22 +2018,55 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Configures the connection string. The format is: <code>mongodb://[username:password@]host1[:port1][,host2[:port2],&#8230;&#8203;[,hostN[:portN]]][/[database.collection][?options]]</code>
-<code>mongodb://</code> is a required prefix to identify that this is a string in the standard connection format.
-<code>username:password@</code> are optional. If given, the driver will attempt to log in to a database after connecting to a database server. For some authentication mechanisms, only the username is specified and the password is not, in which case the ":" after the username is left off as well.
-<code>host1</code> is the only required part of the connection string. It identifies a server address to connect to.
-<code>:portX</code> is optional and defaults to :27017 if not provided.
-<code>/database</code> is the name of the database to log in to and thus is only relevant if the <code>username:password@</code> syntax is used. If not specified the <code>admin</code> database will be used by default.
-<code>?options</code> are connection options. Note that if <code>database</code> is absent there is still a <code>/</code> required between the last host and the <code>?</code> introducing the options. Options are name=value pairs and the pairs are separated by "&amp;".
-An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mongodb&#43;srv://[username:password@]host[/[database][?options]]
- - <code>mongodb&#43;srv://</code> is a required prefix for this format.
- - <code>username:password@</code> are optional. If given, the driver will attempt to login to a database after connecting to a database server. For some authentication mechanisms, only the username is specified and the password is not, in which case the ":" after the username is left off as well
- - <code>host</code> is the only required part of the URI. It identifies a single host name for which SRV records are looked up from a Domain Name Server after prefixing the host name with <code>"_mongodb._tcp"</code>. The host/port for each SRV record becomes the seed list used to connect, as if each one were provided as host/port pair in a URI using the normal mongodb protocol.
- - <code>/database</code> is the name of the database to login to and thus is only relevant if the <code>username:password@</code> syntax is used. If not specified the "admin" database will be used by default.
- - <code>?options</code> are connection options. Note that if <code>database</code> is absent there is still a <code>/</code> required between the last host and the <code>?</code> introducing the options. Options are name=value pairs and the pairs are separated by "&amp;". Additionally with the mongodb&#43;srv protocol, TXT records are looked up from a Domain Name Server for the given host, and the text value of each one is prepended to any options on the URI itself. Because the last specified value for any option wins, that means that options provided on the URI will override any that are provided via TXT records.</p>
+<p>Configures the connection string. The format is: <code>mongodb://[username:password@]host1[:port1][,host2[:port2],&#8230;&#8203;[,hostN[:portN]]][/[database.collection][?options]]</code></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5318">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CONNECTION_STRING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5318" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p><code>mongodb://</code> is a required prefix to identify that this is a string in the standard connection format.</p>
+</div>
+<div class="paragraph">
+<p><code>username:password@</code> are optional. If given, the driver will attempt to log in to a database after connecting to a database server. For some authentication mechanisms, only the username is specified and the password is not, in which case the ":" after the username is left off as well.</p>
+</div>
+<div class="paragraph">
+<p><code>host1</code> is the only required part of the connection string. It identifies a server address to connect to.</p>
+</div>
+<div class="paragraph">
+<p><code>:portX</code> is optional and defaults to :27017 if not provided.</p>
+</div>
+<div class="paragraph">
+<p><code>/database</code> is the name of the database to log in to and thus is only relevant if the <code>username:password@</code> syntax is used. If not specified the <code>admin</code> database will be used by default.</p>
+</div>
+<div class="paragraph">
+<p><code>?options</code> are connection options. Note that if <code>database</code> is absent there is still a <code>/</code> required between the last host and the <code>?</code> introducing the options. Options are name=value pairs and the pairs are separated by "&amp;".</p>
+</div>
+<div class="paragraph">
+<p>An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">mongodb+srv://[username:password@]host[/[database][?options]]</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mongodb&#43;srv://</code> is a required prefix for this format.</p>
+</li>
+<li>
+<p><code>username:password@</code> are optional. If given, the driver will attempt to login to a database after connecting to a database server. For some authentication mechanisms, only the username is specified and the password is not, in which case the ":" after the username is left off as well</p>
+</li>
+<li>
+<p><code>host</code> is the only required part of the URI. It identifies a single host name for which SRV records are looked up from a Domain Name Server after prefixing the host name with <code>"_mongodb._tcp"</code>. The host/port for each SRV record becomes the seed list used to connect, as if each one were provided as host/port pair in a URI using the normal mongodb protocol.</p>
+</li>
+<li>
+<p><code>/database</code> is the name of the database to login to and thus is only relevant if the <code>username:password@</code> syntax is used. If not specified the "admin" database will be used by default.</p>
+</li>
+<li>
+<p><code>?options</code> are connection options. Note that if <code>database</code> is absent there is still a <code>/</code> required between the last host and the <code>?</code> introducing the options. Options are name=value pairs and the pairs are separated by "&amp;". Additionally with the mongodb&#43;srv protocol, TXT records are looked up from a Domain Name Server for the given host, and the text value of each one is prepended to any options on the URI itself. Because the last specified value for any option wins, that means that options provided on the URI will override any that are provided via TXT records.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6887">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CONNECTION_STRING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6887" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2003,7 +2083,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the MongoDB server addressed (one if single mode). The addresses are passed as <code>host:port</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5319">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5319" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6888">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__HOSTS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6888" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2020,7 +2100,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configure the database name.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5320">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__DATABASE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5320" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6889">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__DATABASE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6889" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2037,7 +2117,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the application name.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5321">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__APPLICATION_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5321" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6890">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__APPLICATION_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6890" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2054,7 +2134,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the maximum number of connections in the connection pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5322">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MAX_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5322" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6891">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MAX_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6891" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2071,7 +2151,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the minimum number of connections in the connection pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5323">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MIN_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5323" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6892">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MIN_POOL_SIZE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6892" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2088,7 +2168,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Maximum idle time of a pooled connection. A connection that exceeds this limit will be closed.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5324">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MAX_CONNECTION_IDLE_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5324" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6893">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MAX_CONNECTION_IDLE_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6893" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2106,7 +2186,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Maximum lifetime of a pooled connection. A connection that exceeds this limit will be closed.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5325">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MAX_CONNECTION_LIFE_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5325" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6894">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MAX_CONNECTION_LIFE_TIME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6894" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2124,7 +2204,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the time period between runs of the maintenance job.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5326">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MAINTENANCE_FREQUENCY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5326" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6895">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MAINTENANCE_FREQUENCY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6895" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2142,7 +2222,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures period of time to wait before running the first maintenance job on the connection pool.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5327">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MAINTENANCE_INITIAL_DELAY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5327" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6896">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__MAINTENANCE_INITIAL_DELAY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6896" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2160,7 +2240,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>How long a connection can take to be opened before timing out.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5328">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CONNECT_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5328" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6897">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CONNECT_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6897" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2178,7 +2258,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>How long a socket read can take before timing out.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5329">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__READ_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5329" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6898">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__READ_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6898" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2196,7 +2276,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>If connecting with TLS, this option enables insecure TLS connections.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5330">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__TLS_INSECURE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5330" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6899">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__TLS_INSECURE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6899" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2213,7 +2293,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Whether to connect using TLS.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5331">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__TLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5331" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6900">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__TLS</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6900" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2230,7 +2310,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Implies that the hosts given are a seed list, and the driver will attempt to find all members of the set.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5332">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__REPLICA_SET_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5332" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6901">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__REPLICA_SET_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6901" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2247,7 +2327,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>How long the driver will wait for server selection to succeed before throwing an exception.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5333">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__SERVER_SELECTION_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5333" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6902">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__SERVER_SELECTION_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6902" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2265,7 +2345,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>When choosing among multiple MongoDB servers to send a request, the driver will only send that request to a server whose ping time is less than or equal to the server with the fastest ping time plus the local threshold.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5334">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__LOCAL_THRESHOLD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5334" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6903">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__LOCAL_THRESHOLD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6903" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2283,7 +2363,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>The frequency that the driver will attempt to determine the current state of each server in the cluster.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5335">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__HEARTBEAT_FREQUENCY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5335" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6904">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__HEARTBEAT_FREQUENCY</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6904" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2301,7 +2381,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the read concern. Supported values are: <code>local|majority|linearizable|snapshot|available</code></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5336">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__READ_CONCERN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5336" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6905">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__READ_CONCERN</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6905" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2315,10 +2395,10 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <div class="openblock description">
 <div class="content">
 <div class="paragraph">
-<p>Configures the read preferences. Supported values are: <code>primary|primaryPreferred|secondary|secondaryPreferred|nearest</code></p>
+<p>Configures the read preference. Supported values are: <code>primary|primaryPreferred|secondary|secondaryPreferred|nearest</code></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5337">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__READ_PREFERENCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5337" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6906">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__READ_PREFERENCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6906" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2335,7 +2415,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>The database used during the readiness health checks</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5338">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__HEALTH_DATABASE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5338" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6907">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__HEALTH_DATABASE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6907" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2358,7 +2438,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
  - <code>false</code>: the driver does not ensure that all writes are acknowledged by the MongoDB server.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5339">QUARKUS_MONGODB_WRITE_CONCERN_SAFE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5339" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6908">QUARKUS_MONGODB_WRITE_CONCERN_SAFE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6908" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2375,7 +2455,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the journal writing aspect. If set to <code>true</code>: the driver waits for the server to group commit to the journal file on disk. If set to <code>false</code>: the driver does not wait for the server to group commit to the journal file on disk.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5340">QUARKUS_MONGODB_WRITE_CONCERN_JOURNAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5340" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6909">QUARKUS_MONGODB_WRITE_CONCERN_JOURNAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6909" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2392,7 +2472,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>When set, the driver adds <code>w: wValue</code> to all write commands. It requires <code>safe</code> to be <code>true</code>. The value is typically a number, but can also be the <code>majority</code> string.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5341">QUARKUS_MONGODB_WRITE_CONCERN_W</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5341" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6910">QUARKUS_MONGODB_WRITE_CONCERN_W</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6910" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2409,7 +2489,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>If set to <code>true</code>, the driver will retry supported write operations if they fail due to a network error.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5342">QUARKUS_MONGODB_WRITE_CONCERN_RETRY_WRITES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5342" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6911">QUARKUS_MONGODB_WRITE_CONCERN_RETRY_WRITES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6911" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2426,7 +2506,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>When set, the driver adds <code>wtimeout : ms</code> to all write commands. It requires <code>safe</code> to be <code>true</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5343">QUARKUS_MONGODB_WRITE_CONCERN_W_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5343" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6912">QUARKUS_MONGODB_WRITE_CONCERN_W_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6912" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2445,7 +2525,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
  - <code>false</code>: the driver does not ensure that all writes are acknowledged by the MongoDB server.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5344">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__WRITE_CONCERN_SAFE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5344" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6913">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__WRITE_CONCERN_SAFE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6913" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2462,7 +2542,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the journal writing aspect. If set to <code>true</code>: the driver waits for the server to group commit to the journal file on disk. If set to <code>false</code>: the driver does not wait for the server to group commit to the journal file on disk.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5345">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__WRITE_CONCERN_JOURNAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5345" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6914">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__WRITE_CONCERN_JOURNAL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6914" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2479,7 +2559,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>When set, the driver adds <code>w: wValue</code> to all write commands. It requires <code>safe</code> to be <code>true</code>. The value is typically a number, but can also be the <code>majority</code> string.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5346">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__WRITE_CONCERN_W</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5346" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6915">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__WRITE_CONCERN_W</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6915" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2496,7 +2576,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>If set to <code>true</code>, the driver will retry supported write operations if they fail due to a network error.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5347">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__WRITE_CONCERN_RETRY_WRITES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5347" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6916">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__WRITE_CONCERN_RETRY_WRITES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6916" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2513,7 +2593,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>When set, the driver adds <code>wtimeout : ms</code> to all write commands. It requires <code>safe</code> to be <code>true</code>.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5348">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__WRITE_CONCERN_W_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5348" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6917">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__WRITE_CONCERN_W_TIMEOUT</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6917" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2536,7 +2616,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the username.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5349">QUARKUS_MONGODB_CREDENTIALS_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5349" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6918">QUARKUS_MONGODB_CREDENTIALS_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6918" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2553,7 +2633,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the password.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5350">QUARKUS_MONGODB_CREDENTIALS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5350" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6919">QUARKUS_MONGODB_CREDENTIALS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6919" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2570,7 +2650,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the authentication mechanism to use if a credential was supplied. The default is unspecified, in which case the client will pick the most secure mechanism available based on the sever version. For the GSSAPI and MONGODB-X509 mechanisms, no password is accepted, only the username. Supported values: null or <code>GSSAPI|PLAIN|MONGODB-X509|SCRAM_SHA_1|SCRAM_SHA_256|MONGODB_AWS</code></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5351">QUARKUS_MONGODB_CREDENTIALS_AUTH_MECHANISM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5351" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6920">QUARKUS_MONGODB_CREDENTIALS_AUTH_MECHANISM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6920" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2587,7 +2667,47 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the source of the authentication credentials. This is typically the database that the credentials have been created. The value defaults to the database specified in the path portion of the connection string or in the 'database' configuration property. If the database is specified in neither place, the default value is <code>admin</code>. This option is only respected when using the MONGO-CR mechanism (the default).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5352">QUARKUS_MONGODB_CREDENTIALS_AUTH_SOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5352" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6921">QUARKUS_MONGODB_CREDENTIALS_AUTH_SOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6921" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-mongodb_quarkus.mongodb.credentials.credentials-provider"></a><code><a href="#quarkus-mongodb_quarkus.mongodb.credentials.credentials-provider">quarkus.mongodb.credentials.credentials-provider</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The credentials provider name</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6922">QUARKUS_MONGODB_CREDENTIALS_CREDENTIALS_PROVIDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6922" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-mongodb_quarkus.mongodb.credentials.credentials-provider-name"></a><code><a href="#quarkus-mongodb_quarkus.mongodb.credentials.credentials-provider-name">quarkus.mongodb.credentials.credentials-provider-name</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The credentials provider bean name.</p>
+</div>
+<div class="paragraph">
+<p>It is the <code>&amp;#64;Named</code> value of the credentials provider bean. It is used to discriminate if multiple CredentialsProvider beans are available.</p>
+</div>
+<div class="paragraph">
+<p>For Vault it is: vault-credentials-provider. Not necessary if there is only one credentials provider available.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6923">QUARKUS_MONGODB_CREDENTIALS_CREDENTIALS_PROVIDER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6923" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2604,7 +2724,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Allows passing authentication mechanism properties.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5353">QUARKUS_MONGODB_CREDENTIALS_AUTH_MECHANISM_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5353" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6924">QUARKUS_MONGODB_CREDENTIALS_AUTH_MECHANISM_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6924" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2621,7 +2741,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the username.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5354">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5354" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6925">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_USERNAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6925" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2638,7 +2758,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the password.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5355">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5355" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6926">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_PASSWORD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6926" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2655,7 +2775,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the authentication mechanism to use if a credential was supplied. The default is unspecified, in which case the client will pick the most secure mechanism available based on the sever version. For the GSSAPI and MONGODB-X509 mechanisms, no password is accepted, only the username. Supported values: null or <code>GSSAPI|PLAIN|MONGODB-X509|SCRAM_SHA_1|SCRAM_SHA_256|MONGODB_AWS</code></p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5356">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_AUTH_MECHANISM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5356" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6927">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_AUTH_MECHANISM</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6927" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2672,7 +2792,7 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Configures the source of the authentication credentials. This is typically the database that the credentials have been created. The value defaults to the database specified in the path portion of the connection string or in the 'database' configuration property. If the database is specified in neither place, the default value is <code>admin</code>. This option is only respected when using the MONGO-CR mechanism (the default).</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5357">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_AUTH_SOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5357" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6928">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_AUTH_SOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6928" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -2689,11 +2809,51 @@ An alternative format, using the <code>mongodb&#43;srv</code> protocol, is:  mon
 <p>Allows passing authentication mechanism properties.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5358">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_AUTH_MECHANISM_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5358" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-6929">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_AUTH_MECHANISM_PROPERTIES</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6929" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>Map&lt;String,String&gt;</code></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-mongodb_quarkus.mongodb.-mongo-client-configs-.credentials.credentials-provider"></a><code><a href="#quarkus-mongodb_quarkus.mongodb.-mongo-client-configs-.credentials.credentials-provider">quarkus.mongodb."mongo-client-configs".credentials.credentials-provider</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The credentials provider name</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6930">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_CREDENTIALS_PROVIDER</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6930" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-mongodb_quarkus.mongodb.-mongo-client-configs-.credentials.credentials-provider-name"></a><code><a href="#quarkus-mongodb_quarkus.mongodb.-mongo-client-configs-.credentials.credentials-provider-name">quarkus.mongodb."mongo-client-configs".credentials.credentials-provider-name</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>The credentials provider bean name.</p>
+</div>
+<div class="paragraph">
+<p>It is the <code>&amp;#64;Named</code> value of the credentials provider bean. It is used to discriminate if multiple CredentialsProvider beans are available.</p>
+</div>
+<div class="paragraph">
+<p>For Vault it is: vault-credentials-provider. Not necessary if there is only one credentials provider available.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-6931">QUARKUS_MONGODB__MONGO_CLIENT_CONFIGS__CREDENTIALS_CREDENTIALS_PROVIDER_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-6931" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
 </tbody>
@@ -2741,21 +2901,41 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -2764,15 +2944,29 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -2781,19 +2975,33 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -2802,13 +3010,21 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -2819,21 +3035,21 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

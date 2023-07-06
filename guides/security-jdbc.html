@@ -9,7 +9,7 @@
   <title>Using Security with JDBC - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,66 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" >Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" selected>3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" selected>2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -231,7 +207,7 @@
 <p>JDK 11+ installed with <code>JAVA_HOME</code> configured appropriately</p>
 </li>
 <li>
-<p>Apache Maven 3.8.6</p>
+<p>Apache Maven 3.9.2</p>
 </li>
 <li>
 <p>Optionally the <a href="cli-tooling">Quarkus CLI</a> if you want to use it</p>
@@ -314,7 +290,7 @@ cd security-jdbc-quickstart</code></pre>
 <div class="title">Maven</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:2.13.4.Final:create \
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mvn io.quarkus.platform:quarkus-maven-plugin:3.2.0.Final:create \
     -DprojectGroupId=org.acme \
     -DprojectArtifactId=security-jdbc-quickstart \
     -Dextensions='elytron-security-jdbc,jdbc-postgresql,resteasy-reactive' \
@@ -391,17 +367,17 @@ to your project by running the following command in your project base directory:
 <h2 id="writing-the-application"><a class="anchor" href="#writing-the-application"></a>Writing the application</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Let&#8217;s start by implementing the <code>/api/public</code> endpoint. As you can see from the source code below, it is just a regular JAX-RS resource:</p>
+<p>Let&#8217;s start by implementing the <code>/api/public</code> endpoint. As you can see from the source code below, it is just a regular Jakarta REST resource:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme.security.jdbc;
 
-import javax.annotation.security.PermitAll;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.annotation.security.PermitAll;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/api/public")
 public class PublicResource {
@@ -422,11 +398,11 @@ public class PublicResource {
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme.security.jdbc;
 
-import javax.annotation.security.RolesAllowed;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import jakarta.annotation.security.RolesAllowed;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 
 @Path("/api/admin")
 public class AdminResource {
@@ -448,12 +424,12 @@ We are using <code>SecurityContext</code> to get access to the current authentic
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package org.acme.security.jdbc;
 
-import javax.annotation.security.RolesAllowed;
-import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.SecurityContext;
+import jakarta.annotation.security.RolesAllowed;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.core.Context;
+import jakarta.ws.rs.core.SecurityContext;
 
 @Path("/api/users")
 public class UserResource {
@@ -694,7 +670,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The realm name</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5685">QUARKUS_SECURITY_JDBC_REALM_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5685" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7317">QUARKUS_SECURITY_JDBC_REALM_NAME</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7317" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -711,7 +687,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>If the properties store is enabled.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5686">QUARKUS_SECURITY_JDBC_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5686" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7318">QUARKUS_SECURITY_JDBC_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7318" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -728,7 +704,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The sql query to find the password</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5687">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5687" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7319">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7319" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -745,7 +721,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The data source to use</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5688">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_DATASOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5688" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7320">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_DATASOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7320" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -762,7 +738,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>If the clear-password-mapper is enabled.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5689">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_CLEAR_PASSWORD_MAPPER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5689" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7321">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_CLEAR_PASSWORD_MAPPER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7321" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -779,7 +755,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The index (1 based numbering) of the column containing the clear password</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5690">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_CLEAR_PASSWORD_MAPPER_PASSWORD_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5690" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7322">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_CLEAR_PASSWORD_MAPPER_PASSWORD_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7322" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -796,7 +772,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>If the bcrypt-password-mapper is enabled.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5691">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5691" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7323">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7323" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -813,7 +789,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The index (1 based numbering) of the column containing the password hash</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5692">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_PASSWORD_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5692" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7324">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_PASSWORD_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7324" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -830,7 +806,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>A string referencing the password hash encoding ("BASE64" or "HEX")</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5693">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_HASH_ENCODING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5693" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7325">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_HASH_ENCODING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7325" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -849,7 +825,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The index (1 based numbering) of the column containing the Bcrypt salt</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5694">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_SALT_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5694" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7326">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_SALT_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7326" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -866,7 +842,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>A string referencing the salt encoding ("BASE64" or "HEX")</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5695">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_SALT_ENCODING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5695" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7327">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_SALT_ENCODING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7327" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -885,7 +861,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The index (1 based numbering) of the column containing the Bcrypt iteration count</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5696">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_ITERATION_COUNT_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5696" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7328">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_BCRYPT_PASSWORD_MAPPER_ITERATION_COUNT_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7328" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -902,7 +878,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The index (1 based numbering) of column to map</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5697">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_ATTRIBUTE_MAPPINGS__ATTRIBUTE_MAPPINGS__INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5697" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7329">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_ATTRIBUTE_MAPPINGS__ATTRIBUTE_MAPPINGS__INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7329" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -919,7 +895,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The target attribute name</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5698">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_ATTRIBUTE_MAPPINGS__ATTRIBUTE_MAPPINGS__TO</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5698" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7330">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY_ATTRIBUTE_MAPPINGS__ATTRIBUTE_MAPPINGS__TO</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7330" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -936,7 +912,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The sql query to find the password</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5699">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5699" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7331">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__SQL</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7331" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -953,7 +929,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The data source to use</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5700">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__DATASOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5700" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7332">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__DATASOURCE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7332" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -970,7 +946,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The index (1 based numbering) of column to map</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5701">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__ATTRIBUTE_MAPPINGS__ATTRIBUTE_MAPPINGS__INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5701" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7333">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__ATTRIBUTE_MAPPINGS__ATTRIBUTE_MAPPINGS__INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7333" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -987,7 +963,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The target attribute name</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5702">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__ATTRIBUTE_MAPPINGS__ATTRIBUTE_MAPPINGS__TO</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5702" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7334">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__ATTRIBUTE_MAPPINGS__ATTRIBUTE_MAPPINGS__TO</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7334" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1004,7 +980,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>If the clear-password-mapper is enabled.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5703">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__CLEAR_PASSWORD_MAPPER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5703" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7335">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__CLEAR_PASSWORD_MAPPER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7335" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1021,7 +997,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The index (1 based numbering) of the column containing the clear password</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5704">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__CLEAR_PASSWORD_MAPPER_PASSWORD_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5704" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7336">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__CLEAR_PASSWORD_MAPPER_PASSWORD_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7336" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1038,7 +1014,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>If the bcrypt-password-mapper is enabled.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5705">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5705" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7337">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7337" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1055,7 +1031,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The index (1 based numbering) of the column containing the password hash</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5706">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_PASSWORD_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5706" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7338">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_PASSWORD_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7338" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1072,7 +1048,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>A string referencing the password hash encoding ("BASE64" or "HEX")</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5707">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_HASH_ENCODING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5707" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7339">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_HASH_ENCODING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7339" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1091,7 +1067,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The index (1 based numbering) of the column containing the Bcrypt salt</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5708">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_SALT_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5708" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7340">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_SALT_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7340" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1108,7 +1084,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>A string referencing the salt encoding ("BASE64" or "HEX")</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5709">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_SALT_ENCODING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5709" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7341">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_SALT_ENCODING</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7341" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1127,7 +1103,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <p>The index (1 based numbering) of the column containing the Bcrypt iteration count</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-5710">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_ITERATION_COUNT_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-5710" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-7342">QUARKUS_SECURITY_JDBC_PRINCIPAL_QUERY__NAMED_PRINCIPAL_QUERIES__BCRYPT_PASSWORD_MAPPER_ITERATION_COUNT_INDEX</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-7342" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -1144,7 +1120,7 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
 <div class="ulist">
 <ul>
 <li>
-<p><a href="security">Quarkus Security</a></p>
+<p><a href="security-overview">Quarkus Security overview</a></p>
 </li>
 </ul>
 </div>
@@ -1170,21 +1146,41 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -1193,15 +1189,29 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -1210,19 +1220,33 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1231,13 +1255,21 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1248,21 +1280,21 @@ quarkus.security.jdbc.principal-query.roles.attribute-mappings.0.to=groups</code
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

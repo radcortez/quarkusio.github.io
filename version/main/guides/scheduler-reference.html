@@ -9,7 +9,7 @@
   <title>Scheduler Reference Guide - main - Quarkus</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src https://dpm.demdex.net; script-src 'self' 'unsafe-eval' 'sha256-ANpuoVzuSex6VhqpYgsG25OHWVA1I+F6aGU04LoI+5s=' 'sha256-ipy9P/3rZZW06mTLAR0EnXvxSNcnfSDPLDuh3kzbB1w=' js.bizographics.com https://www.redhat.com https://static.redhat.com assets.adobedtm.com jsonip.com https://ajax.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://use.fontawesome.com https://app.mailjet.com http://www.youtube.com http://www.googleadservices.com https://googleads.g.doubleclick.net https://dpm.demdex.net https://giscus.app; style-src 'self' https://fonts.googleapis.com https://use.fontawesome.com; img-src 'self' *; media-src 'self'; frame-src https://www.googletagmanager.com https://www.youtube.com https://embed.restream.io https://app.mailjet.com http://xy0p2.mjt.lu https://mj.quarkus.io https://giscus.app; base-uri 'none'; object-src 'none'; form-action 'none'; font-src 'self' https://use.fontawesome.com https://fonts.gstatic.com;" />
   <script id="adobe_dtm" src="https://www.redhat.com/dtm.js" type="text/javascript"></script>
   <script src="/assets/javascript/highlight.pack.js" type="text/javascript"></script>
   <META HTTP-EQUIV='X-XSS-Protection' CONTENT="1; mode=block">
@@ -60,16 +60,15 @@
     <div class="width-12-12">
       <input type="checkbox" id="checkbox" />
       <nav id="main-nav" class="main-nav">
-  <div class="container">
-    <div class="logo-wrapper">
-        <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
-    </div>
+        <div class="logo-wrapper">
+           <a href="/"><img src="/assets/images/quarkus_logo_horizontal_rgb_600px_reverse.png" class="project-logo" title="Quarkus"></a>
+        </div>
     <label class="nav-toggle" for="checkbox">
       <i class="fa fa-bars"></i>
     </label>
     <ul id="menu" class="menu">
       <li class="dropdown">
-        <span href="/about/">About <i class="fas fa-chevron-down"></i></span>
+        <span href="/about/">About<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/about" class="">WHAT IS QUARKUS?</a></li>
           <li><a href="/container-first" class="">CONTAINER FIRST</a></li>
@@ -80,16 +79,25 @@
         </ul>
       </li>
       <li class="dropdown">
-        <span href="/learn/">Learn <i class="fas fa-chevron-down"></i></span>
+        <span href="/learn/">Learn<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/get-started" class="">GET STARTED</a></li>
-          <li><a href="/guides" class="active">GUIDES</a></li>
+          <li><a href="/guides" class="active">DOCUMENTATION</a></li>
           <li><a href="/qtips" class="">"Q" TIP VIDEOS</a></li>          
           <li><a href="/books" class="">BOOKS</a></li>
           </ul>
       </li>
       <li class="dropdown">
-        <span href="/community/">Community <i class="fas fa-chevron-down"></i></span>
+        <span href="https://quarkus.io/extensions/">Extensions<i class="fas fa-chevron-down"></i></span>
+        <ul class="submenu">
+          <!-- Note that quarkus.io is hardcoded here, because it is the only url which supports extensions -->
+          <li><a href="https://quarkus.io/extensions/" class="">BROWSE EXTENSIONS</a></li>
+          <li><a href="/faq/#what-is-a-quarkus-extension" class="">USE EXTENSIONS</a></li>
+          <li><a href="/guides/writing-extensions" class="">CREATE EXTENSIONS</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <span href="/community/">Community<i class="fas fa-chevron-down"></i></span>
         <ul class="submenu">
           <li><a href="/support/" class="">SUPPORT</a></li>
           <li><a href="/blog" class="">BLOG</a></li>
@@ -113,7 +121,6 @@
           </ul>
       </li>
     </ul>
-  </div>
       </nav>
     </div>
   </div>
@@ -124,66 +131,35 @@
 
 
 
-<div class="full-width-version-bg grey align-self">
-  <div class="grid-wrapper">
-    <div class="grid__item width-6-12">
-      <p class="returnlink"><i class="fas fa-angle-left"></i><a href="/version/main/guides/"> Back to Guides</a></p>
+
+<section class="full-width-version-bg flexfilterbar guides">
+  <div class="guideflexcontainer">
+    <div class="docslink">
+      <a class="returnlink" href="/version/main/guides/"> Back to Guides</a>
     </div>
-    <div class="grid__item width-6-12 align-self-center text-right hide-mobile">
-      <label id="guide-version-label">Select Guide Version</label>
-      <select id="guide-version-dropdown">
-        
+    <div class="flexlabel">
+      <label>By Version</label>
+    </div>
+    <div class="guidepulldown version">
+    <select id="guide-version-dropdown">
       
         
-        
-        
-        
-          
         <option value="main" selected>Main - SNAPSHOT</option>
         
         
-      
+        <option value="latest" >3.2 - Latest</option>
         
         
         
         
-          
-        <option value="latest" >2.13 - Latest</option>
+        <option value="2.13" >2.13</option>
         
         
-      
-        
-        
-        
-        
-          
         <option value="2.7" >2.7</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="2.2" >2.2</option>
-        
-        
-      
-        
-        
-        
-        
-          
-        <option value="1.11" >1.11</option>
-        
-        
-      
-    
-      </select>
+        </select>
     </div>
   </div>
-</div>
+</section>
 
 <div class="grid-wrapper guide">
   <div class="grid__item width-12-12 width-12-12-mobile">
@@ -202,40 +178,21 @@
 </ul>
 </li>
 <li><a href="#scheduler">2. Scheduler</a></li>
-<li><a href="#programmatic-scheduling">3. Programmatic Scheduling</a></li>
+<li><a href="#programmatic_scheduling">3. Programmatic Scheduling</a></li>
 <li><a href="#scheduled-methods-and-testing">4. Scheduled Methods and Testing</a></li>
 <li><a href="#metrics">5. Metrics</a></li>
-<li><a href="#configuration-reference">6. Configuration Reference</a></li>
+<li><a href="#opentelemetry-tracing">6. OpenTelemetry Tracing</a></li>
+<li><a href="#configuration-reference">7. Configuration Reference</a></li>
 </ul></div>
     <div>
-      <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#scheduled-methods">1. Scheduled Methods</a>
-<ul class="sectlevel2">
-<li><a href="#triggers">1.1. Triggers</a></li>
-<li><a href="#identity">1.2. Identity</a></li>
-<li><a href="#delayed-execution">1.3. Delayed Execution</a></li>
-<li><a href="#concurrent_execution">1.4. Concurrent Execution</a></li>
-<li><a href="#conditional_execution">1.5. Conditional Execution</a></li>
-<li><a href="#non-blocking-methods">1.6. Non-blocking Methods</a></li>
-</ul>
-</li>
-<li><a href="#scheduler">2. Scheduler</a></li>
-<li><a href="#programmatic-scheduling">3. Programmatic Scheduling</a></li>
-<li><a href="#scheduled-methods-and-testing">4. Scheduled Methods and Testing</a></li>
-<li><a href="#metrics">5. Metrics</a></li>
-<li><a href="#configuration-reference">6. Configuration Reference</a></li>
-</ul>
-</div>
-<div id="preamble">
+      <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>Modern applications often need to run specific tasks periodically.
 There are two scheduler extensions in Quarkus.
 The <code>quarkus-scheduler</code> extension brings the API and a lightweight in-memory scheduler implementation.
 The <code>quarkus-quartz</code> extension implements the API from the <code>quarkus-scheduler</code> extension and contains a scheduler implementation based on the Quartz library.
-You will only need <code>quarkus-quartz</code> for more advanced scheduling use cases, such as persistent tasks, clustering and programmatic scheduling of jobs.</p>
+You will only need <code>quarkus-quartz</code> for more advanced scheduling use cases, such as persistent tasks and clustering.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -258,7 +215,7 @@ If you add the <code>quarkus-quartz</code> dependency to your project the lightw
 <p>A method annotated with <code>@io.quarkus.scheduler.Scheduled</code> is automatically scheduled for invocation.
 A scheduled method must not be abstract or private.
 It may be either static or non-static.
-A scheduled method can be annotated with interceptor bindings, such as <code>@javax.transaction.Transactional</code> and <code>@org.eclipse.microprofile.metrics.annotation.Counted</code>.</p>
+A scheduled method can be annotated with interceptor bindings, such as <code>@jakarta.transaction.Transactional</code> and <code>@org.eclipse.microprofile.metrics.annotation.Counted</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -376,6 +333,39 @@ void myMethod() { }</code></pre>
 </div>
 <div class="paragraph">
 <p>If the property <code>myMethod.cron.expr</code> is undefined or <code>null</code>, the default value (<code>0 0 15 ? * MON *</code>) will be used.</p>
+</div>
+<div class="sect4">
+<h5 id="time-zones"><a class="anchor" href="#time-zones"></a>1.1.1.1. Time Zones</h5>
+<div class="paragraph">
+<p>The cron expression is evaluated in the context of the default time zone.
+However, it is also possible to associate the cron expression with a specific time zone.</p>
+</div>
+<div class="listingblock">
+<div class="title">Time Zone Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Scheduled(cron = "0 15 10 * * ?", timeZone = "Europe/Prague") <i class="conum" data-value="1"></i><b>(1)</b>
+void myMethod() { }</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The time zone ID is parsed using <code>java.time.ZoneId#of(String)</code>.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>timeZone</code> attribute supports <a href="config-reference#property-expressions">Property Expressions</a> including default values and nested
+Property Expressions.</p>
+</div>
+<div class="listingblock">
+<div class="title">Time Zone Configuration Property Example</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">@Scheduled(cron = "0 15 10 * * ?", timeZone = "{myMethod.timeZone}")
+void myMethod() { }</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -743,36 +733,71 @@ class MyService {
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A CDI event is fired synchronously and asynchronously when the scheduler or a scheduled job is paused/resumed. The payload is <code>io.quarkus.scheduler.SchedulerPaused</code>, <code>io.quarkus.scheduler.SchedulerResumed</code>, <code>io.quarkus.scheduler.ScheduledJobPaused</code> and <code>io.quarkus.scheduler.ScheduledJobResumed</code> respectively.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="programmatic-scheduling"><a class="anchor" href="#programmatic-scheduling"></a>3. Programmatic Scheduling</h2>
+<h2 id="programmatic_scheduling"><a class="anchor" href="#programmatic_scheduling"></a>3. Programmatic Scheduling</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you need to schedule a job programmatically you&#8217;ll need to add the <a href="quartz">Quartz extension</a> and use the Quartz API directly.</p>
+<p>An injected <code>io.quarkus.scheduler.Scheduler</code> can be also used to schedule a job programmatically.</p>
 </div>
 <div class="listingblock">
-<div class="title">Programmatic Scheduling with Quartz API</div>
+<div class="title">Programmatic Scheduling</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import org.quartz.Scheduler;
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">import io.quarkus.scheduler.Scheduler;
 
+@ApplicationScoped
 class MyJobs {
 
-    void onStart(@Observes StartupEvent event, Scheduler quartz) throws SchedulerException {
-        JobDetail job = JobBuilder.newJob(SomeJob.class)
-                .withIdentity("myJob", "myGroup")
-                .build();
-        Trigger trigger = TriggerBuilder.newTrigger()
-                .withIdentity("myTrigger", "myGroup")
-                .startNow()
-                .withSchedule(SimpleScheduleBuilder.simpleSchedule()
-                        .withIntervalInSeconds(1)
-                        .repeatForever())
-                .build();
-        quartz.scheduleJob(job, trigger);
+    @Inject
+    Scheduler scheduler;
+
+    void addMyJob() { <i class="conum" data-value="1"></i><b>(1)</b>
+        scheduler.newJob("myJob")
+            .setCron("0/5 * * * * ?")
+            .setTask(executionContext -&gt; { <i class="conum" data-value="2"></i><b>(2)</b>
+                // do something important every 5 seconds
+            })
+            .schedule(); <i class="conum" data-value="3"></i><b>(3)</b>
+    }
+
+    void removeMyJob() {
+        scheduler.unscheduleJob("myJob"); <i class="conum" data-value="4"></i><b>(4)</b>
     }
 }</code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This is a programmatic alternative to a method annotated with <code>@Scheduled(identity = "myJob", cron = "0/5 * * * * ?")</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The business logic is defined in a callback.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The job is scheduled once the <code>JobDefinition#schedule()</code> method is called.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>A job that was added programmatically can be also removed.</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -781,7 +806,19 @@ class MyJobs {
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-By default, the scheduler is not started unless a <code>@Scheduled</code> business method is found. You may need to force the start of the scheduler for "pure" programmatic scheduling. See also <a href="quartz#quartz-configuration-reference">Quartz Configuration Reference</a>.
+By default, the scheduler is not started unless a <code>@Scheduled</code> business method is found. You may need to force the start of the scheduler for "pure" programmatic scheduling via <code>quarkus.scheduler.start-mode=forced</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the <a href="quartz">Quartz extension</a> is present then the Quartz API can be also used to schedule a job programmatically.
 </td>
 </tr>
 </table>
@@ -806,7 +843,7 @@ You can even disable the scheduler for particular <a href="getting-started-testi
 <p>Some basic metrics are published out of the box if <code>quarkus.scheduler.metrics.enabled</code> is set to <code>true</code> and a metrics extension is present.</p>
 </div>
 <div class="paragraph">
-<p>If the <a href="micrometer">Micrometer extension</a> is present, then a <code>@io.micrometer.core.annotation.Timed</code> interceptor binding is added to all <code>@Scheduled</code> methods automatically (unless it&#8217;s already present) and a <code>io.micrometer.core.instrument.Timer</code> with name <code>scheduled.methods</code> and a <code>io.micrometer.core.instrument.LongTaskTimer</code> with name <code>scheduled.methods.running</code> are registered. The fully qualified name of the declaring class and the name of a <code>@Scheduled</code> method are used as tags.</p>
+<p>If the <a href="telemetry-micrometer">Micrometer extension</a> is present, then a <code>@io.micrometer.core.annotation.Timed</code> interceptor binding is added to all <code>@Scheduled</code> methods automatically (unless it&#8217;s already present) and a <code>io.micrometer.core.instrument.Timer</code> with name <code>scheduled.methods</code> and a <code>io.micrometer.core.instrument.LongTaskTimer</code> with name <code>scheduled.methods.running</code> are registered. The fully qualified name of the declaring class and the name of a <code>@Scheduled</code> method are used as tags.</p>
 </div>
 <div class="paragraph">
 <p>If the <a href="smallrye-metrics">SmallRye Metrics extension</a> is present, then a <code>@org.eclipse.microprofile.metrics.annotation.Timed</code>  interceptor binding is added to all <code>@Scheduled</code> methods automatically (unless it&#8217;s already present) and a <code>org.eclipse.microprofile.metrics.Timer</code> is created for each <code>@Scheduled</code> method. The name consists of the fully qualified name of the declaring class and the name of a <code>@Scheduled</code> method. The timer has a tag <code>scheduled=true</code>.</p>
@@ -814,7 +851,15 @@ You can even disable the scheduler for particular <a href="getting-started-testi
 </div>
 </div>
 <div class="sect1">
-<h2 id="configuration-reference"><a class="anchor" href="#configuration-reference"></a>6. Configuration Reference</h2>
+<h2 id="opentelemetry-tracing"><a class="anchor" href="#opentelemetry-tracing"></a>6. OpenTelemetry Tracing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If <code>quarkus.scheduler.tracing.enabled</code> is set to <code>true</code> and the <a href="opentelemetry">OpenTelemetry extension</a> is present then the <code>@io.opentelemetry.instrumentation.annotations.WithSpan</code> annotation is added automatically to every <code>@Scheduled</code> method. As a result, each execution of this method has a new <code>io.opentelemetry.api.trace.Span</code> associated.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuration-reference"><a class="anchor" href="#configuration-reference"></a>7. Configuration Reference</h2>
 <div class="sectionbody">
 <div class="paragraph configuration-legend">
 <p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> Configuration property fixed at build time - All other configuration properties are overridable at runtime</p>
@@ -841,7 +886,7 @@ You can even disable the scheduler for particular <a href="getting-started-testi
 <p>The syntax used in CRON expressions.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-12515">QUARKUS_SCHEDULER_CRON_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-12515" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28689">QUARKUS_SCHEDULER_CRON_TYPE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28689" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -860,7 +905,24 @@ You can even disable the scheduler for particular <a href="getting-started-testi
 <p>Scheduled task metrics will be enabled if a metrics extension is present and this value is true.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-12516">QUARKUS_SCHEDULER_METRICS_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-12516" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28690">QUARKUS_SCHEDULER_METRICS_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28690" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-lock" title="Fixed at build time"></i></span> <a id="quarkus-scheduler_quarkus.scheduler.tracing.enabled"></a><code><a href="#quarkus-scheduler_quarkus.scheduler.tracing.enabled">quarkus.scheduler.tracing.enabled</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Tracing will be enabled if the OpenTelemetry extension is present and this value is true.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-28691">QUARKUS_SCHEDULER_TRACING_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28691" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -877,7 +939,7 @@ You can even disable the scheduler for particular <a href="getting-started-testi
 <p>If schedulers are enabled.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-12517">QUARKUS_SCHEDULER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-12517" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28692">QUARKUS_SCHEDULER_ENABLED</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28692" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
@@ -894,13 +956,38 @@ You can even disable the scheduler for particular <a href="getting-started-testi
 <p>Scheduled task will be flagged as overdue if next execution time is exceeded by this period.</p>
 </div>
 <div class="paragraph">
-<p>Environment variable: <code id="env-var-12518">QUARKUS_SCHEDULER_OVERDUE_GRACE_PERIOD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-12518" title="Copy to clipboard" do-not-collapse="true"></button></p>
+<p>Environment variable: <code id="env-var-28693">QUARKUS_SCHEDULER_OVERDUE_GRACE_PERIOD</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28693" title="Copy to clipboard" do-not-collapse="true"></button></p>
 </div>
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a>
   <a href="#duration-note-anchor-quarkus-scheduler" title="More information about the Duration format"><span class="icon"><i class="fa fa-question-circle"></i></span></a></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><code>1S</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a id="quarkus-scheduler_quarkus.scheduler.start-mode"></a><code><a href="#quarkus-scheduler_quarkus.scheduler.start-mode">quarkus.scheduler.start-mode</a></code></p>
+</div>
+<div class="openblock description">
+<div class="content">
+<div class="paragraph">
+<p>Scheduler can be started in different modes. By default, the scheduler is not started unless a <code>io.quarkus.scheduler.Scheduled</code> business method is found.</p>
+</div>
+<div class="paragraph">
+<p>Environment variable: <code id="env-var-28694">QUARKUS_SCHEDULER_START_MODE</code><button class="btn-copy fa fa-clipboard inline-btn-copy" data-clipboard-action="copy" data-clipboard-target="#env-var-28694" title="Copy to clipboard" do-not-collapse="true"></button></p>
+</div>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="paragraph">
+<p><span class="asciidoc-tooltip-wrapper"><code>normal</code><span class="asciidoc-tooltip">The scheduler is not started unless a <code>io.quarkus.scheduler.Scheduled</code> business method is found.</span></span>, tooltip:forced[The scheduler will be started even if no scheduled business methods are found.</p>
+</div>
+<div class="paragraph">
+<p>This is necessary for "pure" programmatic scheduling.], tooltip:halted[Just like the <code>forced</code> mode but the scheduler will not start triggering jobs until <code>Scheduler#resume()</code> is called.</p>
+</div>
+<div class="paragraph">
+<p>This can be useful to run some initialization logic that needs to be performed before the scheduler starts.]</p>
+</div></div></td>
+<td class="tableblock halign-left valign-middle"></td>
 </tr>
 </tbody>
 </table>
@@ -947,21 +1034,41 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Navigation</span>
         <ul class="footer-links">
           
-            <li><a href="/">Home</a></li>
           
-            <li><a href="/about">About</a></li>
+            <li><a href="/" target="_blank">Home</a></li>
           
-            <li><a href="/blog">Blog</a></li>
           
-            <li><a href="/insights">Podcast</a></li>
           
-            <li><a href="/events">Events</a></li>
+            <li><a href="/about" target="_blank">About</a></li>
           
-            <li><a href="/newsletter">Newsletter</a></li>
           
-            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1">Roadmap</a></li>
           
-            <li><a href="/security">Security&nbsp;policy</a></li>
+            <li><a href="/blog" target="_blank">Blog</a></li>
+          
+          
+          
+            <li><a href="/insights" target="_blank">Podcast</a></li>
+          
+          
+          
+            <li><a href="/events" target="_blank">Events</a></li>
+          
+          
+          
+            <li><a href="/newsletter" target="_blank">Newsletter</a></li>
+          
+          
+          
+            <li><a href="https://github.com/orgs/quarkusio/projects/13/views/1" target="_blank">Roadmap</a></li>
+          
+          
+          
+            <li><a href="/security" target="_blank">Security&nbsp;policy</a></li>
+          
+          
+          
+            <li><a href="/usage" target="_blank">Usage</a></li>
+          
           
         </ul>
       </div>
@@ -970,15 +1077,29 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Follow Us</span>
         <ul class="footer-links">
           
-            <li><a href="https://twitter.com/quarkusio">Twitter</a></li>
           
-            <li><a href="https://www.facebook.com/quarkusio">Facebook</a></li>
+            <li><a href="https://twitter.com/quarkusio" target="_blank">Twitter</a></li>
           
-            <li><a href="https://www.linkedin.com/company/quarkusio/">Linkedin</a></li>
           
-            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg">Youtube</a></li>
           
-            <li><a href="https://github.com/quarkusio">GitHub</a></li>
+            <li><a rel="me" href="https://fosstodon.org/@quarkusio" target="_blank">Mastodon</a></li>
+            
+          
+          
+            <li><a href="https://www.facebook.com/quarkusio" target="_blank">Facebook</a></li>
+          
+          
+          
+            <li><a href="https://www.linkedin.com/company/quarkusio/" target="_blank">Linkedin</a></li>
+          
+          
+          
+            <li><a href="https://www.youtube.com/channel/UCaW8QG_QoIk_FnjLgr5eOqg" target="_blank">Youtube</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio" target="_blank">GitHub</a></li>
+          
           
         </ul>
       </div>
@@ -987,19 +1108,33 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Get Help</span>
         <ul class="footer-links">
           
-            <li><a href="/support">Support</a></li>
           
-            <li><a href="/guides">Guides</a></li>
+            <li><a href="/support" target="_blank">Support</a></li>
           
-            <li><a href="/faq">FAQ</a></li>
           
-            <li><a href="/get-started">Get Started</a></li>
           
-            <li><a href="https://stackoverflow.com/questions/tagged/quarkus">Stack Overflow</a></li>
+            <li><a href="/guides" target="_blank">Guides</a></li>
           
-            <li><a href="https://github.com/quarkusio/quarkus/discussions">Discussions</a></li>
           
-            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev">Development mailing list</a></li>
+          
+            <li><a href="/faq" target="_blank">FAQ</a></li>
+          
+          
+          
+            <li><a href="/get-started" target="_blank">Get Started</a></li>
+          
+          
+          
+            <li><a href="https://stackoverflow.com/questions/tagged/quarkus" target="_blank">Stack Overflow</a></li>
+          
+          
+          
+            <li><a href="https://github.com/quarkusio/quarkus/discussions" target="_blank">Discussions</a></li>
+          
+          
+          
+            <li><a href="https://groups.google.com/forum/#!forum/quarkus-dev" target="_blank">Development mailing list</a></li>
+          
           
         </ul>
       </div>
@@ -1008,13 +1143,21 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Languages</span>
         <ul class="footer-links">
           
-            <li><a href="https://quarkus.io/">English</a></li>
           
-            <li><a href="https://es.quarkus.io/">Español</a></li>
+            <li><a href="https://quarkus.io/" target="_blank">English</a></li>
           
-            <li><a href="https://cn.quarkus.io/">简体中文</a></li>
           
-            <li><a href="https://ja.quarkus.io/">日本語</a></li>
+          
+            <li><a href="https://es.quarkus.io/" target="_blank">Español</a></li>
+          
+          
+          
+            <li><a href="https://cn.quarkus.io/" target="_blank">简体中文</a></li>
+          
+          
+          
+            <li><a href="https://ja.quarkus.io/" target="_blank">日本語</a></li>
+          
           
         </ul>
       </div>
@@ -1025,21 +1168,21 @@ Otherwise, <code>PT</code> is implicitly prepended to the value to obtain a stan
         <span>Quarkus is made of community projects</span>
         <ul class="footer-links">
           
-            <li><a href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
+            <li><a blah href="https://vertx.io/" target="_blank">Eclipse Vert.x</a></li>
           
-            <li><a href="https://smallrye.io" target="_blank">SmallRye</a></li>
+            <li><a blah href="https://smallrye.io" target="_blank">SmallRye</a></li>
           
-            <li><a href="https://hibernate.org" target="_blank">Hibernate</a></li>
+            <li><a blah href="https://hibernate.org" target="_blank">Hibernate</a></li>
           
-            <li><a href="https://netty.io" target="_blank">Netty</a></li>
+            <li><a blah href="https://netty.io" target="_blank">Netty</a></li>
           
-            <li><a href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
+            <li><a blah href="https://resteasy.github.io" target="_blank">RESTEasy</a></li>
           
-            <li><a href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
+            <li><a blah href="https://camel.apache.org" target="_blank">Apache Camel</a></li>
           
-            <li><a href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
+            <li><a blah href="https://microprofile.io" target="_blank">Eclipse MicroProfile</a></li>
           
-            <li><a href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
+            <li><a blah href="https://code.quarkus.io/" target="_blank">And many more...</a></li>
           
         </ul>
       </div>

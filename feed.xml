@@ -5,57 +5,38 @@
         <title>Quarkus</title>
         <link>https://quarkus.io</link>
         <description>Quarkus: Supersonic Subatomic Java</description>
-        <lastBuildDate>Thu, 06 Jul 2023 03:31:39 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 06 Jul 2023 14:27:36 +0000</lastBuildDate>
         
         <item>
-            <title>Quarkus Observability Roadmap 2023</title>
+            <title>Long-Term Support (LTS) for Quarkus</title>
             <link>
-                https://quarkus.io/blog/quarkus-observability-roadmap-2023/
+                https://quarkus.io/blog/lts-releases/
             </link>
             <description>
-                Quarkus has come a long way in the observability space. Initial support for Tracing and Metrics came from MicroProfile and their respective implementations, SmallRye OpenTracing and SmallRye Metrics. Because the observability space evolved, these implementations expanded beyond the original specifications, and the Quarkus extensions providing Tracing and Metrics have been...
+                We&#8217;re thrilled to announce the introduction of Long-Term Support (LTS) releases for Quarkus. We aim to strike a balance between our regular high-paced release cycle and the needs of users who require more stability and predictability. LTS releases offer an opportunity for our community to enjoy a version of Quarkus,...
             </description>
-            <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+            <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quarkus-observability-roadmap-2023/
+                https://quarkus.io/blog/lts-releases/
             </guid>
             
             
             
-            <author>Roberto Cortez (https://twitter.com/radcortez)</author>
+            <author>Max Rydahl Andersen (https://twitter.com/maxandersen)</author>
             
         </item>
         
         <item>
-            <title>Quarkus 2.13.4.Final released - Maintenance release</title>
+            <title>Quarkus 3.2.0.Final released - New security features, @QuarkusComponentTest</title>
             <link>
-                https://quarkus.io/blog/quarkus-2-13-4-final-released/
+                https://quarkus.io/blog/quarkus-3-2-0-final-released/
             </link>
             <description>
-                Today, we released Quarkus 2.13.4.Final with a new round of bugfixes and documentation improvements. It is a recommended upgrade for anyone already using 2.13. If you are not already using 2.13, please refer to our migration guide. GraalVM/Mandrel upgrade We don&#8217;t usually upgrade GraalVM/Mandrel in a micro release but GraalVM/Mandrel...
+                It is our pleasure to announce the release of Quarkus 3.2.0.Final. Quarkus 3.2 is the first of the now announced Long Term Support releases of Quarkus. Even if we will maintain 2.16 for a few months still, we encourage all our users to start their migration journey to Quarkus 3....
             </description>
-            <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
+            <pubDate>Wed, 05 Jul 2023 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quarkus-2-13-4-final-released/
-            </guid>
-            
-            
-            
-            <author>Guillaume Smet (https://twitter.com/gsmet_)</author>
-            
-        </item>
-        
-        <item>
-            <title>Quarkus 2.13.3.Final released - Maintenance release</title>
-            <link>
-                https://quarkus.io/blog/quarkus-2-13-3-final-released/
-            </link>
-            <description>
-                Today, we released Quarkus 2.13.3.Final with a new round of bugfixes and documentation improvements. It is a recommended and safe upgrade for anyone already using 2.13. Especially since it fixes a Jackson CVE (even if you probably are not affected by the CVE, better be safe). If you are not...
-            </description>
-            <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://quarkus.io/blog/quarkus-2-13-3-final-released/
+                https://quarkus.io/blog/quarkus-3-2-0-final-released/
             </guid>
             
             
@@ -65,16 +46,16 @@
         </item>
         
         <item>
-            <title>Quarkus 2.13.2.Final released - Maintenance release</title>
+            <title>Quarkus 2.16.8.Final released - Maintenance release</title>
             <link>
-                https://quarkus.io/blog/quarkus-2-13-2-final-released/
+                https://quarkus.io/blog/quarkus-2-16-8-final-released/
             </link>
             <description>
-                2.13.2.Final is the second maintenance release of the 2.13 release train. As usual, it contains bugfixes and documentation improvements. It is a recommended and safe upgrade for anyone already using 2.13. If you are not already using 2.13, please refer to our migration guide. Full changelog You can get the...
+                As mentioned in previous blog posts, we encourage all our users to upgrade to Quarkus 3. However we understand the migration can require some time so we will continue to maintain 2.16.x for a while. Today, we released Quarkus 2.16.8.Final, the eighth maintenance release of our 2.16 release train. As...
             </description>
-            <pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
+            <pubDate>Wed, 05 Jul 2023 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quarkus-2-13-2-final-released/
+                https://quarkus.io/blog/quarkus-2-16-8-final-released/
             </guid>
             
             
@@ -84,16 +65,92 @@
         </item>
         
         <item>
-            <title>Quarkus Newsletter #25 - October</title>
+            <title>Quarkus 3.1.3.Final released - Maintenance release</title>
             <link>
-                https://quarkus.io/blog/quarkus-newsletter-25/
+                https://quarkus.io/blog/quarkus-3-1-3-final-released/
             </link>
             <description>
-                It&#8217;s that time of the month&#8230;&#8203; time for the latest Quarkus newsletter! "Tutorial: Build a Quarkus web app with Azure App Service on Linux and PostgreSQL" walks you through the process of building, configuring, deploying, and scaling Java web apps on Azure. Vamil Kumar&#8217;s article; "Service discovery using SmallRye Stork...
+                We released Quarkus 3.1.3.Final, the third maintenance release of our 3.1 release train. As usual, it contains bugfixes and documentation improvements. It should be a safe upgrade for anyone already using 3.1. If you are not already using 3.1, please refer to the Quarkus 3.1 migration guide. And if you...
             </description>
-            <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
+            <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quarkus-newsletter-25/
+                https://quarkus.io/blog/quarkus-3-1-3-final-released/
+            </guid>
+            
+            
+            
+            <author>Guillaume Smet (https://twitter.com/gsmet_)</author>
+            
+        </item>
+        
+        <item>
+            <title>Quarkus Native with Podman for Windows</title>
+            <link>
+                https://quarkus.io/blog/podman-for-windows/
+            </link>
+            <description>
+                Developers who use Windows workstations might face the challenge of running Linux-native workflows. One way to achieve this is by using Podman, a container engine that provides a command line capability to run Linux containers. Podman supports running containers both as "rootful" and as "rootless", with the latter being the...
+            </description>
+            <pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate>
+            <guid>
+                https://quarkus.io/blog/podman-for-windows/
+            </guid>
+            
+            
+            
+            <author>Karm Michal Babacek (https://twitter.com/_karm)</author>
+            
+        </item>
+        
+        <item>
+            <title>Dev productivity - Quarkus CLI</title>
+            <link>
+                https://quarkus.io/blog/quarkus-cli/
+            </link>
+            <description>
+                People hardly realize that the Quarkus CLI was available from the first public release of Quarkus back in 2019. It originally only allowed project creation and extension manipulation. The following command shows the list of supported commands: quarkus --help Usage: quarkus &lt;command&gt; [&lt;args&gt;] These are the common quarkus commands used...
+            </description>
+            <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+            <guid>
+                https://quarkus.io/blog/quarkus-cli/
+            </guid>
+            
+            
+            
+            <author>Ioannis Canellos (https://twitter.com/iocanel)</author>
+            
+        </item>
+        
+        <item>
+            <title>Quarkus 3.1.2.Final released - Maintenance release</title>
+            <link>
+                https://quarkus.io/blog/quarkus-3-1-2-final-released/
+            </link>
+            <description>
+                We released Quarkus 3.1.2.Final, the second maintenance release of our 3.1 release train. As usual, it contains bugfixes and documentation improvements. It should be a safe upgrade for anyone already using 3.1. If you are not already using 3.1, please refer to the Quarkus 3.1 migration guide. And if you...
+            </description>
+            <pubDate>Fri, 16 Jun 2023 00:00:00 +0000</pubDate>
+            <guid>
+                https://quarkus.io/blog/quarkus-3-1-2-final-released/
+            </guid>
+            
+            
+            
+            <author>Guillaume Smet (https://twitter.com/gsmet_)</author>
+            
+        </item>
+        
+        <item>
+            <title>Quarkus Newsletter #33 - June</title>
+            <link>
+                https://quarkus.io/blog/quarkus-newsletter-33/
+            </link>
+            <description>
+                Check out the June Newsletter. Read "A Guide to the Quarkus 3 Azure Functions Extension: Bootstrap Java Microservices with Ease" by Daniel Oh &amp; Erik Costlow and to learn how Quarkus integrates Java microservices into Azure Functions with an improved developer experience. Check out "Quarkus: Java revisited!" by Willem Meints...
+            </description>
+            <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+            <guid>
+                https://quarkus.io/blog/quarkus-newsletter-33/
             </guid>
             
             
@@ -103,16 +160,16 @@
         </item>
         
         <item>
-            <title>Quarkus 2.13.1.Final released - Maintenance release</title>
+            <title>Quarkus 3.1.1.Final released - Maintenance release</title>
             <link>
-                https://quarkus.io/blog/quarkus-2-13-1-final-released/
+                https://quarkus.io/blog/quarkus-3-1-1-final-released/
             </link>
             <description>
-                2.13.1.Final is the first maintenance release of the 2.13 release train. It comes with a bunch of bugfixes and documentation improvements. It is a recommended and safe upgrade for anyone already using 2.13. If you are not already using 2.13, please refer to our migration guide. Full changelog You can...
+                We released Quarkus 3.1.1.Final, the first maintenance release of our 3.1 release train. As usual, it contains bugfixes and documentation improvements. It should be a safe upgrade for anyone already using 3.1. If you are not already using 3.1, please refer to the Quarkus 3.1 migration guide. And if you...
             </description>
-            <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+            <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quarkus-2-13-1-final-released/
+                https://quarkus.io/blog/quarkus-3-1-1-final-released/
             </guid>
             
             
@@ -122,78 +179,21 @@
         </item>
         
         <item>
-            <title>Quarkus 2.13.0.Final released - Cross site request forgery prevention filter, Kafka Dev UI</title>
+            <title>Quarkus 3.1.0.Final released - Programmatic creation of Reactive REST Clients, Kotlin 1.8.21 and more</title>
             <link>
-                https://quarkus.io/blog/quarkus-2-13-0-final-released/
+                https://quarkus.io/blog/quarkus-3-1-0-final-released/
             </link>
             <description>
-                We don&#8217;t have a ton of big new features in Quarkus 2.13.0.Final but it comes with a ton of small enhancements that should improve your overall experience with Quarkus. It still comes with some exciting stuff: Cross Site Request Forgery (CSRF) prevention filter for RESTEasy Reactive (well, security is not...
+                It has been a month since we released Quarkus 3.0 and it is our pleasure to announce Quarkus 3.1.0.Final. As usual, it comes with a lot of improvements all over the place. Major changes are: Provide new API to programmatically create Reactive REST Clients Introduce a way to set headers...
             </description>
-            <pubDate>Wed, 28 Sep 2022 00:00:00 +0000</pubDate>
+            <pubDate>Wed, 31 May 2023 00:00:00 +0000</pubDate>
             <guid>
-                https://quarkus.io/blog/quarkus-2-13-0-final-released/
+                https://quarkus.io/blog/quarkus-3-1-0-final-released/
             </guid>
             
             
             
             <author>Guillaume Smet (https://twitter.com/gsmet_)</author>
-            
-        </item>
-        
-        <item>
-            <title>Quarkus 2.12.3.Final released</title>
-            <link>
-                https://quarkus.io/blog/quarkus-2-12-3-final-released/
-            </link>
-            <description>
-                Today, we released Quarkus 2.12.3.Final, with a new round of bugfixes and documentation improvements. It is a safe upgrade for anyone using 2.12. Migration Guide If you are not already using 2.12, please refer to our migration guide. Full changelog You can get the full changelog of 2.12.3.Final on GitHub....
-            </description>
-            <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://quarkus.io/blog/quarkus-2-12-3-final-released/
-            </guid>
-            
-            
-            
-            <author>Guillaume Smet (https://twitter.com/gsmet_)</author>
-            
-        </item>
-        
-        <item>
-            <title>Quarkus Tools for IntelliJ 1.13.0 released!</title>
-            <link>
-                https://quarkus.io/blog/intellij-quarkus-tools-1.13.0/
-            </link>
-            <description>
-                We are very pleased to announce the 1.13.0 release of Quarkus Tools for IntelliJ. This release improves the Qute developer experience. Improved Qute developer experience InlayHint support InlayHint is a new feature. It allows to add inline information about parameters and variables. This is very useful for Qute templates to...
-            </description>
-            <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://quarkus.io/blog/intellij-quarkus-tools-1.13.0/
-            </guid>
-            
-            
-            
-            <author>Jeff Maury (https://twitter.com/jeffmaury)</author>
-            
-        </item>
-        
-        <item>
-            <title>How to implement a job queue with Redis</title>
-            <link>
-                https://quarkus.io/blog/redis-job-queue/
-            </link>
-            <description>
-                In how to cache with Redis, we implemented a simple cache backed by Redis. That&#8217;s just one use case of Redis. Redis is also used as a messaging server to implement the processing of background jobs or other kinds of messaging tasks. This post explores implementing this pattern with Quarkus...
-            </description>
-            <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
-            <guid>
-                https://quarkus.io/blog/redis-job-queue/
-            </guid>
-            
-            
-            
-            <author>Clement Escoffier (https://twitter.com/clementplop)</author>
             
         </item>
         
